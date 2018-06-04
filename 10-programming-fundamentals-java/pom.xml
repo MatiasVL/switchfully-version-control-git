@@ -5,12 +5,78 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.switchfully.programming.fundamentals</groupId>
-    <artifactId>10-programming-fundamentals</artifactId>
+    <artifactId>10-programming-fundamentals-java</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <modules>
-        <module>10-basics/01-variables-datatypes-keywords</module>
+        <module>10-basics/10-variables-datatypes-keywords</module>
+        <module>10-basics/20-basic-operators</module>
+        <module>10-basics/30-methods</module>
+        <module>10-basics/40-strings</module>
+        <module>10-basics/50-arrays</module>
+        <module>10-basics/60-decision-making</module>
+        <module>10-basics/70-loops</module>
+        <module>10-basics/additional-10-java-cli</module>
+        <module>10-basics/additional-20-arrays2D</module>
     </modules>
+
+    <properties>
+        <maven.compiler.plugin.version>3.7.0</maven.compiler.plugin.version>
+        <java.supported.version>1.8</java.supported.version>
+        <junit.version>5.2.0</junit.version>
+        <assertj.version>3.10.0</assertj.version>
+        <mockito.version>2.18.3</mockito.version>
+        <surefire.plugin.version>2.21.0</surefire.plugin.version>
+        <junit-platform-surefire-provider.version>1.2.0</junit-platform-surefire-provider.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.assertj</groupId>
+            <artifactId>assertj-core</artifactId>
+            <version>${assertj.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-core</artifactId>
+            <version>${mockito.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <version>${junit.version}</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>${surefire.plugin.version}</version>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.junit.platform</groupId>
+                        <artifactId>junit-platform-surefire-provider</artifactId>
+                        <version>${junit-platform-surefire-provider.version}</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${maven.compiler.plugin.version}</version>
+                <configuration>
+                    <source>${java.supported.version}</source>
+                    <target>${java.supported.version}</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
 
 </project>
