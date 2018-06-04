@@ -30,8 +30,8 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <maven.compiler.plugin.version>3.7.0</maven.compiler.plugin.version>
-        <java.supported.version>1.8</java.supported.version>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
         <junit.version>5.2.0</junit.version>
         <assertj.version>3.10.0</assertj.version>
         <mockito.version>2.18.3</mockito.version>
