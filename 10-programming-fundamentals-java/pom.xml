@@ -19,9 +19,17 @@
         <module>10-basics/70-loops</module>
         <module>10-basics/additional-10-java-cli</module>
         <module>10-basics/additional-20-arrays2D</module>
+        <module>20-oop/10-objects</module>
+        <module>20-oop/20-classes</module>
+        <module>20-oop/30-inheritance-composition</module>
+        <module>20-oop/40-polymorphism-abstraction-interfaces</module>
+        <module>20-oop/50-testing</module>
+        <module>20-oop/additional-codelabs</module>
     </modules>
 
     <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <maven.compiler.plugin.version>3.7.0</maven.compiler.plugin.version>
         <java.supported.version>1.8</java.supported.version>
         <junit.version>5.2.0</junit.version>
@@ -65,15 +73,6 @@
                         <version>${junit-platform-surefire-provider.version}</version>
                     </dependency>
                 </dependencies>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>${maven.compiler.plugin.version}</version>
-                <configuration>
-                    <source>${java.supported.version}</source>
-                    <target>${java.supported.version}</target>
-                </configuration>
             </plugin>
         </plugins>
     </build>

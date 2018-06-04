@@ -1,0 +1,51 @@
+# MyRectangle
+
+## Create a MyRectangle class
+
+### Requirement 1
+I should be able to create a MyRectangle object without providing any arguments.
+
+### Requirement 2
+I should be able to create a MyRectangle object by providing a X and Y coordinate
+- The dimensions should be 50 for width and 100 for height then
+
+### Requirement 3
+I should be able to create a MyRectangle object by providing a width and weight
+- The coordinates should be 5 for X and 10 for Y then
+
+### Requirement 4
+I should be able to create a MyRectangle object by providing the coordinates and dimensions
+
+### Requirement 5
+Make sure no-one can directly access the instance variables outside of your MyRectangle class
+
+### Requirement 6
+Create getters for all instance variables
+
+### Requirement 7
+Create a method that sets both the width and height to the provided new values
+
+### Requirement 8
+Create a method that calculates and returns the area
+
+### Requirement 9
+Create a method that calculates and returns the perimeter
+
+### Requirement 10
+Create two new methods:
+1. A method to set the name (or label) of the MyRectangle instance
+2. A method to get the name (or label) of the MyRectangle instance
+
+### Requirement 11
+Override (a certain method) to tell Java how it should textually represent a MyRectangle instance
+- It should return a String of the following format: "Rectangle `name` with x = `x`, y = `y`, width = `width` and height = `height`"
+
+### Requirement 12
+Create a method that, as an argument, takes a MyRectangle object and duplicates it.
+- With duplicating, we mean a new MyRectangle should be created with the values of the provided one
+    - This new MyRectangle object should be returned
+- Question: Should it be an instance method or a class method?
+
+### Requirement 13
+Create a way so we can ask MyRectangle how many instances / objects have been created of MyRectangle.
+- This means, that every time we create a new instance of MyRectangle, we have to keep count.
