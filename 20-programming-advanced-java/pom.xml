@@ -10,7 +10,6 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>00-self-evaluation</module>
         <module>05-agile-software-development/10-test-driven-development</module>
         <module>05-agile-software-development/20-refactoring-clean-code</module>
         <module>10-exception-handling</module>
