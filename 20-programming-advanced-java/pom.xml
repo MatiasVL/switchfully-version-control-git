@@ -20,6 +20,8 @@
         <module>60-design-principles-and-patterns/10-design-principles</module>
         <module>60-design-principles-and-patterns/20-design-patterns</module>
         <module>additional-codelabs</module>
+        <module>70-code-kata/gameoflife-ui</module>
+        <module>70-code-kata/gameoflife-backend</module>
     </modules>
 
     <properties>
