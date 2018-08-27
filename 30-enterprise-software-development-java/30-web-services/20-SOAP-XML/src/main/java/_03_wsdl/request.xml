@@ -1,0 +1,10 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <helloWorld>
+            <name>Reinout</name>
+        </helloWorld>
+    </soapenv:Body>
+</soapenv:Envelope>
+
+
