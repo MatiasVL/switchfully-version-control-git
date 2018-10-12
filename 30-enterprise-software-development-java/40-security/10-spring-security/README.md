@@ -18,7 +18,7 @@ So get back to work and make your country proud, private! Oorah!
 
 ## Some tactical notes
 
-Next up are the stories you will be developing that will help you learn about securing modern Java applications.
+Next up are the stories you will be developing that will help you learn about securing ASP.Net Core applications.
 - To build the code for the first time, call `mvnw.cmd clean install` from your command line, from within a module (e.g. `1-operation-avocado`)
 
 Each story has a 'starting point', a Maven module that has the minimum code setup for you to start the story without too much hassle.
