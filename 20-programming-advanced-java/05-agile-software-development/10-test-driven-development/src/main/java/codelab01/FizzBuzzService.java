@@ -1,4 +1,4 @@
-package codelab03;
+package codelab01;
 
 public class FizzBuzzService {
 }

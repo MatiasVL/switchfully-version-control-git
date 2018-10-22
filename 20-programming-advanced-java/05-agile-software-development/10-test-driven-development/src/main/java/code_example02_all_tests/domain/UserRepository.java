@@ -4,7 +4,7 @@ import java.util.*;
 
 public class UserRepository {
 
-    private Map<UUID, User> usersDB;
+    private final Map<UUID, User> usersDB;
 
     public UserRepository() {
         usersDB = new HashMap<>();

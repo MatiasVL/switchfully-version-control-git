@@ -5,8 +5,8 @@ import java.util.UUID;
 
 public class User {
 
-    private UUID id;
-    private String nickname;
+    private final UUID id;
+    private final String nickname;
 
     public User(String nickname) {
         this.id = UUID.randomUUID();
