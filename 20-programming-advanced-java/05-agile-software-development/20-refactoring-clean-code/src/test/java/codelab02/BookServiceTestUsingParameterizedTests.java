@@ -1,5 +1,7 @@
 package codelab02;
 
+import codelab02.domain.HarryPotterBook;
+import codelab02.domain.HarryPotterBookTitle;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;

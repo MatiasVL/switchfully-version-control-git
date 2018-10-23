@@ -1,5 +1,8 @@
 package codelab02;
 
+import codelab02.domain.HarryPotterBook;
+import codelab02.domain.HarryPotterBookTitle;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 

@@ -1,5 +1,7 @@
 package codelab02;
 
+import codelab02.domain.HarryPotterBook;
+import codelab02.domain.HarryPotterBookTitle;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

@@ -1,4 +1,4 @@
-package codelab02;
+package codelab02.domain;
 
 public enum HarryPotterBookTitle {
 
