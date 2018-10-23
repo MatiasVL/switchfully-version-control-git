@@ -1,9 +1,13 @@
 package codelab01;
 
+/**
+ * Read the README.md.
+ * (the current code of this class is OK)
+ */
 class Soldier {
 
-    private int attackingStrength;
-    private int defendingStrength;
+    private final int attackingStrength;
+    private final int defendingStrength;
 
     public Soldier(int attackingStrength, int defendingStrength) {
         this.attackingStrength = attackingStrength;

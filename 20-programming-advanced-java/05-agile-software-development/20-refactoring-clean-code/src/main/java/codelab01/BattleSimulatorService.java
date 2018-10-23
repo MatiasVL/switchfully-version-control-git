@@ -1,9 +1,12 @@
 package codelab01;
 
-
+/**
+ * Read the README.md.
+ * (the current code of this class is NOT OK)
+ */
 class BattleSimulatorService {
 
-    boolean simulateBattle(Army a1, Army a2) {
+    boolean simBat(Army a1, Army a2) {
         int a1Strength = 0;
         int a2Strength = 0;
 

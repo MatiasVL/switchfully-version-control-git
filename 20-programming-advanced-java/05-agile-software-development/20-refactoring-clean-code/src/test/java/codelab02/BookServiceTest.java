@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.util.Lists.newArrayList;
 
-class bookServiceTest {
+class BookServiceTest {
 
     private BookService bookService;
 
@@ -19,8 +19,8 @@ class bookServiceTest {
 
     @Test
     void givenOneBook_whenCaculatingPrice_thenReturnBasePrice() {
-        ArrayList<Book> selectedBooks = newArrayList(
-                new Book(BookType.THE_CHAMBER_OF_SECRETS));
+        ArrayList<HarryPotterBook> selectedBooks = newArrayList(
+                new HarryPotterBook(HarryPotterBookTitle.THE_CHAMBER_OF_SECRETS));
 
         double priceOfBooks = bookService.shop(selectedBooks);
 
@@ -29,9 +29,9 @@ class bookServiceTest {
 
     @Test
     void givenTwoDifferentBooks_whenCaculatingPrice_thenReturnPriceWith5pctDiscount() {
-        ArrayList<Book> selectedBooks = newArrayList(
-                new Book(BookType.THE_CHAMBER_OF_SECRETS),
-                new Book(BookType.THE_PRISONER_OF_AZKABAN));
+        ArrayList<HarryPotterBook> selectedBooks = newArrayList(
+                new HarryPotterBook(HarryPotterBookTitle.THE_CHAMBER_OF_SECRETS),
+                new HarryPotterBook(HarryPotterBookTitle.THE_PRISONER_OF_AZKABAN));
 
         double priceOfBooks = bookService.shop(selectedBooks);
 
@@ -40,10 +40,10 @@ class bookServiceTest {
 
     @Test
     void givenThreeDifferentBooks_whenCaculatingPrice_thenReturnPriceWith10pctDiscount() {
-        ArrayList<Book> selectedBooks = newArrayList(
-                new Book(BookType.THE_CHAMBER_OF_SECRETS),
-                new Book(BookType.THE_PRISONER_OF_AZKABAN),
-                new Book(BookType.THE_GOBLET_OF_FIRE));
+        ArrayList<HarryPotterBook> selectedBooks = newArrayList(
+                new HarryPotterBook(HarryPotterBookTitle.THE_CHAMBER_OF_SECRETS),
+                new HarryPotterBook(HarryPotterBookTitle.THE_PRISONER_OF_AZKABAN),
+                new HarryPotterBook(HarryPotterBookTitle.THE_GOBLET_OF_FIRE));
 
         double priceOfBooks = bookService.shop(selectedBooks);
 
@@ -52,11 +52,11 @@ class bookServiceTest {
 
     @Test
     void givenFourDifferentBooks_whenCaculatingPrice_thenReturnPriceWith20pctDiscount() {
-        ArrayList<Book> selectedBooks = newArrayList(
-                new Book(BookType.THE_CHAMBER_OF_SECRETS),
-                new Book(BookType.THE_PRISONER_OF_AZKABAN),
-                new Book(BookType.THE_GOBLET_OF_FIRE),
-                new Book(BookType.THE_ORDER_OF_THE_PHOENIX));
+        ArrayList<HarryPotterBook> selectedBooks = newArrayList(
+                new HarryPotterBook(HarryPotterBookTitle.THE_CHAMBER_OF_SECRETS),
+                new HarryPotterBook(HarryPotterBookTitle.THE_PRISONER_OF_AZKABAN),
+                new HarryPotterBook(HarryPotterBookTitle.THE_GOBLET_OF_FIRE),
+                new HarryPotterBook(HarryPotterBookTitle.THE_ORDER_OF_THE_PHOENIX));
 
         double priceOfBooks = bookService.shop(selectedBooks);
 
@@ -65,12 +65,12 @@ class bookServiceTest {
 
     @Test
     void givenFiveDifferentBooks_whenCaculatingPrice_thenReturnPriceWith25pctDiscount() {
-        ArrayList<Book> selectedBooks = newArrayList(
-                new Book(BookType.THE_CHAMBER_OF_SECRETS),
-                new Book(BookType.THE_PRISONER_OF_AZKABAN),
-                new Book(BookType.THE_GOBLET_OF_FIRE),
-                new Book(BookType.THE_ORDER_OF_THE_PHOENIX),
-                new Book(BookType.THE_PHILOSOPHERS_STONE));
+        ArrayList<HarryPotterBook> selectedBooks = newArrayList(
+                new HarryPotterBook(HarryPotterBookTitle.THE_CHAMBER_OF_SECRETS),
+                new HarryPotterBook(HarryPotterBookTitle.THE_PRISONER_OF_AZKABAN),
+                new HarryPotterBook(HarryPotterBookTitle.THE_GOBLET_OF_FIRE),
+                new HarryPotterBook(HarryPotterBookTitle.THE_ORDER_OF_THE_PHOENIX),
+                new HarryPotterBook(HarryPotterBookTitle.THE_PHILOSOPHERS_STONE));
 
         double priceOfBooks = bookService.shop(selectedBooks);
 
@@ -79,9 +79,9 @@ class bookServiceTest {
 
     @Test
     void givenTwoIdenticalBooks_whenCaculatingPrice_thenReturnBasePriceWithoutDiscount() {
-        ArrayList<Book> selectedBooks = newArrayList(
-                new Book(BookType.THE_CHAMBER_OF_SECRETS),
-                new Book(BookType.THE_CHAMBER_OF_SECRETS));
+        ArrayList<HarryPotterBook> selectedBooks = newArrayList(
+                new HarryPotterBook(HarryPotterBookTitle.THE_CHAMBER_OF_SECRETS),
+                new HarryPotterBook(HarryPotterBookTitle.THE_CHAMBER_OF_SECRETS));
 
         double priceOfBooks = bookService.shop(selectedBooks);
 
@@ -90,11 +90,11 @@ class bookServiceTest {
 
     @Test
     void givenTwoTimesTheSameTwoDifferentBooks_whenCaculatingPrice_thenOnlyCaculateDiscountOnce() {
-        ArrayList<Book> selectedBooks = newArrayList(
-                new Book(BookType.THE_CHAMBER_OF_SECRETS),
-                new Book(BookType.THE_CHAMBER_OF_SECRETS),
-                new Book(BookType.THE_PRISONER_OF_AZKABAN),
-                new Book(BookType.THE_PRISONER_OF_AZKABAN));
+        ArrayList<HarryPotterBook> selectedBooks = newArrayList(
+                new HarryPotterBook(HarryPotterBookTitle.THE_CHAMBER_OF_SECRETS),
+                new HarryPotterBook(HarryPotterBookTitle.THE_CHAMBER_OF_SECRETS),
+                new HarryPotterBook(HarryPotterBookTitle.THE_PRISONER_OF_AZKABAN),
+                new HarryPotterBook(HarryPotterBookTitle.THE_PRISONER_OF_AZKABAN));
 
         double priceOfBooks = bookService.shop(selectedBooks);
 
@@ -103,15 +103,15 @@ class bookServiceTest {
 
     @Test
     void givenANumberOfBooks_whenCaculatingPrice_thenReturnCorrectPrice() {
-        ArrayList<Book> selectedBooks = newArrayList(
-                new Book(BookType.THE_CHAMBER_OF_SECRETS),
-                new Book(BookType.THE_CHAMBER_OF_SECRETS),
-                new Book(BookType.THE_PHILOSOPHERS_STONE),
-                new Book(BookType.THE_PHILOSOPHERS_STONE),
-                new Book(BookType.THE_PRISONER_OF_AZKABAN),
-                new Book(BookType.THE_PRISONER_OF_AZKABAN),
-                new Book(BookType.THE_ORDER_OF_THE_PHOENIX),
-                new Book(BookType.THE_GOBLET_OF_FIRE));
+        ArrayList<HarryPotterBook> selectedBooks = newArrayList(
+                new HarryPotterBook(HarryPotterBookTitle.THE_CHAMBER_OF_SECRETS),
+                new HarryPotterBook(HarryPotterBookTitle.THE_CHAMBER_OF_SECRETS),
+                new HarryPotterBook(HarryPotterBookTitle.THE_PHILOSOPHERS_STONE),
+                new HarryPotterBook(HarryPotterBookTitle.THE_PHILOSOPHERS_STONE),
+                new HarryPotterBook(HarryPotterBookTitle.THE_PRISONER_OF_AZKABAN),
+                new HarryPotterBook(HarryPotterBookTitle.THE_PRISONER_OF_AZKABAN),
+                new HarryPotterBook(HarryPotterBookTitle.THE_ORDER_OF_THE_PHOENIX),
+                new HarryPotterBook(HarryPotterBookTitle.THE_GOBLET_OF_FIRE));
 
         double priceOfBooks = bookService.shop(selectedBooks);
 

@@ -1,5 +1,9 @@
 package codelab01;
 
+/**
+ * Read the README.md.
+ * (the current code of this class is OK)
+ */
 public class BattleApp {
 
     public static void main(String[] args) {
@@ -18,7 +22,7 @@ public class BattleApp {
                 new Soldier(10, 5)}
         );
 
-        boolean result = battleSimulatorService.simulateBattle(army1, army2);
+        boolean result = battleSimulatorService.simBat(army1, army2);
 
         System.out.println("Did army 1 defeat army 2? " + result);
 

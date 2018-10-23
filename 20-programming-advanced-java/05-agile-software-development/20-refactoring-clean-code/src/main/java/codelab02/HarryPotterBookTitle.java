@@ -1,6 +1,6 @@
 package codelab02;
 
-public enum BookType {
+public enum HarryPotterBookTitle {
 
     THE_PHILOSOPHERS_STONE,
     THE_CHAMBER_OF_SECRETS,

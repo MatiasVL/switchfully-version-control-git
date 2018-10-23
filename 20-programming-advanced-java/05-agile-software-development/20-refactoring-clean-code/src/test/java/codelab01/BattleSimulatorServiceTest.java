@@ -1,9 +1,17 @@
 package codelab01;
 
 import org.assertj.core.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 class BattleSimulatorServiceTest {
+
+    private BattleSimulatorService battleSimulatorService;
+
+    @BeforeEach
+    void setupBattleSimulator() {
+        battleSimulatorService = new BattleSimulatorService();
+    }
 
     @Test
     void simulateBattle_givenAttackingArmyAttackingStrengthLowerThanDoubleOfDefendingArmyDefendingStrength_thenFalse() {
@@ -18,8 +26,7 @@ class BattleSimulatorServiceTest {
         );
 
         // WHEN
-        BattleSimulatorService battleSimulatorService = new BattleSimulatorService();
-        boolean result = battleSimulatorService.simulateBattle(attackingArmy, defendingArmy);
+        boolean result = battleSimulatorService.simBat(attackingArmy, defendingArmy);
 
         // THEN
         Assertions.assertThat(result).isFalse();
@@ -38,8 +45,7 @@ class BattleSimulatorServiceTest {
         );
 
         // WHEN
-        BattleSimulatorService battleSimulatorService = new BattleSimulatorService();
-        boolean result = battleSimulatorService.simulateBattle(attackingArmy, defendingArmy);
+        boolean result = battleSimulatorService.simBat(attackingArmy, defendingArmy);
 
         // THEN
         Assertions.assertThat(result).isFalse();
@@ -58,8 +64,7 @@ class BattleSimulatorServiceTest {
         );
 
         // WHEN
-        BattleSimulatorService battleSimulatorService = new BattleSimulatorService();
-        boolean result = battleSimulatorService.simulateBattle(attackingArmy, defendingArmy);
+        boolean result = battleSimulatorService.simBat(attackingArmy, defendingArmy);
 
         // THEN
         Assertions.assertThat(result).isTrue();
