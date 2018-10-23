@@ -49,4 +49,3 @@ Expand your design when taking up more requirements. (e.g.: use a whiteboard, pe
 - Did you add tests later? When? 
 - Are your tests and the code both readable? 
 - Which tests did you write and why? 
-- Boundary cases (empty armies, same weapons fighting,...)
