@@ -1,12 +1,12 @@
-package code_example02.domain;
+package codelab02.domain;
 
 import java.util.Objects;
 
 public class Stock {
 
-    public Price price;
-    public String stockId;
-    public String company;
+    private final Price price;
+    private final String stockId;
+    private final String company;
 
     public Stock(Price price, String stockId, String company) {
         this.price = price;

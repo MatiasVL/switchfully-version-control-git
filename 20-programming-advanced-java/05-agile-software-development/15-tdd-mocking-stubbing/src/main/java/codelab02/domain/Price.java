@@ -1,9 +1,14 @@
-package code_example02.domain;
+package codelab02.domain;
 
 import java.math.BigDecimal;
 import java.text.NumberFormat;
 import java.util.Objects;
 
+/**
+ * Price is a Value Object and represents a certain price-value and price-currency.
+ * Value Object don't have an identity, nor do should they be mutable.
+ * Therefore, Price is made immutable (final)
+ */
 public final class Price {
 
     private final String currency;

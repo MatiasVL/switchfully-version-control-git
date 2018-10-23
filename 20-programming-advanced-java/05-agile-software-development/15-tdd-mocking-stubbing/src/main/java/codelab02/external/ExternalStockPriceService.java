@@ -1,5 +1,8 @@
-package code_example02.external;
+package codelab02.external;
 
+/**
+ * Read the README.md.
+ */
 public interface ExternalStockPriceService {
 
     void connect();

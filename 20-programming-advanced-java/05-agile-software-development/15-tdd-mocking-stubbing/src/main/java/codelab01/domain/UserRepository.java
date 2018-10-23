@@ -1,10 +1,14 @@
-package code_example01.domain;
+package codelab01.domain;
 
 import java.util.*;
 
+/**
+ * Read the README.md.
+ */
 public class UserRepository {
 
-    private Map<UUID, User> usersDB;
+    // usersDB is a very dummy in-memory database
+    private final Map<UUID, User> usersDB;
 
     public UserRepository() {
         usersDB = new HashMap<>();

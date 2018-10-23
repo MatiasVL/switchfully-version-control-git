@@ -1,16 +1,20 @@
-package code_example01;
+package codelab01;
 
-import code_example01.domain.User;
-import code_example01.domain.UserRepository;
+import codelab01.domain.User;
+import codelab01.domain.UserRepository;
 
 import java.util.Comparator;
 import java.util.List;
 import java.util.UUID;
 import java.util.stream.Collectors;
 
+/**
+ * Read the README.md.
+ * These are the 3 public methods (API) you should test
+ */
 public class UserService {
 
-    private UserRepository userRepository;
+    private final UserRepository userRepository;
 
     public UserService(UserRepository userRepository) {
         this.userRepository = userRepository;
@@ -25,8 +29,7 @@ public class UserService {
     }
 
     public List<User> getUsersSortedOnNicknameAsc() {
-        List<User> unsortedUsers = userRepository.getAll();
-        return unsortedUsers.stream()
+        return userRepository.getAll().stream()
                 .sorted(Comparator.comparing(User::getNickname))
                 .collect(Collectors.toList());
     }
