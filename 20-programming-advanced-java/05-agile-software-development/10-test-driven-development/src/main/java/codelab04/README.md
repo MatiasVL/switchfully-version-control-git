@@ -1,4 +1,4 @@
-﻿﻿# Spacebook
+# Spacebook
 
 For every requirement (you can even split requirements up into smaller bits):
 1. Write a test
