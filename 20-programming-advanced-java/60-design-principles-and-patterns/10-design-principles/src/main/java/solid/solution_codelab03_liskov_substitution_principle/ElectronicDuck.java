@@ -1,10 +1,9 @@
 package solid.solution_codelab03_liskov_substitution_principle;
 
-public class ElectronicDuck implements ElectronicQuackable {
+public class ElectronicDuck implements Quackable {
     private boolean isSwitchedOn = false;
 
-    @Override
-    public void prepareQuack() {
+    private void prepareQuack() {
         turnOn();
     }
 

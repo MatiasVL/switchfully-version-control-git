@@ -12,7 +12,7 @@ public class ElectronicDuck extends Duck {
 
     @Override
     public void swim() {
-        throw new UnsupportedOperationException("Eletronic ducks can't swim, they'll break!");
+        throw new UnsupportedOperationException("Electronic ducks can't swim, they'll break!");
     }
 
     public void turnOn() {
