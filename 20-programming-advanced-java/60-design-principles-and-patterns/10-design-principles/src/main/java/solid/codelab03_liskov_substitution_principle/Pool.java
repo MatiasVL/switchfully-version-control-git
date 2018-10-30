@@ -19,6 +19,7 @@ public class Pool {
     private void quack(Duck... ducks) {
         Stream.of(ducks)
                 .forEach(duck -> {
+                    // just to make sure the ElectronicDuck is always on...
                     if(duck instanceof ElectronicDuck) {
                         ((ElectronicDuck) duck).turnOn();
                     }
