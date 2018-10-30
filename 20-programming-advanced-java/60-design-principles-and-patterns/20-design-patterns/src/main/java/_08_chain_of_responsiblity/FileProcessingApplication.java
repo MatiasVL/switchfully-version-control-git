@@ -1,5 +1,8 @@
 package _08_chain_of_responsiblity;
 
+import _08_chain_of_responsiblity.files.File;
+import _08_chain_of_responsiblity.files.FileProcessor;
+
 public class FileProcessingApplication {
 
     public static void main(String[] args) {

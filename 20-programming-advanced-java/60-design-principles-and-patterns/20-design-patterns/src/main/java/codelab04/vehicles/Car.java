@@ -1,4 +1,4 @@
-package codelab04;
+package codelab04.vehicles;
 
 /**
  * You can't change anything in this class

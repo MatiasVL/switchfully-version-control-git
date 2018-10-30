@@ -1,6 +1,6 @@
 package _04_proxy;
 
-public class ImageProxy implements Image{
+public class ImageProxy implements Image {
 
     private ActualImage actualImage;
     private String pathToImage;
@@ -10,11 +10,24 @@ public class ImageProxy implements Image{
     }
 
     @Override
-    public void display() {
-        System.out.println("Showing a placeholder until the actual image is loaded!");
-        if(actualImage == null) {
+    public void display() throws InterruptedException {
+        if (actualImage == null) {
+            displayPlaceholderImageWhileFetchingTheRealImage();
+            System.out.println(String.format("(Loading file %s from remote server... This may take a while)", pathToImage));
             actualImage = new ActualImage(pathToImage);
         }
         actualImage.display();
+    }
+
+    private void displayPlaceholderImageWhileFetchingTheRealImage() {
+        System.out.println("==================");
+        System.out.println("=======   ========");
+        System.out.println("======     =======");
+        System.out.println("=====       ======");
+        System.out.println("===  TEMP IMG  ===");
+        System.out.println("=====       ======");
+        System.out.println("======     =======");
+        System.out.println("=======   ========");
+        System.out.println("==================");
     }
 }

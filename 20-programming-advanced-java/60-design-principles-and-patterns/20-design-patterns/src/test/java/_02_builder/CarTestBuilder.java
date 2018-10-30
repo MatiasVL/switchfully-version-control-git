@@ -8,10 +8,10 @@ class CarTestBuilder {
     private String brand;
     private String type;
 
-    private CarBuilder carBuilder;
+    private Car.CarBuilder carBuilder;
 
     private CarTestBuilder() {
-        carBuilder = CarBuilder.carBuilder();
+        carBuilder = Car.CarBuilder.carBuilder();
     }
 
     public static CarTestBuilder aDefaultCar() {

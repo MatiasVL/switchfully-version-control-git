@@ -1,8 +1,11 @@
 package _01_factory_method;
 
 import _01_factory_method.cars.RentalCar;
+import _01_factory_method.rentalstores.AntarcticCarRentalStore;
+import _01_factory_method.rentalstores.BelgianCarRentalStore;
+import _01_factory_method.rentalstores.CarRentalStore;
 
-import static _01_factory_method.TerrainType.ROUGH;
+import static _01_factory_method.rentalstores.TerrainType.ROUGH;
 
 public class CarRentalApplication {
 

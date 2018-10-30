@@ -10,8 +10,11 @@ Expand the provided code with extra functionality:
     - the car's engine is turned off
     - the car's driven for a certain amount of miles
 
-Refactor the code, using a behavioral design pattern, so that it works just as before, 
-but also includes the new **undo** behavior
+Refactor the code, using a behavioral design pattern, so that it works just as before (there are tests to assure this), 
+but also supports the newly required **undo** behavior
 
-There are numerous tests available, refactor them if needed!
-In the end, they should all be green (again).
+We haven't yet covered this design pattern.
+
+No clue which pattern to use?
+- Decode the following string with **Base64** (source charset: UTF-8) to get your answer
+	- `c3RhdGUbWVtZW50bw==`

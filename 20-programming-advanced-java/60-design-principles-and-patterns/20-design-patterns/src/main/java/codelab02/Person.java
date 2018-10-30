@@ -5,16 +5,16 @@ package codelab02;
  */
 class Person {
 
-    private String lastName;
-    private String middleName;
-    private String firstName;
-    private int age;
-    private String city;
-    private String street;
-    private String housenumber;
-    private String zipcode;
-    private String phonenumber;
-    private String email;
+    private final String lastName;
+    private final String middleName;
+    private final String firstName;
+    private final int age;
+    private final String city;
+    private final String street;
+    private final String housenumber;
+    private final String zipcode;
+    private final String phonenumber;
+    private final String email;
 
     Person(
             String lastName,

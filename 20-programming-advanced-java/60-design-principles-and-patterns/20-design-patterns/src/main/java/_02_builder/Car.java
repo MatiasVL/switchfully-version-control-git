@@ -1,5 +1,8 @@
 package _02_builder;
 
+/**
+ * Car has, as a static nested class, a CarBuilder.
+ */
 public class Car {
 
     private int numberOfWheels;
@@ -8,7 +11,7 @@ public class Car {
     private String brand;
     private String type;
 
-    public Car(CarBuilder carBuilder) {
+    private Car(CarBuilder carBuilder) {
         numberOfWheels = carBuilder.numberOfWheels;
         color = carBuilder.color;
         numberOfDoors = carBuilder.numberOfDoors;
@@ -45,5 +48,55 @@ public class Car {
 
     public String getType() {
         return type;
+    }
+
+    /**
+     * The CarBuilder class: used for building Car objects.
+     */
+    public static class CarBuilder {
+
+        private int numberOfWheels;
+        private String color;
+        private int numberOfDoors;
+        private String brand;
+        private String type;
+
+        private CarBuilder() {}
+
+        /**
+         * Static factory method
+         */
+        public static CarBuilder carBuilder() {
+            return new CarBuilder();
+        }
+
+        public Car build() {
+            return new Car(this);
+        }
+
+        public CarBuilder withNumberOfWheels(int numberOfWheels) {
+            this.numberOfWheels = numberOfWheels;
+            return this;
+        }
+
+        public CarBuilder withColor(String color) {
+            this.color = color;
+            return this;
+        }
+
+        public CarBuilder withNumberOfDoors(int numberOfDoors) {
+            this.numberOfDoors = numberOfDoors;
+            return this;
+        }
+
+        public CarBuilder withBrand(String brand) {
+            this.brand = brand;
+            return this;
+        }
+
+        public CarBuilder withType(String type) {
+            this.type = type;
+            return this;
+        }
     }
 }

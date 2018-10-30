@@ -1,9 +1,9 @@
-package _08_chain_of_responsiblity;
+package _08_chain_of_responsiblity.files;
 
-import _08_chain_of_responsiblity.filehandling.AudioFileHandler;
-import _08_chain_of_responsiblity.filehandling.FileHandler;
-import _08_chain_of_responsiblity.filehandling.JsonFileHandler;
-import _08_chain_of_responsiblity.filehandling.TextFileHandler;
+import _08_chain_of_responsiblity.files.handlers.AudioFileHandler;
+import _08_chain_of_responsiblity.files.handlers.FileHandler;
+import _08_chain_of_responsiblity.files.handlers.JsonFileHandler;
+import _08_chain_of_responsiblity.files.handlers.TextFileHandler;
 
 public class FileProcessor {
 

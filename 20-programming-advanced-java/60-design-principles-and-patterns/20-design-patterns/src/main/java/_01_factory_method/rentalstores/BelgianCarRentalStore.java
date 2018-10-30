@@ -1,4 +1,4 @@
-package _01_factory_method;
+package _01_factory_method.rentalstores;
 
 import _01_factory_method.cars.RentalCar;
 import _01_factory_method.cars.SimpleMondeo;

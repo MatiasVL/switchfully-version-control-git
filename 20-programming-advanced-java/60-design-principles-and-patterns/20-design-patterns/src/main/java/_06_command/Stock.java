@@ -2,7 +2,7 @@ package _06_command;
 
 public class Stock {
 
-    private String name;
+    private final String name;
     private int quantity;
 
     public Stock(String name) {

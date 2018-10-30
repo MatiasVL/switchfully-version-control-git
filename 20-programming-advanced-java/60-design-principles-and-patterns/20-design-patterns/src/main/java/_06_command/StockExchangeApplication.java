@@ -17,7 +17,7 @@ public class StockExchangeApplication {
         myBroker.registerNewOrder(new BuyStock(stockMicrosoft, 7));
         myBroker.registerNewOrder(new SellStock(stockApple, 2));
 
-        // Do I already have bought and sold the shares of these stocks? (No you don't, the orders are not yet processed)
+        // At this point, you haven't yet bought or sold any stocks (the orders are not yet processed)
         System.out.println("Before processing");
         System.out.println("\t" + stockGoogle);
         System.out.println("\t" + stockApple);

@@ -4,8 +4,8 @@ import _06_command.Stock;
 
 public class SellStock implements Order {
 
-    private Stock stock;
-    private int quantityToSell;
+    private final Stock stock;
+    private final int quantityToSell;
 
     public SellStock(Stock stock, int quantityToSell) {
         this.stock = stock;

@@ -1,6 +1,6 @@
 package _02_builder;
 
-import static _02_builder.CarBuilder.carBuilder;
+import static _02_builder.Car.CarBuilder.carBuilder;
 
 public class CarApplication {
 

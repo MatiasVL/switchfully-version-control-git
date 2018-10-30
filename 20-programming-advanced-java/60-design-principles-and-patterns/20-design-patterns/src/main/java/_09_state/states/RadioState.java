@@ -8,7 +8,6 @@ public class RadioState implements State {
     public void pressPlayButton(MP3Player context) {
         System.out.println("\tPressing the play button when in the radio state, will change the radio channel");
         System.out.println("\t\tThe radio state will remain the current state");
-
     }
 
     @Override

@@ -1,4 +1,4 @@
-package _08_chain_of_responsiblity;
+package _08_chain_of_responsiblity.files;
 
 public class File {
 

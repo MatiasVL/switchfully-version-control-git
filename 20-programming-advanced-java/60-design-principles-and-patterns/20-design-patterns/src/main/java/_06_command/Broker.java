@@ -7,7 +7,7 @@ import java.util.List;
 
 public class Broker {
 
-    private List<Order> orders;
+    private final List<Order> orders;
 
     public Broker() {
         orders = new ArrayList<>();

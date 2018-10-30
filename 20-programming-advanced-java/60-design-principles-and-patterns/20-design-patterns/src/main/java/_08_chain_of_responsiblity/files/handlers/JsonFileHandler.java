@@ -1,6 +1,6 @@
-package _08_chain_of_responsiblity.filehandling;
+package _08_chain_of_responsiblity.files.handlers;
 
-import _08_chain_of_responsiblity.File;
+import _08_chain_of_responsiblity.files.File;
 
 public class JsonFileHandler implements FileHandler {
 
