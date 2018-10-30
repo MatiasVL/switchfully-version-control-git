@@ -1,14 +1,12 @@
 package solid.solution_codelab01_single_responsiblity_principle;
 
+import java.util.stream.Collectors;
+
 public class CarManager {
     private final CarDao carDao;
-    private final CarFormatter carFormatter;
-    private final CarRater carRater;
 
-    public CarManager(CarDao carDao, CarFormatter carFormatter, CarRater carRater) {
+    public CarManager(CarDao carDao) {
         this.carDao = carDao;
-        this.carFormatter = carFormatter;
-        this.carRater = carRater;
     }
 
     public Car getCarById(final String carId) {
@@ -16,10 +14,14 @@ public class CarManager {
     }
 
     public String getCarsNames() {
-        return this.carFormatter.getCarsNames(this.carDao.findAll());
+        return this.carDao.findAll().stream()
+                .map(Car::printCar)
+                .collect(Collectors.joining(", "));
     }
 
     public Car getBestCar() {
-        return this.carRater.getBestCar(this.carDao.findAll());
+        return this.carDao.findAll().stream()
+                .max(Car::compareTo)
+                .orElse(null);
     }
 }

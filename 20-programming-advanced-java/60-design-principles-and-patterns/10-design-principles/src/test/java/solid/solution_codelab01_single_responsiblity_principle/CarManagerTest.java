@@ -10,7 +10,7 @@ public class CarManagerTest {
 
     @BeforeEach
     public void setUp() throws Exception {
-        carManager = new CarManager(new CarDao(), new CarFormatter(), new CarRater());
+        carManager = new CarManager(new CarDao());
     }
 
     @Test
