@@ -2,12 +2,6 @@ package _02_builder;
 
 class CarTestBuilder {
 
-    private int numberOfWheels;
-    private String color;
-    private int numberOfDoors;
-    private String brand;
-    private String type;
-
     private Car.CarBuilder carBuilder;
 
     private CarTestBuilder() {
