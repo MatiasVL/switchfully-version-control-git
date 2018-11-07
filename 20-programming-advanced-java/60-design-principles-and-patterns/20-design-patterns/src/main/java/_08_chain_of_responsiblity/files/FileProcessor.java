@@ -1,8 +1,8 @@
 package _08_chain_of_responsiblity.files;
 
-import _08_chain_of_responsiblity.files.handlers.AudioFileHandler;
 import _08_chain_of_responsiblity.files.handlers.FileHandler;
 import _08_chain_of_responsiblity.files.handlers.JsonFileHandler;
+import _08_chain_of_responsiblity.files.handlers.NonFileHandler;
 import _08_chain_of_responsiblity.files.handlers.TextFileHandler;
 
 public class FileProcessor {
@@ -14,14 +14,14 @@ public class FileProcessor {
     }
 
     private void createFileHandlerChain() {
-        TextFileHandler textFileHandler = new TextFileHandler();
         JsonFileHandler jsonFileHandler = new JsonFileHandler();
-        AudioFileHandler audioFileHandler = new AudioFileHandler();
+        TextFileHandler textFileHandler = new TextFileHandler();
+        NonFileHandler nonFileHandler = new NonFileHandler();
 
-        textFileHandler.setNextHandler(jsonFileHandler);
-        jsonFileHandler.setNextHandler(audioFileHandler);
+        jsonFileHandler.setNextHandler(textFileHandler);
+        textFileHandler.setNextHandler(nonFileHandler);
 
-        initialFileHandler = textFileHandler;
+        initialFileHandler = jsonFileHandler;
     }
 
     public void processFile(File file) {

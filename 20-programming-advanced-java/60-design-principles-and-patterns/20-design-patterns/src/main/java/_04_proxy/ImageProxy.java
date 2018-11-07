@@ -1,6 +1,6 @@
 package _04_proxy;
 
-public class ImageProxy implements Image {
+public class ImageProxy implements Displayable {
 
     private ActualImage actualImage;
     private String pathToImage;

@@ -1,6 +1,6 @@
 package _04_proxy;
 
-public interface Image {
+public interface Displayable {
 
     void display() throws InterruptedException;
 

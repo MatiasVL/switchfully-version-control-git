@@ -1,6 +1,6 @@
 package _04_proxy;
 
-public class ActualImage implements Image {
+public class ActualImage implements Displayable {
 
     private String pathToImage;
 
@@ -12,7 +12,7 @@ public class ActualImage implements Image {
     @Override
     public void display() {
         System.out.println("\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r");
-        System.out.println("- Actual Image -");
+        System.out.println("- Actual Displayable -");
         System.out.println("===============");
         System.out.println("======   ======");
         System.out.println("====       ====");
@@ -27,6 +27,7 @@ public class ActualImage implements Image {
     }
 
     private void loadImageFromRemoteServer() throws InterruptedException {
+        // In real-life, we should use the pathToImage to do an external call to the server
         Thread.sleep(2500);
     }
 
