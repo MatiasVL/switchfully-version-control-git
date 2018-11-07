@@ -12,7 +12,7 @@ public class LunchHall {
         this.workers = workers;
     }
 
-    public void manage() {
+    public void lunchTime() {
         this.workers
                 .forEach(worker -> {
                     // A required check because of our bad design :'(

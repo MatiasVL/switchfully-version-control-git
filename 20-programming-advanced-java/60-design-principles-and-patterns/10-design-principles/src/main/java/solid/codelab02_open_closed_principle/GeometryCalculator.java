@@ -33,24 +33,24 @@ public class GeometryCalculator {
         }
     }
 
-    private double circumferenceTriangle(double sideA, double sideB, double sideC) {
-        return sideA + sideB + sideC;
-    }
 
     private double circumferenceCircle(double radius) {
         return 2 * Math.PI * radius;
     }
 
-    private double circumferenceRectangle(double height, double width) {
-        return 2 * (height + width);
+    private double areaCircle(double radius) {
+        return Math.PI * radius * radius;
+    }
+    private double circumferenceTriangle(double sideA, double sideB, double sideC) {
+        return sideA + sideB + sideC;
     }
 
     private double areaTriangle(double base, double height) {
         return base * height / 2;
     }
 
-    private double areaCircle(double radius) {
-        return Math.PI * radius * radius;
+    private double circumferenceRectangle(double height, double width) {
+        return 2 * (height + width);
     }
 
     private double areaRectangle(double height, double width) {
