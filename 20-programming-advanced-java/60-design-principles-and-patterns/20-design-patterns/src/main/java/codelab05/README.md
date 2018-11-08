@@ -20,4 +20,4 @@ Which Structural pattern can we use?
 
 No clue which pattern to use?
 - Decode the following string with **Base64** (source charset: UTF-8) to get your answer
-	- `YWRhcHRlcgY29tcG9zaXRl`
+	- `Y29tcG9zaXRl`
