@@ -2,7 +2,7 @@
 
 Game of Life Code Kata!
 
-Using Maven, Angular (4+) and Spring Boot (2.0.4.RELEASE)
+Using Maven, Angular and Spring Boot (2.1.0.RELEASE)
 
 ## Usage
 
