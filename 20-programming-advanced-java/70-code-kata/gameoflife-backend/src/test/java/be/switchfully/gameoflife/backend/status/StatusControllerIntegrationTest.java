@@ -16,12 +16,12 @@ public class StatusControllerIntegrationTest extends IntegrationTest {
                 .basePath(STATUS_BASE_URL + "/check")
                 .contentType("text/plain;charset=UTF-8")
                 .when()
-                .get()
+                    .get()
                 .then()
-                .statusCode(200)
-                .extract()
-                .response()
-                .asString();
+                    .statusCode(200)
+                    .extract()
+                    .response()
+                    .asString();
 
         Assertions.assertThat(statusCheck).isEqualTo("Up and running!");
     }
