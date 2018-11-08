@@ -17,4 +17,4 @@ We haven't yet covered this design pattern.
 
 No clue which pattern to use?
 - Decode the following string with **Base64** (source charset: UTF-8) to get your answer
-	- `c3RhdGUbWVtZW50bw==`
+	- `bWVtZW50bw==`
