@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<company xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="company01.xsd">
+    Hotel corporation UK
+</company>
+
+<!-- Make sure to read the README.MD file that's located in the "10-xml" folder before starting the codelabs -->

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="https://switchfully.com"
+           xmlns="https://switchfully.com"
+           elementFormDefault="qualified">
+
+    <!-- an XML instance containing as its root element a person element,
+    can be validate against to XML Schema now as well -->
+    <xs:element name="person">
+        <xs:complexType>
+            <xs:all>
+                <xs:element name="firstname" minOccurs="0">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:minLength value="2"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element name="lastname" type="xs:string"/>
+                <xs:element name="birthDate" type="xs:date"/>
+                <xs:element name="phoneNumber" type="phoneNumberType"/>
+            </xs:all>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="phoneNumberType">
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute name="isMobileNumber" type="xs:boolean" default="false"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+
+    <xs:element name="phoneContacts">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="person" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+</xs:schema>

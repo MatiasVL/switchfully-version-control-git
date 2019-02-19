@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<company xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="company02.xsd">
+    <id>1</id>
+    <name>Hotel corporation UK</name>
+</company>

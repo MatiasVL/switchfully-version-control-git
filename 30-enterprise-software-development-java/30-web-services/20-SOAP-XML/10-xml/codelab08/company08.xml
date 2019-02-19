@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<company xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="company08.xsd">
+    <id>1</id>
+    <name>Hotel corporation UK</name>
+    <project>
+        <project_id>1</project_id>
+        <project_name>my project</project_name>
+    </project>
+    <project>
+        <project_id>2</project_id>
+        <project_name>my second project</project_name>
+    </project>
+    <project>
+        <project_id>3</project_id>
+        <project_name>my third project</project_name>
+        <project_owner>
+            <firstname>John</firstname>
+            <lastname>Doe</lastname>
+        </project_owner>
+    </project>
+</company>

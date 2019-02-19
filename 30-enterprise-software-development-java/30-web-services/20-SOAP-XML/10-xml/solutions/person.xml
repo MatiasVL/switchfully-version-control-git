@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<person xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="https://switchfully.com person.xsd"
+        xmlns="https://switchfully.com">
+    <firstname>Jim</firstname>
+    <birthDate>1980-12-25</birthDate>
+    <lastname>Jimmens</lastname>
+</person>

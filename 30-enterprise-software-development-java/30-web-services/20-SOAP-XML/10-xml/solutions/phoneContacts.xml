@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phoneContacts xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:schemaLocation="https://switchfully.com phoneContacts_alternative.xsd"
+               xmlns="https://switchfully.com">
+    <person>
+        <firstname>Jim</firstname>
+        <birthDate>1980-12-25</birthDate>
+        <lastname>Jimmens</lastname>
+        <phoneNumber>484510452</phoneNumber>
+    </person>
+    <person>
+        <birthDate>1985-10-20</birthDate>
+        <lastname>Timmens</lastname>
+        <phoneNumber>475523489</phoneNumber>
+    </person>
+    <person>
+        <firstname>An</firstname>
+        <lastname>Andrews</lastname>
+        <birthDate>1988-03-15</birthDate>
+        <phoneNumber isMobileNumber="true">477588120</phoneNumber>
+    </person>
+</phoneContacts>
