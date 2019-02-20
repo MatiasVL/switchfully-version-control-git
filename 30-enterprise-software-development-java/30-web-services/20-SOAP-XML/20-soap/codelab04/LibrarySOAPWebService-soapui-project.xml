@@ -1,0 +1,395 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="c969a908-e89b-481d-baec-204bda42b444" activeEnvironment="Default" name="LibrarySOAPWebService" resourceRoot="${projectDir}" soapui-version="5.5.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="3ef72904-1485-4285-ba8d-79bb51782440" wsaVersion="NONE" name="LibraryPB" type="wsdl" bindingName="{http://library.api.switchfully.com}LibraryPB" soapVersion="1_2" anonymous="optional" definition="Library.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="file:\C:\Users\nielsde\Desktop\Library.wsdl"><con:part><con:url>file:\C:\Users\nielsde\Desktop\Library.wsdl</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="http://library.api.switchfully.com" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://library.api.switchfully.com">
+  <!--Types
+      Describes the data.
+      The XML Schema language (also known as XSD) is used (referenced as XS) for this purpose.-->
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://library.api.switchfully.com" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="addBook" type="tns:addBook"/>
+      <xs:element name="addBookResponse" type="tns:addBookResponse"/>
+      <xs:element name="statusCheck" type="tns:statusCheck"/>
+      <xs:element name="statusCheckResponse" type="tns:statusCheckResponse"/>
+      <xs:element name="countAllBooks" type="tns:countAllBooks"/>
+      <xs:element name="countAllBooksResponse" type="tns:countAllBooksResponse"/>
+      <xs:element name="countAllAuthors" type="tns:countAllAuthors"/>
+      <xs:element name="countAllAuthorsResponse" type="tns:countAllAuthorsResponse"/>
+      <xs:element name="findEntriesByTitle" type="tns:findEntriesByTitle"/>
+      <xs:element name="findEntriesByTitleResponse" type="tns:findEntriesByTitleResponse"/>
+      <xs:element name="findEntriesByAuthor" type="tns:findEntriesByAuthor"/>
+      <xs:element name="findEntriesByAuthorResponse" type="tns:findEntriesByAuthorResponse"/>
+      <xs:complexType name="author">
+        <xs:sequence>
+          <xs:element minOccurs="1" name="name" type="xs:string"/>
+          <xs:element minOccurs="0" name="birth" type="xs:dateTime"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xsd:complexType name="authorArray">
+        <xsd:sequence>
+          <xsd:element name="author" type="tns:author" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xs:complexType name="libraryBook">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="isbn" type="xs:string"/>
+          <xs:element minOccurs="0" name="price" type="xs:double"/>
+          <xs:element minOccurs="0" name="title" type="xs:string"/>
+          <xs:element minOccurs="0" name="inception" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="authors" nillable="true" type="tns:authorArray"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="confirmation">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="tx" type="xs:long"/>
+          <xs:element minOccurs="0" name="isbn" type="xs:string"/>
+          <xs:element minOccurs="0" name="stamp" type="xs:dateTime"/>
+        </xs:sequence>
+      </xs:complexType>
+      <!--Request and response elements-->
+      <xsd:complexType name="bookArray">
+        <xsd:sequence>
+          <xsd:element name="book" type="tns:libraryBook" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xs:complexType name="addBook">
+        <xs:sequence>
+          <xs:element name="LibraryBook" type="tns:libraryBook" minOccurs="0"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="addBookResponse">
+        <xs:sequence>
+          <xs:element name="Confirmation" type="tns:confirmation" minOccurs="0"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="statusCheck">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="token" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="statusCheckResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="status" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="countAllBooks">
+        <xs:sequence/>
+      </xs:complexType>
+      <xs:complexType name="countAllBooksResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="count" type="xs:long"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="countAllAuthors">
+        <xs:sequence/>
+      </xs:complexType>
+      <xs:complexType name="countAllAuthorsResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="count" type="xs:long"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="findEntriesByTitle">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="title" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="findEntriesByTitleResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="books" nillable="true" type="tns:bookArray"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="findEntriesByAuthor">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="author" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="findEntriesByAuthorResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="books" nillable="true" type="tns:bookArray"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xsd:schema>
+  </wsdl:types>
+  <!--Messages
+      Typically, a message corresponds to an operation.
+      The message contains the information needed to perform the operation.-->
+  <wsdl:message name="addBookRequest">
+    <wsdl:part name="parameters" element="tns:addBook"/>
+  </wsdl:message>
+  <wsdl:message name="addBookResponse">
+    <wsdl:part name="parameters" element="tns:addBookResponse"/>
+  </wsdl:message>
+  <wsdl:message name="statusCheckRequest">
+    <wsdl:part name="parameters" element="tns:statusCheck"/>
+  </wsdl:message>
+  <wsdl:message name="statusCheckResponse">
+    <wsdl:part name="parameters" element="tns:statusCheckResponse"/>
+  </wsdl:message>
+  <wsdl:message name="countAllBooksRequest">
+    <wsdl:part name="parameters" element="tns:countAllBooks"/>
+  </wsdl:message>
+  <wsdl:message name="countAllBooksResponse">
+    <wsdl:part name="parameters" element="tns:countAllBooksResponse"/>
+  </wsdl:message>
+  <wsdl:message name="countAllAuthorsRequest">
+    <wsdl:part name="parameters" element="tns:countAllAuthors"/>
+  </wsdl:message>
+  <wsdl:message name="countAllAuthorsResponse">
+    <wsdl:part name="parameters" element="tns:countAllAuthorsResponse"/>
+  </wsdl:message>
+  <wsdl:message name="findEntriesByTitleRequest">
+    <wsdl:part name="parameters" element="tns:findEntriesByTitle"/>
+  </wsdl:message>
+  <wsdl:message name="findEntriesByTitleResponse">
+    <wsdl:part name="parameters" element="tns:findEntriesByTitleResponse"/>
+  </wsdl:message>
+  <wsdl:message name="findEntriesByAuthorRequest">
+    <wsdl:part name="parameters" element="tns:findEntriesByAuthor"/>
+  </wsdl:message>
+  <wsdl:message name="findEntriesByAuthorResponse">
+    <wsdl:part name="parameters" element="tns:findEntriesByAuthorResponse"/>
+  </wsdl:message>
+  <!--Defines a Web service, the operations that can be performed,
+    and the messages that are used to perform the operation.-->
+  <wsdl:portType name="libraryInterface">
+    <wsdl:operation name="addBook">
+      <wsdl:input message="tns:addBookRequest"/>
+      <wsdl:output message="tns:addBookResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="statusCheck">
+      <wsdl:input message="tns:statusCheckRequest"/>
+      <wsdl:output message="tns:statusCheckResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="countAllBooks">
+      <wsdl:input message="tns:countAllBooksRequest"/>
+      <wsdl:output message="tns:countAllBooksResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="countAllAuthors">
+      <wsdl:input message="tns:countAllAuthorsRequest"/>
+      <wsdl:output message="tns:countAllAuthorsResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="findEntriesByTitle">
+      <wsdl:input message="tns:findEntriesByTitleRequest"/>
+      <wsdl:output message="tns:findEntriesByTitleResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="findEntriesByAuthor">
+      <wsdl:input message="tns:findEntriesByAuthorRequest"/>
+      <wsdl:output message="tns:findEntriesByAuthorResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <!--Binding: Specifies the interface and defines the SOAP binding style (RPC/Document) and transport (SOAP (over HTTP) Protocol).
+      The binding section also defines the operations.-->
+  <wsdl:binding name="LibraryPB" type="tns:libraryInterface">
+    <soap12:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="addBook">
+      <soap12:operation soapAction=""/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="statusCheck">
+      <soap12:operation soapAction=""/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="countAllBooks">
+      <soap12:operation soapAction=""/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="countAllAuthors">
+      <soap12:operation soapAction=""/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="findEntriesByTitle">
+      <soap12:operation soapAction=""/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="findEntriesByAuthor">
+      <soap12:operation soapAction=""/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <!--Service: Contains a set of system functions that have been exposed to the Web-based protocols.
+      Port: Defines the address or connection point to a Web service. It is typically represented by a simple HTTP URL string.-->
+  <wsdl:service name="LibraryService">
+    <wsdl:port name="libraryPort" binding="tns:LibraryPB">
+      <soap12:address location="http://localhost:8088/LibraryPB"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://CI00058590:8088/LibraryPB</con:endpoint><con:endpoint>http://localhost:8088/LibraryPB</con:endpoint></con:endpoints><con:operation id="5bd23970-ebc5-4781-9b15-bac8bf7c29be" isOneWay="false" action="" name="addBook" bindingOperationName="addBook" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="d1cfd728-5e30-4087-9368-e22e08941666" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8088/LibraryPB</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:lib="http://library.api.switchfully.com">\r
+   <soap:Header/>\r
+   <soap:Body>\r
+      <lib:addBook>\r
+         <!--Optional:-->\r
+         <LibraryBook>\r
+            <!--Optional:-->\r
+            <isbn>?</isbn>\r
+            <!--Optional:-->\r
+            <price>?</price>\r
+            <!--Optional:-->\r
+            <title>?</title>\r
+            <!--Optional:-->\r
+            <inception>?</inception>\r
+            <!--Optional:-->\r
+            <authors>\r
+               <!--Zero or more repetitions:-->\r
+               <author>\r
+                  <name>?</name>\r
+                  <!--Optional:-->\r
+                  <birth>?</birth>\r
+               </author>\r
+            </authors>\r
+         </LibraryBook>\r
+      </lib:addBook>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://library.api.switchfully.com/libraryInterface/addBookRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="289be079-b888-42cd-9f61-2b00c1b0879b" isOneWay="false" action="" name="countAllAuthors" bindingOperationName="countAllAuthors" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="0ce2f1f9-744e-4d1d-b3ea-3a85a562c860" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8088/LibraryPB</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:lib="http://library.api.switchfully.com">\r
+   <soap:Header/>\r
+   <soap:Body>\r
+      <lib:countAllAuthors/>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://library.api.switchfully.com/libraryInterface/countAllAuthorsRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="d1cc4bd4-54b9-44dd-bab7-b71d44453433" isOneWay="false" action="" name="countAllBooks" bindingOperationName="countAllBooks" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="b273ac61-6f77-4bb5-84a8-2e7bf72d0571" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8088/LibraryPB</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:lib="http://library.api.switchfully.com">\r
+   <soap:Header/>\r
+   <soap:Body>\r
+      <lib:countAllBooks/>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://library.api.switchfully.com/libraryInterface/countAllBooksRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="0615d98f-530c-4856-95aa-e0e6cf55ef11" isOneWay="false" action="" name="findEntriesByAuthor" bindingOperationName="findEntriesByAuthor" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="c1952346-94e9-48d7-8987-2da5439a9fc2" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8088/LibraryPB</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:lib="http://library.api.switchfully.com">\r
+   <soap:Header/>\r
+   <soap:Body>\r
+      <lib:findEntriesByAuthor>\r
+         <!--Optional:-->\r
+         <author>?</author>\r
+      </lib:findEntriesByAuthor>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://library.api.switchfully.com/libraryInterface/findEntriesByAuthorRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="983617bb-815a-412c-81ae-a3bbba58f3f2" isOneWay="false" action="" name="findEntriesByTitle" bindingOperationName="findEntriesByTitle" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="e6301b6f-b5a7-4763-ae56-6ed9ef6cb68d" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8088/LibraryPB</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:lib="http://library.api.switchfully.com">\r
+   <soap:Header/>\r
+   <soap:Body>\r
+      <lib:findEntriesByTitle>\r
+         <!--Optional:-->\r
+         <title>?</title>\r
+      </lib:findEntriesByTitle>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://library.api.switchfully.com/libraryInterface/findEntriesByTitleRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="84a5dc6f-ae8a-4596-8ae2-2ac2d191cc1a" isOneWay="false" action="" name="statusCheck" bindingOperationName="statusCheck" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="88d2002f-7bfa-44da-968e-dce149f5cf85" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8088/LibraryPB</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:lib="http://library.api.switchfully.com">\r
+   <soap:Header/>\r
+   <soap:Body>\r
+      <lib:statusCheck>\r
+         <!--Optional:-->\r
+         <token>?</token>\r
+      </lib:statusCheck>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://library.api.switchfully.com/libraryInterface/statusCheckRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:mockService id="58ccd65e-38a0-484e-a1fa-70fe853205db" port="8088" path="/LibraryPB" host="CI00058590" name="LibraryPB Mock (Fake) Web Service Server"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.mock.WsdlMockService@require-soap-action">false</con:setting></con:settings><con:properties/><con:mockOperation name="addBook" id="0d68a58f-1848-4d05-a498-09e2d9eb940d" interface="LibraryPB" operation="addBook"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" id="b4d7eca3-d909-4895-8487-d5594bdb08f0" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:lib="http://library.api.switchfully.com">
+   <soap:Header/>
+   <soap:Body>
+      <lib:addBookResponse>
+         <Confirmation>
+            <tx>45</tx>
+            <isbn>978-3-16-148410-0</isbn>
+            <stamp>2018-06-30T09:00:00</stamp>
+         </Confirmation>
+      </lib:addBookResponse>
+   </soap:Body>
+</soap:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://library.api.switchfully.com/libraryInterface/addBookResponse"/></con:response><con:dispatchConfig/></con:mockOperation><con:mockOperation name="countAllAuthors" id="826aad00-d82c-4867-98b9-72050bb8a3d9" interface="LibraryPB" operation="countAllAuthors"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" id="878362dd-1f50-4053-9d97-d928b9cfb195" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:lib="http://library.api.switchfully.com">
+   <soap:Header/>
+   <soap:Body>
+      <lib:countAllAuthorsResponse>
+         <count>354</count>
+      </lib:countAllAuthorsResponse>
+   </soap:Body>
+</soap:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://library.api.switchfully.com/libraryInterface/countAllAuthorsResponse"/></con:response><con:dispatchConfig/></con:mockOperation><con:mockOperation name="countAllBooks" id="48baeb78-c8c0-492c-97c1-5abb7593d89d" interface="LibraryPB" operation="countAllBooks"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" id="a69827fc-92fc-42e8-a58c-373203277985" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:lib="http://library.api.switchfully.com">
+   <soap:Header/>
+   <soap:Body>
+      <lib:countAllBooksResponse>
+
+         <count>485</count>
+      </lib:countAllBooksResponse>
+   </soap:Body>
+</soap:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://library.api.switchfully.com/libraryInterface/countAllBooksResponse"/></con:response><con:dispatchConfig/></con:mockOperation><con:mockOperation name="findEntriesByAuthor" id="e795e26c-9c77-4627-aaf2-4a1fd00cfd76" interface="LibraryPB" operation="findEntriesByAuthor"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" id="57a3a48e-35de-4520-bfab-308949fd499a" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:lib="http://library.api.switchfully.com">
+   <soap:Header/>
+   <soap:Body>
+      <lib:findEntriesByAuthorResponse>
+         <books>
+            <book>
+               <isbn>978-3-16-148410-0</isbn>
+               <price>12.95</price>
+               <title>Who, what, why?</title>
+               <inception>2018-06-30T16:30:05</inception>
+               <authors>
+                  <author>
+                     <name>John Johnson</name>
+                     <birth>1960-01-25T00:00:00</birth>
+                  </author>
+                  <author>
+                     <name>Mathilde Mathisan</name>
+                  </author>
+               </authors>
+            </book>
+            <book>
+               <isbn>978-5-18-228410-8</isbn>
+               <price>14.99</price>
+               <title>Why we work way worse when we worry</title>
+               <inception>2019-01-10T11:32:12</inception>
+               <authors>
+                  <author>
+                     <name>Mathilde Mathisan</name>
+                     <birth>1960-01-25T00:00:00</birth>
+                  </author>
+               </authors>
+            </book>
+         </books>
+      </lib:findEntriesByAuthorResponse>
+   </soap:Body>
+</soap:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://library.api.switchfully.com/libraryInterface/findEntriesByAuthorResponse"/></con:response><con:dispatchConfig/></con:mockOperation><con:mockOperation name="findEntriesByTitle" id="1369e483-7e65-4ecd-8a57-972d27dcd71c" interface="LibraryPB" operation="findEntriesByTitle"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" id="c01e418f-dd60-4d5f-9bba-0da84967d5ac" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:lib="http://library.api.switchfully.com">
+   <soap:Header/>
+   <soap:Body>
+      <lib:findEntriesByTitleResponse>
+         <books>
+            <book>
+               <isbn>978-3-16-148410-0</isbn>
+               <price>12.95</price>
+               <title>Who, what, why?</title>
+               <inception>2018-06-30T16:30:05</inception>
+               <authors>
+                  <author>
+                     <name>John Johnson</name>
+                     <birth>1960-01-25T00:00:00</birth>
+                  </author>
+                  <author>
+                     <name>Mathilde Mathisan</name>
+                  </author>
+               </authors>
+            </book>
+         </books>
+      </lib:findEntriesByTitleResponse>
+   </soap:Body>
+</soap:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://library.api.switchfully.com/libraryInterface/findEntriesByTitleResponse"/></con:response><con:dispatchConfig/></con:mockOperation><con:mockOperation name="statusCheck" id="726fb5cb-9679-445b-a7b4-f5e1db8b75c8" interface="LibraryPB" operation="statusCheck"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" id="6bdd31e6-e986-4deb-9ca1-6f641c85a6b7" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:lib="http://library.api.switchfully.com">
+   <soap:Header/>
+   <soap:Body>
+      <lib:statusCheckResponse>
+         <status>Fake Web Service is UP and running on http://localhost:8088/LibraryPB</status>
+      </lib:statusCheckResponse>
+   </soap:Body>
+</soap:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://library.api.switchfully.com/libraryInterface/statusCheckResponse"/></con:response><con:dispatchConfig/></con:mockOperation></con:mockService><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>

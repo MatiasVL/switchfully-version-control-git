@@ -1,0 +1,304 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<wsdl:definitions
+        xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/"
+        xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+        xmlns:tns="http://library.api.switchfully.com"
+        targetNamespace="http://library.api.switchfully.com">
+
+    <!--
+      Types
+      Describes the data.
+      The XML Schema language (also known as XSD) is used (referenced as XS) for this purpose.
+    -->
+    <wsdl:types>
+        <xsd:schema
+                xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                xmlns:tns="http://library.api.switchfully.com"
+                targetNamespace="http://library.api.switchfully.com">
+
+            <xs:element name="addBook" type="tns:addBook"/>
+            <xs:element name="addBookResponse" type="tns:addBookResponse"/>
+            <xs:element name="statusCheck" type="tns:statusCheck"/>
+            <xs:element name="statusCheckResponse" type="tns:statusCheckResponse"/>
+            <xs:element name="countAllBooks" type="tns:countAllBooks"/>
+            <xs:element name="countAllBooksResponse" type="tns:countAllBooksResponse"/>
+            <xs:element name="countAllAuthors" type="tns:countAllAuthors"/>
+            <xs:element name="countAllAuthorsResponse" type="tns:countAllAuthorsResponse"/>
+            <xs:element name="findEntriesByTitle" type="tns:findEntriesByTitle"/>
+            <xs:element name="findEntriesByTitleResponse" type="tns:findEntriesByTitleResponse"/>
+            <xs:element name="findEntriesByAuthor" type="tns:findEntriesByAuthor"/>
+            <xs:element name="findEntriesByAuthorResponse" type="tns:findEntriesByAuthorResponse"/>
+
+            <xs:complexType name="author">
+                <xs:sequence>
+                    <xs:element minOccurs="1" name="name" type="xs:string"/>
+                    <xs:element minOccurs="0" name="birth" type="xs:dateTime"/>
+                </xs:sequence>
+            </xs:complexType>
+
+            <xsd:complexType name="authorArray">
+                <xsd:sequence>
+                    <xsd:element name="author" type="tns:author" minOccurs="0" maxOccurs="unbounded"/>
+                </xsd:sequence>
+            </xsd:complexType>
+
+            <xs:complexType name="libraryBook">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="isbn" type="xs:string"/>
+                    <xs:element minOccurs="0" name="price" type="xs:double"/>
+                    <xs:element minOccurs="0" name="title" type="xs:string"/>
+                    <xs:element minOccurs="0" name="inception" type="xs:dateTime"/>
+                    <xs:element minOccurs="0" name="authors" nillable="true" type="tns:authorArray"/>
+                </xs:sequence>
+            </xs:complexType>
+
+            <xs:complexType name="confirmation">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="tx" type="xs:long"/>
+                    <xs:element minOccurs="0" name="isbn" type="xs:string"/>
+                    <xs:element minOccurs="0" name="stamp" type="xs:dateTime"/>
+                </xs:sequence>
+            </xs:complexType>
+
+            <!-- Request and response elements -->
+
+            <xsd:complexType name="bookArray">
+                <xsd:sequence>
+                    <xsd:element name="book" type="tns:libraryBook" minOccurs="0" maxOccurs="unbounded"/>
+                </xsd:sequence>
+            </xsd:complexType>
+
+            <xs:complexType name="addBook">
+                <xs:sequence>
+                    <xs:element name="LibraryBook" type="tns:libraryBook" minOccurs="0"/>
+                </xs:sequence>
+            </xs:complexType>
+
+            <xs:complexType name="addBookResponse">
+                <xs:sequence>
+                    <xs:element name="Confirmation" type="tns:confirmation" minOccurs="0"/>
+                </xs:sequence>
+            </xs:complexType>
+
+            <xs:complexType name="statusCheck">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="token" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+
+            <xs:complexType name="statusCheckResponse">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="status" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+
+            <xs:complexType name="countAllBooks">
+                <xs:sequence/>
+            </xs:complexType>
+            <xs:complexType name="countAllBooksResponse">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="count" type="xs:long"/>
+                </xs:sequence>
+            </xs:complexType>
+
+            <xs:complexType name="countAllAuthors">
+                <xs:sequence/>
+            </xs:complexType>
+            <xs:complexType name="countAllAuthorsResponse">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="count" type="xs:long"/>
+                </xs:sequence>
+            </xs:complexType>
+
+            <xs:complexType name="findEntriesByTitle">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="title" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="findEntriesByTitleResponse">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="books" nillable="true" type="tns:bookArray"/>
+                </xs:sequence>
+            </xs:complexType>
+
+            <xs:complexType name="findEntriesByAuthor">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="author" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="findEntriesByAuthorResponse">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="books" nillable="true" type="tns:bookArray"/>
+                </xs:sequence>
+            </xs:complexType>
+
+        </xsd:schema>
+    </wsdl:types>
+
+    <!--
+      Messages
+      Typically, a message corresponds to an operation.
+      The message contains the information needed to perform the operation.
+    -->
+    <wsdl:message name="addBookRequest">
+        <wsdl:part name="parameters" element="tns:addBook"/>
+    </wsdl:message>
+    <wsdl:message name="addBookResponse">
+        <wsdl:part name="parameters" element="tns:addBookResponse"/>
+    </wsdl:message>
+
+    <wsdl:message name="statusCheckRequest">
+        <wsdl:part name="parameters" element="tns:statusCheck"/>
+    </wsdl:message>
+    <wsdl:message name="statusCheckResponse">
+        <wsdl:part name="parameters" element="tns:statusCheckResponse"/>
+    </wsdl:message>
+
+    <wsdl:message name="countAllBooksRequest">
+        <wsdl:part name="parameters" element="tns:countAllBooks"/>
+    </wsdl:message>
+    <wsdl:message name="countAllBooksResponse">
+        <wsdl:part name="parameters" element="tns:countAllBooksResponse"/>
+    </wsdl:message>
+
+    <wsdl:message name="countAllAuthorsRequest">
+        <wsdl:part name="parameters" element="tns:countAllAuthors"/>
+    </wsdl:message>
+    <wsdl:message name="countAllAuthorsResponse">
+        <wsdl:part name="parameters" element="tns:countAllAuthorsResponse"/>
+    </wsdl:message>
+
+    <wsdl:message name="findEntriesByTitleRequest">
+        <wsdl:part name="parameters" element="tns:findEntriesByTitle"/>
+    </wsdl:message>
+    <wsdl:message name="findEntriesByTitleResponse">
+        <wsdl:part name="parameters" element="tns:findEntriesByTitleResponse"/>
+    </wsdl:message>
+
+    <wsdl:message name="findEntriesByAuthorRequest">
+        <wsdl:part name="parameters" element="tns:findEntriesByAuthor"/>
+    </wsdl:message>
+    <wsdl:message name="findEntriesByAuthorResponse">
+        <wsdl:part name="parameters" element="tns:findEntriesByAuthorResponse"/>
+    </wsdl:message>
+
+    <!--
+    Defines a Web service, the operations that can be performed,
+    and the messages that are used to perform the operation.
+    -->
+    <wsdl:portType name="libraryInterface">
+
+        <wsdl:operation name="addBook">
+            <wsdl:input message="tns:addBookRequest"/>
+            <wsdl:output message="tns:addBookResponse"/>
+        </wsdl:operation>
+
+        <wsdl:operation name="statusCheck">
+            <wsdl:input message="tns:statusCheckRequest"/>
+            <wsdl:output message="tns:statusCheckResponse"/>
+        </wsdl:operation>
+
+        <wsdl:operation name="countAllBooks">
+            <wsdl:input message="tns:countAllBooksRequest"/>
+            <wsdl:output message="tns:countAllBooksResponse"/>
+        </wsdl:operation>
+
+        <wsdl:operation name="countAllAuthors">
+            <wsdl:input message="tns:countAllAuthorsRequest"/>
+            <wsdl:output message="tns:countAllAuthorsResponse"/>
+        </wsdl:operation>
+
+        <wsdl:operation name="findEntriesByTitle">
+            <wsdl:input message="tns:findEntriesByTitleRequest"/>
+            <wsdl:output message="tns:findEntriesByTitleResponse"/>
+        </wsdl:operation>
+
+        <wsdl:operation name="findEntriesByAuthor">
+            <wsdl:input message="tns:findEntriesByAuthorRequest"/>
+            <wsdl:output message="tns:findEntriesByAuthorResponse"/>
+        </wsdl:operation>
+
+    </wsdl:portType>
+
+    <!--
+      Binding: Specifies the interface and defines the SOAP binding style (RPC/Document) and transport (SOAP (over HTTP) Protocol).
+      The binding section also defines the operations.
+    -->
+    <wsdl:binding name="LibraryPB" type="tns:libraryInterface">
+
+        <soap12:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+        <wsdl:operation name="addBook">
+            <soap12:operation soapAction=""/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+
+        <wsdl:operation name="statusCheck">
+            <soap12:operation soapAction=""/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+
+        <wsdl:operation name="countAllBooks">
+            <soap12:operation soapAction=""/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+
+        <wsdl:operation name="countAllAuthors">
+            <soap12:operation soapAction=""/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+
+        <wsdl:operation name="findEntriesByTitle">
+            <soap12:operation soapAction=""/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+
+        <wsdl:operation name="findEntriesByAuthor">
+            <soap12:operation soapAction=""/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+
+    </wsdl:binding>
+
+    <!--
+      Service: Contains a set of system functions that have been exposed to the Web-based protocols.
+      Port: Defines the address or connection point to a Web service. It is typically represented by a simple HTTP URL string.
+    -->
+    <wsdl:service name="LibraryService">
+        <wsdl:port name="libraryPort" binding="tns:LibraryPB">
+            <soap12:address location="http://localhost:8088/LibraryPB"/>
+        </wsdl:port>
+    </wsdl:service>
+
+</wsdl:definitions>
