@@ -3,7 +3,7 @@
 Let's create your own REST API in Spring
 
 ## Functional Requirements
-- Create 2 resources
+- Create 2 Resources (a.k.a. Controllers)
     - professor (id, firstname, lastname)
         - E.g.: `Professor profFreddy = new professor(1, "Freddy", "Mertens");`
     - course (id, name, studyPoints, category, professor)
