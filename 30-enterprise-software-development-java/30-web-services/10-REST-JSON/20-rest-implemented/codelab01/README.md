@@ -16,7 +16,7 @@ Let's create your own REST API in Spring
 
 ## Technical Requirements
 - Use Spring Boot (starter-web)
-- Create an in memory datastructure that functions as a 'database'.
+- Create an in memory data structure that functions as a 'database'.
     - Provide some initial data in your 'database'
 - Use DTO's and Mappers
     - Do your own research! Why would one use DTO's?
