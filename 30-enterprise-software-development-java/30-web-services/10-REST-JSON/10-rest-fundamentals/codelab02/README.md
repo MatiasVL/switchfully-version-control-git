@@ -12,7 +12,7 @@ If **GET** `https://switchfully-funiversity.herokuapp.com/professors` responded 
 However, without being able to take a look at the actual implementation code of the Web API, there's no way to know if other resources or operations exist... 
 Maybe the `students`, `courses` and `studyPrograms` resources exist?
 
-**OpenAPI** is a specification that allows for defining REST(ful) Web API's. **Swagger**is an implementation (library) of OpenAPI that we can use in our Web API to properly define it.
+**OpenAPI** is a specification that allows for defining REST(ful) Web API's. **Swagger** is an implementation (library) of OpenAPI that we can use in our Web API to properly define it.
 
 We have added Swagger to the Digibooky backend.
 
