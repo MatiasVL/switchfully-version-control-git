@@ -9,7 +9,7 @@ public class ArraysCodelab05 {
 
     /**
      * Start with a String array and a String replaceWord
-     * Replace the element, on index 2 of the array, with replaceWord
+     * Replace the element, on index 2 of the array, with replacingWord
      * If the array contains 2 or fewer elements, return the array as is
      *      replaceThirdWord(["This", "is", "really", "very", "funny"], "not") → ["This", "is", "not", "very", "funny"]
      *      replaceThirdWord(["This", "is", "funny"], "Sparta!") → ["This", "is", "Sparta"]
