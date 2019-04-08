@@ -1,13 +1,23 @@
 public class MethodsCodelab03 {
 
     public static void main(String[] args) {
-        // Create a method add, making the addition of its two parameters and returning the result (all type double)
-        // Create a method subtract, subtracting the first parameter by the second and returning the result (all type double)
-        // Create a method multiply, multiplying it's two parameters and returning the result (all type double)
-        // Create a method divide, dividing the first parameter by the second and returning the result (all type double)
-        // Transform the following equation using only your newly created methods. Print out the result:
-        //  --> ((4.5 + 3.5) / 2.0) + (2.0 * (4.5 - 1.5))
-        //  --> e.g.: (1 + 1) should we written as add(1, 1)
+        // Call the calculatePercentageValue(...) method 3 times
+        //      1. Using value 100 and 80%
+        //      2. Using value 250 and 5%
+        //      3. Using 625 and 25%
+        // Make sure to print (write to the console) each result.
+    }
+
+    /**
+     * Calculates the percentage value of the given value using the given percentage.
+     *      E.g. Given value 50 and 0.25 (percentage), returns value 12.5.
+     * @param originalValue - the value for which we will calculate the percentage value
+     * @param percentage - the percentage to use, range [0, 1]
+     * @return the calculated percentage value
+     */
+    // (don't change this method)
+    private static float calculatePercentageValue(int originalValue, float percentage) {
+        return originalValue * percentage;
     }
 
 }

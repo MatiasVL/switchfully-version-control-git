@@ -6,10 +6,8 @@ import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.jupiter.api.Assertions.assertEquals;
 
-
-public class MethodsCodelab05Test {
+public class MethodsCodelab08Test {
 
     private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
     private final ByteArrayOutputStream errContent = new ByteArrayOutputStream();
@@ -27,15 +25,15 @@ public class MethodsCodelab05Test {
     }
 
     @Test
-    public void get5IsCorrectlyCreated() throws Exception {
-        assertThat(MethodsCodelab05.class.getDeclaredMethod("get5")).isNotNull();
-        assertThat(MethodsCodelab05.class.getDeclaredMethod("get5").getReturnType()).isEqualTo(int.class);
+    public void incrementIsCorrectlyCreated() throws Exception {
+        assertThat(MethodsCodelab08.class.getDeclaredMethod("increment", int.class)).isNotNull();
+        assertThat(MethodsCodelab08.class.getDeclaredMethod("increment", int.class).getReturnType()).isEqualTo(int.class);
     }
 
     @Test
-    public void get5isPrinted() throws Exception {
-        MethodsCodelab05.main(null);
-        assertEquals("5", outContent.toString().toLowerCase().trim());
+    public void expressionIsPrinted() throws Exception {
+        MethodsCodelab08.main(null);
+        assertThat(outContent.toString().toLowerCase().trim()).contains("Value 10 incremented by 1. New value is 11".toLowerCase());
     }
 
 }

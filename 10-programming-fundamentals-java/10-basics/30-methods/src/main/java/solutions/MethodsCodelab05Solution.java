@@ -4,21 +4,11 @@ package solutions;
 public class MethodsCodelab05Solution {
 
     public static void main(String[] args) {
-        easyPrint(105);
-        easyPrint("Mark");
-        easyPrint(80.45);
+        System.out.println(get5());
     }
 
-    public static void easyPrint(int valueToPrint) {
-        System.out.println("Easy printing value: " + valueToPrint);
-    }
-
-    public static void easyPrint(double valueToPrint) {
-        System.out.println("Easy printing value: " + valueToPrint);
-    }
-
-    public static void easyPrint(String valueToPrint) {
-        System.out.println("Easy printing value: " + valueToPrint);
+    private static int get5() {
+        return 5;
     }
 
 }

@@ -1,12 +1,31 @@
 public class MethodsCodelab04 {
 
     public static void main(String[] args) {
-        // Create a method increment
-        // Method increment should define one parameter, an int
-        // Method increment should increment the value of the parameter by one (using the increment operator)
-        // Method increment should print the message "Value <OLD_VALUE> incremented by 1. New value is <NEW_VALUE>"
-        // Method increment should return the new (incremented) value
-        // call the increment method with argument 10
+        // Call the methods below to produce the following output in the console:
+        //      12345
+        // Call every method exactly once (no more, no less)!
     }
+
+    private static void printTwo() {
+        System.out.print(2);
+    }
+
+    private static void printOne() {
+        System.out.print(1);
+    }
+
+    private static int getFive() {
+        return 5;
+    }
+
+    private static void printNumber(int number) {
+        System.out.print(number);
+    }
+
+    private static int getNumber(int number) {
+        return number;
+    }
+
+
 
 }

@@ -1,20 +1,38 @@
 package solutions;
 
-
 public class MethodsCodelab04Solution {
 
     public static void main(String[] args) {
-        increment(10);
+        // Call the methods below to produce the following output in the console:
+        //      12345
+        // Call every method exactly once (no more, no less)!
+        printOne();
+        printTwo();
+        printNumber(3);
+        System.out.print(getNumber(4));
+        System.out.print(getFive());
     }
 
-    private static int increment(int valueToIncrement) {
-        int oldValue = valueToIncrement;
-        valueToIncrement++;
-        // Printing using String.format. Google: "Java String format"
-        System.out.println(String.format("Value %d incremented by 1. New value is %d", oldValue, valueToIncrement));
-        // This works as well:
-        // System.out.println("Value " + oldValue + " incremented by 1. New value is " + valueToIncrement);
-        return valueToIncrement;
+    private static void printTwo() {
+        System.out.print(2);
     }
+
+    private static void printOne() {
+        System.out.print(1);
+    }
+
+    private static int getFive() {
+        return 5;
+    }
+
+    private static void printNumber(int number) {
+        System.out.print(number);
+    }
+
+    private static int getNumber(int number) {
+        return number;
+    }
+
+
 
 }

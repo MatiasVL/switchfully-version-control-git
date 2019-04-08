@@ -6,10 +6,9 @@ import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
-public class MethodsCodelab05Test {
+public class MethodsCodelab06Test {
 
     private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
     private final ByteArrayOutputStream errContent = new ByteArrayOutputStream();
@@ -27,15 +26,15 @@ public class MethodsCodelab05Test {
     }
 
     @Test
-    public void get5IsCorrectlyCreated() throws Exception {
-        assertThat(MethodsCodelab05.class.getDeclaredMethod("get5")).isNotNull();
-        assertThat(MethodsCodelab05.class.getDeclaredMethod("get5").getReturnType()).isEqualTo(int.class);
+    public void addIsCorrectlyCreated() throws Exception {
+        assertThat(MethodsCodelab06.class.getDeclaredMethod("add", double.class, double.class)).isNotNull();
+        assertThat(MethodsCodelab06.class.getDeclaredMethod("add", double.class, double.class).getReturnType()).isEqualTo(double.class);
     }
 
     @Test
-    public void get5isPrinted() throws Exception {
-        MethodsCodelab05.main(null);
-        assertEquals("5", outContent.toString().toLowerCase().trim());
+    public void addIsPrinted() throws Exception {
+        MethodsCodelab06.main(null);
+        assertThat(outContent.toString().toLowerCase().trim()).contains("90.52");
     }
 
 }

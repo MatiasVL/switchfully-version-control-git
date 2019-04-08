@@ -1,14 +1,17 @@
 package solutions;
 
-
-public class MethodsCodelab02Solution {
+public class MethodsCodelab02solution {
 
     public static void main(String[] args) {
-        System.out.println(add(80.52, 10.00));
+        // Call the legalDrinkingAge() method and print (write to the console) its returned value.
+        System.out.println(legalDrinkingAge());
     }
 
-    private static double add(double leftOperand, double rightOperand) {
-        return leftOperand + rightOperand;
+    // Do mind the static keyword!
+    // It's required here if we want to call this method from the main method.
+    // (don't change this method)
+    private static int legalDrinkingAge() {
+        return 16;
     }
 
 }
