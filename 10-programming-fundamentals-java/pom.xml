@@ -12,8 +12,8 @@
     <modules>
         <module>00-self-evaluation</module>
         <module>10-basics/00-presentation-code-examples</module>
-        <module>10-basics/10-variables-datatypes-keywords</module>
-        <module>10-basics/20-basic-operators</module>
+        <module>10-basics/10-variables-types</module>
+        <module>10-basics/20-expressions</module>
         <module>10-basics/30-methods</module>
         <module>10-basics/40-strings</module>
         <module>10-basics/50-arrays</module>

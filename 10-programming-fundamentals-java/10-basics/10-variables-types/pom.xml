@@ -11,6 +11,6 @@
         <relativePath>../..</relativePath>
     </parent>
 
-    <artifactId>10-variables-datatypes-keywords</artifactId>
+    <artifactId>10-variables-types</artifactId>
 
 </project>
