@@ -1,8 +1,11 @@
 package codelab00.warmup01;
 
 /**
- * Create a World object
- * call the getMessage() method and print the result
+ * Do the following
+ * ------------------
+ * 1. In the body of the main method, create a World object
+ * 2. Call the getMessage() method
+ * 3. Print (System.out.println) the String object which is returned by getMessage().
  */
 public class WorldRunner {
 

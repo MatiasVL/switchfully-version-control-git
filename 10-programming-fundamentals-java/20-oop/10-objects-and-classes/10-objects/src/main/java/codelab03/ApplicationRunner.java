@@ -1,4 +1,4 @@
-package codelab02;
+package codelab03;
 
 public class ApplicationRunner {
 

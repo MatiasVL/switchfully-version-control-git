@@ -3,10 +3,12 @@ package codelab01;
 public class CatRunner {
 
     /**
-     * Create a Cat
-     * Create a Cat with name = Garfield, age = 27 and color = Orange
-     * Create a Cat with name = Felix, age = 10 and color = Black
-     * Create a Cat with name = Dobby, age = 3 and color = Red
+     *  Do the following
+     *  ------------------
+     * Create a Cat object
+     * Create a Cat object with name = Garfield, age = 27 and color = Orange
+     * Create a Cat object with name = Felix, age = 10 and color = Black
+     * Create a Cat object with name = Dobby, age = 3 and color = Red
      *
      * Then:
      *    Print out all 4 cats

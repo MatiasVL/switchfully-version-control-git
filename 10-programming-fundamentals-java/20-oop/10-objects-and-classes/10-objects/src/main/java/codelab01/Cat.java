@@ -7,9 +7,9 @@ import java.awt.*;
  */
 public class Cat {
 
-    private Color color;
-    private String name;
-    private int ageInYears;
+    private final Color color;
+    private final String name;
+    private final int ageInYears;
 
     public Cat() {
         color = Color.BLACK;

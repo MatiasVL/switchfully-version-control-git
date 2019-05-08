@@ -5,8 +5,13 @@ package codelab00.warmup04;
  */
 public class Computer {
 
-    private String brand;
-    private int priceInDollarCents;
+    /**
+     * By adding the final keyword, we make the field immutable.
+     * This means it can be only given a value upon creating the object (in the constructor).
+     * Once the object is created, the field (e.g. brand) can not receive a different value.
+     */
+    private final String brand;
+    private final int priceInDollarCents;
 
     // This is a constructor
     public Computer() {

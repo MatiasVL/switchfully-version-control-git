@@ -1,15 +1,17 @@
 package codelab00.warmup02;
 
 /**
- * Create a Alarm object
- * call the methods of Alarm in such a way that the following result is printed
+ *  Do the following
+ *  ------------------
+ *  1. Create a main method (we need it to run/execute the AlarmRunner)
+ *  2. In the body of the main method, create an Alarm object
+ *  3. Call the methods of Alarm in such a way that the following result is printed
+ *      TRING
+ *      BLEEP
+ *      Hey... how you doing?
+ *      PIEP
  *
- *    TRING
- *    BLEEP
- *    Hey... how you doing?
- *    PIEP
- *
- * Tip: Inspect the methods, see what they do. Do they have a return value?
+ * Tip: Inspect the methods, see what they do. Do they have a return value? Do they return a String object?
  */
 public class AlarmRunner {
 }
