@@ -1,14 +1,17 @@
-package codelab03;
+package codelab01;
 
 import java.awt.*;
 
 public class PointRunner {
 
     /**
-     * Before running this exercise,
-     * determine what the output will be and why!
-     * Draw on a piece of paper which variables (ref) point to which objects (as we did on the slides)
-     * Only when it's clear to you, execute the code and validate your solution.
+     * The goal of this codelab is the gain some insight on Object references.
+     * Therefore, don't yet execute the main method!
+     * First, do the following:
+     *      1. Determine what the printed output will be and why!
+     *      2. Draw on a piece of paper which variables (holding references) point to which objects (as we did on the slides)
+     *      3. Only then execute the code and validate whether your solutions from step 1 and 2 were correct!
+     *          - To execute the code, turn the code on line 17 into a comment (or simply remove it)
      */
     public static void main(String[] args) {
         thinkBeforeYouRunThisExercise();
