@@ -21,12 +21,22 @@
         <module>10-basics/70-loops</module>
         <module>10-basics/additional-10-java-cli</module>
         <module>10-basics/additional-20-arrays2D</module>
-        <module>20-oop/10-objects</module>
         <module>20-oop/20-classes</module>
         <module>20-oop/30-inheritance-composition</module>
         <module>20-oop/40-polymorphism-abstraction-interfaces</module>
         <module>20-oop/50-testing</module>
         <module>20-oop/additional-codelabs</module>
+        <module>20-oop/10-objects-and-classes/10-objects</module>
+        <module>20-oop/10-objects-and-classes/20-objects-in-depth</module>
+        <module>20-oop/10-objects-and-classes/30-classes</module>
+        <module>20-oop/10-objects-and-classes/40-static-class-members</module>
+        <module>20-oop/10-objects-and-classes/50-enum</module>
+        <module>20-oop/20-object-oriented/10-inheritance</module>
+        <module>20-oop/20-object-oriented/20-composition</module>
+        <module>20-oop/20-object-oriented/30-polymorphism</module>
+        <module>20-oop/20-object-oriented/40-abstract-classes</module>
+        <module>20-oop/20-object-oriented/50-interfaces</module>
+        <module>20-oop/20-object-oriented/60-extra-codelabs</module>
     </modules>
 
     <properties>
