@@ -1,5 +1,6 @@
 package codelab01;
 
+import codelab02.CatRunner;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;

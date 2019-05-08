@@ -1,4 +1,4 @@
-package codelab00.warmup01;
+package codelab01.warmup01;
 
 /**
  * You don't have to change anything in this class.
