@@ -1,5 +1,19 @@
 # Alien
 
+> **Student:** A `README.md` file? What is that?
+
+As of now, most (if not all) assignments will be written down and provided in a `README.md` file. The name `README` is 
+a conventional title you give to a file which you wish other developers to read ("read me"). It usually contains 
+installation instructions, a description and other useful information for an application / codebase.
+
+Readme files can be delivered as plain text (e.g. `README.txt`), however, we decide to write them using MarkDown (`.md`). 
+Markdown is a popular lightweight markup language (E.g. wrapping a text in ** will render it in **bold**).
+
+To view the rendered Markdown, install the `Markdown Support` plugin for IntelliJ
+- Press `ctrl` + `shift + `a`, type in plugins, click on plugins, search for `Markdown Support`, install.
+- Alternatively, GitHub has built-in Markdown support. If you use GitHub to navigate to this `README.md` file, you'll 
+see it in the rendered format.
+
 ## Class
 
 Create a new class `Alien` that has the following instance variables (which form a Person's state):
