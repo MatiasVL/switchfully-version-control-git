@@ -1,4 +1,4 @@
-package codelab07;
+package codelab06;
 
 import java.awt.*;
 

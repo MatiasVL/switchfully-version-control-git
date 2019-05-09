@@ -3,6 +3,8 @@ package codelab04;
 public class ApplicationRunner {
 
     /**
+     * Do the following
+     * ------------------
      * Create a LittleRectangle object,
      * provide it the following coordinates and color:
      *    x: 10

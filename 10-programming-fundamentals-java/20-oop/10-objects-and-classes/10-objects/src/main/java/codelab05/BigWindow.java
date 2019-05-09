@@ -1,4 +1,4 @@
-package codelab07;
+package codelab05;
 
 import javax.swing.*;
 import java.awt.*;
