@@ -15,7 +15,7 @@ It should have the following constructors:
     - A no-argument constructor which sets the radius to 1.0 and the color to "blue"
     - A constructor with radius as argument, the color should be set to blue
     
-It should have the following intance methods / state:
+It should have the following instance methods / state:
     - getRadius() which returns the value of radius
     - getArea() which returns the area of a circle
     - setColor() which takes a color as a parameter and assigns it to the color instance variable (but doesn't return it)
