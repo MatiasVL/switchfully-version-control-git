@@ -1,4 +1,4 @@
-package codelab02;
+package codelab05;
 
 public class CatRunner {
 

@@ -1,4 +1,4 @@
-package codelab03;
+package codelab06;
 
 /**
  * Do the following

@@ -1,4 +1,4 @@
-package codelab03;
+package codelab06;
 
 /**
  * You don't have to change anything in this class.

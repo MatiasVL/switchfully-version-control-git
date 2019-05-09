@@ -1,4 +1,4 @@
-package codelab06;
+package codelab09;
 
 public class CheckerboardLauncher {
 
