@@ -16,5 +16,6 @@ For example:
 - A person of age 17 will receive 125 euro allowance.
 - A person of age 18 will receive 0 euro allowance.
         
-Method `calculateAllowance()` should not accept any parameters.
+Method `calculateAllowance()` should not accept any parameters. 
+Thus, if certain data is required to perform the calculation, make sure it is part of the state of `Person`.
 

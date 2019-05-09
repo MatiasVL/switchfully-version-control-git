@@ -19,6 +19,9 @@ Create a class `RailroadCar`, a train has the following instance variables:
 - `numberOfSeats`
 - `hasToilet` (either it has one or hasn't one)
 
+Make sure you perform **proper data encapsulation**. 
+Should you have questions about this, make sure to ask them!
+
 ## Constructors
 
 Create the following, different, constructors:
@@ -32,8 +35,7 @@ Create the following, different, constructors:
    - Instance variable `isFirstClass` should be set to parameter `isFirstClass`
    - Instance variable `numberOfSeats` should be set parameter `numberOfSeats`
    - Instance variable `hasToilet` should be set to parameter `hasToilet`
-   
-Make sure you do proper data encapsulation.
+  
    
 ## Main method
  Create yourself a new class (e.g. `TrainSimulator`) that has a main method in which you create some `RailroadCar` instances
@@ -46,7 +48,11 @@ Override the toString method, it should return the following String:
 - `"RailroadCar <serialNumber>: Number of seats: <numberOfSeats> - First class: <isFirstClass> - Has a toilet: <hasToilet>"`
 
 ## Create getters
-Create getter methods for all the instance variables
+Create getter methods for all the instance variables.
+
+Do you know why we are not asking you to create setters?
+- Reason: if they're not required, don't (yet) create or generate them! Should the need arise to be able to access a 
+field from outside the class itself, we can still generate one setter - for that specific field - at that time.
 
 ## Change isFirstClass
 Create a setter method to set the instance variable `isFirstClass` to the value provided (as an argument)

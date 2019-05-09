@@ -3,13 +3,17 @@
 ## Create MyCircle class
 Start by creation a `MyCircle` class.
 
+Place this class in its own package, call it `shapes`.
+It will hold the `MyCircle` shape and any future shapes...
+
 It should have the following fields (/ instance fields / attributes / properties / state):
-    - radius (double)
-    - color (String)
+- radius (double)
+- color (String)
 
 It should have the following constructors:
-    - A no-argument constructor which sets the radius to 1.0 and the color to "blue"
-    - A constructor with radius as argument, the color should be set to blue
+- A no-argument constructor which sets the radius to 1.0 and the color to "blue"
+    - Let this constructor call the second constructor, providing value 1.0 for the radius!
+- A constructor with radius as argument, the color should be set to blue
     
 It should have the following instance methods / state:
     - `getRadius()` which returns the value of radius
@@ -19,7 +23,9 @@ It should have the following instance methods / state:
 
 ## MyCircleApplication
 
-Create the `MyCircleApplication` class. It will contain the `main` method. 
+Create the `MyCircleApplication` class. It will contain the `main` method.
+
+Place this class directly in the current package, not in (sub)package `shapes`. 
 
 Firstly:
 1. Declare an instance of `MyCircle` class called `c1`.
