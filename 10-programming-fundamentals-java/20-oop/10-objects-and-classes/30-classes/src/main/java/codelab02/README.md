@@ -50,6 +50,9 @@ Override the toString method, it should return the following String:
 ## Create getters
 Create getter methods for all the instance variables.
 
+Getters (and Setters) can be **automatically generated** by your IDE such as IntelliJ.
+Press `alt` + `insert` and then select Getter, Setter or Getter & Setter.
+
 Do you know why we are not asking you to create setters?
 - Reason: if they're not required, don't (yet) create or generate them! Should the need arise to be able to access a 
 field from outside the class itself, we can still generate one setter - for that specific field - at that time.
