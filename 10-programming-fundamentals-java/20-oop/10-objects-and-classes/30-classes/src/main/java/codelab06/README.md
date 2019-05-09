@@ -1,9 +1,5 @@
 # CoolEmployee
 
-**For your information**: This extra, optional codelab already covers the creation of classes 
-(which is different than creation object / instances of classes).
-Creating classes will be covered in the next module (module: classes)
-
 ## Creating the CoolEmployee class
 
 It should have the following state:
@@ -18,13 +14,15 @@ It should have one constructor which you pass the following arguments:
 - lastName
 - salary
 
-For each value, create a method that returns that value:
+For each field, create a method that returns the (value of the) field:
 - id
 - firstName
 - lastName
-- Name (full name)
 - salary
+
+Additionally, also create methods that returns the following values.
 - annual salary (monthly salary * 13.9)
+- full name (firstName + lastnName)
 
 Create the following methods, which set / modify the following values
 - A method to set the salary to a provided value
@@ -43,4 +41,11 @@ Try to come up with a way to always have a unique ID.
 
 If your program gets restarted, you can start again with 0.
 
-Tip: the solution is not as far fetched as you might think. ;)
+Tip: maybe already check the slides on `static class members` to solve this unique ID's issue... ;)
+
+## equals and toString
+Override both the equals and toString methods.
+- The equals method should only check for equality based on the ID's. If 2 ID's match, 
+the 2 CoolEmployee objects are equal.
+- The toString method should return a String containing 
+the following text: "({id}) {firstName} {lastName} - {salary} EUR / month"

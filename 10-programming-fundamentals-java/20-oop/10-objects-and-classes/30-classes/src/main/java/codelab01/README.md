@@ -1,36 +1,73 @@
-# Time Exercise
+# Alien
 
-- Write a definition for a class named Time which consists of 3 instance variables (state)
-    - hour (int)
-    - minute (int)
-    - second (double)
-- Pay attention to proper encapsulation!
+## Class
+
+Create a new class `Alien` that has the following instance variables (which form a Person's state):
+- a firstName (think about which type it should have)
+- a lastName (think about which type it should have)
+- numberOfHeads (think about which type it should have)
+    - FYI: aliens can have more than 1 head
+
+## Encapsulation
+
+Make sure you properly encapsulate (hide) these instance variables. 
+They should not only be visible and thus usable inside the Alien class, not outside.
+
+## A Class to Execute
+
+1. Create a new class, call it `AlienApplication`.
+2. Inside of this class, create a `main` method.
+3. Inside of the `main` method, do the following:
+    1. Create a new Alien instance (object), using the `default constructor` and store it in a variable called `zappyTheAlien`.
+    2. Print `zappyTheAlien` to the console.
+        - It should print something like `warmup1.Alien@g4f5gc5` when you let Java execute the `main` method
+            
+## Constructors
+
+Create the following constructors:
+
+1. A constructor that takes no arguments.
+    - field (a.k.a Instance variable) `firstName` should be set to value `"Unidentified"` 
+    - field (a.k.a Instance variable) `lastName` should be set to value `"Unidentified"`
+    - field (a.k.a Instance variable) `numberOfHeads` should be set to value `1` 
+2. A constructor that takes a `firstName` and `lastName` as an argument
+    - field (a.k.a Instance variable) `firstName` should be set to parameter `firstName`
+    - field (a.k.a Instance variable) `lastName` should be set to parameter `lastName`
+    - field (a.k.a Instance variable) `numberOfHeads` should be set to value `1`
+3. A constructor that takes a `firstName`, `lastName` and `numberOfHeads` as an argument
+    - field (a.k.a Instance variable) `firstName` should be set to parameter `firstName`
+    - field (a.k.a Instance variable) `lastName` should be set to parameter `lastName`
+    - field (a.k.a Instance variable) `numberOfHeads` should be set to parameter `numberOfHeads`
     
-- Time should have 3 constructors
-    - One without any arguments which sets the instance variables to the following values:
-        - hour to 13
-        - minute to 30
-        - seconds to 0.0   
-    - One with 2 arguments, hour and minute, which should be assigned to the instance variables hour and minute
-    - One with 3 arguments, hour, minute and second, which should be assigned to the instance variables hour, minute and second
-    
-- Time should override the toString method, 
-if called, it should return the following String: "The time is hh:mm:ss.ss"
+## Create some more instances (objects) of Alien
 
-- Time should provide an equals method which takes a Object object as argument (which you'll have to convert to a Time object)
-and returns a boolean (indicating if both Time objects are equal). 
-A Time object is equal to another if their hour, minute and second values are the same.
-(tip: do on search on overriding the equals method)
+1. Go back to your `main` method in `AlienApplication`
+2. Create a new Alien instance (object) for which you provide a `firstName` ("Blyub") and `lastName` ("Wilziax") and store the instance in a variable called `blyubTheAlien`.
+3. Create a new Alien instance (object) for which you provide a `firstName` ("Kujlu"), a `lastName` ("Krak") and a `numberOfHeads` (3) and store the instance in a variable called `kujluTheAlien`.
+4. Print `blyubTheAlien` (an instance of `Alien`) to the console 
+5. Print `kujluTheAlien` (an instance of `Alien`) to the console
 
-- Define a constant, TEA_TIME_HOUR, which you set to 16.
+## Full name
 
-- Provide a getter method for hour and one for minute.
+1. Inside the `Alien` class, create a new method called `getFullName()`.
+    - It should return a single `String` containing the concatenation of instance variables `firstName` and `lastName`
+2. In your `main` method, call this new method on each of the `Alien` instances and print the result:
+    1. Call method `getFullName()` on `zappyTheAlien` (an instance of `Alien`) and print the result that is returned by `getFullName()`
+        - It should print something like: `"Unidentified Unidentifed"`
+    2. Call method `getFullName()` on `blyubTheAlien` (an instance of `Alien`) and print the result that is returned by `getFullName()`
+        - It should print something like: `"Blyub Wilziax"`
+    3. Call method `getFullName()` on `kujluTheAlien` (an instance of `Alien`) and print the result that is returned by `getFullName()`
+        - It should print something like: `"Kujlu Krak"`
+        
+## Get the heads
 
-- Create a class method (highestHour) which takes two Time objects as arguments and returns the Time object 
-with the highest hour.
+1. Inside the `Alien` class, create a new method called `getNumberOfHeads()`.
+    - It should return the instance variable `numberOfHeads` of the current instance on which the `getNumberOfHeads()` is called.
+2. Inside the `main` method of `AlienApplication` call  the `getNumberOfHeads()` method on the `Alien` instance `kujluTheAlien`
+    - Store the result in a variable called `theHeadsOfKujlu`
+    - Then, print this variable to the console like this `"Alien Kujlu has X heads"`
+        - (You should replace `X` with `theHeadsOfKujlu`)   
 
-- Create a TimeRunner class in which you create some Time objects and use all the methods and constructors you created.
-Print the results, then run the TimeRunner and inspect the results. Does it all look like expected?
+ 
 
-- If done, let someone evaluate your implementation.
-    
+ 

@@ -1,53 +1,40 @@
-# Bank account
+# BankAccount
 
-## Account
+## Creating the BankAccount class
 
-The class named Account should contain a definition for a simple bank account.
+It should have the following state:
+- accountNumber (String)
+- name (String)
+- balance (int)
 
-it has the following instance variables (state): 
-    - a balance (double)
-    - an account owner (AccountOwner)
-    - an account number (long)
-Don't forget about Encapsulation!
+It should have one constructor which you pass the following arguments:
+- accountNumber
+- name
 
-- Account has one constructor, which requires the balance and account owner to be given as arguments.
-This constructor will initialize the balance and account owner with the arguments.
-This constructor will generate a random account number (hint: java.util.Random) between 100 and 1000.
+It should have another constructor which you pass the following arguments:
+- accountNumber
+- name
+- balance
 
-- Account has instance methods to:
-- withdraw(double amount)
-    - an account's balance can never get below 0 (write tests for this, write them first!)
-    - There is a maximum withdrawal limit of 5000 (write tests for this, write them first!)
-        - for both criteria, print a message
-- deposit(double amount)
-    - There is a maximum deposit limit of 80000 (write tests for this, write them first!)
-        - Print a message
-- get the balance
-- get the account number
+For each field, create a method that returns that value:
+- accountNumber
+- name
+- balance
 
-- Override the toString method so that the textual representation of Account is: 
-  "Account with number <accountNumber> and owner <accountOwner> has balance <balance>"
-  
-- Account should contain a private class variable, accountCounter, 
-which should hold the total amount of all the created Account objects. 
-Create a class method (getNumberOfAccounts) to return this classVariable
+Create the following methods, which set / modify the following values
+- A method **credit** to add a certain, given amount to the balance (+ return the new balance)
+- A method **debit** to subtract a certain, given amount from the balance (+ return the new balance)
+    - If the amount to subtract is bigger than the current balance, print a message and don't subtract (simply return the balance as is)
+- A method to **transfer** a given amount to a given (other) BankAccount
+    - The current BankAccount should be **debited** with the provided amount.
+    - The (other) BankAccount should be **credited** with the provided amount.     
+    - However, the given amount can not be bigger than the available balance of the current BankAccount
+        - If it is bigger, print a message and don't debit the current BankAccount and don't credit the other BankAccount 
+    - Always return the (new) balance (of the current BankAccount)
 
-## AccountOwner
+## Equal & Text
+Create a method to get the textual representation of BankAccount
+- Tip: override the Java specific method which has as its purpose to represent an instance's as a String (text).
+    - You know this one...
 
-- AccountOwner has the following instance variables
-    - a firstname (String)
-    - a lastname (String)
-    
-- AccountOwner offers 2 public getter methods (instance methods)
-    - one for firstname
-    - one for lastname
-    
-- Override the toString method so that the textual representation of AccountOwner is: 
-"Mr. or Mrs. <firstname>, <lastname>"
-
-## BankRunner
-
-Extends the BankRunner to run your interactive bank/account application.
-Create an AccountOwner and an Account on which you do some transactions
-    
-    
+Then, make it so that 2 BankAccount objects are equal if and only if their `accountNumber`'s match.

@@ -1,33 +1,37 @@
-# Rational
+# MyCircle
 
-A rational number is a number that can be represented as the ratio of two integers. 
-For example, 2/3 is a rational number, and you can think of 7 as a rational number with an implicit 1 in the denominator.
+## Create MyCircle class
+Start by creation a `MyCircle` class.
 
-- Define a class called Rational. 
+It should have the following fields (/ instance fields / attributes / properties / state):
+    - radius (double)
+    - color (String)
 
-- A Rational object should have two integer instance variables that store the numerator and denominator.
+It should have the following constructors:
+    - A no-argument constructor which sets the radius to 1.0 and the color to "blue"
+    - A constructor with radius as argument, the color should be set to blue
+    
+It should have the following instance methods / state:
+    - `getRadius()` which returns the value of radius
+    - `getArea()` which returns the area of a circle
+    - `setColor()` which takes a color as a parameter and assigns it to the color instance variable (but doesn't return it)
+    - `getColor()` which returns the color
 
-- Write a constructor that takes no arguments and that sets the numerator to 0 and denominator to 1.
+## MyCircleApplication
 
-- Write the toString method for Rational (but first, write a test!).
+Create the `MyCircleApplication` class. It will contain the `main` method. 
 
-- Write a second constructor that takes two arguments and uses them to initialize the instance variables.
+Firstly:
+1. Declare an instance of `MyCircle` class called `c1`.
+2. Construct the instance by invoking the "default" constructor which sets its radius and color to their default value.
+3. Print out the radius, area and color in a fun sentence
 
-- Write an instance method called negate that reverses the sign of a rational number. 
-This method should be a mutator, so it should be void.
+Secondly: 
+1. Declare an instance of class `MyCircle` called `c2`.
+2. Construct the instance by invoking the second constructor with 8.5 as radius and default color. 
+3. Print out the radius, area and color in a fun sentence
 
-- Write an instance method called invert that inverts the number by swapping the numerator and denominator. 
-It should be a mutator.
-
-- Write an instance method called toDouble that converts the rational number to a double (floating-point number) 
-and returns the result. This method is a pure method; it does not modify the object.
-
-- Write an instance method named reduce that reduces a rational number to its lowest terms by finding the greatest 
-common divisor (GCD) of the numerator and denominator and dividing through. 
-This method should be a pure method; it should not modify the instance variables of the object on which it is invoked. 
-Hint: Finding the GCD only takes a few lines of code. Search the web for “Euclidean algorithm”.
-
-- Write an instance method called add that takes a Rational number as an argument, adds it to this, 
-and returns a new Rational object. There are several ways to add fractions. You can use any one you want, 
-but you should make sure that the result of the operation is reduced so that the numerator and denominator 
-have no common divisor (other than 1).
+Make sure to not duplicate the code required for the third step in both (printing).
+How can we reuse this code and write it once, but use it twice?
+  
+    

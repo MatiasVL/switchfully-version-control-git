@@ -1,13 +1,20 @@
-# Scrabble
+# It's person(al)
 
-- Write a definition for a class named Tile (in other words, create Tile.java which is a class) that represents Scrabble tiles. 
-    - The instance variables should include a character named letter and an integer named value.
-    
-- Write a constructor that takes parameters named letter and value, and initializes the instance variables.
+Create a `Person` class which provides the method `calculateAllowance()`. 
+This is a method we can use to calculate the allowance a person should receive. 
 
-- Write a method that takes an integer parameter named multiplier, and that returns the value of the tile multiplied by the multiplier.
+The formula (to calculate the allowance) is described as follows: 
+- When a person is between 0 and 12 (including 12) years old, they receive an allowance of 100 euro. 
+- When a person is 13 year or older, but younger than 18, they receive an allowance of 100 euro +  
+5 euro per year of age exceeding the age of 12.
+- when a person is 18 years or older, he is considered an adult and does no longer receive an allowance (allowance should be 0)
 
-- Implement the toString and equals methods for a Tile.
+For example:
+- A person of age 10 will receive 100 euro allowance.
+- A person of age 12 will receive 100 euro allowance.
+- A person of age 13 will receive 105 euro allowance.
+- A person of age 17 will receive 125 euro allowance.
+- A person of age 18 will receive 0 euro allowance.
+        
+Method `calculateAllowance()` should not accept any parameters.
 
-- Create ScrabbleRunner, a class which can be executed. In it, create an array with 7 Tiles (you decide which tiles).
-Then, loop over the array, printing each tile. 
