@@ -1,6 +1,6 @@
-package codelab06;
+package codelab07;
 
-public class Equality {
+public class StringConcat {
 
     public static void main(String[] args) {
         String[] lorem = {"Lorem","ipsum","dolor","sit","amet"};
@@ -12,7 +12,7 @@ public class Equality {
      * Implement the joinLorem method to make the test succeed.
      * Hints: Look up information on StringJoiner, then create an object and use it.
      */
-    public static String joinLorem(String[] wordsToJoin) {
+    static String joinLorem(String[] wordsToJoin) {
         return null;
     }
 
@@ -20,7 +20,7 @@ public class Equality {
      * Implement the buildLorem method to make the test succeed.
      * Hints: Look up information on StringBuilder, then create an object and use it.
      */
-    public static String buildLorem(String[] wordsToBuild) {
+    static String buildLorem(String[] wordsToBuild) {
         return null;
     }
 

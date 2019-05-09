@@ -1,26 +1,26 @@
-package codelab06;
+package codelab07;
 
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-public class EqualityTest {
+class StringConcatTest {
 
     @Test
-    public void joinLorem_isCorrect() throws Exception {
+    void joinLorem_isCorrect() {
         String[] lorem = {"Lorem","ipsum","dolor","sit","amet", "jotum"};
         String expected = "Lorem ipsum dolor sit amet jotum.";
 
-        Assertions.assertThat(Equality.joinLorem(lorem))
+        Assertions.assertThat(StringConcat.joinLorem(lorem))
                 .describedAs("Lorem string objects should be equal.")
                 .isEqualTo(expected);
     }
 
     @Test
-    public void buildLorem_isCorrect() throws Exception {
+    void buildLorem_isCorrect() {
         String[] lorem = {"Lorem","ipsum","dolor","sit","amet", "situm"};
         String expected = "Lorem ipsum dolor sit amet situm.";
 
-        Assertions.assertThat(Equality.buildLorem(lorem))
+        Assertions.assertThat(StringConcat.buildLorem(lorem))
                 .describedAs("Lorem string objects should be equal.")
                 .isEqualTo(expected);
     }
