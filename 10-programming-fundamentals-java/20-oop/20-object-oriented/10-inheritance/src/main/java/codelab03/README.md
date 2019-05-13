@@ -5,6 +5,7 @@
 A `Member` has a `username` (e.g. "frank.detank") and a `lastSignedInOn` date (use as its type Java's `LocalDate`).
 - LocalDate: https://docs.oracle.com/en/java/javase/12/docs/api/java.base/java/time/LocalDate.html
 
+Do the following:
 - A `Moderator` extends `Member` and has an additional field called `isTrusted` (e.g. true).
 - A `FreeMember` extends `Member`.
 - A `PayingMember` extends `Member`.
