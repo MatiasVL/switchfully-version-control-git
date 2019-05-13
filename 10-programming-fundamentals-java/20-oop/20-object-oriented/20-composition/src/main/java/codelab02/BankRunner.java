@@ -1,4 +1,4 @@
-package codelab07;
+package codelab02;
 
 import java.util.Scanner;
 
