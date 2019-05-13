@@ -1,4 +1,4 @@
-package codelab01.warmup03;
+package codelab03;
 
 /**
  * Do the following
