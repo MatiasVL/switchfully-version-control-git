@@ -45,7 +45,7 @@ Create the `Cat` class, it's a child class of (parent) class `Pet`.
 
 A `Cat` has, besides its inherited state of `Pet`, one additional field: `isAggresive`.
 
-It should be possible to create a `Cat` object like this: `new Dog("Garfield", 75, true, true);` 
+It should be possible to create a `Cat` object like this: `new Cat("Garfield", 75, true, true);` 
 (where the second `true` is the value for `isAggressive`).
 
 ### Override buy(...)

@@ -31,7 +31,7 @@
         <module>20-oop/20-object-oriented/30-polymorphism</module>
         <module>20-oop/20-object-oriented/40-abstract-classes</module>
         <module>20-oop/20-object-oriented/50-interfaces</module>
-        <module>20-oop/20-object-oriented/60-extra-codelabs</module>
+        <module>20-oop/20-object-oriented/60-combined-codelabs</module>
     </modules>
 
     <properties>

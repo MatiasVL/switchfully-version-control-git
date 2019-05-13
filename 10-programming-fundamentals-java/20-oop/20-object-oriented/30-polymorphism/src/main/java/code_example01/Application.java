@@ -1,10 +1,10 @@
 package code_example01;
 
-import code_example01.vehicles.vehicles.CityCar;
-import code_example01.vehicles.vehicles.SportsCar;
-import code_example01.vehicles.vehicles.Vehicle;
-import code_example01.vehicles.vehicles.engines.RegularEngine;
-import code_example01.vehicles.vehicles.engines.TurboV8Engine;
+import code_example01.vehicles.CityCar;
+import code_example01.vehicles.SportsCar;
+import code_example01.vehicles.Vehicle;
+import code_example01.vehicles.engines.RegularEngine;
+import code_example01.vehicles.engines.TurboV8Engine;
 
 public class Application {
 

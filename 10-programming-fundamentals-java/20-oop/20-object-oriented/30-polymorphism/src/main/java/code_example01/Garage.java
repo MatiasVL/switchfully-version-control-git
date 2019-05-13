@@ -1,6 +1,6 @@
 package code_example01;
 
-import code_example01.vehicles.vehicles.Vehicle;
+import code_example01.vehicles.Vehicle;
 
 public class Garage {
 
