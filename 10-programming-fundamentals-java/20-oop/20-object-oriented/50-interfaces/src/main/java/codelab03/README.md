@@ -1,4 +1,14 @@
-# Make some poly-sound!
+# Make some poly-sound, again!
+
+## Wait? This one again?
+
+Jup, you already did this one. However, redo this codelab, 
+but this time, make use of an interface!
+
+Since there is not much a `Cat` and a `Computer` have in common, besides the sound functionality / behavior, 
+an interface is much more suited here than an abstract class.
+
+## Let's do it again!
 
 When you look at the `SoundService`, you'll notice the `allMakeSound` method is **overloaded** (not overrided) a couple of times.
 In total, we have 4 versions of the `allMakeSound`, which do exactly the same, they only differ in their argument type.
@@ -6,15 +16,7 @@ In total, we have 4 versions of the `allMakeSound`, which do exactly the same, t
 Also notice how `Baby`, `Cat`, `Dog` and `Computer` all have a method `makeSound` which 
 returns a textual representation of the sound they make.
 
-## Firstly
-
-Create a Car class.
-- Implement the `makeSound` method so that it returns the `"Tuut tuut!"` text.
-- In the `SoundService`, create a new overloaded `allMakeSound` method which accepts an array of `Car` objects.    
-
-## Secondly
-
-Come up with a design to refactor the code in such a way that we only need one `allMakeSound` method 
+Come up with a design to refactor the code (with an interface) in such a way that we only need one `allMakeSound` method 
 that accepts `Baby`, `Cat`, `Dog`, `Computer` an `Car`. 
 
 Change the code so that **polymorphism** is used so that we only need one `allMakeSound` method. 
