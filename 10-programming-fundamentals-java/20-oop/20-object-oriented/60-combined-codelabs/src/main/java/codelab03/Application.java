@@ -1,4 +1,4 @@
-package codelab06;
+package codelab03;
 
 /**
  * Read the README.md file

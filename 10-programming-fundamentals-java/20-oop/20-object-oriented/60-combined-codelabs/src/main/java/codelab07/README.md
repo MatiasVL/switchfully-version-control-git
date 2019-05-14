@@ -1,5 +1,7 @@
 # Connect four
 
+A more fun and completely **optional** codelab...
+
 Create a game of Connect Four (Four in a row).
 
 Think about your design!
@@ -9,14 +11,14 @@ Think about your design!
     - Which class should know and do what?
 - Provide a CLI (command line interface)
     - The players can provide input using the console
-    - Always validate their input, they shouldn't be able to crash your program.
+    - Always validate their input, players of the game shouldn't be able to crash your program.
         - When input is invalid, provide the player with feedback and allow him to try again.
-- A game of Connect Four is won when there are four disks 
+
+A game of Connect Four is won when there are four disks 
 of the same player on an uninterrupted horizontal, vertical or diagonal line.
 
-Don't be fooled, this is already a darn complex thing to develop!
-Start by creating only a small part of the game: e.g. creating the board and printing it out.
-Then, add more and more parts to your code.
+Tip: Start by creating only a small part of the game: e.g. creating the board and printing it out.
+Then, add more and more parts to your code until you have a fully working connect four game.
 
 Below, we demonstrate how a fully implemented game should be played using the console / command line:
 

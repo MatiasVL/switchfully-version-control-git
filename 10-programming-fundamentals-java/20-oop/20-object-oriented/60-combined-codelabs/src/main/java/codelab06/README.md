@@ -1,4 +1,8 @@
-# Slot Machines (Level Up Lunch)
+# Slot Machines
+
+> Created by Level Up Lunch
+
+A more fun and completely **optional** codelab...
 
 A slot machine is a gambling device that the user inserts money into and then pulls a lever (or presses a button). 
 The slot machine then displays a set of random images. 
@@ -7,7 +11,6 @@ If two or more of the images match, the user wins an amount of money that the sl
 Create a program that simulates a slot machine.
 - Think about your design!
     - Which concepts will you create?
-- A gentle reminder to make sure to write tests and write them first!
 
 When the program runs, it should do the following:
 
@@ -35,6 +38,7 @@ You win $500.00
 
 Would you like to play again?
 Enter Y for yes or N for no: y
+
 Welcome to the Slot Machine Simulation.
 
 Enter the amount you would like to bet: $500
@@ -45,5 +49,6 @@ You win $1,000.00
 
 Would you like to play again?
 Enter Y for yes or N for no: n
+
 You won a total of $1,500.00
 ```
