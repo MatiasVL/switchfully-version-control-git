@@ -1,54 +1,44 @@
-# Sheep Shipping
+# MyRectangle
 
-Listen closely, as we've found the next-big thing. We present an Online... Sheep...Ordering... Service (OSOS).
+Start by creating a `MyRectangle` class.
 
-It's basically a webshop where you can buy living sheep. Can't have enough sheep around, am I right?
+## Requirement 1
+I should be able to create a MyRectangle object without providing any arguments.
 
-##  Sheep
+## Requirement 2
+I should be able to create a MyRectangle object by providing a X and Y coordinate
+- The dimensions should be 50 for width and 100 for height then
 
-Create a class `Sheep`. A sheep has a nickname, a price and a color (which can only be black or white!).
-- Make it as easy as possible to create a sheep with a nickname, price and valid color. 
+## Requirement 3
+I should be able to create a MyRectangle object by providing a width and weight
+- The coordinates should be 5 for X and 10 for Y then
 
-At any time, we should be able to call a **method** (named `amountOfActiveSheep`) that returns us the amount of active (in memory) `Sheep` objects.
+## Requirement 4
+I should be able to create a MyRectangle object by providing the coordinates and dimensions
 
-A sheep can have any nickname except "Dolly" (case insensitive). Make sure to assert this!
+## Requirement 5
+Make sure no-one can directly access the instance variables outside of your MyRectangle class
 
-Override the `toString` method so that it returns: 
-- "I'm a sheep named {nickname} (which is not Dolly) and I'm not white" *(if the sheep is black)*
-- "I'm a sheep named {nickname} (which is not Dolly) and I'm white" *(if the sheep is white)*
+## Requirement 6
+Create getters for all instance variables
 
-## OrderService
+## Requirement 7
+Create a method that sets both the width and height to the provided new values
 
-Create a class `OrderService`, it's the class that offers (as a service) the functionality for ordering Sheep.
+## Requirement 8
+Create a method that calculates and returns the area
 
-Create a method `orderSheep` that accepts a `Sheep` object as an argument (the sheep to order). The method returns the 
-total cost of the sheep.
-- The total cost is calculated as follows: `price of sheep + order fee`.
-    - The order fee is a fixed price of 5 (euro).
-    
-Create a method `orderFeeAsText` that returns the following String: "The order fee is {order fee}".
+## Requirement 9
+Create two new methods:
+1. A method to set the name (or label) of the MyRectangle instance
+2. A method to get the name (or label) of the MyRectangle instance
 
-## Execute
+## Requirement 10
+Create a method that, as an argument, takes a MyRectangle object and duplicates it.
+- With duplicating, we mean a new MyRectangle object should be created with the values of the provided one
+    - This new MyRectangle object should be returned
+- Question: Should it be an instance method or a class method?
 
-Make some Sheep objects and use them with the `orderSheep` method of class `OrderService`. Make sure to also work with 
-the other available methods.
-- Based on your implementation, do you need an instance of `OrderService` in order (pun intended) to call the `OrderSheep` method (among others)?
-
-## Validate your solution
-
-Done with your solution? Great, read on.
-
-Not done with your solution? Great as well, but don't yet read on please.
-
-Validate whether the following statements are true in regards to your solution (code):
-
-- In class `Sheep`, you should have used at least one constant and one static field.
-- In class `Sheep`, you should have used at least one static method, but - technically - you are not required.
-- In class `OrderService`, you could have used two static methods, but - technically - you don't have to.
-- In class `OrderService`, you should have used a constant.
-
-Questions? Ask them!
-
-
-
-
+## Requirement 11
+Create a way so we can ask MyRectangle how many instances / objects have been created of MyRectangle.
+- This means, that every time we create a new instance of MyRectangle, we have to keep count.

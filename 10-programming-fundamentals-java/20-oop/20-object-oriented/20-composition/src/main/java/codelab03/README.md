@@ -1,26 +1,58 @@
-# Bank Account - Types of accounts
+# Bank account
 
-We're going to add some additional functionality to the existing code of `codelab02`. 
-Make sure to have finished that (the previous) codelab before starting.
+## Account
 
-## Account types
+The class named Account should contain a definition for a simple bank account.
 
-Up until this point, it's possible to create a bank account with an owner, 
-balance and an account number. It's possible to withdraw or deposit money from those accounts. 
+it has the following instance fields (state): 
+- a balance (double)
+- an account owner (AccountOwner)
+- an account number (long)
 
-Currently, there's only one way for withdrawing money, the way it's implemented in the `withdraw(...)` of `BankAccount`.
+Don't forget about Encapsulation!
 
-That's about to change.
+`Account` has one constructor, which requires values for the `balance` and `account owner` fields to be given as arguments.
+This constructor will initialize the balance and account owner with the arguments.
+This constructor will generate a random account number (hint: java.util.Random) between 1 and 50.000.0000.
 
-It turns out that there are 4 different types of bank accounts, which all have different rules for withdrawing money:
+`Account` has instance methods to:
+- `withdraw(double amount)`
+    - an account's balance can never get below 0 (write tests for this, write them first!)
+    - There is a maximum withdrawal limit of 5000 (write tests for this, write them first!)
+        - for both criteria, print a message
+- `deposit(double amount)`
+    - There is a maximum deposit limit of 80000 (write tests for this, write them first!)
+        - Print a message
+- a method to get the balance
+- a method get the account number
 
-- Free type: You may only withdraw 100 euro a day, you can never have a negative balance.
-- Basic type: You may withdraw up to 1000 euro a day, but you can never have a negative balance.
-- Premium: You may withdraw up to 2000 euro a day, you can have a negative balance but if you start the withdrawal transaction negative you cannot do the withdrawal.
-- Platinum: You have no limits.
+Override the `toString` method so that the textual representation of `Account` is: "Account with number <accountNumber> and owner <accountOwner> has balance <balance>"
+  
+Account should contain a private class variable, `accountCounter`, 
+which should hold the total amount of all the created Account objects. 
+Create a class method (`getNumberOfAccounts`) to return the value of `accountCounter`.
 
-## Questions
+## AccountOwner
 
-Questions (after implementing): 
-- Which parts are implemented using composition, 
-- which part are implemented using inheritance?
+`AccountOwner` has the following instance fields:
+- a firstname (String)
+- a lastname (String)
+    
+`AccountOwner` offers 2 public getter methods (instance methods):
+- one for firstname
+- one for lastname
+    
+Override the `toString` method so that the textual representation of `AccountOwner` is: 
+"Mr. or Mrs. <firstname>, <lastname>"
+
+## BankRunner
+
+`BankRunner`already has some code available. More specifically, it's using the `Scanner` class. This class allows
+ you to input (instead of output) text from the console.
+ 
+Add code the to `BankRunner` class, so that an AccountOwner and an Account object are created based on the input 
+entered into the console.
+
+Make sure to also deposit or withdraw some money from that account.
+    
+    
