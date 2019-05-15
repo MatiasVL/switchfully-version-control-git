@@ -253,7 +253,7 @@ All birds have a beak size, it can be small, medium or large. Furthermore, it sh
 
 Most birds can **fly**, but not all! Eagle and Pigeon can fly, a Dodo can not.
 - When we let an eagle fly, it should return textual value "I'm soaring through the sky!"
-- When we let a pigeon fly, it should return textual value "Flap flap... oeh, look, crumbles!"
+- When we let a pigeon fly, it should return textual value "Flap flap... oeh, look, breadcrumbs!"
 - It should be impossible to let a dodo fly (they're fly-less birds!)
 
 For all the specific birds that can fly (eagle and pigeon), we should also be able to get the maximum altitude it can fly.
