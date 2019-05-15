@@ -1,5 +1,8 @@
 package codelab02;
 
+/**
+ * Read the README.md for the assignment
+ */
 public class Main {
 
     public static char[] getAlphabet() {

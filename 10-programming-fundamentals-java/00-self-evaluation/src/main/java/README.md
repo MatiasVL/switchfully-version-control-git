@@ -1,124 +1,51 @@
 # Self evaluation 1
 
-## Codelab 00
-### Questions
-1. What is the difference between .java and .class files?
-2. What is the signature of a method?
-3. What is method overloading?
+This self evaluation is created for the purpose of self reflection and to match your current level 
+of programming against our expectations.
 
-### More Questions (by Oracle)
-4. The term "instance variable" is another name for ___.
-5. The term "class variable" is another name for ___.
-6. A local variable stores temporary state; it is declared inside a ___.
-7. A variable declared within the opening and closing parenthesis of a method signature is called a ____.
-8. What are the eight primitive data types supported by the Java programming language?
-9. Character strings are represented by the class ___.
-10. An ___ is a container object that holds a fixed number of values of a single type.
+This self evaluation is in no means a 'classic' test in which the received grades are the most important aspect.
+Therefore, the self evaluation will not be graded. However, you will receive extensive feedback on your solutions.
 
-Correct answers(no peeking, only use it to validate your answers **afterwards**):
-- https://docs.oracle.com/javase/tutorial/java/nutsandbolts/QandE/answers_variables.html
+You should be able to correctly complete the theoretical questions and the codelabs, 
+although some looking-up and tinkering might be necessary. 
+Do always (try to) formulate an answer first, only then search for additional information to improve on your answer.
 
+It is our expectation that you should understand most of the questions, codelabs and have a 
+general idea of the answers up-front. Should that not be the case, take the time to study the question's subject 
+better so that it becomes more clear.
 
-## Codelab 01
-### Coding
-1. Create a method that prints the string "Hello World!"
-2. Create a method (`printAny`) that prints any string you give it.
-3. Using method overloading, create two methods with the same name (`printNumber`).
-    - Both have one parameter.
-    - Both should print a message, although the message differs based on the type (int or double):  
-        - I'm an int: <parameter> 
-        - I'm a double: <parameter>
-4. Create a method that returns the number it receives plus 1
-5. Run the tests!
-    - The tests expect all the methods to be static, which they can be.
+**The process is more important than the goal**, don't simply copy/paste answers from the internet. Make sure you truely understand your answer.
 
-### Questions
-1. What are parameters?
-2. What are arguments?
-3. What is ```public static void main(String args[])``` ?
-4. What are static methods?
-5. What is the return type void?
-6. What's the difference between int and Integer? double and Double?
-7. What is the difference between a primitive and a (reference) data type?
-8. What does over and under flow mean?
-9. What is the difference between int and double?
-10. What is variable declaration?
-11. What is variable initialization?
-12. What will the next block of code print: `1/2` or `0.5`? Why?  
-    - `System.out.println(1/2);`
+Try to work as autonomous as possible.
 
-## Codelab 02
-### Coding
-1. Create a method that returns an array with all the letters of the alphabet.
-    - Check the test to see if it's required to include lower and upper-casing
-    - Run the test 
-2. Replace the 3th element of an array by "do".
-    - Run the tests
+## Theoretical questions
 
-### Questions
-1. What is the difference between a varargs and an array?
-2. What are (the) different ways of initializing arrays?
-3. Can we dynamically alter the dimension (size) of an array?
+Answer the questions inline, like the example below:
 
-## Codelab 03
-### Coding
-1. Create a 2 dimensional array with size X and create the next patterns
+1. **If this is the question**
+    - Then this should be your answer (don't forget to tab and prefix with `-` or `*`)
 
-Some examples (size = 2)
-
-	@@
-	@@
-
-Some examples (size = 3)
- 
-	@@@
-	@ @
-	@@@
-    
-Some examples (size = 4)
-    
-	@@@@
-	@  @
-	@  @
-	@@@@
-
-Some examples (size = 5)
-    
-	@@@@@
-	@   @
-	@   @
-	@   @
-	@@@@@
-
-    
-### Questions
-1. Can you create a 3 dimensional array?
-
-### Questions not related to Arrays
-1. What is autoboxing and unboxing? (Search it, if you don't know what it is)
-2. What is casting? explain widening/upcast and narrowing/downcast
-3. What are access modifiers? Explain all 4.
-4. What is null?
-
-## Codelab 04
-### Coding
-1. Create a method that returns the month in English by its number.
-2. Create a method that takes in a number of elements and calculates a price based on the following rules:
-    1. The first 10 elements costs 5 euro each.
-    2. The following 5 elements costs 4 euro each.
-    3. Every next element costs 3 euro each.
-    4. A negative amount of elements will return 0
-3. Create a method that returns the following:
-    1. When the input is 1: "It's something"
-    2. When the input is 2: "That's more like it"
-    3. When the input is 3: "Way to go"
-    4. Other input: "That's a fail whale"
-    
-### Questions
-1. What is the difference between ```i++``` and ```++i```
-2. What are the different kind of loops? explain their difference.
-3. What are the different logical operators?
-4. What is the output of following codeblock?
+### Questions Basic
+1. **What kind of types are there in Java?**
+2. **What does 'declaring and initializing a variable' mean?**
+3. **What is a statement? What is an expression? What is an operator?**
+4. **What is `casting`? E.g. "I'm casting the value to an `int`"**
+5. **What is the signature of a method?**
+6. **What is method overloading?**
+7. **What is method overriding (OOP)?**
+8. **What is meant with "arguments are passed-by-value"?**
+9. **Of what types can we create an array?**
+10. **Can the size of an array change after instantiation?**
+11. **What is the main difference (in use-case, not structure) of an If/Else statement and a Switch statement?**
+12. **What is the main difference between primitive data types and reference types in Java?**
+13. **What is the main difference between a While and Do-While loop (in execution, not structure)?**
+14. **What is the main difference between a For and Foreach loop (in use-case, not structure)?**
+15. **A variable declared within the opening and closing parenthesis of a method signature is called a ____ variable?**
+16. **Why would you chose `long` over `int`?**
+17. **What's the difference between `long` and `float`?**
+18. **What value (`1/2` or `0.5` or `0`) will be printed for the following code? `Console.WriteLine(1/2);`? Explain why?**
+19. **What is the difference between `.java` and `.class` files?**
+20. **What is the output of following code?**
 ```java
 boolean isTrue = true;
 if(isTrue != false){
@@ -127,138 +54,239 @@ if(isTrue != false){
 System.out.println("It is false");
 ```
 
-## Codelab 05
-### Questions (by Oracle)
+### Questions OOP
+1. **The term "instance variable" is another name for ___ ? And, what is it exactly?**
+2. **The term "class variable" is another name for ___ ?**
+3. **What are parameters?**
+4. **What are arguments?**
+5. **What is the return type void?**
+6. **What's an object? What's a class?**
+7. **What's state? What's behavior?**
+8. **What is an instance?**
+9. **How do we create an object from a class?**
+10. **What is the value `null`? What types can hold `null`?**
+11. **What is an object reference?**
+12. **What is data encapsulation? What role do the access modifiers play in it? Provide all access modifiers.**
+13. **What is a constructor?**
+14. **What is the default constructor?**
+15. **What is a package? Why do we use them?**
+16. **What is an enum and when should you use one?**
+17. **What's the difference between a static method and an instance method?**
+18. **What is a constant?**
+19. **What is inheritance? Why is it useful? Give an example.**
+20. **What is composition? Why is it useful? Give an example.**
+21. **What is polymorphism? Why is it useful? Give an example.**
+22. **What is meant with the sentence 'Class A extends / inherits from Class B'?**
+23. **What is the difference between a (parent) class and an (abstract) parent class?**
+24. **What's the difference between an abstract class and an interface?**
+25. **What is meant with the sentence 'Class A implements (interface) A'?**
+26. **How does an object gets 'destroyed' and thrown out of the memory?**
+27. **What is the `Object` class?**
+28. **To invert the value of a boolean, which operator would you use?**
+29. **What is casting? explain widening/upcast and narrowing/downcast.**
+30. **What does the `final` keyword do?**
+31. **What is the difference between `==` and `equals`?**
 
-Consider the following code snippet:
-```
-int i = 10;
-int n = i++%5;
-```
-- What are the values of i and n after the code is executed?
-- What are the final values of i and n if instead of using the postfix increment operator (i++), you use the prefix version (++i))?
+## Hands-on
 
-### Extra questions (by Oracle)
-- To invert the value of a boolean, which operator would you use?
-- Which operator is used to compare two values (literals or references), = or == ?
-- Explain the following code sample: 
+### Codelab 01
+1. Create a method that prints the string "Hello World!"
+2. Create a method (`printAny`) that prints any string you give it.
+3. Using method overloading, create two methods with the same name (`printNumber`).
+    - Both have one parameter.
+    - Both should print a message, although the message differs based on the type (int or double):  
+        - `I'm an int: {parameter}` in case of the actual argument being of type `int`. 
+        - `I'm a double: {parameter}` in case of the actual argument being of type `double`.
+4. Create a method that returns the number it receives plus 1
+    - E.g. 4 is provided as an argument, then value 5 is returned
+
+### Codelab 02
+1. Create a method that returns an array with all the letters of the alphabet.
+    - Check the test to see what is required exactly. 
+        - E.g. is it required to include both lower and upper-casing characters?
+    - Run the test (before and after having implemented your solution) 
+2. Create a method that replaces the 3th element of a String[] array by "do".
+    - Run the tests (before and after having implemented your solution) 
+    - Think about edge cases: empty array, null,... 
+        - Test scenario's:
+          - `["we", "can", "work", "it"]` --> `["we", "can", "do", "it"]`
+          - `["you", "should", "work", "it"]` --> `["you", "should", "do", "it"]`
+
+
+### Codelab 03
+1. Create a method that generates a 2D pattern (as a 2D array) based on a provided size (parameter).
+2. Call the method and loop over the 2D array to print its contents to the console.
+3. Based on the examples below, the pattern should be clear.
+4. Run the tests (before and after having implemented your solution)
+
+Some examples (size = 2), printed to the console
 ```
-result = someCondition ? value1 : value2;
+@@
+@@
 ```
 
-Correct answers(no peeking, only use it to validate your answers **afterwards**):
-- https://docs.oracle.com/javase/tutorial/java/nutsandbolts/QandE/answers_operators.html
+Some examples (size = 3), printed to the console
+``` 
+@@@
+@ @
+@@@
+```
+ 
+Some examples (size = 4), printed to the console
+```    
+@@@@
+@  @
+@  @
+@@@@
+```
 
-## Codelab 06
-### Coding
+Some examples (size = 5), printed to the console
+```    
+@@@@@
+@   @
+@   @
+@   @
+@@@@@
+```
+
+### Codelab 04
+
+1. Create a method that takes in a number of elements and calculates a price based on the following rules:
+    1. The first 10 elements costs 5 euro each.
+    2. The following 5 elements costs 4 euro each.
+    3. Every next element costs 3 euro each.
+    4. A negative amount of elements will return 0
+    5 Run the test (before and after having implemented your solution
+2. Create a method that returns the following:
+    1. When the input is 1: "It's something"
+    2. When the input is 2: "That's more like it"
+    3. When the input is 3: "Way to go"
+    4. Other input: "That's a fail whale"
+    5. Run the test (before and after having implemented your solution
+        - Test scenario's:
+            - amountOfItems == 1, then price == 5
+            - amountOfItems == 0, then price == 0
+            - amountOfItems == 9, then price == 45
+            - amountOfItems == 10, then price == 50
+            - amountOfItems == 11, then price == 54
+            - amountOfItems == 15, then price == 70
+            - amountOfItems == 16, then price == 73
+            - amountOfItems == 20, then price == 85
+            - amountOfItems == -1, should not return a price   
+
+### Codelab 05
+
 1. Create an `Alarm`.
-2. Make sure we can use a no-arg constructor and an single argument (the sound to make) constructor. By default, the sound to make is "BEEP"
-3. The ```makeSound``` method(s) should return an array containing x-times the sound to make.
-    - We should be able to provide x, although it should not be required
-    - If x is not provided, the return should contain the 'sound to make' 3 times.
-        - This number is fixed!
-    - Implement these requirements test-first!
+2. Make sure we can use a no-arg constructor and an single argument (the sound to make) constructor. By default, 
+the sound to make is "BEEP". 
+3. The `makeSound` method(s) should return an array containing x-times the sound to make.
+    - We should be able to provide x, although it should not be required.
+    - If x is not provided, the returned value should contain the 'sound to make' 3 times.
+        - 3 is the default amount of times to make a sound.
 
-### Questions
-1. What is a class?
-2. What is an object?
-3. What is an instance?
-4. What is the `Object` class?
-5. What is inheritance?
-6. What is method overriding? 
-7. What is composition (and why favor it over inheritance)?
+### Codelab 06
 
-## Codelab 07
-### Coding
+We're going to program a (French) deck of cards.
 
-1. Write a class whose instances represent a single playing card from a deck of cards. Playing cards have two distinguishing properties: rank and suit.
-2. Write a class whose instances represent a full deck of cards.
-3. Write a small program to test your deck and card classes. The program can be as simple as creating a deck of cards and displaying its cards.
+French decks come in a variety of patterns and deck sizes. We're going for the most popular 52-card deck. 
+It includes 13 ranks of each suit. There are four suits: hearts, spades, diamonds and clubs. 
+Each suit includes an ace, a king, queen, and jack, and numbers two through ten. 
 
-### Questions
+Commercial packs often include between one and six jokers, most often two. 
+But we will not include them in our solution!
 
-1. Consider the following class:
-```
-public class IdentifyMyParts {
-    public static int x = 7; 
-    public int y = 3; 
-}
-```
-- What are the class variables?
-- What are the instance variables?
+1. Create a class that represents a single playing card.
+2. Create a class that represents a deck of (52) cards.
+    - After creating a deck of cards object, it should hold 52 cards.
+    - However, it should also be possible to create a deck of cards object for which 
+    we provided (as an argument) the cards (possible not 52 cards).
+    - It should be possible to check whether a certain card (argument) is part of the deck of cards.
+    - It should be possible to get a textual representation of the entire deck of cards.
+3. Write a small executable program in which you create a deck of cards and check whether a certain card is part of it. 
 
-2. What is the output from the following code:
+### Codelab 07
 
-```
-IdentifyMyParts a = new IdentifyMyParts();
-IdentifyMyParts b = new IdentifyMyParts();
-a.y = 5;
-b.y = 6;
-a.x = 1;
-b.x = 2;
-System.out.println("a.y = " + a.y);
-System.out.println("b.y = " + b.y);
-System.out.println("a.x = " + a.x);
-System.out.println("b.x = " + b.x);
-System.out.println("IdentifyMyParts.x = " + IdentifyMyParts.x);
-```
+Write a `Dog`, `Labrador` and `Chihuahua` class. 
 
-3. What's wrong with the following program?
-```
-public class SomethingIsWrong {
-    public static void main(String[] args) {
-        Rectangle myRect;
-        myRect.width = 40;
-        myRect.height = 50;
-        System.out.println("myRect's area is " + myRect.area());
-    }
-}
-```
+All dogs have a name and can bark
+- The actual barking sound is specific to the breed of dog.
+    - A labrador has as its barking sound value "WOOF WOOF!"
+    - A chihuahua has as its barking sound value "Kefkefkef!"
+- The name is specific to the actual instance of a dog.
 
-4. The following code creates one array and one string object. How many references to those objects exist after the code executes? Is there one (or more) object(s) eligible for garbage collection?
-```
-String[] students = new String[10];
-String studentName = "Peter Parker";
-students[0] = studentName;
-studentName = null;
-```
+All dogs also have an average breed weight
+- The actual value for the average breed weight is specific to the breed of dog.
+    - A labrador has as its average breed weight, value 35 (Kg).
+    - A chihuahua has as its average breed weight, value 2 (Kg).
+- We should be able to let every dog bark
+- We should be able to **get** the average breed weight for every dog
+- (It should not be possible to create instances of `Dog` itself)
 
-5. How does a program destroy an object that it creates?
+Chihuahuas also have a color field, it can be either Brown, Black or White.
 
-Correct answers(no peeking, only use it to validate your answers **afterwards**):
-- https://docs.oracle.com/javase/tutorial/java/javaOO/QandE/creating-answers.html
-- https://docs.oracle.com/javase/tutorial/java/javaOO/QandE/objects-answers.html
+Override the `toString` method, it should contain the entire state of every dog.
+    - For a labrador: "Labrador: (name = Labby, sound = WOOF WOOF!, average breed weight = 35)"
+    - For a chihuahua: "Chihuahua: (name = Darling, sound = Kefkefkef!!, average breed weight = 2, color = Brown)"
 
-## Codelab 08
-### Coding
+Override the `equals` method: two dogs are equal if they are of they have the same name and make the same sound.
 
-Write a Dog, Labrador and Chihuahua class
-- Dogs have a name and can bark
-    - The barking sound is specific to the breed of dog
-    - The name is specific to the instance of a dog
-- Dogs also have an average breed weight
-- We should be able to let dogs bark and get their average breed weight
-- Chihuahuas also have a color
-- Override the toString method
-- Override the equals method: two dogs are equal if they are of the same breed and have the same name
+### Codelab 08
 
-## Codelab 09
-### Coding
+All birds have a beak size, it can be small, medium or large. Furthermore, it should be possible to **get** this beak size.
+- Eagle is a specific type of bird, an eagle has a large beak size.
+- Pigeon is a specific type of bird, a pigeon has a medium beak size.
+- Dodo is a specific type of bird, a dodo has a large beak size.
+- (any future new specific types of bird will also have a beak size)
+- (creating an instance of a (non-specific) bird should not be possible)
 
-Write a Laptop class
-- A laptop consists of a screen, a storage device, RAM, a processor, a keyboard and a mouse
-    - Make sure that each of these is represented by a correct state and has some useful behavior.
-    - A screen can be LCD or LED
-    - A storage device can be HDD or SSD
-    - A processor can have 3 different states: energy-saving, normal and overclocked. It should be possible to let a processor switch from state (during runtime)
-    - We should be able to get the active and idle energy consumption of screens, storage (devices) and processors
-- Think about your design (simply think about these questions):
-    - When and where do we need inheritance?
-    - When and where do we need abstraction?
-    - When and where do we need composition?
-    - When and where do we need interfaces?
-    - When and where do we need to create additional concepts (classes)
+Most birds can **fly**, but not all! Eagle and Pigeon can fly, a Dodo can not.
+- When we let an eagle fly, it should return textual value "I'm soaring through the sky!"
+- When we let a pigeon fly, it should return textual value "Flap flap... oeh, look, crumbles!"
+- It should be impossible to let a dodo fly (they're fly-less birds!)
+
+For all the specific birds that can fly (eagle and pigeon), we should also be able to get the maximum altitude it can fly.
+- The maximum altitude is specific to a single instance (so 2 eagle birds can have a different maximum altitude). However, 
+there is a range per bird type.
+    - Eagles should have a maximum altitude between 4.000 and 5.000 meters (both including). 
+    - Pigeons should have a maximum altitude between 500 and 750 meters (both including).
+    - Dodo's do not have the concept of a maximum altitude (as they don't fly...) 
+
+### Codelab 09
+
+Let's design - in code - a Laptop.
+
+Our `Laptop` class consists of a screen, a storage device, RAM, a processor and peripheral devices (keyboard, mouse,...)
+- Make sure that each of these components are represented by some obvious state and have some useful behavior.
+
+A screen can be either an LCD screen or LED screen (and in the future, who knows what else...)
+- Possible state: resolution, color, brightness,...
+- Possible behavior: dim (brightness),...
+
+A storage device can be either HDD or SSD (and in the future, who knows what else...)
+- Possible state: speed, size,...
+- Possible behavior: storeData,...
+
+A processor can have 3 different modes: energy-saving, normal and overclocked. 
+- It should be possible to let a processor switch from its mode (during runtime)
+    - E.g. from energy-saving to normal
+- Possible behavior: processInstructions,...
+
+It should be possible to **get** both the active and idle energy consumption of all screens, storage devices and processors.
+- Energy consumption can be written in kilowatt hour (kWh).
+
+keyboard and mouse are both peripheral devices. A laptop can have up to 5 peripheral devices.
+- All peripheral devices should have a method to use them. But based on the specific peripheral, using it means something else.
+
+Finally, create an instance from `Laptop` and interact with it (maybe also print it to the console?).
+
+Think about your design (simply think about these questions):
+- When and where do we need (or can use) inheritance?
+- When and where do we need (or can use) abstraction?
+- When and where do we need (or can use) composition?
+- When and where do we need (or can use) interfaces?
+- When and where do we need to create additional concepts (classes, enums,...)
+    - E.g. is resolution a concept which we can or should create?
     
 ## Finished? 
 1. Ask feedback on your solutions
-2. Complete all uncompleted previous codelabs.    
+2. Complete all uncompleted codelabs from modules `10-basics` and `20-oop`.    

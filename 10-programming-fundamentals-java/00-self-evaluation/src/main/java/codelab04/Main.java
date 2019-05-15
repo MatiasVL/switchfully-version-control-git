@@ -1,5 +1,8 @@
 package codelab04;
 
+/**
+ * Read the README.md for the assignment
+ */
 public class Main {
 
     public static String month(int i) {
