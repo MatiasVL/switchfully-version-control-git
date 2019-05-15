@@ -1,24 +1,29 @@
 # Self evaluation 1
 
 This self evaluation is created for the purpose of self reflection and to match your current level 
-of programming against our expectations.
+of programming against our expectations. 
+
+You will have 2 dedicated days to complete it. 
+Should that not be enough, we expect you to finish it after-hours / over the weekend.
 
 This self evaluation is in no means a 'classic' test in which the received grades are the most important aspect.
-Therefore, the self evaluation will not be graded. However, you will receive extensive feedback on your solutions.
+Therefore, the self evaluation will not be graded in a numerical way. However, you will receive extensive feedback 
+on your solutions which you should review in-depth!
 
 You should be able to correctly complete the theoretical questions and the codelabs, 
 although some looking-up and tinkering might be necessary. 
-Do always (try to) formulate an answer first, only then search for additional information to improve on your answer.
 
-It is our expectation that you should understand most of the questions, codelabs and have a 
-general idea of the answers up-front. Should that not be the case, take the time to study the question's subject 
-better so that it becomes more clear.
+It is our expectation that you should understand most of the questions and should be able to solve all the codelabs.
+Should you feel like you're struggling heavily with every codelab, make sure to address this. We will be more than happy 
+to see how - and help you - to get you back on track as soon as possible!
 
-**The process is more important than the goal**, don't simply copy/paste answers from the internet. Make sure you truely understand your answer.
-
-Try to work as autonomous as possible.
+**The process is more important than the goal**, don't simply copy/paste (theoretical) answers or solutions from the internet. 
+Make sure you truly understand what you're doing! Try to work as autonomous as possible.
 
 ## Theoretical questions
+
+Do always (try to) come-up and formulate an answer first, 
+only then search for additional information, should you be unsure of your answer, to improve your knowledge.
 
 Answer the questions inline, like the example below:
 
@@ -88,6 +93,13 @@ System.out.println("It is false");
 31. **What is the difference between `==` and `equals`?**
 
 ## Hands-on
+
+For every codelab, a package `codelab{n}` has been created.
+It's your starting location for implementing the assignment.
+
+The assignments themselves are written down in this file, in the following sections. 
+
+Sometimes, tests have been written to validate your solution. Use (run) them.  
 
 ### Codelab 01
 1. Create a method that prints the string "Hello World!"
