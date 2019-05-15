@@ -230,7 +230,7 @@ All dogs have a name and can bark
 
 All dogs also have an average breed weight
 - The actual value for the average breed weight is specific to the breed of dog.
-    - A labrador has as its average breed weight, value 35 (Kg).
+    - A labrador has as its average breed weight, value 15 (Kg).
     - A chihuahua has as its average breed weight, value 2 (Kg).
 - We should be able to let every dog bark
 - We should be able to **get** the average breed weight for every dog
@@ -264,6 +264,11 @@ there is a range per bird type.
     - Eagles should have a maximum altitude between 4.000 and 5.000 meters (both including). 
     - Pigeons should have a maximum altitude between 500 and 750 meters (both including).
     - Dodo's do not have the concept of a maximum altitude (as they don't fly...) 
+
+Finally, create a `Sky` class. It should have a class - not instance - method 
+that accepts (as an argument) an array of birds that can fly (only!).
+- Let this method loop over the array and let it call, each bird's fly method.
+- Each time, print the value returned by the fly method to the console.
 
 ### Codelab 09
 
