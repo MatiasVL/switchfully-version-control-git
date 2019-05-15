@@ -116,7 +116,7 @@ Sometimes, tests have been written to validate your solution. Use (run) them.
 1. Create a method that returns an array with all the letters of the alphabet.
     - Check the test to see what is required exactly. 
         - E.g. is it required to include both lower and upper-casing characters?
-    - Run the test (before and after having implemented your solution) 
+    - Run the tests (before and after having implemented your solution) 
 2. Create a method that replaces the 3th element of a String[] array by "do".
     - Run the tests (before and after having implemented your solution) 
     - Think about edge cases: empty array, null,... 
@@ -162,19 +162,21 @@ Some examples (size = 5), printed to the console
 ```
 
 ### Codelab 04
-
-1. Create a method that takes in a number of elements and calculates a price based on the following rules:
-    1. The first 10 elements costs 5 euro each.
-    2. The following 5 elements costs 4 euro each.
-    3. Every next element costs 3 euro each.
-    4. A negative amount of elements will return 0
-    5 Run the test (before and after having implemented your solution
-2. Create a method that returns the following:
-    1. When the input is 1: "It's something"
-    2. When the input is 2: "That's more like it"
-    3. When the input is 3: "Way to go"
-    4. Other input: "That's a fail whale"
-    5. Run the test (before and after having implemented your solution
+1. Create a method that returns the month in English by its number.
+    - Run the tests (before and after having implemented your solution.
+        - The tests will also show what the exact requirements are!
+2. Create a method that takes in a number of elements and calculates a price based on the following rules:
+    - The first 10 elements costs 5 euro each.
+    - The following 5 elements costs 4 euro each.
+    - Every next element costs 3 euro each.
+    - A negative amount of elements will return 0
+    - Run the tests (before and after having implemented your solution
+3. Create a method that returns the following:
+    - When the input is 1: "It's something"
+    - When the input is 2: "That's more like it"
+    - When the input is 3: "Way to go"
+    - Other input: "That's a fail whale"
+    - Run the tests (before and after having implemented your solution
         - Test scenario's:
             - amountOfItems == 1, then price == 5
             - amountOfItems == 0, then price == 0
