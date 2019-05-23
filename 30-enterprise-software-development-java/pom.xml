@@ -10,7 +10,6 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>30-web-services/20-SOAP-XML</module>
         <module>40-security/10-spring-security</module>
     </modules>
 
