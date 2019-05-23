@@ -20,15 +20,13 @@
         <java.target.version>12</java.target.version>
         <maven.compiler.version>3.8.1</maven.compiler.version>
         <jaxb.api.version>2.4.0-b180830.0359</jaxb.api.version>
-        <assertj.version>3.10.0</assertj.version>
         <spring.version>5.0.6.RELEASE</spring.version>
         <hibernate.version>5.3.1.Final</hibernate.version>
-        <commons.lang.version>3.7</commons.lang.version>
-        <junit.version>5.2.0</junit.version>
-        <assertj.version>3.10.0</assertj.version>
-        <mockito.version>2.18.3</mockito.version>
-        <surefire.plugin.version>2.21.0</surefire.plugin.version>
-        <junit-platform-surefire-provider.version>1.2.0</junit-platform-surefire-provider.version>
+        <commons.lang.version>3.9</commons.lang.version>
+        <junit.version>5.4.2</junit.version>
+        <assertj.version>3.12.2</assertj.version>
+        <mockito.version>2.27.0</mockito.version>
+        <surefire.plugin.version>2.22.2</surefire.plugin.version>
     </properties>
 
     <dependencies>
@@ -106,13 +104,6 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>${surefire.plugin.version}</version>
-                <dependencies>
-                    <dependency>
-                        <groupId>org.junit.platform</groupId>
-                        <artifactId>junit-platform-surefire-provider</artifactId>
-                        <version>${junit-platform-surefire-provider.version}</version>
-                    </dependency>
-                </dependencies>
             </plugin>
         </plugins>
     </build>
