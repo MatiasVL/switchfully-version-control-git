@@ -13,7 +13,7 @@ public class MyFileReader {
 
     private static class MyFile {
         public MyFile(String filename) {
-            // do nothing, dummy vlzdd
+            // do nothing, dummy code
         }
 
         public static MyFile accessFromDisk(String filename) {
