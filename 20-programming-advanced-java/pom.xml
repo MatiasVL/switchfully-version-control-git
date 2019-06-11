@@ -14,7 +14,8 @@
         <module>05-agile-software-development/10-test-driven-development</module>
         <module>05-agile-software-development/15-tdd-mocking-stubbing</module>
         <module>05-agile-software-development/20-refactoring-clean-code</module>
-        <module>10-exception-handling</module>
+        <module>10-exceptions/10-exception-handling</module>
+        <module>10-exceptions/20-exceptions-combined</module>
         <module>20-data-structures</module>
         <module>30-generics</module>
         <module>40-nested-classes-lambdas</module>
