@@ -70,7 +70,7 @@ If you closely look at the trace of the **Stack** (also known as the **Stack tra
 on line `22` -> at `codelab02.Calculator.main(Calculator.java:22)`. It's where we call method `nextInt` of `Scanner`.
 - No idea what the Stack is? We'll soon cover this in the slides. 
 
-If we continue to go down the stack trace (the top of the stack trace is the last output line), we see that it goes wrong on line `2212`, 
+If we continue to go up the stack trace (the bottom of the stack trace is the last output line), we see that it goes wrong on line `2212`, 
 which is in the body of method `nextInt` -> `at java.base/java.util.Scanner.nextInt(Scanner.java:2212)`. That's as deep as we need to go.
 
 We now know we are calling an unsafe method (`nextInt`) and where exactly we are calling it (line `22` of method `main`).
