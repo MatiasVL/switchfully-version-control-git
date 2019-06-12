@@ -6,7 +6,7 @@ package codelab01;
 class MyExceptionService {
 
     void doSomethingExceptional() {
-        // implement me
+        throw new IllegalStateException("I'm so exceptional");
     }
 
 }
