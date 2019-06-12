@@ -67,7 +67,7 @@ Exception in thread "main" java.util.InputMismatchException
 ```
 
 If you closely look at the trace of the **Stack** (also known as the **Stack trace**), you'll see that it goes wrong 
-on line `22` -> `at codelab02.Calculator.main(Calculator.java:22)`. It's where we call method `nextInt` of `Scanner`.
+on line `22` -> at `codelab02.Calculator.main(Calculator.java:22)`. It's where we call method `nextInt` of `Scanner`.
 - No idea what the Stack is? We'll soon cover this in the slides. 
 
 If we continue to go down the stack trace (the top of the stack trace is the last output line), we see that it goes wrong on line `2212`, 
