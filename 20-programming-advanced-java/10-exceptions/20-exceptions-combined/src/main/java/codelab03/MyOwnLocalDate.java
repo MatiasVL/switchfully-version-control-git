@@ -9,8 +9,8 @@ public class MyOwnLocalDate {
     private int month;
     private int dayOfMonth;
 
-    public static final int MAX_YEAR = 2100;
-    public static final int MIN_YEAR = 1901;
+    static final int MAX_YEAR = 2100;
+    static final int MIN_YEAR = 1901;
 
     /*
      * By setting the only constructor of MyOwnLocalDate to private,
@@ -27,7 +27,7 @@ public class MyOwnLocalDate {
      * To create an object, other classes
      * can use this class method (static method)
      */
-    public static MyOwnLocalDate create(int year, int month, int dayOfMonth) {
+    static MyOwnLocalDate create(int year, int month, int dayOfMonth) {
         int validatedYear = validateYear(year);
         int validatedMonth = validateMonth(month);
         int validateDayOfMonth = validateDayOfMonth(dayOfMonth);
@@ -35,15 +35,15 @@ public class MyOwnLocalDate {
     }
 
     private static int validateYear(int year) {
-        throw new UnsupportedOperationException("Implement me!");
+        return -1; // implement me properly!
     }
 
     private static int validateMonth(int month) {
-        throw new UnsupportedOperationException("Implement me!");
+        return -1; // implement me properly!
     }
 
     private static int validateDayOfMonth(int dayOfMonth) {
-        throw new UnsupportedOperationException("Implement me!");
+        return -1; // implement me properly!
     }
 
     @Override

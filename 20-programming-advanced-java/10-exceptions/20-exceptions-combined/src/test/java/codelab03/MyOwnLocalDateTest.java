@@ -12,9 +12,9 @@ class MyOwnLocalDateTest {
 
     @Test
     void create_givenCorrectParameters_thenReturnMyOwnLocalDateObject() {
-        MyOwnLocalDate myOwnLocalDate = MyOwnLocalDate.create(2018, 11, 20);
+        MyOwnLocalDate myOwnLocalDate = MyOwnLocalDate.create(2022, 11, 20);
 
-        assertEquals(myOwnLocalDate.toString(), "20/11/2018");
+        assertEquals(myOwnLocalDate.toString(), "20/11/2022");
     }
 
     @Test
@@ -37,36 +37,36 @@ class MyOwnLocalDateTest {
 
     @Test
     void create_givenTooLowMonth_thenThrowDateTimeException() {
-        DateTimeException dateTimeException = assertThrows(DateTimeException.class, () -> {
-            MyOwnLocalDate.create(2018, 0, 20);
-        });
+        DateTimeException dateTimeException = assertThrows(DateTimeException.class, () ->
+            MyOwnLocalDate.create(2022, 0, 20)
+        );
 
         assertEquals(dateTimeException.getMessage(), "The provided month is not allowed!");
     }
 
     @Test
     void create_givenTooHighMonth_thenThrowDateTimeException() {
-        DateTimeException dateTimeException = assertThrows(DateTimeException.class, () -> {
-            MyOwnLocalDate.create(2018, 13, 20);
-        });
+        DateTimeException dateTimeException = assertThrows(DateTimeException.class, () ->
+            MyOwnLocalDate.create(2022, 13, 20)
+        );
 
         assertEquals(dateTimeException.getMessage(), "The provided month is not allowed!");
     }
 
     @Test
     void create_givenTooLowDay_thenThrowDateTimeException() {
-        DateTimeException dateTimeException = assertThrows(DateTimeException.class, () -> {
-            MyOwnLocalDate.create(2018, 10, 0);
-        });
+        DateTimeException dateTimeException = assertThrows(DateTimeException.class, () ->
+            MyOwnLocalDate.create(2022, 10, 0)
+        );
 
         assertEquals(dateTimeException.getMessage(), "The provided dayOfMonth is not allowed!");
     }
 
     @Test
     void create_givenTooHighDay_thenThrowDateTimeException() {
-        DateTimeException dateTimeException = assertThrows(DateTimeException.class, () -> {
-            MyOwnLocalDate.create(2018, 10, 32);
-        });
+        DateTimeException dateTimeException = assertThrows(DateTimeException.class, () ->
+            MyOwnLocalDate.create(2022, 10, 32)
+        );
 
         assertEquals(dateTimeException.getMessage(), "The provided dayOfMonth is not allowed!");
     }
