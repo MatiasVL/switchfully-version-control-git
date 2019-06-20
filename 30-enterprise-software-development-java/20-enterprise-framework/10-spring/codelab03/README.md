@@ -4,13 +4,13 @@ As said before, Spring Boot aims to get us up and running as quick as possible (
 It does this by packaging a embedded tomcat in our WAR. That way, we don't need to manually deploy WAR files.
 But what does that mean, "deploying WAR files"? Let's find out!
 
-## Start by installing Apache Tomcat 8.x
+## Start by installing Apache Tomcat 9.x
 
 Tomcat is a web container / server that runs web applications (based on Servlets and JavaServer pages), 
 but it can also be used as a HTTP server.
-In short: it will host and run WAR filàç-es.
+In short: it will host and run WAR files.
 
-1. Download Apache Tomcat 8.X
+1. Download Apache Tomcat 9.X
 2. Install Apache Tomcat
     - The ui-manager should be installed as well (normally, this is by default)
 3. Run the service
@@ -43,7 +43,7 @@ But for now, we'll do it manually!
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>1.5.9.RELEASE</version>
+        <version>2.1.6.RELEASE</version>
     </parent>
     <dependencies>
         <dependency>

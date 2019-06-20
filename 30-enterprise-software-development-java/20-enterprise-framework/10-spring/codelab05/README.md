@@ -17,7 +17,7 @@ The Stock Exchange Application is described in the README.md file of package `_0
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>1.5.9.RELEASE</version>
+        <version>2.1.6.RELEASE</version>
     </parent>
     ```
 2. Still in your own parent pom
@@ -36,7 +36,7 @@ The Stock Exchange Application is described in the README.md file of package `_0
         <dependency>
             <groupId>org.mockito</groupId>
             <artifactId>mockito-core</artifactId>
-            <version>2.13.0</version>
+            <version>2.28.2</version>
             <scope>test</scope>
         </dependency>
         ```
@@ -45,12 +45,12 @@ The Stock Exchange Application is described in the README.md file of package `_0
         <dependency>
             <groupId>com.google.guava</groupId>
             <artifactId>guava</artifactId>
-            <version>23.5-jre</version>
+            <version>28.0-jre</version>
         </dependency>
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
-            <version>3.7</version>
+            <version>3.9</version>
         </dependency>
         ```
         - Additionally, all the modules on which another module has a dependency should also be defined in this section.
