@@ -27,5 +27,5 @@ A Blog has the following state
 - A group of BlogPosts
 
 A Blog has the following behavior
-- A method for getting all the BlogPosts for a provided `Author` object. 
+- A method for getting all the BlogPosts per Author (`getBlogPostsPerAuthor`). 
 - A method `suggestABlogPost` which returns the most recent BlogPost (thus, sorted on its creationDate, descending, and then the first element)
