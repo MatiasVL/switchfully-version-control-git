@@ -16,7 +16,11 @@
         <module>05-agile-software-development/20-refactoring-clean-code</module>
         <module>10-exceptions/10-exception-handling</module>
         <module>10-exceptions/20-exceptions-combined</module>
-        <module>20-data-structures</module>
+        <module>20-data-structures/10-list</module>
+        <module>20-data-structures/20-queue</module>
+        <module>20-data-structures/30-map</module>
+        <module>20-data-structures/40-set</module>
+        <module>20-data-structures/50-combined</module>
         <module>30-generics</module>
         <module>40-nested-classes-lambdas</module>
         <module>50-streams</module>
