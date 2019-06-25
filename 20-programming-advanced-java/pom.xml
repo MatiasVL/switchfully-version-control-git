@@ -21,7 +21,8 @@
         <module>20-data-structures/30-map</module>
         <module>20-data-structures/40-set</module>
         <module>20-data-structures/50-combined</module>
-        <module>30-generics</module>
+        <module>30-generics/10-generic-classes</module>
+        <module>30-generics/20-generics-combined</module>
         <module>40-nested-classes-lambdas</module>
         <module>50-streams</module>
         <module>60-design-principles-and-patterns/10-design-principles</module>
