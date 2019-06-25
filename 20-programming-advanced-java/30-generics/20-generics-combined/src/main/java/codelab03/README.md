@@ -28,4 +28,4 @@ Create a `main` method in which you create at least two different `FlexPair<T1, 
  
  Then, use the `getLeft`and `getRight` methods on them. Validate the types (and objects) that are returned by these methods.
  
- Hopefully, it's clear that `FlexPair<T1, T2>` can do whatever `SimplePair<T>` can **and more**.
+ Hopefully, it's clear that `FlexPair<T1, T2>` can do whatever `SimplePair<T>` can **and more** *(making `SimplePair<T>` redundant)*.
