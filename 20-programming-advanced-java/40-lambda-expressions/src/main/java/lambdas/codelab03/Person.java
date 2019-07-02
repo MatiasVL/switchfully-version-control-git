@@ -5,13 +5,13 @@ package lambdas.codelab03;
  */
 class Person {
 
-    private String givenName;
-    private String surName;
-    private int age;
-    private Gender gender;
-    private String email;
-    private String phone;
-    private String address;
+    private final String givenName;
+    private final String surName;
+    private final int age;
+    private final Gender gender;
+    private final String email;
+    private final String phone;
+    private final String address;
 
     private Person(Builder builder) {
         givenName = builder.givenName;

@@ -1,4 +1,4 @@
-package lambdas.codelab02;
+package lambdas.codelab02.v2;
 
 /**
  * Read the README.md file
