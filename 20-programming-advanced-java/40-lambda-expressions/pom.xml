@@ -10,6 +10,6 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>40-nested-classes-lambdas</artifactId>
+    <artifactId>40-lambda-expressions</artifactId>
 
 </project>
