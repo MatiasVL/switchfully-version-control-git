@@ -4,7 +4,7 @@ We're going to transform our multi-module Maven stock exchange application to a 
 including:
 - A functioning (REST) endpoint / entrypoint to our API
 - Dependency Injection with Spring
-- A Fat JAR
+- An executable JAR (also known as "fat JAR" or "JAR with dependencies")
 
 The Stock Exchange Application is described in the README.md file of package `_08_build_and_dependency_management._03.maven.codelab04`
 - If you already successfully finished codelab04, use your own code as your starting point
@@ -31,12 +31,6 @@ The Stock Exchange Application is described in the README.md file of package `_0
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.mockito</groupId>
-            <artifactId>mockito-core</artifactId>
-            <version>2.28.2</version>
             <scope>test</scope>
         </dependency>
         ```
