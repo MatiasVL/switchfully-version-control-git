@@ -7,11 +7,16 @@ Below you'll find a list of additional topics and exercises, related to the
 
 ## Improve the security of your application with OWASP & Maven
 The security of web applications is of the utmost importance.
-It happens often that security holes are discovered in the opensource libraries we use.
+
+The Open Web Application Security Project, opensource software community, that strives to improve the security of software. \
+Every few years they release the OWASP top 10: A list of the most critical web application security risks.
+
+It happens often that security holes are discovered in the opensource libraries we use. And hackers will not hesitate to abuse those holes.
 Active opensource projects do their best to react swiftly to these vulnerability reports,
 but as a developer, you have the responsibility to upgrade (and redeploy) your application as soon as a patch is available.
 
-To detect dependencies with potential security problems, add the following snippet to your maven pom file:
+To detect dependencies with potential security problems (one of the top 10 risks), the OWASP community has created a tool that integrates with Maven.\
+Add the following snippet to your maven pom file & run `mvn` to get your first security report:
 ````xml
     <profile>
         <id>dependency-checks</id>

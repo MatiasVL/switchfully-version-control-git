@@ -120,7 +120,7 @@ The Stock Exchange Application is described in the README.md file of package `_0
          public class TestApplication {}
          ```
     - In an integration test we don't Mock or Stub!
-3. Write a test providing an exisiting stockId to the controller and asserting the returned result
+3. Write a test providing an existing stockId to the controller and asserting the returned result
 
 ## Solution
 
