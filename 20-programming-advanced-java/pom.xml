@@ -25,7 +25,7 @@
         <module>30-generics/20-generics-combined</module>
         <module>35-nested-classes</module>
         <module>40-lambda-expressions</module>
-        <module>50-streams</module>
+        <module>50-stream-api</module>
         <module>60-design-principles-and-patterns/10-design-principles</module>
         <module>60-design-principles-and-patterns/20-design-patterns</module>
         <module>additional-codelabs</module>
