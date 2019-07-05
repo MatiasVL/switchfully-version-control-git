@@ -9,12 +9,12 @@ import {interval, Subscription} from "rxjs";
 })
 export class AppComponent implements OnInit {
 
-  private isEvolutionEnabled: boolean;
-  private evolutionIteration: Subscription;
-  private worldService: GolService;
-  private world: number[];
-  private worldDimension: number;
-  private numberOfCalls: number;
+  public isEvolutionEnabled: boolean;
+  public evolutionIteration: Subscription;
+  public worldService: GolService;
+  public world: number[];
+  public worldDimension: number;
+  public numberOfCalls: number;
 
   constructor(worldService: GolService) {
     this.worldService = worldService;
@@ -26,7 +26,7 @@ export class AppComponent implements OnInit {
     this.numberOfCalls = 0;
   }
 
-  private initializeWorld(arr): void {
+  public initializeWorld(arr): void {
     this.world = arr;
     this.worldDimension = arr.length;
   };
