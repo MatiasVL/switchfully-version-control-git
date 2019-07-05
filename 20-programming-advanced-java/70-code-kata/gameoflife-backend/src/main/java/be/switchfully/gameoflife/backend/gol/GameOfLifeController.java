@@ -15,7 +15,7 @@ public class GameOfLifeController {
     private static Logger logger = LoggerFactory.getLogger(GameOfLifeController.class);
 
     @PostMapping(value = "/phase")
-    @CrossOrigin(origins = "http://localhost:4200")
+    @CrossOrigin(origins = "http://localhost:3000")
     public List<List<Boolean>> nextGeneration(@RequestBody List<List<Boolean>> currentWorld){
         logger.info("current world: {}", currentWorld);
         Collections.shuffle(currentWorld);
