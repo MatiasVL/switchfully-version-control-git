@@ -1,6 +1,5 @@
-package codelab01;
+package config;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
@@ -13,8 +12,11 @@ import javax.sql.DataSource;
 @PropertySource("database.properties")
 public class DatasourceConfig {
 
-    @Autowired
-    private Environment environment;
+    private final Environment environment;
+
+    public DatasourceConfig(Environment environment) {
+        this.environment = environment;
+    }
 
     @Bean
     public DataSource dataSource() {
