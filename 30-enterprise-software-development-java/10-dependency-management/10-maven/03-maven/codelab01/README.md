@@ -82,7 +82,9 @@ Intellij should now know that it should build the project / module using Maven.
      </project>
      ```
 8. Just to make sure, reimport Maven. It will make sure your dependencies are downloaded to your local maven repository.
-9. Create a `MyApplication` class
+10. In Intellij look at the External Libraries tab
+    - If everything worked correctly you should see the guava library files
+11. Create a `MyApplication` class
     - Add the following code:
     ```
         public static void main(String[] args) {

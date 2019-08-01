@@ -134,4 +134,5 @@ Let's switch to the maven assembly plugin!
     ```
 15. This should work and output your "Hello World" message.
 16. Inspect this jar, see what is included.
+    - Compare the size difference between the jars
    
