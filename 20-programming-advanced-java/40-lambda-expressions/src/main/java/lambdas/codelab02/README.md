@@ -29,5 +29,5 @@ However, **each version of StrictCalculator will have a different way of providi
 Instances of these concrete implementations can be provided as an argument to method `multipleBy2`.
 2. **Version 2:** Use an existing built-in functional interface and 3 anonymous classes (one for each ruleset). 
 Provide every anonymous class as an argument to `multipleBy2` for each call.
-3. **Version 2:** Use an existing built-in functional interface and 3 lambda expressions (one for each ruleset). 
+3. **Version 3:** Use an existing built-in functional interface and 3 lambda expressions (one for each ruleset). 
 Provide each lambda expression as an argument to `multipleBy2` for each call. 
