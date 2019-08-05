@@ -7,9 +7,9 @@ Create a File and Directory tree structure for which we can print the contents.
 Example output:
 ```
 |-- Directory X
-    |--- File A
-    |--- File B
-    |--- Directory C
+    |-- File A
+    |-- File B
+    |-- Directory C
         |-- File K
         |-- File L
     |-- File D 

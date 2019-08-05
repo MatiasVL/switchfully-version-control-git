@@ -54,4 +54,5 @@ let's see how we can create our own JAR's.
     java -jar my-packaged-project.jar
     ```
 11. Unpackage the my-packaged-project.jar file, inspect the Manifest file.
+    - Since a .jar file is actually just a zip file you can use any unzipping tool
 
