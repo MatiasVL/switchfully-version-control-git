@@ -98,7 +98,6 @@ For example:
 - **Codelab02** (Fruit tree) of sub-module `10-generic-classes`
 - **Codelab01** (Generic interface) of sub-module `20-generics-combined`
 - **Codelab02** (Generic class and generic interface) of sub-module `20-generics-combined`
-- **Codelab02** (Generic class and generic interface) of sub-module `20-generics-combined`
 - **Codelab04** (Generic swapper) of sub-module `20-generics-combined`
 - **Codelab05** (Habitats for Animals) of sub-module `20-generics-combined`
 - **Codelab07** (Generic count) of sub-module `20-generics-combined`
@@ -145,7 +144,6 @@ For example:
 - **Codelab02** (FilterCollection) of module `50-stream-api` 
 - **Codelab03** (FlatCollection) of module `50-stream-api` 
 - **Codelab04** (OldestPerson) of module `50-stream-api` 
-- **Codelab09** (Grouping) of module `50-stream-api` 
 - **Codelab09** (Grouping) of module `50-stream-api` 
 - **Codelab11** (Library) of module `50-stream-api`
 
