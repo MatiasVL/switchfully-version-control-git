@@ -15,7 +15,7 @@ Most likely, some (if not most) of these codelabs you will have already solved b
 Then, redo some of the codelabs you had already solved before and compare your new solution with your previous solution. 
 Your new solution will most likely be better, as you can apply new knowledge, techniques you didn't know the first time.
 
-In **this file**, please replace every :x: with a check mark :heavy_check_mark: `:heavy_check_mark:` when you have created solution for it.
+In **this file**, please replace every :x: with a check mark :heavy_check_mark: `:heavy_check_mark:` when you have created a solution for it.
 Please do this after each finished codelab. It will help us in keeping track of your progress.
 
 ## Object Oriented
