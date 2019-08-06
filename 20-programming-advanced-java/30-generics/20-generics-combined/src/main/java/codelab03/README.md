@@ -23,7 +23,7 @@ Create a `main` method in which you create at least two different `FlexPair<T1, 
  - One instance for which you provide type `String` for type parameter `T1` and `Integer` for type parameter `T2`
  - One instance for which you provide type `String` for type parameter `T1` and `String` for type parameter `T2`
  
- Also, create an instance of `Pair<T>`:
+ Also, create an instance of `SimplePair<T>`:
  - One instance for which you provide type `String` for type parameter `T`.
  
  Then, use the `getLeft`and `getRight` methods on them. Validate the types (and objects) that are returned by these methods.

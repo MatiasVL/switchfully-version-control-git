@@ -15,12 +15,12 @@ public class Head {
     }
 
     public void acquireSunburn() {
-        brain.reacToSunburn();
+        brain.reactToSunburn();
     }
 
     private class Brain {
 
-        private void reacToSunburn() {
+        private void reactToSunburn() {
             hasHeadache = true;
         }
     }
