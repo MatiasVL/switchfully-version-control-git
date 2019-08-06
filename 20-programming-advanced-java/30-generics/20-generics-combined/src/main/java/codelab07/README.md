@@ -12,7 +12,7 @@ and returns the amount of elements of the collection that match the given filter
 Some examples:
 - Given List of Strings `("Hello", "Wooooorld", "ok")` and a Filter `MaxLength5` (length of string should be 5 or lower)
   - Should `return 2`.
-- Given List of ints `(1,2,3,4,5,6,7)` and a Filter `UnevenInts` (ony uneven int's)
+- Given List of ints `(1,2,3,4,5,6,7)` and a Filter `UnevenInts` (only uneven int's)
   - Should `return 4`.
 
 ## Tips

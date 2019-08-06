@@ -15,7 +15,7 @@ Example Binary Tree:
       /    \
      /      \
  Node X    Node Y
-```
+``
 
 Create a class `BinaryTree` that represents a binary tree. The only thing the binary tree needs to know about is its root node (the node from which the binary tree starts: (Node A in the example)).
 
@@ -29,7 +29,7 @@ A binary tree instantiated with a certain type for its type parameter can not ho
 Create a method `draw()` in the binary tree class that draws the binary tree (see an example output below).
 It starts from the root node and then continues with its children. Deeper and deeper until fully traversed (and drawn).
 - Traverse the tree depth-first (google this)
-    - (Traversing the tree bread-first will be more a lot more difficult)
+    - (Traversing the tree breadth-first will be more a lot more difficult)
 
 Example output (the binary tree from above, printed out in your program):
 ```

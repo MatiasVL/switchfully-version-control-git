@@ -12,7 +12,7 @@ The only thing we want to do is create instances of `SimpleList<E>` to which we 
 ## Usage
 
 We should be able to use the `SimpleList<E>` as follows (test this!):
-```java
+```
 List<String> simpleListStrings = new SimpleList<>();
 simpleListStrings.add("Hello");
 simpleListStrings.add("World");
@@ -20,9 +20,9 @@ String shouldHoldHello = simpleListStrings.get(0);
 int theSizeShouldBe2 = simpleListStrings.size();
 ```
 or
-```java
-List<int> simpleListInts = new SimpleList<>();
+```
+List<Integer> simpleListInts = new SimpleList<>();
 simpleListInts.add(5);
 simpleListInts.add(6);
-String shouldHold6 = simpleListInts.get(1);
+Integer shouldHold6 = simpleListInts.get(1);
 ```
