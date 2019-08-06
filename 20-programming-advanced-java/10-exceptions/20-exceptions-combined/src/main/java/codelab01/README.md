@@ -1,4 +1,4 @@
-# Exceptional V1
+# Exceptions V1
 
 Start by running the `ExceptionApplication` (it has a `main` method).
 
