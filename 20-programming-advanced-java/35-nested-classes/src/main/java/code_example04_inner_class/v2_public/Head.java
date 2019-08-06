@@ -15,7 +15,7 @@ public class Head {
     }
 
     public void acquireSunburn() {
-        brain.reacToSunburn();
+        brain.reactToSunburn();
     }
 
     /**
@@ -24,7 +24,7 @@ public class Head {
      */
     public class Brain {
 
-        private void reacToSunburn() {
+        private void reactToSunburn() {
             hasHeadache = true;
         }
     }
