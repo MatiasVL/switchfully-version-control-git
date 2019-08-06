@@ -15,12 +15,8 @@ Most likely, some (if not most) of these codelabs you will have already solved b
 Then, redo some of the codelabs you had already solved before and compare your new solution with your previous solution. 
 Your new solution will most likely be better, as you can apply new knowledge, techniques you didn't know the first time.
 
-In **this file**, please **mark** every codelab with a checkmark :heavy_check_mark: `:heavy_check_mark:` when you have finished it.
+In **this file**, please replace every :x: with a check mark :heavy_check_mark: `:heavy_check_mark:` when you have created solution for it.
 Please do this after each finished codelab. It will help us in keeping track of your progress.
-
-For example:
-
-- :heavy_check_mark: Codelab0X
 
 ## Object Oriented
 
@@ -33,16 +29,16 @@ For example:
 
 ### Codelabs
 
-- **Codelab03** (Members) of sub-module `10-inheritance`
-- **Codelab02** (Agenda) of sub-module `20-composition`
-- **Codelab01** (Make some poly-sound!) of sub-module `30-polymorphism`
-- **Codelab02** (Battle sim.) of sub-module `30-polymorphism`
-- **Codelab01** (Employee) of sub-module `40-abstract-classes`
-- **Codelab01** (Clickable & downloadable) of sub-module `50-interfaces`
-- **Codelab02** (Treehehehe) of sub-module `60-combined-codelabs`
-- **Codelab03** (Swappable Bonus calculators (during runtime)) of sub-module `60-combined-codelabs`
-- **Codelab04** (Movie Rental) of sub-module `60-combined-codelabs`
-- **Codelab05** (Mails) of sub-module `60-combined-codelabs`
+- [:x:] **Codelab03** (Members) of sub-module `10-inheritance`
+- [:x:] **Codelab02** (Agenda) of sub-module `20-composition`
+- [:x:] **Codelab01** (Make some poly-sound!) of sub-module `30-polymorphism`
+- [:x:] **Codelab02** (Battle sim.) of sub-module `30-polymorphism`
+- [:x:] **Codelab01** (Employee) of sub-module `40-abstract-classes`
+- [:x:] **Codelab01** (Clickable & downloadable) of sub-module `50-interfaces`
+- [:x:] **Codelab02** (Treehehehe) of sub-module `60-combined-codelabs`
+- [:x:] **Codelab03** (Swappable Bonus calculators (during runtime)) of sub-module `60-combined-codelabs`
+- [:x:] **Codelab04** (Movie Rental) of sub-module `60-combined-codelabs`
+- [:x:] **Codelab05** (Mails) of sub-module `60-combined-codelabs`
 
 ## Agile Software Development
 
@@ -52,9 +48,9 @@ For example:
 - Make sure you have a notion of how to refactor and write clean code.
     
 ### Codelabs
-- **Codelab01** (TDD FizzBuzz) of sub-module `10-test-driven-development`
-- **Codelab02** (B@ttle) of sub-module `10-test-driven-development`
-- **Codelab03** (Movie Rental) of sub-module `20-refactoring-clean-code`
+- [:x:] **Codelab01** (TDD FizzBuzz) of sub-module `10-test-driven-development`
+- [:x:] **Codelab02** (B@ttle) of sub-module `10-test-driven-development`
+- [:x:] **Codelab03** (Movie Rental) of sub-module `20-refactoring-clean-code`
 
 ## Exception handling
 
@@ -66,12 +62,12 @@ For example:
     - *What is the intended behavior?*
     
 ### Codelabs
-- **Codelab03** (Safe calculations) of sub-module `10-exceptions/10-exception-handling`
-- **Codelab01** (Exceptions V1) of sub-module `10-exceptions/20-exceptions-combined`
-- **Codelab02** (Exceptions V2) of sub-module `10-exceptions/20-exceptions-combined`
-- **Codelab05** (Strict bank account) of sub-module `10-exceptions/20-exceptions-combined`
-- **Codelab06** (File reading) of sub-module `10-exceptions/20-exceptions-combined`
-- **Codelab07** (You're exceptional) of sub-module `10-exceptions/20-exceptions-combined`
+- [:x:] **Codelab03** (Safe calculations) of sub-module `10-exceptions/10-exception-handling`
+- [:x:] **Codelab01** (Exceptions V1) of sub-module `10-exceptions/20-exceptions-combined`
+- [:x:] **Codelab02** (Exceptions V2) of sub-module `10-exceptions/20-exceptions-combined`
+- [:x:] **Codelab05** (Strict bank account) of sub-module `10-exceptions/20-exceptions-combined`
+- [:x:] **Codelab06** (File reading) of sub-module `10-exceptions/20-exceptions-combined`
+- [:x:] **Codelab07** (You're exceptional) of sub-module `10-exceptions/20-exceptions-combined`
 
 ## Data structures
 
@@ -80,13 +76,13 @@ For example:
 - Make sure you know the difference between a `List`, a `Queue`, a `Map` and a `Set`
 
 ### Codelabs
-- **Codelab03** (Solar System) of sub-module `10-list`
-- **Codelab02** (Supermarket) of sub-module `20-queue`
-- **Codelab01** (Phone book) of sub-module `30-map`
-- **Codelab01** (Movie Catalog) of sub-module `40-set`
-- **Codelab02** (Word reader) of sub-module `50-combined`
-- **Codelab03** (Supermarket Racks) of sub-module `50-combined`
-- **Codelab05** (Blog) of sub-module `50-combined`
+- [:x:] **Codelab03** (Solar System) of sub-module `10-list`
+- [:x:] **Codelab02** (Supermarket) of sub-module `20-queue`
+- [:x:] **Codelab01** (Phone book) of sub-module `30-map`
+- [:x:] **Codelab01** (Movie Catalog) of sub-module `40-set`
+- [:x:] **Codelab02** (Word reader) of sub-module `50-combined`
+- [:x:] **Codelab03** (Supermarket Racks) of sub-module `50-combined`
+- [:x:] **Codelab05** (Blog) of sub-module `50-combined`
 
 ## Generics
 
@@ -95,12 +91,12 @@ For example:
 
 ### Codelabs
 
-- **Codelab02** (Fruit tree) of sub-module `10-generic-classes`
-- **Codelab01** (Generic interface) of sub-module `20-generics-combined`
-- **Codelab02** (Generic class and generic interface) of sub-module `20-generics-combined`
-- **Codelab04** (Generic swapper) of sub-module `20-generics-combined`
-- **Codelab05** (Habitats for Animals) of sub-module `20-generics-combined`
-- **Codelab07** (Generic count) of sub-module `20-generics-combined`
+- [:x:] **Codelab02** (Fruit tree) of sub-module `10-generic-classes`
+- [:x:] **Codelab01** (Generic interface) of sub-module `20-generics-combined`
+- [:x:] **Codelab02** (Generic class and generic interface) of sub-module `20-generics-combined`
+- [:x:] **Codelab04** (Generic swapper) of sub-module `20-generics-combined`
+- [:x:] **Codelab05** (Habitats for Animals) of sub-module `20-generics-combined`
+- [:x:] **Codelab07** (Generic count) of sub-module `20-generics-combined`
 
 ## Design patterns and principles
 
@@ -111,7 +107,7 @@ For example:
 
 ### Codelabs
 
-- :heavy_check_mark: (None are required for our benchmark...)
+- [:heavy_check_mark:] (None are required for our benchmark...)
 
 ## Nested classes
 
@@ -119,8 +115,8 @@ For example:
 - Make sure you know how to create nested classes
 
 ### Codelabs
-- **Codelab02** (Bob the builder) of module `35-nested-classes` 
-- **Codelab03** (Callback) of module `35-nested-classes` 
+- [:x:] **Codelab02** (Bob the builder) of module `35-nested-classes` 
+- [:x:] **Codelab03** (Callback) of module `35-nested-classes` 
 
 ## Lambda expressions
 
@@ -129,9 +125,9 @@ For example:
     - **Remember**, They're only available in Java 8 and up
 
 ### Codelabs
-- **Codelab01** (Sorting) of module `40-lambda-expressions` 
-- **Codelab02** (One problem, 3 solutions) of module `40-lambda-expressions` 
-- **Codelab04** (Matcher) of module `40-lambda-expressions` 
+- [:x:] **Codelab01** (Sorting) of module `40-lambda-expressions` 
+- [:x:] **Codelab02** (One problem, 3 solutions) of module `40-lambda-expressions` 
+- [:x:] **Codelab04** (Matcher) of module `40-lambda-expressions` 
 
 ## Stream API
 
@@ -140,12 +136,12 @@ For example:
     - **Remember**, They're only available in Java 8 and up
     
 ### Codelabs
-- **Codelab01** (ToUpperCase) of module `50-stream-api` 
-- **Codelab02** (FilterCollection) of module `50-stream-api` 
-- **Codelab03** (FlatCollection) of module `50-stream-api` 
-- **Codelab04** (OldestPerson) of module `50-stream-api` 
-- **Codelab09** (Grouping) of module `50-stream-api` 
-- **Codelab11** (Library) of module `50-stream-api`
+- [:x:] **Codelab01** (ToUpperCase) of module `50-stream-api` 
+- [:x:] **Codelab02** (FilterCollection) of module `50-stream-api` 
+- [:x:] **Codelab03** (FlatCollection) of module `50-stream-api` 
+- [:x:] **Codelab04** (OldestPerson) of module `50-stream-api` 
+- [:x:] **Codelab09** (Grouping) of module `50-stream-api` 
+- [:x:] **Codelab11** (Library) of module `50-stream-api`
 
 ## Finished?
 
