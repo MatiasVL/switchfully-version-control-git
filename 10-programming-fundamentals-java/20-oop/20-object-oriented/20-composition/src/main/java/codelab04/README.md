@@ -1,6 +1,6 @@
 # Bank Account - Types of accounts
 
-We're going to add some additional functionality to the existing code of `codelab02`. 
+We're going to add some additional functionality to the existing code of the previous codelab. 
 Make sure to have finished that (the previous) codelab before starting.
 
 ## Account types
