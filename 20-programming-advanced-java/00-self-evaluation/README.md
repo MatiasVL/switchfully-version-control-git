@@ -49,7 +49,7 @@ Please do this after each finished codelab. It will help us in keeping track of 
     
 ### Codelabs
 - [:x:] **Codelab01** (TDD FizzBuzz) of sub-module `10-test-driven-development`
-- [:x:] **Codelab02** (B@ttle) of sub-module `10-test-driven-development`
+- [:x:] **Codelab03** (B@ttle) of sub-module `10-test-driven-development`
 - [:x:] **Codelab03** (Movie Rental) of sub-module `20-refactoring-clean-code`
 
 ## Exception handling
