@@ -11,7 +11,7 @@ which we can then include on our own project (as external dependencies).
 
 1. Create a new Java project
     - In Intellij: `File > New > Java Project`
-2. Create the following folder structure:
+2. Create the following folder structure (`application` and `person` are java packages):
     ```
     simplejarproject
         | output
@@ -33,7 +33,9 @@ which we can then include on our own project (as external dependencies).
         ```
         javac -d "output" src/main/java/application/*.java src/main/java/person/*.java
         ```
-    - Find out what the `-d` option does: https://docs.oracle.com/javase/8/docs/technotes/tools/windows/javac.html
+    - Find out what the `-d` option does: 
+        - https://docs.oracle.com/javase/8/docs/technotes/tools/windows/javac.html (if you use the Java 8 JDK)
+        - https://docs.oracle.com/en/java/javase/12/tools/javac.html (if you use the Java 12 JDK)
 6. Run the application using the command line
     - From inside the `output` folder, run command: 
         ```
@@ -45,13 +47,16 @@ which we can then include on our own project (as external dependencies).
     ```
     jar cfe my-packaged-project.jar application.MyApplication application/*.class person/*.class
     ```
-    - Find out about the `jar` command and what the `-c`, `-f` and `-e` option do: https://docs.oracle.com/javase/8/docs/technotes/tools/windows/jar.html
-    - You can image packaging a large project manually can be a pretty cumbersome task to do...
+    - Find out about the `jar` command and what the `-c`, `-f` and `-e` option do: 
+        - https://docs.oracle.com/javase/8/docs/technotes/tools/windows/jar.html
+        - https://docs.oracle.com/en/java/javase/12/tools/jar.htm
+    - **Not providing** the `-e` option - in this scenario - will make this JAR non-executable.
+    - You can imagine packaging a large project manually can be a pretty cumbersome task to do...
 9. At the root level of your `output` folder, the `my-packaged-project.jar` jar file should be generated.
 10. Run the JAR file using the `java` command with the `-jar` option
     ```
     java -jar my-packaged-project.jar
     ```
 11. Un-package the my-packaged-project.jar file, inspect the Manifest file.
-    - Since a .jar file is actually just a zip file you can use any unzipping tool
+    - Since a .jar file is actually just a zip file you can use any unzipping tool.
 
