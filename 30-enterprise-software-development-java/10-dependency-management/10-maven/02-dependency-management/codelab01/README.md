@@ -14,7 +14,7 @@ Let's use it as an example for our first external dependency.
     simpleprojectwithdependency
         | output
         | lib
-        |META-INF
+        | META-INF
         | src
             | main
                 | java
@@ -27,6 +27,7 @@ Let's use it as an example for our first external dependency.
         - The bundle should consist of a ```.jar``` file
     - Place it in the ```lib``` folder
         - It's a good practice to place your external libraries in a ```lib``` folder
+        - The exernal library doesn't have to be in a ```lib````folder, it can be anywhere in your file system! 
 4. Link the Guava jar file to your project's IDE module
     - In Intellij: right click on simpleprojectwithdependency > open module settings > libraries > add Guava
         - This will allows us to already use Guava, do note that this is not a java-specific task, but an IDE task.
