@@ -78,7 +78,7 @@ Since we're using classes from Guava in ```MyApplication```, we have to include 
         - Most of the time the MANIFEST.MF file will be auto generated
 12. Still inside your ```output``` folder, run the following command
     ```
-    jar cfme  my-dependency-project.jar "../META-INF/Manifest.txt" application.MyApplication application/*.class
+    jar cfme  my-dependency-project.jar "../META-INF/Manifest.MF" application.MyApplication application/*.class
     ```
 13. At the root level of your ```output``` folder, the ```my-dependency-project.jar``` jar file should be generated.
 14. Run the JAR file using the ```java``` command with the ```-jar``` option
