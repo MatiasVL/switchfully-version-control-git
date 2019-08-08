@@ -14,7 +14,7 @@ class PartyBusTestV2 {
 
     @Test
     void hopOn_givenAPartyBusWithAvailableRoom_thenPassengerContainedInPassengersOfBus() {
-        PartyBus bus = CreatePartyBusWithDriver();
+        PartyBus bus = createPartyBusWithDriver();
         Person expectedPassenger = new Person("Bart Simpson");
 
         bus.hopOn(expectedPassenger);
@@ -24,7 +24,7 @@ class PartyBusTestV2 {
 
     @Test
     void hopOn_givenAPartyBusWithNoRoomLeft_thenPassengerNotContainedInPassengersOfBus() {
-        PartyBus bus = CreatePartyBusWithDriver();
+        PartyBus bus = createPartyBusWithDriver();
         List<Person> givenPassengers = generatePersons(PartyBus.MAX_AMOUNT_OF_PASSENGERS);
         letEveryPersonHopOnTheBus(givenPassengers, bus);
 
@@ -35,7 +35,7 @@ class PartyBusTestV2 {
 
     @Test
     void hopOff_givenAPartyBusContainingThePassenger_thenPassengerNoLongerOnBus() {
-        PartyBus bus = CreatePartyBusWithDriver();
+        PartyBus bus = createPartyBusWithDriver();
         List<Person> givenPassengers = generatePersons(PartyBus.MAX_AMOUNT_OF_PASSENGERS);
         letEveryPersonHopOnTheBus(givenPassengers, bus);
         Person passengerToHopOff = givenPassengers.get(0);
@@ -49,7 +49,7 @@ class PartyBusTestV2 {
 
     @Test
     void hopOff_givenAPartyBusNotContainingThePassenger_thenThrowException() {
-        PartyBus bus = CreatePartyBusWithDriver();
+        PartyBus bus = createPartyBusWithDriver();
         Person notAPassenger = new Person("Bart Simpson");
 
         Executable whenMethod = () -> bus.hopOff(notAPassenger);
@@ -59,7 +59,7 @@ class PartyBusTestV2 {
                                 "Passenger %s was not on the bus.", notAPassenger));
     }
 
-    private PartyBus CreatePartyBusWithDriver() {
+    private PartyBus createPartyBusWithDriver() {
         return new PartyBus(new Person("Otto Mann"));
     }
 
