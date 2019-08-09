@@ -11,6 +11,8 @@
 
     <modules>
         <module>40-security/10-spring-security</module>
+        <module>10-build-and-dependency-management/10-compiling/comp-codelab01</module>
+        <module>10-build-and-dependency-management/20-packaging/pack-codelab01</module>
     </modules>
 
     <properties>
@@ -38,6 +40,12 @@
             <version>${mockito.version}</version>
             <scope>test</scope>
         </dependency>
+            <dependency>
+                <groupId>org.junit.jupiter</groupId>
+                <artifactId>junit-jupiter-engine</artifactId>
+                <version>${junit.version}</version>
+                <scope>test</scope>
+            </dependency>
     </dependencies>
 
     <build>
