@@ -1,6 +1,6 @@
 # Spring Dependency Injection fundamentals
 
-## Variation 1 (com.switchfully.spring.codelab.v1)
+## Variation 1 (com.switchfully.springdi.codelab01.v1)
 One of the fundamental actions when using Spring, is to define your beans.
 As mentioned before, Spring beans are javabeans that are managed by the Spring container.
 
@@ -15,7 +15,7 @@ What happens? What do you learn from this exception?
 * Q: What variations to the solution are possible?
 * Q: How would you have solved this earlier, before using Spring?
 
-## Variation 2 (com.switchfully.spring.codelab.v2)
+## Variation 2 (com.switchfully.springdi.codelab01.v2)
 Royco is not your only soup option! There are sooo many soups ;-)
 
 * Run 'DrinkMoreSoup.main()'. \
@@ -25,7 +25,7 @@ Royco is not your only soup option! There are sooo many soups ;-)
 
 * Q: What variations to your solution are possible?
 
-## Variation 3 (com.switchfully.spring.codelab.v3)
+## Variation 3 (com.switchfully.springdi.codelab01.v3)
 SomeGreatMovies uses java & Spring to list a few movies.
 It does this by printing ALL the beans in the Spring container or application context.
 
@@ -47,19 +47,24 @@ These beans are created by the Spring AnnotationConfigApplicationContext for int
 How would you change the code so only beans of type Movie are displayed? \
 ⚠ Documentation is useful, do not learn these details by heart.
 
-## Variation 4 (com.switchfully.spring.codelab.v4)
+## Variation 4 (com.switchfully.springdi.codelab01.v4)
 In this variation we'll use a seperate ApplicationConfiguration class to define our beans.
 
 Complete the song (Mercedes Benz - Janis Joplin) by creating beans.
 Be careful, as all our beans are of the same type (String)
 
-## Variation 5 (com.switchfully.spring.codelab.v5)
+## Variation 5 (com.switchfully.springdi.codelab01.v5)
+| ⚠ Remove comments ⚠ |
+|--- |
+| Before you start, uncomment `@Component` in DeliveryVan, Driver & DriversLicense classes.|
+| These comments have been introduced to avoid issues with variation 3 of this codelab. |
+
 In the previous variations of this codelab, we have focused on creating beans and making sure the componentscan is set correctly.
 Now it is time for the next step: Wire individual beans together.
 
 Adjust the application configuration so ParcelDeliveryService works correctly.
 
-## Variation 6 (com.switchfully.spring.codelab.v6)
+## Variation 6 (com.switchfully.springdi.codelab01.v6)
 The PhoneFactory sells mobile phones & subscriptions at cheap prices.
 They want to improve their software and have asked you to rewrite the PhoneFactory class.
 

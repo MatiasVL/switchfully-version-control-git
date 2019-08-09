@@ -4,7 +4,7 @@ import com.switchfully.springdi.codelab01.v5.enums.DriverLicenseType;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-@Component
+//@Component
 public class DriversLicense {
     private DriverLicenseType licenseType;
 

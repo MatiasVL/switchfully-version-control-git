@@ -6,7 +6,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-@ComponentScan(basePackages = "com.switchfully.spring.codelab.v5.entities")
+@ComponentScan(basePackages = "com.switchfully.springdi.codelab01.v5.entities")
 public class AppConfig {
 
     @Bean
