@@ -1,6 +1,6 @@
 # Packaging
 
-During one of your first days, you had to compile your own code. Since then, we've let our IDE handle that for us. 
+During one of your first days (and in the previous codelab), you had to compile your own code instead of letting the IDE do it for you.
 Java offers a way to package together those .class files into a single, compressed archive (instead of a plain folder).
 - Most often, these archives are JAR's (Java Archives) or WAR's (Web specific Java Archives) 
 
@@ -9,7 +9,7 @@ which we can then include on our own project (as external dependencies).
 
 ## Create your own JAR
 
-1. Create a new Java project
+1. Create a new Java project (outside of the Switchfully project)
     - In Intellij: `File > New > Java Project`
 2. Create the following folder structure (`application` and `person` are java packages):
     ```
@@ -21,7 +21,7 @@ which we can then include on our own project (as external dependencies).
                     | application
                     | person 
     ```
-3. Create a `Person` class in package `person`, it should have a name and a `Gender` (Enum, also in package `person`)
+3. Create a `Person` class in package `person`, it should have a name (`String`) and a `Gender` (Enum, also in package `person`)
 4. Create a `MyApplication` class (in the `application` package) which has a main method.
     - It should create a `Person` object
     - It should print a welcome message and the data of the person (override its toString() method)
@@ -29,7 +29,7 @@ which we can then include on our own project (as external dependencies).
 5. Compile the Java files.
     - We want the .class files to be stored in the `output` folder
     - We want all of our .java files compiled
-    - Use the `javac` command (you already worked with it before):
+    - Use the `javac` command (open your terminal / cmd from inside the root folder `simplejarproject`):
         ```
         javac -d "output" src/main/java/application/*.java src/main/java/person/*.java
         ```

@@ -1,14 +1,11 @@
 package codelab11;
 
-import org.assertj.core.api.Assertions;
-import org.junit.jupiter.api.Test;
-
-import java.util.Arrays;
-import java.util.List;
-import java.util.Map;
-
 class LibraryTest {
 
+    // Uncomment the tests when starting with this codelab.
+    // Start by creating the Library,... classes so that the tests compile
+
+    /*
     @Test
     void get15OrLessUniqueSurnamesOf50YearOrOlderAuthorsOfBooks() {
         Library library = new Library(Arrays.asList(
@@ -59,5 +56,6 @@ class LibraryTest {
         Assertions.assertThat(booksGroupedByAuthor.get(authorBurtens)).containsExactlyInAnyOrder(book1, book2, book3);
         Assertions.assertThat(booksGroupedByAuthor.get(authorTrulens)).containsExactlyInAnyOrder(book4);
     }
+    */
 
 }

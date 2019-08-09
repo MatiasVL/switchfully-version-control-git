@@ -5,12 +5,12 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>com.switchfully.programming.fundamentals</groupId>
-        <artifactId>10-programming-fundamentals-java</artifactId>
+        <groupId>com.switchfully.enterprise.software.development</groupId>
+        <artifactId>30-enterprise-software-development-java</artifactId>
         <version>1.0-SNAPSHOT</version>
-        <relativePath>../..</relativePath>
+        <relativePath>../../..</relativePath>
     </parent>
 
-    <artifactId>additional-10-java-cli</artifactId>
+    <artifactId>pack-codelab01</artifactId>
 
 </project>
