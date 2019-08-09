@@ -8,7 +8,7 @@ public class MemberService {
             Member member = service.createMember("jim@jimmy.be");
             System.out.println(member);
         } catch(IllegalArgumentException e) {
-            System.out.println(e.getMessage());
+            System.err.println(e.getMessage());
         }
 
     }
