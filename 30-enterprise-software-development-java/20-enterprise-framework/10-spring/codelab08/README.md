@@ -1,4 +1,4 @@
-# ⛔ `System.out.println();` is forbidden! ⛔
+# ⛔ `System.out.println();` is forbidden! ⛔ (part 2)
 
 ## Debugging your Spring application
 To debug 🐞 your application, never use `System.out.println();`, always use a debugger!
@@ -19,7 +19,10 @@ $ java -Xdebug -Xrunjdwp:server=y,transport=dt_socket,address=8000,suspend=n \
 Reference: https://www.jetbrains.com/help/idea/creating-and-editing-run-debug-configurations.html
 
 ## Logging your Spring application
-If your Java application really _MUST_ print some information to the commandline, never use `System.out.println();`, always use a logging framework.
+Remember Codelab08 from 20-programming-advanced-java > 10-exceptions > 20-exceptions-combined?
+In this codelab Java Logging was introduced, in a way that did not require a dependency. But now you are familiar with Maven and Spring, so let's do it the Spring way!
+
+Repeat after me: If your Java application really _MUST_ print some information to the commandline, never use `System.out.println();`, always use a logging framework.
 
 > ⚡️ACTION: (Codelab activity)
 > Add Spring logging to your solution of Codelab06.
