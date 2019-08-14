@@ -68,6 +68,7 @@ Please do this after each finished codelab. It will help us in keeping track of 
 - [:x:] **Codelab05** (Strict bank account) of sub-module `10-exceptions/20-exceptions-combined`
 - [:x:] **Codelab06** (File reading) of sub-module `10-exceptions/20-exceptions-combined`
 - [:x:] **Codelab07** (You're exceptional) of sub-module `10-exceptions/20-exceptions-combined`
+- [:x:] **Codelab08** (System.out.println is forbidden) of sub-module `10-exceptions/20-exceptions-combined`
 
 ## Data structures
 

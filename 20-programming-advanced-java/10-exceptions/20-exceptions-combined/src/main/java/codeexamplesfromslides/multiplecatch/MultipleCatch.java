@@ -14,11 +14,11 @@ public class MultipleCatch {
         try {
             numbers[6] = 13;
         } catch (ArrayIndexOutOfBoundsException | NullPointerException ex) {
-            System.out.println("One of two exceptions: "  + ex.getMessage());
+            System.err.println("One of two exceptions: "  + ex.getMessage());
         } catch (RuntimeException ex) {
-            System.out.println("RuntimeException: " + ex.getMessage());
+            System.err.println("RuntimeException: " + ex.getMessage());
         } catch (Exception ex) {
-            System.out.println("Exception: " + ex.getMessage());
+            System.err.println("Exception: " + ex.getMessage());
         }
         return numbers;
     }
@@ -27,11 +27,11 @@ public class MultipleCatch {
         try {
             text = text.concat("!!!");
         } catch (ArrayIndexOutOfBoundsException | NullPointerException ex) {
-            System.out.println("One of two exceptions: "  + ex.getMessage());
+            System.err.println("One of two exceptions: "  + ex.getMessage());
         } catch (RuntimeException ex) {
-            System.out.println("RuntimeException: " + ex.getMessage());
+            System.err.println("RuntimeException: " + ex.getMessage());
         } catch (Exception ex) {
-            System.out.println("Exception: " + ex.getMessage());
+            System.err.println("Exception: " + ex.getMessage());
         }
         return text;
     }
@@ -41,10 +41,10 @@ public class MultipleCatch {
         try {
             result = numerator / denominator;
         } catch (ArrayIndexOutOfBoundsException | NullPointerException ex) {
-            System.out.println("One of two exceptions: "  + ex.getMessage());
+            System.err.println("One of two exceptions: "  + ex.getMessage());
         }
         catch (RuntimeException ex) {
-            System.out.println("RuntimeException: " + ex.getMessage());
+            System.err.println("RuntimeException: " + ex.getMessage());
         }
         return result;
     }

@@ -2,7 +2,7 @@
 
 ## Requirements
 
-A `Member` has a `username` (e.g. "frank.detank") and a `lastSignedInOn` date (use as its type Java's `LocalDate`).
+A `Member` has a `username` (e.g. "frank.detank"/"gerard.lechar") and a `lastSignedInOn` date (use as its type Java's `LocalDate`).
 - LocalDate: https://docs.oracle.com/en/java/javase/12/docs/api/java.base/java/time/LocalDate.html
 
 Do the following:
