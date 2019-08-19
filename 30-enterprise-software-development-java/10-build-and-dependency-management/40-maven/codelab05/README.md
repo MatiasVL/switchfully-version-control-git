@@ -89,3 +89,17 @@ command `mvn clean package` executes successfully.
 - Create multiple folders at once using the `mkdir` command. E.g.: `mkdir src\main\java`
 - Explore what the "Maven Wrapper" is, use it if you like
     - *What are the benefits of the Maven Wrapper?*
+    
+## Finished?
+
+Think you're finished? Ask for some feedback first, only then checkout the solution.
+**Do yourself a favor and do not look at the solution beforehand!**
+ 
+The `maven-stock-exchange` project on our GitHub project contains a solution for this codelab.
+- Clone (or Fork, then Clone) the project: https://github.com/switchfully/maven-stock-exchange
+- Explore the project
+- Run the build: `mvn clean package`
+    - Which module gets compiled first? Why?
+    - Inspect the target folders, what do you notice?
+    - Inspect the generated jars.
+- You're free to experiment, make changes, extend,... the code
