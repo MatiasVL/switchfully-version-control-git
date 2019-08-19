@@ -42,7 +42,7 @@ Think you're finished? Ask for some feedback first, only then checkout the solut
 **Do yourself a favor and do not look at the solution beforehand!**
  
 The `maven-multi-module-project` project on our GitHub project contains a solution for this codelab.
-
+- Clone (or Fork, then Clone) the project: https://github.com/switchfully/maven-multi-module-project
 - Explore the project
 - Run the build: `mvn clean package`
     - Which module gets compiled first? Why?
