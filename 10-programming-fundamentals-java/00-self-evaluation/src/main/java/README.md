@@ -171,22 +171,22 @@ Some examples (size = 5), printed to the console
     - Every next element costs 3 euro each.
     - A negative amount of elements will return 0
     - Run the tests (before and after having implemented your solution
+        - Test scenario's:
+                - amountOfItems == 1, then price == 5
+                - amountOfItems == 0, then price == 0
+                - amountOfItems == 9, then price == 45
+                - amountOfItems == 10, then price == 50
+                - amountOfItems == 11, then price == 54
+                - amountOfItems == 15, then price == 70
+                - amountOfItems == 16, then price == 73
+                - amountOfItems == 20, then price == 85
+                - amountOfItems == -1, should not return a price
 3. Create a method that returns the following:
     - When the input is 1: "It's something"
     - When the input is 2: "That's more like it"
     - When the input is 3: "Way to go"
     - Other input: "That's a fail whale"
-    - Run the tests (before and after having implemented your solution
-        - Test scenario's:
-            - amountOfItems == 1, then price == 5
-            - amountOfItems == 0, then price == 0
-            - amountOfItems == 9, then price == 45
-            - amountOfItems == 10, then price == 50
-            - amountOfItems == 11, then price == 54
-            - amountOfItems == 15, then price == 70
-            - amountOfItems == 16, then price == 73
-            - amountOfItems == 20, then price == 85
-            - amountOfItems == -1, should not return a price   
+    - Run the tests (before and after having implemented your solution   
 
 ### Codelab 05
 
