@@ -12,13 +12,12 @@ Let's first install Maven, so we can use it from the command line.
 2. Download Maven
 3. Unpack to a convenient location
 4. Go to your Environment Variables, add the ```bin``` directory to the ```Path``` System variable.
-    E.g.: ```D:\apache-maven-3.5.2\bin```
+    E.g.: ```D:\apache-maven-3.6.1\bin```
 5. Open up your command line / terminal and execute the ```mvn -v``` commando, you should get a similar-ish result:
     ```
-    Apache Maven 3.5.2 (138edd61fd100ec658bfa2d307c43b76940a5d7d; 2017-10-18T09:58:13+02:00)
-    Maven home: D:\apache-maven-3.5.2\bin\..
-    Java version: 1.8.0_111, vendor: Oracle Corporation
-    Java home: D:\Program Files\Java\jdk1.8.0_111\jre
+    Apache Maven 3.6.1 (d66c9c0b3152b2e69ee9bac180bb8fcc8e6af555; 2019-04-04T21:00:29+02:00)
+    Maven home: C:\Program Files\apache-maven-3.6.1\bin\..
+    Java version: 12.0.1, vendor: Oracle Corporation, runtime: C:\Program Files\Java\jdk-12.0.1
     Default locale: en_US, platform encoding: Cp1252
     OS name: "windows 10", version: "10.0", arch: "amd64", family: "windows"
     ```
@@ -29,7 +28,7 @@ Let's first install Maven, so we can use it from the command line.
     - In Intellij: ```File > New > Java Project```
 2. Create the following folder structure:
     ```
-    simpleprojectwithmaven
+    simple-maven-project
         | src
             | main
                 | java
@@ -50,6 +49,10 @@ Let's first install Maven, so we can use it from the command line.
         <version>1.0</version>
     </project>
     ````
+    - Small remark: since the POM file is written in xml (`pom.xml`), the following optional XML-specific elements 
+    and attributes are often added to the POM file (don't worry about them):
+        - The XML declaration / prolog: `<?xml version="1.0" encoding="UTF-8"?>` specifies the version and encoding of the XML.
+        - The XML namespace (and schema instance) are added as attributes to the `project` element.
 5. Reimport Maven in IntelliJ (right click module > Maven > Reimport). 
 Intellij should now know that it should build the project / module using Maven.
 6. Let's include Guava as an external dependency. We can now do this using Maven:
@@ -75,7 +78,7 @@ Intellij should now know that it should build the project / module using Maven.
              <dependency>
                  <groupId>com.google.guava</groupId>
                  <artifactId>guava</artifactId>
-                 <version>23.5-jre</version>
+                 <version>28.0-jre</version>
              </dependency>
          </dependencies>
          
