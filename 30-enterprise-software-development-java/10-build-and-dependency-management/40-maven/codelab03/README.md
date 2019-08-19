@@ -1,44 +1,63 @@
-# Multi-module project
+# Dicer Application
 
-We're going to create the multi-module project that was featured in the slides
+1. Create a new Maven project (instead of a normal Java project)
+    - In Intellij: ```File > New > Project > Maven```
+    - Accept the default options (no archetype).
+    - As the `groupId`, use `com.switchfully.dicer` or, if you like, something else.
+    - As the `artifactId` use `dicer-app` or, if you like, something else.
+2. A project structure following the maven conventions should be created, additionally, a `pom.xml` will be created.
+3. It should look something like this:
+    ```
+    dicer-app
+        | src
+            | main
+                | java
+        | pom.xml
+    ```
+4. Inside `src/main/java`, create package structure `com.switchfully.dicer` (it's common practice to use the same base-package structure as your `groupId`).
 
-## Requirements
+## The actual application
 
-1. One parent project: `mymavenmultimoduleproject`
-2. 2 modules: `api` and `domain`
-3. Use a groupId of your own
-4. Create a Person class in `domain`
-5. Create a MyAPI class in `api` which has a main method
-    - It should create 2 Person object
-    - It should store them in a list, using the Lists.newArrayList method of Guava
-    - In the main method, it should loop over the list, printing the name of every Person
-6. Do dependency management in the parent pom
-7. Use the maven-compiler-plugin to set the source and target runtime version to Java 8
-    - For both modules
-8. Use the maven-assembly-plugin to generate an executable JAR that contains the dependencies
-    - The main class being MyApi
-    - Only for module `api`
-    - Bind goal `single` to phase `package`
-9. Do plugin management in the parent pom
-    - It works the same way as dependency management, but for plugins
-    
-Run the build: mvn clean install
-- Which module gets compiled first? Why?
-- Inspect the target folders
-- Inspect the generated jars
+Our dicer-app will have a `main` method inside of the `DicerApplication` class. It rolls a normal six-sided dice 3 times and print the results to the console.
 
-Execute the correct JAR, does it show the program's output?
+`DicerApplication.java` should contain the following code:
+```java
+package com.switchfully.dicer;
 
-## Finished?
+import com.google.common.collect.Lists;
+import org.apache.commons.lang3.RandomUtils;
 
-Think you're finished? Ask for some feedback first, only then checkout the solution.
-**Do yourself a favor and do not look at the solution beforehand!**
- 
-The `maven-multi-module-project` project contains a solution for this codelab.
+import java.util.ArrayList;
 
-- Explore the project
-- Run the build: mvn clean install
-    - Which module gets compiled first? Why?
-    - Inspect the target folders, what do you notice?
-    - Inspect the generated jars.
-- You're free to experiment, make changes, extend,... the code
+public class DicerApplication {
+
+    private static final int START_INCLUSIVE = 1;
+    private static final int END_EXCLUSIVE = 7;
+
+    public static void main(String[] args) {
+        ArrayList<Integer> diceRolls = Lists.newArrayList(
+                RandomUtils.nextInt(START_INCLUSIVE, END_EXCLUSIVE),
+                RandomUtils.nextInt(START_INCLUSIVE, END_EXCLUSIVE),
+                RandomUtils.nextInt(START_INCLUSIVE, END_EXCLUSIVE));
+
+        diceRolls.forEach(diceRoll -> System.out.println("Rolled " + diceRoll));
+    }
+}
+```
+- `RandomUtils` is part of the commons-lang3 library (`import org.apache.commons.lang3.RandomUtils;`)
+- `Lists.newArrayList` is part of the Guava library (`import com.google.common.collect.Lists;`)
+
+## Configure Maven
+
+Now, it's up to you to correctly configure Maven by modifying the POM file.
+
+Do what's necessary so that:
+1. Executing `mvn clean compile` will compile our code withouth any problem
+2. Executing `mvn clean package` will package our code into an executable JAR.
+    - Running the JAR should be possible using `java -jar <name-of-artifact>.jar`
+    - It should display the program's output (e.g.):
+        ```
+        Rolled 3
+        Rolled 6
+        Rolled 6
+        ```
