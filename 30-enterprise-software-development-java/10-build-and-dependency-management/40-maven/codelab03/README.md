@@ -61,8 +61,78 @@ Do what's necessary so that:
         Rolled 6
         Rolled 6
         ```
+## Finished with the above?
 
-## Finished?
+If you're finished with the above, we're going to add a test and make sure that every time we package our code, 
+the tests are ran beforehand. Only if our tests succeed, will a new archive be created.
+
+1. Get the dependency of the latest version of JUnit 5 (Jupiter API to write tests, Jupiter Engine to run our tests)
+    - Jupiter API: https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api
+    - Jupiter Engine: https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-engine
+    - No RC (release candidate) or  M (milestone) suffixed dependencies.
+2. Add the dependencies to the `pom.xml file`
+3. Create the `src/test/java` folder structure.
+4. Go to `DicerApplication` and in IntelliJ press `ctrl` + `shift` + `t` to create a test for it.
+    - Alternatively: create package `com.switchfully.dicer` in `src/test/java`. Then, in `com.switchfully.dicer` create file `DicerApplicationTest`.
+5. Then, create the following dummy test method:
+    ```
+    @Test
+    void justADummyTest() {
+        Assertions.assertTrue(false); // this test will fail
+    }
+    ```
+6. Maven's Surefire plugin is by default configured to the `test` build phase (the `test` goal of plugin `surefire` is bound to the `test` build base).
+    - https://maven.apache.org/surefire/maven-surefire-plugin/test-mojo.html
+7. However, to make sure the correct version of the Surefire plugin is used, we're going to specify our own version:
+    ```
+    <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>2.22.2</version>
+    </plugin>
+    ``` 
+    - Add the above configuration to your `pom.xml` file.
+8. Now, run `mvn clean test` (or `mvn clean package` as build phase `test` precedes build phase `package`)
+    - The build should not succeed (BUILD FAILURE). If you used `package`, no archive (JAR) will be created.
+    - Inspect the output, it should look something like this:
+    ```
+    [ERROR] Failures: 
+    [ERROR]   DicerApplicationTest.justADummyTest:10 expected: <true> but was: <false>
+    [INFO]
+    [ERROR] Tests run: 1, Failures: 1, Errors: 0, Skipped: 0
+    [INFO]
+    [INFO] ------------------------------------------------------------------------
+    [INFO] BUILD FAILURE
+    [INFO] ------------------------------------------------------------------------
+    [INFO] Total time:  3.681 s
+    [INFO] Finished at: xxxx-xx-xx
+    [INFO] ------------------------------------------------------------------------
+    [ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.22.2:test (default-test) on project dicer-app: There are test failures.
+    [ERROR]
+    [ERROR] Please refer to <your-local-path>\dicer-app\target\surefire-reports for the individual test results.
+    [ERROR] Please refer to dump files (if any exist) [date].dump, [date]-jvmRun[N].dump and [date].dumpstream.
+    [ERROR] -> [Help 1]
+    [ERROR]
+    [ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+    [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+    [ERROR]
+    [ERROR] For more information about the errors and possible solutions, please read the following articles:
+    [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+    ```
+9. Fix your test, change the code to:
+    ```
+    @Test
+    void justADummyTest() {
+        Assertions.assertTrue(true);
+    }
+    ```
+10. Re-run your build, use `mvn clean package`.
+    - The tests will run
+    - If they succeed, the archive will be created.
+
+Now, only if all the test succeed will we deliver a new - fully working (without bugs hopefully) artifact.
+
+## Completely Finished?
 
 Think you're finished? Ask for some feedback first, only then checkout the solution.
 **Do yourself a favor and do not look at the solution beforehand!**
