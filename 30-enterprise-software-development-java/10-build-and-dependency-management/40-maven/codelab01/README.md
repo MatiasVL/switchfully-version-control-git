@@ -25,7 +25,7 @@ Let's first install Maven, so we can use it from the command line.
 ## Dependency Management with Maven
 
 1. Create a new Java project
-    - In Intellij: ```File > New > Java Project```
+    - In Intellij: ```File > New > Project > Java```
 2. Create the following folder structure:
     ```
     simple-maven-project
