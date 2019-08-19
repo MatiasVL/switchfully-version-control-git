@@ -61,3 +61,17 @@ Do what's necessary so that:
         Rolled 6
         Rolled 6
         ```
+
+## Finished?
+
+Think you're finished? Ask for some feedback first, only then checkout the solution.
+**Do yourself a favor and do not look at the solution beforehand!**
+ 
+The `maven-single-module-project` project on our GitHub project contains a solution for this codelab.
+- Clone (or Fork, then Clone) the project: https://github.com/switchfully/maven-single-module-project
+- Explore the project
+- Run the build: `mvn clean package`
+    - Which module gets compiled first? Why?
+    - Inspect the target folders, what do you notice?
+    - Inspect the generated jars.
+- You're free to experiment, make changes, extend,... the code
