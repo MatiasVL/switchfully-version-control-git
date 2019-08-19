@@ -1,93 +1,51 @@
-# Stock Exchange
+# Multi-module project
 
-We're going to create an multi-module Maven stock exchange application.
+We're going to create a multi-module Maven project.
 
-1. Create 1 parent project and 4 modules:
-    - api
-    - service
-    - domain
-    - interfaces
-2. As packages for the modules, use the groupId + ArtifactId as a starting point
-    - E.g.: 
-        - groupId = com.switchfully
-        - artifactId = module1
-        - Then, base package should be: `com.switchfully.module1` (inside `src/main/java`)
-3. Make sure that in the end (after implementing all the requirements), 
-command `mvn clean install` executes successfully.
-    - It should compile your code
-    - It should compile and run your tests
-    - It should package your code
+## Requirements
+
+1. One parent project: `maven-multi-module-project`
+2. 2 modules: `api` and `domain`
+3. Use a groupId of your own
+4. Create a `Person` class in module `domain`
+5. Create a `MyAPI` class in module `api` which has a `main` method
+    - It should create 2 `Person` object
+    - It should store them in a list, using the `Lists.newArrayList` method of Guava
+    - In the `main` method, it should loop over the list, printing the name of every Person
+6. Do **Dependency Management** (`<dependencyManagement>`) in the parent pom
+7. Overwrite the correct `properties` to set the source and target runtime version to Java 8 (or higher), so that both modules are compiled against that version. 
+8. Use the `maven-jar-dependency` combined with the `maven-dependency-plugin` to create an executable JAR.
+    - The main class being `myApi`
+    -  Only for module `api`
+    - Alternatively, use the `maven-assembly-plugin` to create an executable fat JAR (a fat JAR contains all the JARs of its dependencies, they're packaged inside of our JAR).
+        - http://maven.apache.org/plugins/maven-assembly-plugin/
+        - Bind goal `single` to phase `package`
+        - Our solution uses this plugin.
+9. Do **Plugin Management** in the parent pom
+    - It works the same way as dependency management, but for plugins
+        - So, it creates an on-demand centralized way of defining plugins. 
+        If a module wants to use a plugin, it has to specify its groupId and artifactId (again, similar to dependency management).
+    - https://maven.apache.org/pom.html#Plugin_Management
     
-## A Breakdown of the modules (Requirements)
+Run the build: `mvn clean package`
+- Which module gets compiled first? Why?
+- Inspect the target folders
+- Inspect the generated jars
 
-- api
-    - Has a StockExchangeController class
-        - has method `StockDto getStock(String stockId)`
-            - calls the StockService method `Stock getStock(String stockId)`
-            - transforms Stock to StockDto which it returns
-                - *What is a Dto? Why do we use it?*
-        - *(For the sake of this exercise, just imagine that this method can get called outside of this application, by other applications. 
-        It's an entry point to our application, to get information about a stock)*
-- service
-    - Has a StockService class
-        - Has method `public Stock getStock(String stockId)`
-            - calls the StockRepository method `Stock getStockInformation(String stockId)`
-                - *What if no Stock could be found for the given stockId? 
-                The method needs to return a Stock, so what will we return?*
-            - enriches the Stock with Price information, 
-            retrieved by calling the ExternalStockInformationService method `BigDecimal getPriceInEuroForStock(String stockId)`
-            - returns the enriched Stock
-- domain
-    - Has a Stock class
-        - Has the following state:
-            - id (String)
-            - name (String)
-            - price (StockPrice)
-        - Allow to set the price after construction (service has to enrich with price)
-    - Has a StockPrice class
-        - Has the following state:
-            - price (BigDecimal)
-                - *Why BigDecimal and not float or double?*
-            - currency (StockCurrency)
-    - Has a StockCurrency enum
-        - Has enum-values EUR, USD & GBP
-        - We should also provide a label (E.g.: "Euro") and symbo (E.g.: "€")
-    - Has a StockRepository
-        - It holds a map (our fake Database) 
-            - Contains <String, Stock> key-value pairs, where String is the stockId
-                - Populate it with some fake data, e.g.: `("AA", new Stock("AA", "Ambro AN"))`
-        - Has method `Stock getStockInformation(String stockId)`
-            - Returns the corresponding Stock, based on stockId
-            - throws an exception when no Stock was found in the database (map) for the specified stockId
-- interfaces
-    - Has a ExternalStockInformationService class
-        - Has method `BigDecimal getPriceInEuroForStock(String stockId)`
-            - Simply returns a random BigDecimal between 10 and 100, whatever the stockId is.
-        - *(For the sake of this exercise, just imagine that this method calls an external service that has live data on the price of a stock. 
-        This class and method function as the interface / access-point to that external service / system.)*         
+Execute the correct JAR, does it show the program's output?
+- If it does, great!
+- If it doesn't, figure out what's wrong an make it work... :)
 
-## Extra Requirements (Not optional)
-1. For building your Database (map), use the `ImmutableMap.builder` methods of library `Guava`
-2. For generating a random number in ExternalStockInformationService, use the RandomUtils class from library `Commons-lang3`
-3. Write (some) tests!
-    - Use JUnit (and optionally, AssertJ)
-    - Use Mockito (optionally)
-        - If you use Mockito, you might want to stick to version 4.x of JUnir instead of 5.x (currently better support)
+## Finished?
 
-## Extra Requirements (Optional, although recommended)
-1. Command line interface
-    1. Create a new module, name it `cli`
-    2. Inside, create a class MyCLI that has a main method
-        - The main method can have 0 or 1 arguments (located in String[] args), which should be a stockId
-        - The main method calls the `StockDto getStock(String stockId)` method from StockExchangeController (api) if it has 1 argument
-        - The main method prints the answer (StockDto)
-    3. Create a JAR that packages module cli and all its dependencies
-        - Use the assembly plugin
-        - Specify the MyCLI main method as thé main method of the JAR
-    4. Run the jar, providing it a stockId as argument
+Think you're finished? Ask for some feedback first, only then checkout the solution.
+**Do yourself a favor and do not look at the solution beforehand!**
+ 
+The `maven-multi-module-project` project on our GitHub project contains a solution for this codelab.
 
-## Tips    
-- If you think it is helpful, use UML (class diagram(s), sequence diagram(s)) to make things more clear.
-- Create multiple folders at once using the `mkdir` command. E.g.: `mkdir src\main\java`
-- Explore what the "Maven Wrapper" is, use it if you like
-    - *What are the benefits of the Maven Wrapper?*
+- Explore the project
+- Run the build: `mvn clean package`
+    - Which module gets compiled first? Why?
+    - Inspect the target folders, what do you notice?
+    - Inspect the generated jars.
+- You're free to experiment, make changes, extend,... the code
