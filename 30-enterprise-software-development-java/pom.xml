@@ -11,6 +11,7 @@
 
     <modules>
         <module>40-security/10-spring-security</module>
+        <module>20-enterprise-framework/10-spring/codelab01</module>
         <module>10-build-and-dependency-management/10-compiling/comp-codelab01</module>
         <module>10-build-and-dependency-management/20-packaging/pack-codelab01</module>
     </modules>
