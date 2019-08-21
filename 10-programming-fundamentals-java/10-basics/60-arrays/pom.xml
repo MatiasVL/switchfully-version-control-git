@@ -11,6 +11,6 @@
         <relativePath>../..</relativePath>
     </parent>
 
-    <artifactId>50-arrays</artifactId>
+    <artifactId>60-arrays</artifactId>
 
 </project>

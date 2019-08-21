@@ -16,8 +16,8 @@
         <module>10-basics/20-expressions</module>
         <module>10-basics/30-methods</module>
         <module>10-basics/40-strings</module>
-        <module>10-basics/50-arrays</module>
-        <module>10-basics/60-decision-making</module>
+        <module>10-basics/50-decision-making</module>
+        <module>10-basics/60-arrays</module>
         <module>10-basics/70-loops</module>
         <module>10-basics/additional-20-arrays2D</module>
         <module>20-oop/10-objects-and-classes/10-objects</module>

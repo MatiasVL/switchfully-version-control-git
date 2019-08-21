@@ -41,16 +41,22 @@
   - I can read compile-time errors
   - I can read runtime errors
   - I can improve my code iteratively
-- Codelab 6: Arrays (30m - 2u)
+- Codelab 6: Decision making (30m -2u)
   - I can compile Java code
   - I can read compile-time errors
   - I can read runtime errors
   - I can improve my code iteratively
-- Codelab 7: Decision making (30m -2u)
+- Codelab 7: Arrays (30m - 2u)
   - I can compile Java code
   - I can read compile-time errors
   - I can read runtime errors
   - I can improve my code iteratively
+- Codelab 8: Loops (30m -2u)
+    - I can compile Java code
+    - I can read compile-time errors
+    - I can read runtime errors
+    - I can improve my code iteratively
+   
  
 ## Prerequisites
 - Great motivation
