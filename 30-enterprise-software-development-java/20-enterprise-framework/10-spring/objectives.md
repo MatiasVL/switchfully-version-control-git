@@ -8,7 +8,7 @@
 - I can create a Spring Boot application from scratch, manage its dependencies with Maven, deploy & run it in the cloud (Heroku)
 
 ## Codelabs
-- Codelab 1: Spring Dependency Injection basics(30m - 1h)
+- Codelab 1: Spring Dependency Injection basics(1h - 2h)
   - I can explain and use dependency injection and inversion of control
 - Codelab 2: TaxCalculator (30m - 2h)
   - I can explain and use dependency injection and inversion of control
