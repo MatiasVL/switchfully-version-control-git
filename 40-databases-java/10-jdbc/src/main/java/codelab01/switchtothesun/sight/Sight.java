@@ -1,4 +1,4 @@
-package codelab01.be.switchfully.region;
+package codelab01.switchtothesun.sight;
 
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
@@ -6,11 +6,11 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
 
 import static org.apache.commons.lang3.builder.ToStringStyle.SHORT_PREFIX_STYLE;
 
-public class Region {
-    private String regionName;
+public class Sight {
+    private String name;
 
-    public Region(String regionName) {
-        this.regionName = regionName;
+    public Sight(String name) {
+        this.name = name;
     }
 
     @Override

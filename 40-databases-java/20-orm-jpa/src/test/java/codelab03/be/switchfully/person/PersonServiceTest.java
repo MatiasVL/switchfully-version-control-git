@@ -1,7 +1,6 @@
 package codelab03.be.switchfully.person;
 
-import codelab02.be.switchfully.Codelab03Config;
-import codelab02.be.switchfully.person.PersonService;
+import codelab03.be.switchfully.Codelab03Config;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

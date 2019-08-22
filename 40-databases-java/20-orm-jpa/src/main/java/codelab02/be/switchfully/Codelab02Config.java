@@ -18,7 +18,7 @@ import java.util.Properties;
 @Import(DatasourceConfig.class)
 @ComponentScan(basePackages = "codelab03")
 @EnableTransactionManagement
-public class Codelab03Config {
+public class Codelab02Config {
 
     @Bean
     public LocalContainerEntityManagerFactoryBean entityManagerFactory(DataSource dataSource){

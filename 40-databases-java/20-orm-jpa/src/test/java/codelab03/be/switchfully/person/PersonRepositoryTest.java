@@ -1,11 +1,11 @@
 package codelab03.be.switchfully.person;
 
-import codelab02.be.switchfully.Codelab03Config;
-import codelab02.be.switchfully.person.PersonRepository;
-import org.assertj.core.api.Assertions;
+import codelab03.be.switchfully.Codelab03Config;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
+
+import static org.assertj.core.api.Assertions.assertThat;
 
 @SpringJUnitConfig(Codelab03Config.class)
 class PersonRepositoryTest {
@@ -18,7 +18,10 @@ class PersonRepositoryTest {
     }
 
     @Test
-    void test() {
-        Assertions.assertThat(true).isTrue();
+    void save_WillCreateThatPersonInTheDatabase() {
+        Person expected = personRepository.save(new Person("firstName", "lastName"));
+        Person actual = personRepository.findByName("lastName");
+
+        assertThat(actual.getId()).isEqualTo(expected.getId());
     }
 }

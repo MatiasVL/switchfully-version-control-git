@@ -1,4 +1,4 @@
-package codelab01.be.switchfully;
+package codelab01.switchtothesun;
 
 import config.DatasourceConfig;
 import org.springframework.context.annotation.Bean;
