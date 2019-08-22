@@ -1,129 +1,58 @@
-# Spring Boot Stock Exchange
+# ⛔ `System.out.println();` is forbidden! ⛔ (part 2)
 
-We're going to transform our multi-module Maven stock exchange application to a Spring Boot application,
-including:
-- A functioning (REST) endpoint / entrypoint to our API
-- Dependency Injection with Spring
-- An executable JAR (also known as "fat JAR" or "JAR with dependencies")
+## Debugging your Spring application
+To debug 🐞 your application, never use `System.out.println();`, always use a debugger!
 
-The Stock Exchange Application is described in the README.md file of package `_08_build_and_dependency_management._03.maven.codelab04`
-- If you already successfully finished codelab04, use your own code as your starting point
-- If not (or, if you prefer our solution), use the provided solution of codelab04 as your starting point
-    -  https://github.com/switchfully/maven-stock-exchange
+IntelliJ makes it easy to debug your application from within the IDE with a single click (Or `Shift+F9`).
 
-## Requirements
-1. Include the Spring boot starter parent pom in your own parent pom
-    ```
-    <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.1.6.RELEASE</version>
-    </parent>
-    ```
-2. Still in your own parent pom
-    - The following dependencies should be automatically provided to ALL modules:
-        ```
-        <dependency>
-            <groupId>javax.inject</groupId>
-            <artifactId>javax.inject</artifactId>
-            <version>1</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
-        </dependency>
-        ```
-    - The following dependencies should be managed by parent pom and be available to the modules on-demand:
-        ```
-        <dependency>
-            <groupId>com.google.guava</groupId>
-            <artifactId>guava</artifactId>
-            <version>28.0-jre</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-lang3</artifactId>
-            <version>3.9</version>
-        </dependency>
-        ```
-        - Additionally, all the modules on which another module has a dependency should also be defined in this section.
-3. Module api should have a dependency on spring-boot-starter-web:
-    ```
-    <dependency>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-web</artifactId>
-    </dependency>
-    ```
-    - (don't specify a version, it will get this from it's parent (or parent's parent))
-4. All other modules should have a dependency on spring-boot-starter:
-    ```
-    <dependency>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter</artifactId>
-    </dependency>
-    ```
-    - (don't specify a version, it will get this from it's parent (or parent's parent))
-5. Both StockExchangeController (api) and StockService (service) should become managed beans by Spring's ApplicationContext.
-    - Since StockExchangeController already performed Constructor Dependecy Injection, we should be able to easily inject the stockService dependency
-6. StockExchangeController should be expanded to become a REST endpoint (access point to our application)
-    - Annotate the class itself with @ResponseBody and @RequestMapping("/stocks"")
-        - Search for yourself what they do and mean.
-    - Alter your getStock method:
-        ```
-        @GetMapping("/{stockId}")
-            public StockDto getStock(@PathVariable String stockId) {
-                // your code
-            }
-        ```
-        - What does @GetMapping do?
-        - What does @PathVariable do?
-7. If you have a cli module, remove it
-8. Create a new module, as artifactId, name it "jar"
-    - Create a *SpringBootApplication* class named Application
-    - What will this class do?
-9. In (module) jar's pom, include the spring-boot-maven-plugin (for generating our .jar artifact):
-    ```
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-        </plugins>
-    </build>
-    ```
-10. Run `mvn clean install`
-    - It will run your tests
-    - It will package your code (generate the jar)
-    - And all the other things like compiling,...
-11. You have multiple ways of running your application:
-    - Inside the target folder of jar, run the `jar-1.0-SNAPSHOT.jar`
-    - Run Application.java inside the IDE
-    - Execute command `mvn spring-boot:run` from inside module (folder) jar
-12. Surf to `http://localhost:8080/stocks/AA` where AA is an example of a stockId
-    - Change AA into BB or something else
+But it is also possible to connect your debugger to any Java process.
+(Both local and remote Java processes).
 
-## Extra Requirements
+> ⚡️ACTION: (Codelab activity)
+> 1. Using maven: generate an executable jar file from Codelab05 or Codelab06.
+> 2. Start your  program on the commandline with the arguments below.
+> 3. In IntelliJ create a Remote Run configuration & debug your application.
+````
+$ java -Xdebug -Xrunjdwp:server=y,transport=dt_socket,address=8000,suspend=n \
+       -jar target/myapplication-0.0.1-SNAPSHOT.jar
+````
+Reference: https://www.jetbrains.com/help/idea/creating-and-editing-run-debug-configurations.html
 
-1. Write an integration test (in a new test-class that ends on `*IntegrationTest.java`), testing the integration between the StockExchangeController and the StockService
-    - No idea what an integration test is? ASK!
-    - No idea how to start? ASK!
-2. Annotate this test-class with:
-     ```
-     @RunWith(SpringRunner.class)
-     @SpringBootTest(classes = {TestApplication.class})
-     ```
-    - Where TestApplication has the following code:
-         ```
-         @SpringBootApplication(scanBasePackages = {"com.switchfully.springboot.exchange"})
-         public class TestApplication {}
-         ```
-    - In an integration test we don't Mock or Stub!
-3. Write a test providing an existing stockId to the controller and asserting the returned result
+## Logging your Spring application
+Remember Codelab08 from 20-programming-advanced-java > 10-exceptions > 20-exceptions-combined?
+In this codelab Java Logging was introduced, in a way that did not require a dependency. But now you are familiar with Maven and Spring, so let's do it the Spring way!
 
-## Solution
+Repeat after me: If your Java application really _MUST_ print some information to the commandline, never use `System.out.println();`, always use a logging framework.
 
-A solution is provided on https://github.com/switchfully/spring-boot-stock-exchange
-- Only check it out when you're completely finished.
-- Don't if you're stuck. If you're stuck: ask questions!
+> ⚡️ACTION: (Codelab activity)
+> Add Spring logging to your solution of Codelab05.
+
+````java
+@RestController
+public class ExampleController {
+    Logger logger = LoggerFactory.getLogger(ExampleController.class);
+ 
+    @RequestMapping("/")
+    public String helloExample() {
+        logger.trace("I'll update you on every heartbeat 💓");
+        logger.debug("I'm taking a (sub)step 🚶");
+        logger.info("Business as usual, I processed an action correctly");
+        logger.warn("Warning ⚠ I do not trust this situation?!");
+        logger.error("Help 🆘 Something is broken!");
+        return "<h1>`System.out.println();` is forbidden!</h1><p>Logging for the win!</p>";
+    }
+}
+````
+
+References:
+- https://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-logging.html
+- https://docs.spring.io/spring-boot/docs/current/reference/html/howto-logging.html
+- https://github.com/OWASP/CheatSheetSeries/blob/master/cheatsheets/Logging_Cheat_Sheet.md
+
+
+## (Optional) Profile your Spring Boot application
+> ⚡️(Optional) ACTION: (Codelab activity) Connect with VisualVM to your Spring & Spring Boot application.
+
+NOTE: VisualVM is included in JDK8. Starting with JDK9, you'll have to download it separately.
+
+ALTERNATIVE: Use the IntelliJ JVM Profiler to inspect your application.

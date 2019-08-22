@@ -1,89 +1,129 @@
-# Spring Boot Tomcat Automatic Deploy
+# Spring Boot Stock Exchange
 
-Okay, we did it the manual way, now let's use the Spring Boot feature that doesn't require us to manually deploy a WAR.
+We're going to transform our multi-module Maven stock exchange application to a Spring Boot application,
+including:
+- A functioning (REST) endpoint / entrypoint to our API
+- Dependency Injection with Spring
+- An executable JAR (also known as "fat JAR" or "JAR with dependencies")
 
-## Now, create a new project
+The Stock Exchange Application is described in the README.md file of package `_08_build_and_dependency_management._03.maven.codelab04`
+- If you already successfully finished codelab05, use your own code as your starting point
+- If not (or, if you prefer our solution), use the provided solution of codelab05 as your starting point
+    -  https://github.com/switchfully/maven-stock-exchange
 
-Create a new Maven project:
-- GroupId = com.switchfully.spring
-- ArtifactId = spring-boot-tomcat-automatic-deploy
-
-1. Add the Spring Boot dependency, using the dependency management system (parent pom by Spring Boot)
+## Requirements
+1. Include the Spring boot starter parent pom in your own parent pom
     ```
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>2.1.6.RELEASE</version>
     </parent>
-    <dependencies>
+    ```
+2. Still in your own parent pom
+    - The following dependencies should be automatically provided to ALL modules:
+        ```
+        <dependency>
+            <groupId>javax.inject</groupId>
+            <artifactId>javax.inject</artifactId>
+            <version>1</version>
+        </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
         </dependency>
-    </dependencies>
+        ```
+    - The following dependencies should be managed by parent pom and be available to the modules on-demand:
+        ```
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>28.0-jre</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.9</version>
+        </dependency>
+        ```
+        - Additionally, all the modules on which another module has a dependency should also be defined in this section.
+3. Module api should have a dependency on spring-boot-starter-web:
     ```
-2. Add the Spring Boot Maven plugin
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-web</artifactId>
+    </dependency>
+    ```
+    - (don't specify a version, it will get this from it's parent (or parent's parent))
+4. All other modules should have a dependency on spring-boot-starter:
+    ```
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter</artifactId>
+    </dependency>
+    ```
+    - (don't specify a version, it will get this from it's parent (or parent's parent))
+5. Both StockExchangeController (api) and StockService (service) should become managed beans by Spring's ApplicationContext.
+    - Since StockExchangeController already performed Constructor Dependecy Injection, we should be able to easily inject the stockService dependency
+6. StockExchangeController should be expanded to become a REST endpoint (access point to our application)
+    - Annotate the class itself with @ResponseBody and @RequestMapping("/stocks"")
+        - Search for yourself what they do and mean.
+    - Alter your getStock method:
+        ```
+        @GetMapping("/{stockId}")
+            public StockDto getStock(@PathVariable String stockId) {
+                // your code
+            }
+        ```
+        - What does @GetMapping do?
+        - What does @PathVariable do?
+7. If you have a cli module, remove it
+8. Create a new module, as artifactId, name it "jar"
+    - Create a *SpringBootApplication* class named Application
+    - What will this class do?
+9. In (module) jar's pom, include the spring-boot-maven-plugin (for generating our .jar artifact):
     ```
     <build>
-            <plugins>
-                <plugin>
-                    <groupId>org.springframework.boot</groupId>
-                    <artifactId>spring-boot-maven-plugin</artifactId>
-                </plugin>
-            </plugins>
-        </build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
     ```
-    - Spring Boot Maven plugin collects all the jars on the classpath and builds a single, runnable "über-jar", which makes it more convenient to execute and transport your service.
-    - Spring Boot Maven plugin searches for the public static void main() method to flag as a runnable class.
-2. Create a main method class (e.g. Application):
-    ```
-    @SpringBootApplication
-    public class Application {
-    
-        public static void main(String[] args) throws Exception {
-            SpringApplication.run(Application.class, args);
-        }
-    
-    }
-    ```
-3. Create a controller class, it will be served to the end user when he navigates to the root url ("/")
-    ```
-    @Controller
-    public class GreetingController {
-    
-        @RequestMapping("/")
-        @ResponseBody
-        String getWelcomeMessage() {
-            return "Hello World!";
-        }
-    
-    }
-    ```     
-4. Run `mvn clean package`
-    - In your target folder, a JAR should be generated
-5. From withing your target folder, execute command `java -jar <YOUR-JAR-NAME>.jar`
-    - Make sure you killed the (stand-alone) Tomcat process. When the port 8080 is occupied, 
-    your embedded Tomcat won't be able to start. (Only one process per port is allowed...)
-    - Navigate to `http://localhost:8080`
-          - The message "Hello World!" should be shown
-6. There are extra options to run your application:
-    - Run Application.java inside your IDE OR execute command `mvn spring-boot:run`
-        - Navigate to `http://localhost:8080`
-           - The message "Hello World!" should be shown
-           
-"But hey... we generated a JAR, not a WAR?"
-- Correct, it's a so called "Fat jar". It's an executable JAR that contains all of our dependencies, 
-including our embedded web container (Tomcat), which we can run with `java -jar <JAR-NAME>.jar`.
-- We can generate a WAR with Spring Boot, if we want the traditional manual deployment (see codelab03)
-    
-Do know, that this is really something what Spring Boot is offering us...
-With only a few lines of code, we have a fully operational Java web application.
-- No XML configuration (e.g. web.xml)
-- We didn't have to deal with configuring any plumbing or infrastructure
-- No manual deploy
+10. Run `mvn clean install`
+    - It will run your tests
+    - It will package your code (generate the jar)
+    - And all the other things like compiling,...
+11. You have multiple ways of running your application:
+    - Inside the target folder of jar, run the `jar-1.0-SNAPSHOT.jar`
+    - Run Application.java inside the IDE
+    - Execute command `mvn spring-boot:run` from inside module (folder) jar
+12. Surf to `http://localhost:8080/stocks/AA` where AA is an example of a stockId
+    - Change AA into BB or something else
+
+## Extra Requirements
+
+1. Write an integration test (in a new test-class that ends on `*IntegrationTest.java`), testing the integration between the StockExchangeController and the StockService
+    - No idea what an integration test is? ASK!
+    - No idea how to start? ASK!
+2. Annotate this test-class with:
+     ```
+     @RunWith(SpringRunner.class)
+     @SpringBootTest(classes = {TestApplication.class})
+     ```
+    - Where TestApplication has the following code:
+         ```
+         @SpringBootApplication(scanBasePackages = {"com.switchfully.springboot.exchange"})
+         public class TestApplication {}
+         ```
+    - In an integration test we don't Mock or Stub!
+3. Write a test providing an existing stockId to the controller and asserting the returned result
 
 ## Solution
 
-A solution is provided on https://github.com/switchfully/spring-boot-tomcat-automatic-deploy
+A solution is provided on https://github.com/switchfully/spring-boot-stock-exchange
 - Only check it out when you're completely finished.
 - Don't if you're stuck. If you're stuck: ask questions!
