@@ -1,0 +1,32 @@
+# Databases -  Learning Objectives
+ 
+## After the course
+- I can make a java application that is connected to a database and I can perform all basic CRUD operations on the database from the code.
+    - I can create a connection between my java code and a database using JDBC.
+        - I have notion on how a connection is configured and can make small adjustments to it if necessary.
+        - I can execute a native query on a database via my java code.
+        - I can handle the results of a native query in java.
+    - I can store and retrieve java objects in or from a database using JPA.
+        - I can see the bigger picture of JPA and have a basic knowledge of the fundamental JPA concepts.
+            - I know why I would use a JPA system.
+            - I understand the concept of a specification with vendor implementations.
+            - I understand the concept of transactions and why they are used.
+            - I understand the following concepts:
+                - ORM
+                - JPA
+                - Hibernate
+                - entity(manager)
+                - CRUD
+                - one-to-one, one-to-many, many-to-one, many-to-many
+                - owner of the relation
+                - one-directional and bi-directional relationships
+        - I know how relations between entities work.
+            - I know the difference between type of relations.
+            - I can model relations between entities in a meaningful way.
+            - I can implement the relationship.
+            - I understand the danger of cyclic dependencies and how to avoid them.
+    - I know how a transaction works.
+        - I know when a transaction starts/ends.
+        - I know what happens during a rollback.
+        - I know what happens when a transaction ends.
+        - I know what a commit does.
