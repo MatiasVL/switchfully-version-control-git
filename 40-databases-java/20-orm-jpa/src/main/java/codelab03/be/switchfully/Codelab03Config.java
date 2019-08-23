@@ -16,7 +16,7 @@ import java.util.Properties;
 
 @Configuration
 @Import(DatasourceConfig.class)
-@ComponentScan(basePackages = "codelab04")
+@ComponentScan(basePackages = "codelab03")
 @EnableTransactionManagement
 public class Codelab03Config {
 
@@ -24,7 +24,7 @@ public class Codelab03Config {
     public LocalContainerEntityManagerFactoryBean entityManagerFactory(DataSource dataSource){
         LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
         em.setDataSource(dataSource);
-        em.setPackagesToScan("codelab04");
+        em.setPackagesToScan("codelab03");
         em.setJpaVendorAdapter(new HibernateJpaVendorAdapter());
         em.setJpaProperties(additionalProperties());
         return em;
