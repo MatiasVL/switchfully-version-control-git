@@ -17,7 +17,7 @@ create table COUNTRY
 create sequence country_seq start with 1 increment by 1;
 
 
-create table SIGHT
+create table ATTRACTION
 (
     ID                     NUMBER       NOT NULL,
     NAME                   varchar2(64) NOT NULL,
@@ -27,7 +27,7 @@ create table SIGHT
     constraint PK_SIGHT primary key (ID)
 
 );
-create sequence sight_seq start with 1 increment by 1;
+create sequence attraction_seq start with 1 increment by 1;
 
 create table metadata
 (
@@ -60,22 +60,22 @@ values (country_seq.nextval, 'India', (select id from CONTINENT where NAME = 'As
 insert into COUNTRY(ID, NAME, FK_CONTINENT_ID)
 values (country_seq.nextval, 'United States', (select id from CONTINENT where NAME = 'North America'));
 
-insert into SIGHT(id, name, type, fk_country_id)
-values (sight_seq.nextval, 'The Eifel Tower', 'MONUMENT', (select id from COUNTRY where NAME = 'France'));
-insert into SIGHT(id, name, type, fk_country_id)
-values (sight_seq.nextval, 'Côte d''azur', 'BEACH', (select id from COUNTRY where NAME = 'France'));
-insert into SIGHT(id, name, type, fk_country_id)
-values (sight_seq.nextval, 'The Colosseum', 'MONUMENT', (select id from COUNTRY where NAME = 'Italy'));
-insert into SIGHT(id, name, type, fk_country_id)
-values (sight_seq.nextval, 'Venice', 'CITY', (select id from COUNTRY where NAME = 'Italy'));
-insert into SIGHT(id, name, type, fk_country_id)
-values (sight_seq.nextval, 'Seville', 'CITY', (select id from COUNTRY where NAME = 'Spain'));
+insert into ATTRACTION(id, name, type, fk_country_id)
+values (attraction_seq.nextval, 'The Eifel Tower', 'MONUMENT', (select id from COUNTRY where NAME = 'France'));
+insert into ATTRACTION(id, name, type, fk_country_id)
+values (attraction_seq.nextval, 'Côte d''azur', 'BEACH', (select id from COUNTRY where NAME = 'France'));
+insert into ATTRACTION(id, name, type, fk_country_id)
+values (attraction_seq.nextval, 'The Colosseum', 'MONUMENT', (select id from COUNTRY where NAME = 'Italy'));
+insert into ATTRACTION(id, name, type, fk_country_id)
+values (attraction_seq.nextval, 'Venice', 'CITY', (select id from COUNTRY where NAME = 'Italy'));
+insert into ATTRACTION(id, name, type, fk_country_id)
+values (attraction_seq.nextval, 'Seville', 'CITY', (select id from COUNTRY where NAME = 'Spain'));
 
 insert into metadata(NUMBER_OF_VISITS)
 values (0);
 
--- drop table SIGHT;
--- drop sequence sight_seq;
+-- drop table ATTRACTION;
+-- drop sequence attraction_seq;
 -- drop table COUNTRY;
 -- drop sequence country_seq;
 -- drop TABLE CONTINENT;

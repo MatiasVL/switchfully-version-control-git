@@ -1,4 +1,4 @@
-package codelab01.switchtothesun.sight;
+package codelab01.switchtothesun.attraction;
 
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
@@ -6,10 +6,10 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
 
 import static org.apache.commons.lang3.builder.ToStringStyle.SHORT_PREFIX_STYLE;
 
-public class Sight {
+public class Attraction {
     private String name;
 
-    public Sight(String name) {
+    public Attraction(String name) {
         this.name = name;
     }
 

@@ -4,7 +4,7 @@ We're going to use JdbcTemplate to get data from the database
 
 ## Setup
 1. Go to ``resources\application.properties`` and make sure that the ``app.datasource.password`` has the correct password.
-2. Run ``SightRepositoryTest `` to make sure that everything is configured correctly
+2. Run ``AttractionRepositoryTest `` to make sure that everything is configured correctly
 3. Execute `tour-operator.sql` to initialise your database
 
 ## Exercise
@@ -16,13 +16,13 @@ We're going to use JdbcTemplate to get data from the database
 Unfortunately he couldn't finish because he just received a ps4 for his birthday.
 Now `SwitchToTheSun` isn't sure what is in the database and what isn't.
 To make more clear what is in the database they want you to create a reporting functionality.
-    1. `SightRepository` needs to return a list of all the sights in the `Sights` table.
-        1. Complete the implementation so that the repository returns a list of all the sights
-        1. Change the main method in `SwitchToTheSun` so that it prints out a list of all the sights
+    1. `AttractionRepository` needs to return a list of all the attractions in the `attractions` table.
+        1. Complete the implementation so that the repository returns a list of all the attractions
+        1. Change the main method in `SwitchToTheSun` so that it prints out a list of all the attractions
     1. `SwitchToTheSun` also wants you to show a list of all the countries in their database.
         1. Create a new `CountryRepository` and `Country` class.
         1. Read out the `Country` table and show a list of all available countries
-        1. Change the main method in `SwitchToTheSun` so that it prints out a list of all the sights *AND* all the countries
+        1. Change the main method in `SwitchToTheSun` so that it prints out a list of all the attractions *AND* all the countries
     1. Lastly do the same for all the continents in the database
 1. The manager of `SwitchToTheSun` isn't sure if the reporting functionality will be used that often and wants to keep track of its use.
     1. Look at the `metadata` table. Every time you run the main method the `NUMBER_OF_VISITS` column needs to increase by 1.
@@ -48,22 +48,22 @@ Provide a way to delete a continent.
     
 ### QUERYING
 1. For the last main functionality `SwitchToTheSun` wants you to provide some query mechanics
-    1. Every time you type `find sights with <type>` you print out all the sights of type `<type>`
-    1. Every time you type `find sights in <country>` you print out all the sights that are in the country `<country>`
+    1. Every time you type `find attractions with <type>` you print out all the attractions of type `<type>`
+    1. Every time you type `find attractions in <country>` you print out all the attractions that are in the country `<country>`
     1. Every time you type `find countries in <continent>` you print out all the countries that are in the continent `<continent>`
 
 ### Refining
 1. The business is happy with your reporting functionality and now wants you to extend it.
-    1. Extend the reported sights
-        1. Every sight is linked to a country. Change the reporting so that you also print out the country after the name of the sight.
+    1. Extend the reported attractions
+        1. Every attraction is linked to a country. Change the reporting so that you also print out the country after the name of the attraction.
             - E.g. `The Louvre - France`
         1. Every country is linked to a continent. Change the reporting so that you also print out the continent after the name of the country.
             - E.g. `France - Europe`
-        1. Extends the sight reporting even more. Now print out both the country and the continent.
+        1. Extends the attraction reporting even more. Now print out both the country and the continent.
             - E.g. `The louvre - France - Europe`
     1. Make sure that the queries report in the same way!
             
 ### Extra's
-1. New functionality that let's you add a new country and sight
-1. New functionality that reports the number of sights in a country
-1. New functionality that shows all the continents that have more than 2 sights
+1. New functionality that let's you add a new country and attraction
+1. New functionality that reports the number of attractions in a country
+1. New functionality that shows all the continents that have more than 2 attractions

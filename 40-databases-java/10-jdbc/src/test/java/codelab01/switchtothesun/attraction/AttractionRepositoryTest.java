@@ -1,20 +1,20 @@
-package codelab01.be.switchfully.country;
+package codelab01.switchtothesun.attraction;
 
 import codelab01.switchtothesun.Codelab01Config;
-import codelab01.switchtothesun.sight.SightRepository;
+import codelab01.switchtothesun.attraction.AttractionRepository;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
 
 @SpringJUnitConfig(Codelab01Config.class)
-class SightRepositoryTest {
+class AttractionRepositoryTest {
 
-    private SightRepository sightRepository;
+    private AttractionRepository attractionRepository;
 
     @Autowired
-    SightRepositoryTest(SightRepository sightRepository){
-        this.sightRepository = sightRepository;
+    AttractionRepositoryTest(AttractionRepository attractionRepository){
+        this.attractionRepository = attractionRepository;
     }
 
     @Test
