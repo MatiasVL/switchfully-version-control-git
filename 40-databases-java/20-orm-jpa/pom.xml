@@ -24,11 +24,6 @@
             <systemPath>${basedir}/libraries/ojdbc8.jar</systemPath>
         </dependency>
 
-        <dependency>
-            <groupId>org.aspectj</groupId>
-            <artifactId>aspectjweaver</artifactId>
-            <version>1.9.4</version>
-        </dependency>
     </dependencies>
 
 </project>
