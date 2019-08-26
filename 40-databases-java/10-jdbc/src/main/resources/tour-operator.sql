@@ -18,10 +18,10 @@ create sequence country_seq start with 1 increment by 1;
 
 create table ATTRACTION
 (
-    ID                     NUMBER       NOT NULL,
-    NAME                   varchar2(64) NOT NULL,
-    TYPE                   varchar2(64) NOT NULL,
-    FK_COUNTRY_ID          NUMBER       NOT NULL,
+    ID            NUMBER       NOT NULL,
+    NAME          varchar2(64) NOT NULL,
+    TYPE          varchar2(64) NOT NULL,
+    FK_COUNTRY_ID NUMBER       NOT NULL,
     CONSTRAINT FK_ATTRACTION_COUNTRY foreign key (FK_COUNTRY_ID) references COUNTRY (ID),
     CONSTRAINT PK_ATTRACTION primary key (ID)
 
@@ -46,7 +46,9 @@ create table TOURIST_ATTRACTION
 
 create table metadata
 (
-    NUMBER_OF_VISITS NUMBER not null
+    ID               NUMBER not null,
+    NUMBER_OF_VISITS NUMBER not null,
+    CONSTRAINT PK_METADATA PRIMARY KEY (ID)
 );
 
 insert into CONTINENT(ID, NAME)
@@ -86,8 +88,8 @@ values (attraction_seq.nextval, 'Venice', 'CITY', (select id from COUNTRY where 
 insert into ATTRACTION(id, name, type, fk_country_id)
 values (attraction_seq.nextval, 'Seville', 'CITY', (select id from COUNTRY where NAME = 'Spain'));
 
-insert into metadata(NUMBER_OF_VISITS)
-values (0);
+insert into metadata(ID, NUMBER_OF_VISITS)
+values (0, 0);
 
 -- drop table TOURIST_ATTRACTION;
 -- drop table TOURIST;
