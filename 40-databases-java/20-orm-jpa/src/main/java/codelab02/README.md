@@ -9,7 +9,8 @@ We continue with transforming `SwitchToTheSun` to hibernate.
     1. You'll probably get an error saying something about ids
         1. Try to fix this with the `@SequenceGenerator` and `@GeneratedValue` annotations
     1. Next try again inserting a new country in the database. You'll get a new error talking about transactions.
-        1. Try to fix the error with the `@Transactional` annotation 
+        1. Try to fix the error with the `@Transactional` annotation.
+        1. Be sure to use the spring `@Transactional` and not the javax one
     1. This time it should work!
     1. Make sure that all edge cases still work. If not: fix them!
 
