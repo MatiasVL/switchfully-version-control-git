@@ -2,7 +2,7 @@ create table CONTINENT
 (
     ID   number       not null,
     NAME VARCHAR2(64) NOT NULL UNIQUE,
-    constraint PK_CONTINENT primary key (ID)
+    CONSTRAINT PK_CONTINENT primary key (ID)
 );
 create sequence continent_seq start with 1 increment by 1;
 
@@ -11,11 +11,10 @@ create table COUNTRY
     ID              NUMBER       NOT NULL,
     NAME            VARCHAR2(64) NOT NULL UNIQUE,
     FK_CONTINENT_ID NUMBER,
-    constraint FK_COUNTRY_CONTINENT foreign key (FK_CONTINENT_ID) references CONTINENT (ID),
-    constraint PK_COUNTRY primary key (ID)
+    CONSTRAINT FK_COUNTRY_CONTINENT foreign key (FK_CONTINENT_ID) references CONTINENT (ID),
+    CONSTRAINT PK_COUNTRY primary key (ID)
 );
 create sequence country_seq start with 1 increment by 1;
-
 
 create table ATTRACTION
 (
@@ -23,11 +22,27 @@ create table ATTRACTION
     NAME                   varchar2(64) NOT NULL,
     TYPE                   varchar2(64) NOT NULL,
     FK_COUNTRY_ID          NUMBER       NOT NULL,
-    CONSTRAINT FK_SIGHT_COUNTRY foreign key (FK_COUNTRY_ID) references COUNTRY (ID),
-    constraint PK_SIGHT primary key (ID)
+    CONSTRAINT FK_ATTRACTION_COUNTRY foreign key (FK_COUNTRY_ID) references COUNTRY (ID),
+    CONSTRAINT PK_ATTRACTION primary key (ID)
 
 );
 create sequence attraction_seq start with 1 increment by 1;
+
+create table TOURIST
+(
+    ID   NUMBER       NOT NULL,
+    NAME varchar2(64) NOT NULL,
+    CONSTRAINT PK_TOURIST primary key (ID)
+);
+create sequence tourist_seq start with 1 increment by 1;
+
+create table TOURIST_ATTRACTION
+(
+    FK_TOURIST_ID    NUMBER NOT NULL,
+    FK_ATTRACTION_ID NUMBER NOT NULL,
+    CONSTRAINT FK_TA_TOURIST foreign key (FK_TOURIST_ID) references TOURIST (id),
+    CONSTRAINT FK_TA_ATTRACTION foreign key (FK_ATTRACTION_ID) references ATTRACTION (id)
+);
 
 create table metadata
 (
@@ -74,6 +89,9 @@ values (attraction_seq.nextval, 'Seville', 'CITY', (select id from COUNTRY where
 insert into metadata(NUMBER_OF_VISITS)
 values (0);
 
+-- drop table TOURIST_ATTRACTION;
+-- drop table TOURIST;
+-- drop sequence tourist_seq;
 -- drop table ATTRACTION;
 -- drop sequence attraction_seq;
 -- drop table COUNTRY;
