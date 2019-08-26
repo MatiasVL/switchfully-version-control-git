@@ -1,37 +1,21 @@
 package codelab01.switchtothesun;
 
+import config.DatasourceConfig;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.PropertySource;
-import org.springframework.core.env.Environment;
+import org.springframework.context.annotation.Import;
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.jdbc.datasource.DriverManagerDataSource;
 
 import javax.sql.DataSource;
 
 @Configuration
+@Import(DatasourceConfig.class)
 @ComponentScan(basePackages = "codelab01")
-@PropertySource("classpath:database.properties")
 public class Codelab01Config {
-
-    private final Environment environment;
-
-    public Codelab01Config(Environment environment) {
-        this.environment = environment;
-    }
 
     @Bean
     public JdbcTemplate jdbcTemplate(DataSource dataSource){
         return new JdbcTemplate(dataSource);
-    }
-
-    @Bean
-    public DataSource dataSource() {
-        DriverManagerDataSource dataSource = new DriverManagerDataSource();
-        dataSource.setUrl(environment.getProperty("app.datasource.url"));
-        dataSource.setUsername(environment.getProperty("app.datasource.username"));
-        dataSource.setPassword(environment.getProperty("app.datasource.password"));
-        return dataSource;
     }
 }

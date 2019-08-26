@@ -1,10 +1,7 @@
 package switchtothesun;
 
 import config.DatasourceConfig;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Import;
+import org.springframework.context.annotation.*;
 import org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.orm.jpa.JpaTransactionManager;
@@ -20,6 +17,7 @@ import java.util.Scanner;
 @Import(DatasourceConfig.class)
 @ComponentScan(basePackages = "switchtothesun")
 @EnableTransactionManagement
+@EnableAspectJAutoProxy(proxyTargetClass = true)
 public class CodelabConfig {
 
     @Bean
