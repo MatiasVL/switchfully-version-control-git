@@ -15,3 +15,4 @@ Change the reporting functionality so that it uses hibernate in it's calls.
     1. Change the `@Transient` with `@ManyToOne` and under it the line `@JoinColumn(name="FK_COUNTRY_ID")`
     1. `Attraction` will now have a link to `Country`. Easy wasn't it?
     1. Create a report. Country should again been filled in.
+        1. Something will still be broken, but now you have the tools to fix it.
