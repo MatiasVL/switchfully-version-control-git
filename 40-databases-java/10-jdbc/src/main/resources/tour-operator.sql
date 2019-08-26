@@ -9,8 +9,8 @@ create sequence continent_seq start with 1 increment by 1;
 create table COUNTRY
 (
     ID              NUMBER       NOT NULL,
-    NAME            VARCHAR2(64) NOT NULL,
-    FK_CONTINENT_ID NUMBER       NOT NULL,
+    NAME            VARCHAR2(64) NOT NULL UNIQUE,
+    FK_CONTINENT_ID NUMBER,
     constraint FK_COUNTRY_CONTINENT foreign key (FK_CONTINENT_ID) references CONTINENT (ID),
     constraint PK_COUNTRY primary key (ID)
 );
