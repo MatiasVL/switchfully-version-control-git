@@ -29,7 +29,7 @@ We continue with transforming `SwitchToTheSun` to hibernate.
     1. Update the metadata in the `ReportHandler`
         1. Does the update still work?
         1. Try adding `@Transactional` in the repository does it work now?
-        1. Try starting the transaction in the `CommandHandler` does it work now?
+        1. Try setting the annotation on the `Handler` interface does it work now?
         1. Why does it behave in this way?
         
 #### Extra
@@ -37,10 +37,5 @@ We continue with transforming `SwitchToTheSun` to hibernate.
 
 ### Delete
 1. We only have one jdbcTemplate left! Go to the `CountryRepository` and change the delete method so that it uses hibernate.
-    1. You'll need to lookup the country that will be deleted first    
-1. Deleting people.
-    1. Given the name of a person, delete him from the database
-        1. What should happen if the person does not exist?
-        
-        
-        
+    1. You'll need to lookup the country that will be deleted first.
+    1. Make sure that all edge cases still work
