@@ -10,7 +10,7 @@ import java.util.Scanner;
 
 import static java.util.Arrays.asList;
 
-@ComponentScan(basePackages = "codelab01")
+@ComponentScan(basePackages = "switchtothesun")
 public class SwitchToTheSun {
 
     public static void main(String[] args) {
