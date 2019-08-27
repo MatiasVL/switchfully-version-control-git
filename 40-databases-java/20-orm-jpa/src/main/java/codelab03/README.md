@@ -29,35 +29,22 @@ You'll get the extra information of `<attraction>`. (Instead of spaces use '_')
     1. What are the benefits?
     1. Why would you use one over the other?
   
-### ManyToOne
-1. Same as many to one. Already implemented
-1. Create a new table ``hobby``
-    1. it should have a ``name`` and a ``type``
-1. Make a method that let's you create a new hobby
-1. Make a method where you can give a person a hobby
-    1. What happens if you use @OneToOne instead of @ManyToOne?
-    1. How do you enforce that the oneToOne relational really is a oneToOne relationship?
-    
-### OneToMany
-1. Create a mapping between continent and country
-1. Create a new ``BOOK`` table. A book should have the following fields:
-    1. Title
-    1. Author
-1. A Person can have multiple books. Use a OneToMany relationship.
-    1. Create a test where you add a book to a person.
-    1. Create a test where you remove a book from a person.
-    1. Create a test removing all the books starting with an 'a'
-    
-### Unidirectional vs Bidirectional
-1. Try to make the relation between ``PERSON`` and ``ADDRESS`` bidirectional
-    1. Do you need to change the database schema?
-    1. How do you add an address to a person? What has changed?
-    1. How do you remove an address?
-    1. Who owns who?
-    1. What needs to change if you change the ownership?
- 1. Try to make the relation between ``BOOK`` and ``PERSON`` bidirectional
-    1. Same questions as above
- 1. What are the reasons to only use unidirectional relationships?
+### ManyToOne vs OneToMany
+1. Let's add continents to our model.
+    1. Start by adding a continent field to `Country`. Look at how `Attraction` added a country field.
+    1. Make sure that every time you print a report of all the countries, you'll print out the continent name.
+        1. e.g. `France - Europe`
+1. Add a new functionality that prints out all the Countries in a `Continent` whenever you type `find countries in <continent>`.
+    1. Do this by adding a field of type `List<Country` to `Continent`
+    1. Look at the `@OneToMany` annotation to help you.
+1. Right now we have a bidirectional relationship. Most of the time this is not preferable. Try making the relantionship unidrectional.
+    1. Make the continent field in `Country` `Transient`.
+    1. Adapt the OneToMany annotation so that it keeps working
+    1. Test the `find countries in` functionality. It should print out the countries with null as continent name (because the continent was made transient)
+1. Put everything back. So that you yet again have a bidirectional relationship.
+Think about how you can make this relationship unidirectional without loosing any of the functionality.
+    1. Think about why we most of the time prefer to keep our relationship unidirectional.
+
 ### ManyToMany
 1. create a mapping between tourists and attractions
 1. A book can belong to multiple people and a person has multiple books
