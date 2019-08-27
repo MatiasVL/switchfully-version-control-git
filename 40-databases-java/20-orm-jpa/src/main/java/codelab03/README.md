@@ -37,28 +37,35 @@ You'll get the extra information of `<attraction>`. (Instead of spaces use '_')
 1. Add a new functionality that prints out all the Countries in a `Continent` whenever you type `find countries in <continent>`.
     1. Do this by adding a field of type `List<Country` to `Continent`
     1. Look at the `@OneToMany` annotation to help you.
-1. Right now we have a bidirectional relationship. Most of the time this is not preferable. Try making the relantionship unidrectional.
+1. Right now we have a bidirectional relationship. Most of the time this is not preferable. Try making the relationship unidirectional.
     1. Make the continent field in `Country` `Transient`.
     1. Adapt the OneToMany annotation so that it keeps working
     1. Test the `find countries in` functionality. It should print out the countries with null as continent name (because the continent was made transient)
 1. Put everything back. So that you yet again have a bidirectional relationship.
-Think about how you can make this relationship unidirectional without loosing any of the functionality.
+Think about how you can make this relationship unidirectional without loosing any of the functionality. 
+    1. Implement a solution
     1. Think about why we most of the time prefer to keep our relationship unidirectional.
 
 ### ManyToMany
-1. create a mapping between tourists and attractions
-1. A book can belong to multiple people and a person has multiple books
-    1. How would you model this relationship?
-    1. Write a test where you add a book to a person and the book than has that person as a reader
-        1. Can you see why such relationships are difficult to maintain?
-        
+1. Now we're going add tourists to our application (finally). 
+A tourist can visit multiple attractions and attractions will be visited by multiple tourists.
+We'll be adding two new functionalities `find tourists visiting <attraction>` and `find attractions for <tourist>`   
+    1. Start by creating a tourist entity
+    1. Then add a `List<Tourist>` field to `Attraction` and provide the mapping annotations. You can make changes to the database schema.
+    1. Now try to a add a `List<Attraction>` to `Tourist`. What are the problems you face? What can you do to fix it? You can make changes to the database schema.
+    1. Implement both functionalities
+    1. Populate the database with some dummy data.
+1. Yet again we have a bidirectional relationship. Do you see a way to change it to an unidirectional relationship, while keeping both functionalities?
+    1. What would you do if both `Tourist` and `Attraction` have business logic depending on the relation,
+     e.g. a tourist can only visit attractions in the same country and every attraction has a max amount of visitors?
+
 #### Extra
-1. Back to the bidirectional relationships
-    1. Try setting the relation between person and address via the not owning side (probably address). 
-    1. What happens?
-1. Read the extra chapter on cascading
-    1. Try to use a cascading type on a oneToMany relationship
-    1. Does it simplify things
-    1. Why is this not on by default?
-    1. Why are there different cascading types?
-    
+1. Write a functionality that will create an attraction. 
+A user needs to provide information of the country the attraction is in and the overview information of the attaction.
+    1. Look up cascade to help you
+1. Write a functionality that will clear all the attractions from a country.
+    1. An attraction that isn't connected to a country anymore should be deleted.
+    1. Look at orphanremoval for help
+1. Extend the functionality of `remove country` so that also it deletes all the attractions the country has.
+1. Write functionality that will add an attraction to a tourist.
+    1. Create a subclass of tourist named CultureTourist. This tourist can only visits monuments and cities. 

@@ -36,14 +36,6 @@ create table TOURIST
 );
 create sequence tourist_seq start with 1 increment by 1;
 
-create table TOURIST_ATTRACTION
-(
-    FK_TOURIST_ID    NUMBER NOT NULL,
-    FK_ATTRACTION_ID NUMBER NOT NULL,
-    CONSTRAINT FK_TA_TOURIST foreign key (FK_TOURIST_ID) references TOURIST (id),
-    CONSTRAINT FK_TA_ATTRACTION foreign key (FK_ATTRACTION_ID) references ATTRACTION (id)
-);
-
 create table metadata
 (
     ID               NUMBER not null,
@@ -91,7 +83,6 @@ values (attraction_seq.nextval, 'Seville', 'CITY', (select id from COUNTRY where
 insert into metadata(ID, NUMBER_OF_VISITS)
 values (0, 0);
 
--- drop table TOURIST_ATTRACTION;
 -- drop table TOURIST;
 -- drop sequence tourist_seq;
 -- drop table ATTRACTION;
