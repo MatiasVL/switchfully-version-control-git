@@ -1,27 +1,36 @@
 # Mapping
 
+In this codelab we'll be extending the `SwitchToTheSun` exercise with extra data.
 ## Exercises
 ### Embedables
-1. Extend the ``PERSON`` table from the previous exercise with the following columns:
-    1. street name
-    1. house number
-    1. region
-    1. zip code
-1. A Person should have an address. Use the ``Address`` class as an embeddable.
-    1. Adapt the test for creating a person. You should now be able to create a person with an address.
-    1. Adapt the test for finding a person. Verify that the result also has an address.
+1. Extend the `COUNTRY` table with the following columns:
+    1. population
+    1. land area
+    1. GDP
+1. Create a new class `GeographicalInformation` and make it an embeddable of `Country`
+1. Create a new functionality. Whenever you type in `geographical information <country>`. 
+You'll get the geographical information of `<country>`
+    1. As always think of the edge cases.
  
 ### OneToOne
-1. Remove the address columns from ``PERSON``.
-1. Create a new ``ADDRESS`` table with the old columns.
-1. Make a OneToOne relation between ``PERSON`` and ``ADDRESS``
-    1. What is the relationship between person and address? Who should know who?
-    1. Verify that the tests for creation and finding still work
-1. What are the differences between using an embeddable and a OneToOne relationship?
-    1. When would you use an embeddable?
-    1. When would you use an OneToOne relationship?
+1. Create a new table ATTRACTION_OVERVIEW with columns:
+    1. Score `An overal score of the attraction between 0 and 100`
+    1. Description
+    1. Price
+    1. Visitors per year
+1. Create a one-to-one relationship between attraction and attraction overview.
+    1. Create a link between the tables in the database
+    1. Create an entity `AttractionOverview`
+    1. Link the entites `AttractionOverview` and `Attraction` together
+1. Create a new functionality. Whenever you type `attraction information <attraction>`. 
+You'll get the extra information of `<attraction>`. (Instead of spaces use '_')
+    1. As always think of the edge cases
+1. Think about the differences between an embeddable and a oneToOne relationship.
+    1. What are the benefits?
+    1. Why would you use one over the other?
   
 ### ManyToOne
+1. Same as many to one. Already implemented
 1. Create a new table ``hobby``
     1. it should have a ``name`` and a ``type``
 1. Make a method that let's you create a new hobby
@@ -30,6 +39,7 @@
     1. How do you enforce that the oneToOne relational really is a oneToOne relationship?
     
 ### OneToMany
+1. Create a mapping between continent and country
 1. Create a new ``BOOK`` table. A book should have the following fields:
     1. Title
     1. Author
@@ -49,6 +59,7 @@
     1. Same questions as above
  1. What are the reasons to only use unidirectional relationships?
 ### ManyToMany
+1. create a mapping between tourists and attractions
 1. A book can belong to multiple people and a person has multiple books
     1. How would you model this relationship?
     1. Write a test where you add a book to a person and the book than has that person as a reader
