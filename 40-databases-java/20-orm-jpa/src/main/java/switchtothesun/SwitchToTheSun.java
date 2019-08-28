@@ -1,6 +1,5 @@
 package switchtothesun;
 
-import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
@@ -16,16 +15,6 @@ public class SwitchToTheSun {
 
     public static void main(String[] args) {
         SpringApplication.run(SwitchToTheSun.class);
-    }
-
-    @Bean
-    public CommandLineRunner run(CommandReader commandReader) {
-        return (args -> {
-            System.out.println("****************************************");
-            System.out.println("Welcome to Switch To The Sun Application");
-            System.out.println("****************************************");
-            commandReader.startReadingUserInput();
-        });
     }
 
     @Bean
