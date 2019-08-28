@@ -24,7 +24,7 @@ public class RemoveCountryHandler implements Handler {
     public void handle(String parameter) {
         try {
             countryRepository.delete(parameter);
-            System.out.println(format("Continent %s deleted", parameter));
+            System.out.println(format("Country %s removed", parameter));
         } catch (DataIntegrityViolationException exception) {
             System.out.println(format("Could not remove country: Country %s still has connected attractions", parameter));
         }
