@@ -1,33 +1,41 @@
 #JPA Creating, Reading, Updating, Deleting (CRUD)
 
+We continue with transforming `SwitchToTheSun` to hibernate.
+
 ## Exercises
 ### Create
-1. Creating people
-    1. Create a new table ``PERSON`` and a sequence for that table
-        1. A person has a first name, last name and favorite color
-    1. Create a method on ``PersonRepository`` that will persist a new person to the database
-        1. What should happen if that person already exists?
+1. We're going to focus now on the creating a country functionality.
+    1. Try inserting a new country in the database with `entitymanager.persist` in the `CountryRepository`
+    1. You'll probably get an error saying something about ids
+        1. Try to fix this with the `@SequenceGenerator` and `@GeneratedValue` annotations
+    1. Next try again inserting a new country in the database. You'll get a new error talking about transactions.
+        1. Try to fix the error with the `@Transactional` annotation.
+        1. Be sure to use the spring `@Transactional` and not the javax one
+    1. This time it should work!
+    1. Make sure that all edge cases still work. If not: fix them!
 
 ### Read    
-1. Reading people 
-    1. Create a method on ``PersonRepository`` that will find a person by his name
-        1. What should happen if you can't find a person?
-        2. What should happen if you find more than one person?
+1. Now we're going to replace all the jdbc queries with hibernate queries. The remaining queries should be: 'findAttractionsOfType', 'findAttractionsInCountry' and 'getAllCountries'
+    1. Replace all three with hibernate queries. You'll need to lookup what the differences are.
+        1. Are all queries prepared statements?
+    1. Normally you should have introduced a type field for findAttractionsOfType of type String. 
+    Make an enum name AttractionType with values `MONUMENT, BEACH, CITY`. Change the type of the field type into AttractionType.
+        1. Look at the `@Enumerated` annotation for help 
 
-### Update    
-1. Updating people.
-    1. Create a method where you lookup a person by his name and change his favorite color to a given new color.
-        1. A repository should only implement the most basic methods. A good idea would be to use ``PersonService`` for this exercise.
-        1. Do you need to do these two steps in one method? What will happen if you do them separatly? 
+### Update
+1. The only update statement we have is the metadata so lets switch that one to hibernate as well.    
+    1. Create a metadata class and make it an entity
+    1. Change the getNumberOfVisits to getAllMetadata and let it return a list of metadata
+    1. Update the metadata in the `ReportHandler`
+        1. Does the update still work?
+        1. Try adding `@Transactional` in the repository does it work now?
+        1. Try setting the annotation on the `Handler` interface does it work now?
+        1. Why does it behave in this way?
+        
+#### Extra
+1. Throw an exception after updating the numberOfVisits in the `ReportHandler`. Will the update be persisted? 
 
-### Delete    
-1. Deleting people.
-    1. Given the name of a person, delete him from the database
-        1. What should happen if the person does not exist?
-        
-### Transactions
-1. Make a new method that will create a new Person. Throw an exception right after the creation. 
-    1. What should happen?
-    1. Why is this important?
-        
-        
+### Delete
+1. We only have one jdbcTemplate left! Go to the `CountryRepository` and change the delete method so that it uses hibernate.
+    1. You'll need to lookup the country that will be deleted first.
+    1. Make sure that all edge cases still work

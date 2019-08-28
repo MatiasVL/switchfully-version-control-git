@@ -13,6 +13,7 @@
         <module>10-build-and-dependency-management/10-compiling/comp-codelab01</module>
         <module>10-build-and-dependency-management/20-packaging/pack-codelab01</module>
         <module>20-enterprise-framework/10-spring/codelab01</module>
+        <module>20-enterprise-framework/10-spring/codelab02</module>
         <module>30-web-services/10-REST-JSON/20-rest-implemented/10-rest-controller/codelab01</module>
         <module>40-security/10-spring-security</module>
     </modules>

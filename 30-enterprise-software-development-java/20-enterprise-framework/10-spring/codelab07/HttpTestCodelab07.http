@@ -1,4 +1,0 @@
-GET http://localhost:8080/stocks/AA
-Accept: application/json
-
-###

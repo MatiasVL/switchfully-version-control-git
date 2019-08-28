@@ -1,58 +1,117 @@
-# ⛔ `System.out.println();` is forbidden! ⛔ (part 2)
+# Spring Boot Tomcat Manual Deploy
 
-## Debugging your Spring application
-To debug 🐞 your application, never use `System.out.println();`, always use a debugger!
+As said before, Spring Boot aims to get us up and running as quick as possible (it "just runs").
+It does this by packaging a embedded tomcat in our WAR. That way, we don't need to manually deploy WAR files.
+But what does that mean, "deploying WAR files"? Let's find out!
 
-IntelliJ makes it easy to debug your application from within the IDE with a single click (Or `Shift+F9`).
+## Start by installing Apache Tomcat 9.x
 
-But it is also possible to connect your debugger to any Java process.
-(Both local and remote Java processes).
+Tomcat is a web container / server that runs web applications (based on Servlets and JavaServer pages), 
+but it can also be used as a HTTP server.
+In short: it will host and run WAR files.
 
-> ⚡️ACTION: (Codelab activity)
-> 1. Using maven: generate an executable jar file from Codelab06 or Codelab07.
-> 2. Start your  program on the commandline with the arguments below.
-> 3. In IntelliJ create a Remote Run configuration & debug your application.
-````
-$ java -Xdebug -Xrunjdwp:server=y,transport=dt_socket,address=8000,suspend=n \
-       -jar target/myapplication-0.0.1-SNAPSHOT.jar
-````
-Reference: https://www.jetbrains.com/help/idea/creating-and-editing-run-debug-configurations.html
+1. Download Apache Tomcat 9.X
+2. Install Apache Tomcat
+    - The ui-manager should be installed as well (normally, this is by default)
+3. Run the service
+    - The tomcat process runs by default on port 8080
+    - So, try to surf to `http://localhost:8080`
+4. If Tomcat's successfully running and installed, go to `http://localhost:8080/manager/html`
+    - It's possible you first have to configure a user
+        - Go to `conf/tomcat-users.xml` in your installation directory of Tomcat
+        - Add the following line, inside the `<tomcat-users>`tag:
+            ```
+            <role rolename="manager-gui"/>
+            <user username="tomcat" password="s3cret" roles="manager-gui"/>
+            ```
+5. Login to `http://localhost:8080/manager/html`
+6. Tomcat can run multiple WAR simultaneously, we'll be deploying our own WAR pretty soon.
 
-## Logging your Spring application
-Remember Codelab07 from 20-programming-advanced-java > 10-exceptions > 20-exceptions-combined?
-In this codelab Java Logging was introduced, in a way that did not require a dependency. But now you are familiar with Maven and Spring, so let's do it the Spring way!
+## Now, create a new project
 
-Repeat after me: If your Java application really _MUST_ print some information to the commandline, never use `System.out.println();`, always use a logging framework.
+Create a new Maven project:
+- GroupId = com.switchfully.spring
+- ArtifactId = spring-boot-tomcat-manual-deploy
 
-> ⚡️ACTION: (Codelab activity)
-> Add Spring logging to your solution of Codelab06.
+We're going to use Spring Boot, however, we'll exclude the embedded Tomcat. 
+This is purely for the sake of the exercise, to show you how manually deploying a WAR is done. 
+In Codelab05 we saw how Spring Boot automates and facilitates this process. 
+In this codelab, we'll do it manually!
 
-````java
-@RestController
-public class ExampleController {
-    Logger logger = LoggerFactory.getLogger(ExampleController.class);
- 
-    @RequestMapping("/")
-    public String helloExample() {
-        logger.trace("I'll update you on every heartbeat 💓");
-        logger.debug("I'm taking a (sub)step 🚶");
-        logger.info("Business as usual, I processed an action correctly");
-        logger.warn("Warning ⚠ I do not trust this situation?!");
-        logger.error("Help 🆘 Something is broken!");
-        return "<h1>`System.out.println();` is forbidden!</h1><p>Logging for the win!</p>";
+1. Add the Spring Boot dependency, using the dependency management system (parent pom by Spring Boot)
+    ```
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.1.6.RELEASE</version>
+    </parent>
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+    </dependencies>
+    ```
+2. Create a main method class (e.g. Application):
+    ```
+    @SpringBootApplication
+    public class Application extends SpringBootServletInitializer {
+    
+        @Override
+        protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
+            return application.sources(Application.class);
+        }
+    
+        public static void main(String[] args) throws Exception {
+            SpringApplication.run(Application.class, args);
+        }
+    
     }
-}
-````
+    ```
+    - The SpringBootServerInitializer allows to run a SpringApplication from a traditional WAR deployment
+3. Create a controller class, it will be served to the end user when he navigates to the root url ("/")
+    ```
+    @Controller
+    public class GreetingController {
+    
+        @RequestMapping("/")
+        @ResponseBody
+        String getWelcomeMessage() {
+            return "Hello World!";
+        }
+    
+    }
+    ```     
+4. Change the packaging to WAR.
+    - Since we're using Maven and using spring-boot-starter-parent (which configures Maven’s war plugin for you) 
+    all we need to do is to modify our pom.xml to change the packaging to WAR.
+        ```
+        <packaging>war</packaging>
+        ```
+5. The final step in the process is to ensure that the embedded servlet container doesn’t interfere with the servlet container (our installed Tomcat) 
+to which the war file will be deployed. 
+To do so, you need to mark the embedded servlet container dependency as provided ("Hey Maven, this dependency is already provided (although it isn't), don't provide it again").
+    ```
+    <dependencies>
+      <!-- … -->
+      <dependency>
+          <groupId>org.springframework.boot</groupId>
+          <artifactId>spring-boot-starter-tomcat</artifactId>
+          <scope>provided</scope>
+      </dependency>
+      <!-- … -->
+    </dependencies>
+    ```
+6. Run `mvn clean package`
+    - In your target folder, a WAR should be generated
+7. Go back to your Tomcat manager, in the "WAR file to deploy" section, deploy your WAR
+8. When deployed, it will show up as a new entry in the "Applications" list, click on its name.
+9. You should see the "Hello World" message.
 
-References:
-- https://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-logging.html
-- https://docs.spring.io/spring-boot/docs/current/reference/html/howto-logging.html
-- https://github.com/OWASP/CheatSheetSeries/blob/master/cheatsheets/Logging_Cheat_Sheet.md
+Great, we created a (really basic) web application which we had to manually deploy to a Tomcat.
 
+## Solution
 
-## (Optional) Profile your Spring Boot application
-> ⚡️(Optional) ACTION: (Codelab activity) Connect with VisualVM to your Spring & Spring Boot application.
-
-NOTE: VisualVM is included in JDK8. Starting with JDK9, you'll have to download it separately.
-
-ALTERNATIVE: Use the IntelliJ JVM Profiler to inspect your application.
+A solution is provided on https://github.com/switchfully/spring-boot-tomcat-manual-deploy
+- Only check it out when you're completely finished.
+- Don't if you're stuck. If you're stuck: ask questions!
