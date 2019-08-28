@@ -1,4 +1,4 @@
-# Your own Funiversity delux
+# Funiversity
 
 Let's create your own REST API in Spring
 
