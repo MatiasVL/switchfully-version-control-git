@@ -1,14 +1,12 @@
 package switchtothesun.commandreader;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 import switchtothesun.commandreader.handler.Handler;
 
 import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
-@Service
 public class CommandReader {
 
     private Scanner scanner;

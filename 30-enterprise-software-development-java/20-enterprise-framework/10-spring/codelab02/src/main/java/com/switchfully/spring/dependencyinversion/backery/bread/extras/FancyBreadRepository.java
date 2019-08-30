@@ -1,7 +1,7 @@
 package com.switchfully.spring.dependencyinversion.backery.bread.extras;
 
-import com.switchfully.spring.dependencyinversion.backery.bread.Bread;
 import com.google.common.collect.ImmutableMap;
+import com.switchfully.spring.dependencyinversion.backery.bread.Bread;
 
 import java.util.Map;
 

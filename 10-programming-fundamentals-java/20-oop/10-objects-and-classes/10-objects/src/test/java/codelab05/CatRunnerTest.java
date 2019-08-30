@@ -10,6 +10,7 @@ import java.io.PrintStream;
 
 public class CatRunnerTest {
 
+
     private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
     private final ByteArrayOutputStream errContent = new ByteArrayOutputStream();
 

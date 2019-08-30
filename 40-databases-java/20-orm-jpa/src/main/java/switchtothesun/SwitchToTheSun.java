@@ -1,8 +1,8 @@
 package switchtothesun;
 
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
 import switchtothesun.commandreader.CommandReader;
 import switchtothesun.commandreader.handler.*;
 
@@ -10,16 +10,11 @@ import java.util.Scanner;
 
 import static java.util.Arrays.asList;
 
-@ComponentScan(basePackages = "switchtothesun")
+@SpringBootApplication
 public class SwitchToTheSun {
 
     public static void main(String[] args) {
-        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SwitchToTheSun.class);
-        CommandReader commandReader = context.getBean(CommandReader.class);
-        System.out.println("****************************************");
-        System.out.println("Welcome to Switch To The Sun Application");
-        System.out.println("****************************************");
-        commandReader.startReadingUserInput();
+        SpringApplication.run(SwitchToTheSun.class);
     }
 
     @Bean

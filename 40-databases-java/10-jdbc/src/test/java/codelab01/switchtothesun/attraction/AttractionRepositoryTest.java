@@ -1,7 +1,6 @@
 package codelab01.switchtothesun.attraction;
 
 import codelab01.switchtothesun.Codelab01Config;
-import codelab01.switchtothesun.attraction.AttractionRepository;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
