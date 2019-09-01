@@ -18,8 +18,6 @@ Feel like contributing? Great!
 
 For every new contribution, repeat steps 2 to 4.
 
-**Note:** The `.pptx` files are password protected. Thus, only available in readonly mode by default. If you'd like to make contributions to the actual presentations, please contact us (hello@switchfully.com) to receive the master password. 
-
 ## Copyright Notice
 
 All copyright and intellectual property rights, without limitation, are retained by Switchfully (Cegeka). By using this repository - and any file included within - you agree to this statement.
