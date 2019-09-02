@@ -11,7 +11,7 @@
         <relativePath>../</relativePath>
     </parent>
 
-    <artifactId>10-jpa</artifactId>
+    <artifactId>20-orm-jpa</artifactId>
 
     <dependencies>
         <!--Because of license issues, oracle ojdbc is not publicly available on mvncentral -->
