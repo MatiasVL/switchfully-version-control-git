@@ -8,7 +8,7 @@ public class VTCodelab20 {
 
         // ----------------
         // Declare and initialize a byte variable, give it value 250
-        // Print the result using: System.out.println("Printing double with value: " + <YOUR_VARIABLE_NAME>);
+        // Print the result using: System.out.println("Printing byte with value: " + <YOUR_VARIABLE_NAME>);
         // Does it work? Write a comment on why (not)? If the code doesn't compile, put the code itself in comment
 
     }
