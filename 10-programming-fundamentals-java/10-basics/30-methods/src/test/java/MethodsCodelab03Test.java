@@ -27,7 +27,7 @@ class MethodsCodelab03Test {
     @Test
     void calculatePercentageValueIsCalled() {
         MethodsCodelab03.main(null);
-        assertEquals("80.0\r\n125.0\r\n156.25", outContent.toString().trim());
+        assertEquals("80.0\r\n12.5\r\n156.25", outContent.toString().trim());
     }
 
 }
