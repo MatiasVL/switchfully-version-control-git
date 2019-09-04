@@ -22,7 +22,10 @@ export class BooksComponent implements OnInit {
 
   rate(bookId, amount) {
     this.rated.push(bookId);
-    this.bookService.rate(bookId, {scoreOutOfFive: amount, raterName: 'Ratey McRateFace'})
+    this.bookService.rate(bookId, {
+      scoreOutOfFive: amount,
+      raterName: this.authService.getIdToken().given_name + ' ' + this.authService.getIdToken().family_name
+    })
       .subscribe(() => console.log('Rating successful'));
   }
 
