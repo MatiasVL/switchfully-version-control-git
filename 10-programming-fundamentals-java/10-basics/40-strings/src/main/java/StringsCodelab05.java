@@ -8,7 +8,7 @@ public class StringsCodelab05 {
     /**
      * Given a String text and two characters (characterToReplace, characterToReplaceWith)
      * return the text in which, the characterToReplaceWith (for all occurrences, both lower and uppercase) is replaced by characterToReplaceWith
-     *      e.g.: "This is an axe. Sweet, huh?", 's' (to replace) and 'L' (replace with),
+     *      e.g.: "This is an axe. Sweet, HUH?", 's' (to replace) and 'L' (replace with),
      *      should return "ThiL iL an axe, Lweet HUH?"
      * Using the documentation of String:
      *      Search for the replaceAll method
