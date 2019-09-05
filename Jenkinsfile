@@ -15,7 +15,7 @@ pipeline {
             steps {
                 bat 'mvn clean test -pl :30-methods'
             }
-        }
+        }/*
         stage ('Unit Tests: 40-strings') {
             steps {
                 bat 'mvn clean test -pl :40-strings'
@@ -35,6 +35,6 @@ pipeline {
             steps {
                 bat 'mvn clean test -pl :40-strings'
             }
-        }
+        }*/
     }
 }
