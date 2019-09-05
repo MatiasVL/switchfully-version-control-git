@@ -20,12 +20,12 @@ pipeline {
             steps {
                 bat 'mvn clean test -pl :40-strings'
             }
-        }/*
+        }
         stage ('Unit Tests: 50-decision-making') {
             steps {
                 bat 'mvn clean test -pl :50-decision-making'
             }
-        }
+        }/*
         stage ('Unit Tests: 60-arrays') {
             steps {
                 bat 'mvn clean test -pl :60-arrays'
