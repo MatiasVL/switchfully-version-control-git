@@ -6,10 +6,10 @@ public class LoopsCodelabs08 {
      * The best solution makes only a single "linear" pass of both arrays,
      * taking advantage of the fact that both arrays are already in sorted order.
      * Check the tests to see which edge cases exist and how you should respond to them!
-     *      linearIn([1, 2, 4, 6], [2, 4]) → true
-     *      linearIn([1, 2, 4, 6], [2, 3, 4]) → false
-     *      linearIn([1, 2, 4, 4, 6], [2, 4]) → true
-     *      linearIn([1, 2, 8, 800, 1050], [1, 800]) → true
+     *      doesOuterContainAllElementsOfInner([1, 2, 4, 6], [2, 4]) → true
+     *      doesOuterContainAllElementsOfInner([1, 2, 4, 6], [2, 3, 4]) → false
+     *      doesOuterContainAllElementsOfInner([1, 2, 4, 4, 6], [2, 4]) → true
+     *      doesOuterContainAllElementsOfInner([1, 2, 8, 800, 1050], [1, 800]) → true
      */
     public static boolean doesOuterContainAllElementsOfInner(int[] outer, int[] inner) {
         throw new UnsupportedOperationException("Implement me");
