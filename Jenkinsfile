@@ -33,7 +33,7 @@ pipeline {
         }
         stage ('Unit Tests: 70-loops') {
             steps {
-                bat 'mvn clean test -pl :40-strings'
+                bat 'mvn clean test -pl :70-loops'
             }
         }
     }
