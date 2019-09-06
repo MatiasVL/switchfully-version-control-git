@@ -11,3 +11,5 @@ a player can win the game if he has 3 items in one row.
 Run the tests!
 
 If you want to take it up a notch try to check if it is a valid game.
+- Validity of a TicTacToe game: https://www.geeksforgeeks.org/validity-of-a-given-tic-tac-toe-board-configuration/
+ 
