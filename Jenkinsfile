@@ -30,11 +30,11 @@ pipeline {
             steps {
                 bat 'mvn clean test -pl :60-arrays'
             }
-        }/*
+        }
         stage ('Unit Tests: 70-loops') {
             steps {
                 bat 'mvn clean test -pl :40-strings'
             }
-        }*/
+        }
     }
 }
