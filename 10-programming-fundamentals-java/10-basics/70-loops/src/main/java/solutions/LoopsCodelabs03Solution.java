@@ -25,4 +25,20 @@ public class LoopsCodelabs03Solution {
         }
         return balenced;
     }
+
+//    public static boolean xyBalance(String textToAnalyze) {
+//        //        return textToAnalyze.lastIndexOf("x") <= textToAnalyze.lastIndexOf("y");
+//        boolean balanced = true;
+//        for (int character : textToAnalyze.chars().toArray()) {
+//            if (character == 'x') {
+//                balanced = false;
+//            }
+//            if(character == 'y'){
+//                balanced = true;
+//            }
+//        }
+//        return balanced;
+//    }
+
+
 }
