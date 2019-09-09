@@ -28,6 +28,12 @@ public class CustomTime {
                 this.hour, this.minute, this.second);
     }
 
+    /**
+     * This is not the real equals method. It does not take in a parameter of type Object...
+     * It is not correctly overriding the equals method of Object.
+     * @param that the CustomTime object to check equality with.
+     * @return boolean to indicate whether that is equal to this.
+     */
     public boolean equals(CustomTime that) {
         return this.hour == that.hour
                 && this.minute == that.minute
