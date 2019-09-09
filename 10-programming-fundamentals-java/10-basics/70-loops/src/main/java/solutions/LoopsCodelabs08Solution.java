@@ -34,4 +34,24 @@ public class LoopsCodelabs08Solution {
         return true;
     }
 
+//    public static boolean doesOuterContainAllElementsOfInner(int[] outer, int[] inner) {
+//        if (outer.length < inner.length) throw new IllegalArgumentException("Inner cannot be bigger than outer");
+//
+//        for (int in : inner) {
+//            if(!canBeFoundIn(outer, in)){
+//                return false;
+//            }
+//        }
+//        return true;
+//    }
+//
+//    private static boolean canBeFoundIn(int[] outer, int in) {
+//        for(int out : outer){
+//            if(out == in){
+//                return true;
+//            }
+//        }
+//        return false;
+//    }
+
 }
