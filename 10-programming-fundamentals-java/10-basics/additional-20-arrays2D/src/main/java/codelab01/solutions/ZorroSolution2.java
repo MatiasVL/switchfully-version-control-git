@@ -32,12 +32,12 @@ public class ZorroSolution2 {
         return headerFooter;
     }
 
-    private static char[] createMiddleLine(int size, int index) {
+    private static char[] createMiddleLine(int size, int zIndex) {
         char[] line = new char[size];
         for (int j = 0; j < size; j++) {
             line[j] = ' ';
         }
-        line[size - index - 1] = '@';
+        line[size - zIndex - 1] = '@';
         return line;
     }
 
