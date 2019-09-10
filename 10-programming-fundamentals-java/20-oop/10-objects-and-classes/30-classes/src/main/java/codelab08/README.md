@@ -10,7 +10,7 @@
 3. Study the generated equals method and explain to yourself what it does.
 4. Run the tests again, they should all be green.
     - Do you understand why that is?
-5. Change the `add(Time other)` method so that it becomes a pure method!
+5. Change the `add(CustomTime other)` method so that it becomes a pure method!
      Hint: No idea on what pure and impure methods are? 
      Read the sections on **Immutable and mutable objects** 
      and **Pure and impure methods** below!
