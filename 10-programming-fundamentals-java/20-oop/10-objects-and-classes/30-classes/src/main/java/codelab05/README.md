@@ -1,7 +1,7 @@
 # MyCircle
 
 ## Create MyCircle class
-Start by creation a `MyCircle` class.
+Start by creating a `MyCircle` class.
 
 Place this class in its own package, call it `shapes`.
 It will hold the `MyCircle` shape and any future shapes...
