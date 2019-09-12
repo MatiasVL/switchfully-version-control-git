@@ -51,5 +51,15 @@ pipeline {
                 bat 'mvn clean test -pl :30-classes'
             }
         }
+        stage('Unit Tests: 40-static-class-members') {
+            steps {
+                bat 'mvn clean test -pl :40-static-class-members'
+            }
+        }
+        stage('Unit Tests: 50-enum') {
+            steps {
+                bat 'mvn clean test -pl :50-enum'
+            }
+        }
     }
 }
