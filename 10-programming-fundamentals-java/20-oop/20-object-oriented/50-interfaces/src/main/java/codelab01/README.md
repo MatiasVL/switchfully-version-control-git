@@ -10,7 +10,8 @@ Create an interface `Clickable` that defines the following method(s):
 - `String doubleClick()`
 
 Classes `Button` and `Image` are both `Clickable`, make sure this is translated into the code!
-- *For the implementation of the `click()` and `doubleClick` method, you can be as creative as you want.*
+- *For the implementation of the `click()` and `doubleClick()` method, you can be as creative as you want.*
+    - But, it can be a simple as returning String values `"click"` and `"doubleclick"`
 
 ## Download
 
