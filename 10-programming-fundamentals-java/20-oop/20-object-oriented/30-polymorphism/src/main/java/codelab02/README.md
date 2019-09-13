@@ -45,7 +45,7 @@ Are you using an `enum` or not?
 A battle simulator service (`BattleSimulatorService`) has no state, but it does provide the following behavior:
 - a Method to run the application
 - fight, which takes 2 armies (an attacking and defending army) and returns the victorious army
-    - If the attacking army is double the size (or even more bigger) than the defending army, it automatically wins.
+    - If the attacking army is double the size (or even bigger) than the defending army, it automatically wins.
     - If the attacking army is half the size (or even smaller) than the defending army, it automatically loses.
     - Otherwise, if the combined attacking power of the attacking army is 1.2 times the combined defending power of the defending army,
     the attacking army wins. Otherwise the defending army wins.
