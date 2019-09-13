@@ -1,6 +1,6 @@
 # Shape (but now, abstract)
 
-> This is an optional codelab, for if you need some extra practice.
+> You've already seen this codelab in 30-polymorphism, but now you can solve it in a better way.
 
 ## Requirements
 
