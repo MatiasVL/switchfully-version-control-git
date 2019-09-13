@@ -1,5 +1,7 @@
 # Battle sim.
 
+> If this exercise seems too difficult, first make codelab03 and codelab04 to get some more practice.
+
 Design and implement a battle simulator service.
 
 ## Soldier
