@@ -71,5 +71,10 @@ pipeline {
                 bat 'mvn clean test -pl :20-composition'
             }
         }
+        stage('30-polymorphism') {
+            steps {
+                bat 'mvn clean test -pl :30-polymorphism'
+            }
+        }
     }
 }
