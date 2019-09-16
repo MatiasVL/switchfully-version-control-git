@@ -19,11 +19,11 @@ public class SimpleBanking implements BankingFacade {
 
     @Override
     public double withdraw(String uncheckedAmount) {
-        return balance--;
+        return --balance;
     }
 
     @Override
     public double deposit(String uncheckedAmount) {
-        return balance++;
+        return ++balance;
     }
 }
