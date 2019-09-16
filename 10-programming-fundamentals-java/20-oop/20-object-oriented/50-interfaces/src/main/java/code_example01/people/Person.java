@@ -29,6 +29,6 @@ public abstract class Person {
 
     @Override
     public String toString() {
-        return String.format("Hello, I'm %s %s and I'm %s years old", firstName, lastName, Period.between(LocalDate.now(), birthDate).getYears());
+        return String.format("Hello, I'm %s %s and I'm %s years old", firstName, lastName, Period.between(birthDate, LocalDate.now()).getYears());
     }
 }
