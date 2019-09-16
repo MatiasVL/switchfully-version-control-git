@@ -61,5 +61,20 @@ pipeline {
                 bat 'mvn clean test -pl :50-enum'
             }
         }
+        stage('10-inheritance') {
+            steps {
+                bat 'mvn clean test -pl :10-inheritance'
+            }
+        }
+        stage('20-inheritance') {
+            steps {
+                bat 'mvn clean test -pl :20-composition'
+            }
+        }
+        stage('30-polymorphism') {
+            steps {
+                bat 'mvn clean test -pl :30-polymorphism'
+            }
+        }
     }
 }
