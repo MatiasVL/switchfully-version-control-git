@@ -148,4 +148,4 @@ Please do this after each finished codelab. It will help us in keeping track of 
 
 Completely finished? Awesome!
 
-Make sure to give us a heads-up of your progress and we will make sure you receive a new challenge.
+Make sure to give us a heads-up of your progress and we will make sure you receive a final challenge: Rowdy Racers!
