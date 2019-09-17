@@ -76,5 +76,10 @@ pipeline {
                 bat 'mvn clean test -pl :30-polymorphism'
             }
         }
+        stage('40-abstract-classes') {
+            steps {
+                bat 'mvn clean test -pl :40-abstract-classes'
+            }
+        }
     }
 }
