@@ -183,7 +183,7 @@ Some examples (size = 5), printed to the console
                 - amountOfItems == 15, then price == 70
                 - amountOfItems == 16, then price == 73
                 - amountOfItems == 20, then price == 85
-                - amountOfItems == -1, should not return a price
+                - amountOfItems == -1, then price == 0
 3. [:x:] Create a method that returns the following:
     - When the input is 1: "It's something"
     - When the input is 2: "That's more like it"
