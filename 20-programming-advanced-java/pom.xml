@@ -21,6 +21,7 @@
         <module>20-data-structures/30-map</module>
         <module>20-data-structures/40-set</module>
         <module>20-data-structures/50-combined</module>
+        <module>20-data-structures/60-additional</module>
         <module>30-generics/10-generic-classes</module>
         <module>30-generics/20-generics-combined</module>
         <module>35-nested-classes</module>
@@ -69,6 +70,13 @@
             <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-params</artifactId>
+            <version>${junit.version}</version>
+            <scope>test</scope>
+        </dependency>
+
     </dependencies>
 
     <build>
