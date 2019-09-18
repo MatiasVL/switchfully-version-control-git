@@ -241,7 +241,7 @@ But we will not include them in our solution!
 - [:x:] Override the `toString` method, it should contain the entire state of every dog.
     - For a labrador: "Labrador: (name = Labby, sound = WOOF WOOF!, average breed weight = 35)"
     - For a chihuahua: "Chihuahua: (name = Darling, sound = Kefkefkef!!, average breed weight = 2, color = Brown)"
-- [:x:] Override the `equals` method: two dogs are equal if they are of they have the same name and make the same sound.
+- [:x:] Override the `equals` method: two dogs are equal if they have the same name and make the same sound.
 
 ### Codelab 08
 
