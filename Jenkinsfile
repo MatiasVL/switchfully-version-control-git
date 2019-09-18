@@ -76,5 +76,20 @@ pipeline {
                 bat 'mvn clean test -pl :30-polymorphism'
             }
         }
+        stage('40-abstract-classes') {
+            steps {
+                bat 'mvn clean test -pl :40-abstract-classes'
+            }
+        }
+        stage('50-interfaces') {
+            steps {
+                bat 'mvn clean test -pl :50-interfaces'
+            }
+        }
+        stage('60-combined-codelabs') {
+            steps {
+                bat 'mvn clean test -pl :60-combined-codelabs'
+            }
+        }
     }
 }
