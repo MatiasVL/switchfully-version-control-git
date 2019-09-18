@@ -231,7 +231,7 @@ But we will not include them in our solution!
     - The name is specific to the actual instance of a dog.
 - [:x:] All dogs also have an average breed weight
     - The actual value for the average breed weight is specific to the breed of dog.
-        - A labrador has as its average breed weight, value 15 (Kg).
+        - A labrador has as its average breed weight, value 35 (Kg).
         - A chihuahua has as its average breed weight, value 2 (Kg).
     - We should be able to let every dog bark
     - We should be able to **get** the average breed weight for every dog
