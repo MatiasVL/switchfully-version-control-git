@@ -307,4 +307,6 @@ Think about your design (simply think about these questions):
     
 ## Finished? 
 1. Ask feedback on your solutions
-2. Complete all uncompleted codelabs from modules `10-basics` and `20-oop`.    
+2. Review the solutions from the `solutions` branch
+3. Complete all uncompleted codelabs from modules `10-basics` and `20-oop`.
+4. Start / continue with Rowdy Racers
