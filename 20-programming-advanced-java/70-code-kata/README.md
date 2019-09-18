@@ -16,7 +16,7 @@ Using Maven, Angular and Spring Boot (2.1.0.RELEASE).
 
 ## First time usage
 
-- Install NPM (a JavasSript / Node package manager)
+- Install NPM (a JavasScript / Node package manager)
     - It will also install NPX
 - After installation
   - run `npm --version` `npm -v` from inside the terminal, if it's correctly installed it will return a version number
