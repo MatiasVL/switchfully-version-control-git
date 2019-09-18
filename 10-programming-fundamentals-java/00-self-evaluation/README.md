@@ -48,10 +48,10 @@ Please do this after each finished codelab. It will help us in keeping track of 
 12. [:x:] **What is the main difference between primitive data types and reference types in Java?**
 13. [:x:] **What is the main difference between a While and Do-While loop (in execution, not structure)?**
 14. [:x:] **What is the main difference between a For and Foreach loop (in use-case, not structure)?**
-15. [:x:] **A variable declared within the opening and closing parenthesis of a method signature is called a ____ variable?**
-16. [:x:] **Why would you chose `long` over `int`?**
+15. [:x:] **A variable declared within the opening and closing parenthesis of a method is called a ____ variable?**
+16. [:x:] **Why would you choose `long` over `int`?**
 17. [:x:] **What's the difference between `long` and `float`?**
-18. [:x:] **What value (`1/2` or `0.5` or `0`) will be printed for the following code? `Console.WriteLine(1/2);`? Explain why?**
+18. [:x:] **What value (`1/2` or `0.5` or `0`) will be printed for the following code? `System.out.println(1/2);`? Explain why?**
 19. [:x:] **What is the difference between `.java` and `.class` files?**
 20. [:x:] **What is the output of following code?**
 ```java
