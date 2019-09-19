@@ -22,9 +22,4 @@ public class House {
         return super.toString();
     }
 
-    @Override
-    protected void finalize() throws Throwable {
-        super.finalize();
-    }
-
 }
