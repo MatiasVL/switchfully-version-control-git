@@ -66,7 +66,7 @@ pipeline {
                 bat 'mvn clean test -pl :10-inheritance'
             }
         }
-        stage('20-inheritance') {
+        stage('20-composition') {
             steps {
                 bat 'mvn clean test -pl :20-composition'
             }
