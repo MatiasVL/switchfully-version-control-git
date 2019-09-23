@@ -91,5 +91,10 @@ pipeline {
                 bat 'mvn clean test -pl :60-combined-codelabs'
             }
         }
+        stage('00-self-evaluation') {
+            steps {
+                bat 'mvn clean test -pl :00-self-evaluation'
+            }
+        }
     }
 }
