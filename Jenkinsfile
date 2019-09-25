@@ -66,7 +66,7 @@ pipeline {
                 bat 'mvn clean test -pl :10-inheritance'
             }
         }
-        stage('20-inheritance') {
+        stage('20-composition') {
             steps {
                 bat 'mvn clean test -pl :20-composition'
             }
@@ -89,6 +89,11 @@ pipeline {
         stage('60-combined-codelabs') {
             steps {
                 bat 'mvn clean test -pl :60-combined-codelabs'
+            }
+        }
+        stage('00-self-evaluation') {
+            steps {
+                bat 'mvn clean test -pl :00-self-evaluation'
             }
         }
     }
