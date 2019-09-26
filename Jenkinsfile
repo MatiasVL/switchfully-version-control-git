@@ -106,5 +106,10 @@ pipeline {
                 bat 'mvn clean test -pl :10-test-driven-development'
             }
         }
+        stage('20-refactoring-clean-code') {
+            steps {
+                bat 'mvn clean test -pl :20-refactoring-clean-code'
+            }
+        }
     }
 }
