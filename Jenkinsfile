@@ -96,5 +96,20 @@ pipeline {
                 bat 'mvn clean test -pl :00-self-evaluation'
             }
         }
+        stage('05-test-driven-development-first-steps') {
+            steps {
+                bat 'mvn clean test -pl :05-test-driven-development-first-steps'
+            }
+        }
+        stage('10-test-driven-development') {
+            steps {
+                bat 'mvn clean test -pl :10-test-driven-development'
+            }
+        }
+        stage('20-refactoring-clean-code') {
+            steps {
+                bat 'mvn clean test -pl :20-refactoring-clean-code'
+            }
+        }
     }
 }
