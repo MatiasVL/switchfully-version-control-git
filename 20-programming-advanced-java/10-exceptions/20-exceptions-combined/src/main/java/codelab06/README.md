@@ -29,7 +29,7 @@ how to use the readAllBytes method:
 
 ```
 Path pathToFile = ...;
-List<String> lines = Files.readAllLine(pathToFile);
+List<String> lines = Files.readAllLines(pathToFile);
 ```
 > Read more on https://docs.oracle.com/javase/tutorial/essential/io/file.html (Scroll down to "Commonly Used Methods for Small Files")
 
@@ -42,7 +42,7 @@ the provided filename (argument).
 Base yourself on the following snippet:
 ```
 Path pathToFile = ...;
-List<String> lines = Files.readAllLine(pathToFile);
+List<String> lines = Files.readAllLines(pathToFile);
 ```
 
 For the `pathToFile`, use the following code (which will create the correct path for the provided filename):
@@ -56,7 +56,7 @@ Then, loop over the list of lines (`lines`) and print out every line to the cons
 
 Make sure to:
 - Deal with any checked exceptions in order to let your code compile successfully!
-- Read the documentation of the different methods you're using, especially on `Files.readAllLine(...)`
+- Read the documentation of the different methods you're using, especially on `Files.readAllLines(...)`
     - https://docs.oracle.com/en/java/javase/11/ or https://docs.oracle.com/en/java/javase/12/
 
 Finally, inspect and run `ReaderApplication`. The output should be as follows:
@@ -73,6 +73,10 @@ Life
 
 > There are two sample files available, they're located in the `src/main/resources` folder, under pakcage `codelab06`. 
 The `resources` folder is the standard folder (by convention) for storing resources (such as files, images,...)
+
+- After successfully running the ReaderApplication, add the following line to the `main method`:
+    - `myFileReader.read("NON_EXISTING_FILE.txt");`
+- Rerun the code. What type of exception was thrown? Is it caught?
 
 ## Some additional theory
 
