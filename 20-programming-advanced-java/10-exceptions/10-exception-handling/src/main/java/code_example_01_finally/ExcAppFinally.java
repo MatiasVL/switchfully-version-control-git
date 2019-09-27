@@ -6,7 +6,7 @@ public class ExcAppFinally {
         try {
             doSomething();
         } catch(RuntimeException exception) {
-            System.err.println("Exception catched: " + exception.getMessage());
+            System.err.println("Exception caught: " + exception.getMessage());
             // We're going to throw a new exception here...
             throw new NullPointerException("SOMETHING WENT WRONG");
         } finally {
