@@ -22,13 +22,13 @@ import static org.junit.jupiter.params.provider.Arguments.arguments;
 class BookServiceTestUsingParameterizedTests {
 
     @ParameterizedTest(name = "({index}) Expected price = {0} for selected books {1}")
-    @MethodSource("boughtBooksAndExpectedPriceProvidor")
-    void givenSelectedBooks_whenCaculatingPrice_thenReturnCorrectlyCalculatedPrice(String expectedPrice, ArrayList<HarryPotterBook> selectedBooks) {
+    @MethodSource("boughtBooksAndExpectedPriceProvider")
+    void givenSelectedBooks_whenCalculatingPrice_thenReturnCorrectlyCalculatedPrice(String expectedPrice, ArrayList<HarryPotterBook> selectedBooks) {
         double actualPrice = new BookService().shop(selectedBooks);
         assertThat(formatDecimalTwoDigits(actualPrice)).isEqualTo(expectedPrice);
     }
 
-    private static Stream<Arguments> boughtBooksAndExpectedPriceProvidor() {
+    private static Stream<Arguments> boughtBooksAndExpectedPriceProvider() {
         return Stream
                 .of(
                         OneBookCostsBasePrice(),

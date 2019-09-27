@@ -20,7 +20,7 @@ class BookServiceTest {
     }
 
     @Test
-    void givenOneBook_whenCaculatingPrice_thenReturnBasePrice() {
+    void givenOneBook_whenCalculatingPrice_thenReturnBasePrice() {
         ArrayList<HarryPotterBook> selectedBooks = newArrayList(
                 new HarryPotterBook(HarryPotterBookTitle.THE_CHAMBER_OF_SECRETS));
 
@@ -30,7 +30,7 @@ class BookServiceTest {
     }
 
     @Test
-    void givenTwoDifferentBooks_whenCaculatingPrice_thenReturnPriceWith5pctDiscount() {
+    void givenTwoDifferentBooks_whenCalculatingPrice_thenReturnPriceWith5pctDiscount() {
         ArrayList<HarryPotterBook> selectedBooks = newArrayList(
                 new HarryPotterBook(HarryPotterBookTitle.THE_CHAMBER_OF_SECRETS),
                 new HarryPotterBook(HarryPotterBookTitle.THE_PRISONER_OF_AZKABAN));
@@ -41,7 +41,7 @@ class BookServiceTest {
     }
 
     @Test
-    void givenThreeDifferentBooks_whenCaculatingPrice_thenReturnPriceWith10pctDiscount() {
+    void givenThreeDifferentBooks_whenCalculatingPrice_thenReturnPriceWith10pctDiscount() {
         ArrayList<HarryPotterBook> selectedBooks = newArrayList(
                 new HarryPotterBook(HarryPotterBookTitle.THE_CHAMBER_OF_SECRETS),
                 new HarryPotterBook(HarryPotterBookTitle.THE_PRISONER_OF_AZKABAN),
@@ -53,7 +53,7 @@ class BookServiceTest {
     }
 
     @Test
-    void givenFourDifferentBooks_whenCaculatingPrice_thenReturnPriceWith20pctDiscount() {
+    void givenFourDifferentBooks_whenCalculatingPrice_thenReturnPriceWith20pctDiscount() {
         ArrayList<HarryPotterBook> selectedBooks = newArrayList(
                 new HarryPotterBook(HarryPotterBookTitle.THE_CHAMBER_OF_SECRETS),
                 new HarryPotterBook(HarryPotterBookTitle.THE_PRISONER_OF_AZKABAN),
@@ -66,7 +66,7 @@ class BookServiceTest {
     }
 
     @Test
-    void givenFiveDifferentBooks_whenCaculatingPrice_thenReturnPriceWith25pctDiscount() {
+    void givenFiveDifferentBooks_whenCalculatingPrice_thenReturnPriceWith25pctDiscount() {
         ArrayList<HarryPotterBook> selectedBooks = newArrayList(
                 new HarryPotterBook(HarryPotterBookTitle.THE_CHAMBER_OF_SECRETS),
                 new HarryPotterBook(HarryPotterBookTitle.THE_PRISONER_OF_AZKABAN),
@@ -80,7 +80,7 @@ class BookServiceTest {
     }
 
     @Test
-    void givenTwoIdenticalBooks_whenCaculatingPrice_thenReturnBasePriceWithoutDiscount() {
+    void givenTwoIdenticalBooks_whenCalculatingPrice_thenReturnBasePriceWithoutDiscount() {
         ArrayList<HarryPotterBook> selectedBooks = newArrayList(
                 new HarryPotterBook(HarryPotterBookTitle.THE_CHAMBER_OF_SECRETS),
                 new HarryPotterBook(HarryPotterBookTitle.THE_CHAMBER_OF_SECRETS));
@@ -91,7 +91,7 @@ class BookServiceTest {
     }
 
     @Test
-    void givenTwoTimesTheSameTwoDifferentBooks_whenCaculatingPrice_thenOnlyCaculateDiscountOnce() {
+    void givenTwoTimesTheSameTwoDifferentBooks_whenCalculatingPrice_thenOnlyCalculateDiscountOnce() {
         ArrayList<HarryPotterBook> selectedBooks = newArrayList(
                 new HarryPotterBook(HarryPotterBookTitle.THE_CHAMBER_OF_SECRETS),
                 new HarryPotterBook(HarryPotterBookTitle.THE_CHAMBER_OF_SECRETS),
@@ -104,7 +104,7 @@ class BookServiceTest {
     }
 
     @Test
-    void givenANumberOfBooks_whenCaculatingPrice_thenReturnCorrectPrice() {
+    void givenANumberOfBooks_whenCalculatingPrice_thenReturnCorrectPrice() {
         ArrayList<HarryPotterBook> selectedBooks = newArrayList(
                 new HarryPotterBook(HarryPotterBookTitle.THE_CHAMBER_OF_SECRETS),
                 new HarryPotterBook(HarryPotterBookTitle.THE_CHAMBER_OF_SECRETS),
