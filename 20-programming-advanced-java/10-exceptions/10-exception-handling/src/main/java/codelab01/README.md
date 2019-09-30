@@ -99,6 +99,6 @@ Then, again, run the `main` method. The output should be as follows:
 Could not increase power: DANGER! The total power would exceed the critical threshold of 100 (tried to increase with 85)
 61
 ```   
-- It's important to notice, that although our first method call results in an exception (which is catched!), 
+- It's important to notice, that although our first method call results in an exception (which is caught!), 
 the execution is resumed (from after the `catch` block) and thus executes our second `try` block, which successfully 
 executes the `increasePower(...)` method and prints its returned value. 

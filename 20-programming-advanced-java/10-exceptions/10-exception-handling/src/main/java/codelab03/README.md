@@ -20,7 +20,7 @@ According to the laws of math, it's impossible to divide by zero.
 
 Execute the program, as the denominator, provide value `0`.
 
-Upon executing the `divide` method, the program will crash, an un-catched exception was thrown:
+Upon executing the `divide` method, the program will crash, an un-caught exception was thrown:
 ```
 Exception in thread "main" java.lang.ArithmeticException: / by zero
 	at codelab02.CalculatorService.divide(CalculatorService.java:6)
@@ -76,7 +76,7 @@ which is in the body of method `nextInt` -> `at java.base/java.util.Scanner.next
 We now know we are calling an unsafe method (`nextInt`) and where exactly we are calling it (line `22` of method `main`).
 Time to protect our code against the exception it can throw!
 
-Make it so that should an `InputMismatchException` be thrown, it is catched and the value of the numerator is set to 10.
+Make it so that should an `InputMismatchException` be thrown, it is caught and the value of the numerator is set to 10.
 - Also, print the following message: *"(invalid numerator provided. Therefore it is set to value 10)"*
 Otherwise, the provided value is used.
 - Do this similarly for the denominator, but instead of value 10, set it to value 5. Also print a similar message.

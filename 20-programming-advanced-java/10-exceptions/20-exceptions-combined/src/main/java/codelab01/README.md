@@ -40,7 +40,7 @@ goes wrong on line `9` -> at `codelab01.MyExceptionService.doSomethingExceptiona
 what's on line `9` of `MyExceptionService`, we see that it's the place where we create and throw our exception. It's the 
 root cause (that let our program crash), it's at the top of the stack.  
 
-Since an exception is thrown, which reaches our `main` method (where it is not catched), our program crashes. This occurs
+Since an exception is thrown, which reaches our `main` method (where it is not caught), our program crashes. This occurs
 at line `11` of our `main` method (`at codelab01.ExceptionApplication.main(ExceptionApplication.java:11`)). This means 
 that line `12` of our `main` method (`System.out.println("I can show you the world!");`) is never executed 
 (because the program crashes right before it). This is the reason why we don't see that text printed in the console.
