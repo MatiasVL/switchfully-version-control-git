@@ -40,9 +40,7 @@ class MovieCatalogTest {
                 new Movie("The flight", "Scarletta Johansa", "thriller"),
                 new Movie("Hacker", "Gwen Closet", "thriller"),
                 new Movie("Dreaming about dreams", "Denzel Washton", "thriller"),
-                new Movie("The flight", "Scarletta Johansa", "thriller"),
-                new Movie("The Curious case of Ben the button", "Bradly Pitski", "thriller"),
-                new Movie("Hacker", "Gwen Closet", "thriller")
+                new Movie("The Curious case of Ben the button", "Bradly Pitski", "thriller")
         );
     }
 
