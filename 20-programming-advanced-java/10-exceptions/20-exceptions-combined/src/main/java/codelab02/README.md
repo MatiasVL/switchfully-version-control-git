@@ -27,7 +27,7 @@ You'll now notice that `MyExceptionV2Service` compiles, however, `ExceptionV2App
 Do to the nature of `IOException` (checked v.s. unchecked) which is now part of the method's signature (using `throws`), 
 it is required that you catch (or rethrow) the exception.
 
-Wrap the `myExceptionService.doSomethingExceptional();` statement with a `try...catch`. When catched, print out the message
+Wrap the `myExceptionService.doSomethingExceptional();` statement with a `try...catch`. When caught, print out the message
 of the `IOException` exception. 
 
 Your code should now compile again.
