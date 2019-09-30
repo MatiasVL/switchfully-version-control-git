@@ -111,5 +111,15 @@ pipeline {
                 bat 'mvn clean test -pl :20-refactoring-clean-code'
             }
         }
+        stage('10-list') {
+            steps {
+                bat 'mvn clean test -pl :10-list'
+            }
+        }
+        stage('20-queue') {
+            steps {
+                bat 'mvn clean test -pl :20-queue'
+            }
+        }
     }
 }
