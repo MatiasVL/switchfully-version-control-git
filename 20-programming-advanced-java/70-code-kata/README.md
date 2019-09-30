@@ -23,6 +23,20 @@ Using Maven, Angular and Spring Boot (2.1.0.RELEASE).
   - run `npx --version` `npx -v` from inside the terminal, if it's correctly installed it will return a version number
 - You can now start your front-end using the command as described in section **Usage**.
 
+## Setting the proxy behind a corporate firewall
+
+NPM (similar to Maven) manages dependencies, and needs access to the internet.\
+This usually works fine. However, additional proxy configuration is required behind a corporate firewall.
+
+To configure the proxy, execute the following commands (with the correct proxy url):
+> `npm config set proxy http://your-corporate-proxy-url:port`
+> `npm config set https-proxy http://your-corporate-proxy-url:port`
+
+⚠ When NPM encounters proxy (or network) issues, the feedback you receive in the commandline is not very helpful.\
+If the commandline is stuck when starting the UI with NPX, something is wrong.
+> C:\devenv\track-java\20-programming-advanced-java\70-code-kata\gameoflife-gui>`npx lite-server --baseDir="dist"`\
+> `[..................] / rollbackFailedOptional: verb npm-session e8ef6a88aa7d6f97`
+
 ## Some tips
 
 - Tip 1: Run your entire build and all (backend) tests with command `mvn clean install` from inside the root folder (switchfully-gameoflife)
