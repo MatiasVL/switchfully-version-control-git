@@ -21,4 +21,6 @@ Validate the current code according to the following principles (among maybe oth
 
 Detect the violations and refactor the code by applying these GRASP principles.
 
+Take your time, think about the design and your solution!
+
 **When you're done, take a look at the solution (in the `solution`) package.**
