@@ -15,7 +15,7 @@ Example Binary Tree:
       /    \
      /      \
  Node X    Node Y
-``
+```
 
 Create a class `BinaryTree` that represents a binary tree. The only thing the binary tree needs to know about is its root node (the node from which the binary tree starts: (Node A in the example)).
 
