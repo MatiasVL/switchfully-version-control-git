@@ -3,7 +3,7 @@
 ## Footballer
 A footballer has the following state
 - A name
-- A birthday (as DateTime)
+- A birthday (as LocalDate)
 - A shirtNumber (String or int?)
     - Tip: To help you select the type, answer the following question: 
     will we ever do calculations with shirtNumber?
