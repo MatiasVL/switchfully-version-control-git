@@ -1,4 +1,4 @@
-package grasp.part01.solution;
+package grasp.solution;
 
 import java.util.ArrayList;
 import java.util.List;

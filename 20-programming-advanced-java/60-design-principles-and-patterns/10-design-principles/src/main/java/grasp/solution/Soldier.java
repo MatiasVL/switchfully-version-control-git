@@ -1,4 +1,4 @@
-package grasp.part01;
+package grasp.solution;
 
 /**
  * Nothing needs to change here.

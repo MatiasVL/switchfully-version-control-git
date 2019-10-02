@@ -1,4 +1,4 @@
-package grasp.part01;
+package grasp;
 
 import java.util.ArrayList;
 import java.util.HashMap;

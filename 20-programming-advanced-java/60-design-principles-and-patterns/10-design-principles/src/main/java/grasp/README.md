@@ -1,4 +1,4 @@
-# GRASP - Part 01
+# GRASP
 
 > Only take a look at the solution (see the `solution` package) when you're done, not before.
 

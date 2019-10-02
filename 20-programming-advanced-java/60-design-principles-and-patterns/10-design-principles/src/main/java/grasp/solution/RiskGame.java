@@ -1,4 +1,4 @@
-package grasp.part01.solution;
+package grasp.solution;
 
 public class RiskGame {
 
