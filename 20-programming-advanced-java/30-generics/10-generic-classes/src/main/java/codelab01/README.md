@@ -2,7 +2,7 @@
 
 Seriously... What's in the box?
 
-## Refacotor the Box to a more generic variant
+## Refactor the Box to a more generic variant
 
 1. Run `BoxRunner`
     - Understand why it fails by inspecting the `BoxRunner` and `Box` class
