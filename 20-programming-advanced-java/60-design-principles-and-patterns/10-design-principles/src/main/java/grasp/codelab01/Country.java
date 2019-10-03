@@ -1,4 +1,4 @@
-package grasp;
+package grasp.codelab01;
 
 public class Country {
 

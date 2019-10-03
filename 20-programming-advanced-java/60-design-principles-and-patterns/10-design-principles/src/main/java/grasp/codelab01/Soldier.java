@@ -1,4 +1,4 @@
-package grasp;
+package grasp.codelab01;
 
 /**
  * Nothing needs to change here.

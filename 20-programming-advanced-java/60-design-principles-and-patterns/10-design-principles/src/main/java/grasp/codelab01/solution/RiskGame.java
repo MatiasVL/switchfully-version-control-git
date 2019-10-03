@@ -1,4 +1,4 @@
-package grasp.solution;
+package grasp.codelab01.solution;
 
 public class RiskGame {
 
