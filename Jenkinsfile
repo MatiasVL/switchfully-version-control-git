@@ -56,5 +56,10 @@ pipeline {
                 bat 'mvn clean test -pl :50-combined'
             }
         }
+        stage('10-design-principles') {
+            steps {
+                bat 'mvn clean test -pl :10-design-principles'
+            }
+        }
     }
 }
