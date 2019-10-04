@@ -2,14 +2,14 @@ package be.switchfully.gameoflife.backend.status;
 
 import be.switchfully.gameoflife.backend.UnitTest;
 import org.assertj.core.api.Assertions;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
-public class StatusServiceTest extends UnitTest{
+public class StatusServiceTest extends UnitTest {
 
     private StatusService statusService;
 
-    @Before
+    @BeforeEach
     public void setupStatusService() {
         statusService = new StatusService();
     }
