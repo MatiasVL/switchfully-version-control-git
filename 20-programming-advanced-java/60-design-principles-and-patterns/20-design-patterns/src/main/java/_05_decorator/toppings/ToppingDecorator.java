@@ -13,7 +13,4 @@ public abstract class ToppingDecorator implements Pizza {
     public Pizza getPizza() {
         return pizza;
     }
-
-    // All toppings should reimplement the getDescription method
-    public abstract String getDescription();
 }
