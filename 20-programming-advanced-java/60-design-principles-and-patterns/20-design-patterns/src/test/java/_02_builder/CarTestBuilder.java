@@ -8,15 +8,23 @@ class CarTestBuilder {
         carBuilder = Car.CarBuilder.carBuilder();
     }
 
+    /**
+     * This is actually an example of even another design pattern, called the static factory method.
+     * (not to be confused with Factory method).
+     */
     public static CarTestBuilder aDefaultCar() {
         return aCar()
                 .withBrand("Ford")
                 .withType("Mondeo")
-                .withColor("Black")
+                .withColor("White")
                 .withNumberOfDoors(5)
                 .withNumberOfWheels(4);
     }
 
+    /**
+     * This is actually an example of even another design pattern, called the static factory method.
+     * (not to be confused with Factory method).
+     */
     public static CarTestBuilder anEmptyCar() {
         return aCar()
                 .withBrand("")
