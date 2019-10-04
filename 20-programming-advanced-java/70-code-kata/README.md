@@ -31,6 +31,10 @@ This usually works fine. However, additional proxy configuration is required beh
 To configure the proxy, execute the following commands (with the correct proxy url):
 > `npm config set proxy http://your-corporate-proxy-url:port`
 > `npm config set https-proxy http://your-corporate-proxy-url:port`
+> `npm config set strict-ssl false`
+
+It can happen that you also need to give access to your own backend
+> `set NO_PROXY=localhost,127.0.0.*` (configure it in your system variables)
 
 ⚠ When NPM encounters proxy (or network) issues, the feedback you receive in the commandline is not very helpful.\
 If the commandline is stuck when starting the UI with NPX, something is wrong.
