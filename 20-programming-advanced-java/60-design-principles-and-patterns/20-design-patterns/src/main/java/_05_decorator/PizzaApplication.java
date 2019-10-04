@@ -7,10 +7,10 @@ import _05_decorator.toppings.PepperTopping;
 public class PizzaApplication {
 
     public static void main(String[] args) {
-        // Create a pizza hawai with no extra topping
-        Pizza pizzaHawai = new HawaiPizza();
+        // Create a pizza hawaii with no extra topping
+        Pizza pizzaHawaii = new HawaiiPizza();
 
-        printOrder(pizzaHawai);
+        printOrder(pizzaHawaii);
 
         // Create a basic pizza
         Pizza orderedPizza = new MargheritaPizza();

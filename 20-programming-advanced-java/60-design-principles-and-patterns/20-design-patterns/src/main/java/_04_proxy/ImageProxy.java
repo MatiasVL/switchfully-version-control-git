@@ -3,7 +3,7 @@ package _04_proxy;
 public class ImageProxy implements Displayable {
 
     private ActualImage actualImage;
-    private String pathToImage;
+    private final String pathToImage;
 
     public ImageProxy(String pathToImage) {
         this.pathToImage = pathToImage;

@@ -2,9 +2,9 @@ package _05_decorator.toppings;
 
 import _05_decorator.Pizza;
 
-public abstract class ToppingDecorator extends Pizza {
+public abstract class ToppingDecorator implements Pizza {
 
-    private Pizza pizza;
+    private final Pizza pizza;
 
     ToppingDecorator(Pizza pizza) {
         this.pizza = pizza;

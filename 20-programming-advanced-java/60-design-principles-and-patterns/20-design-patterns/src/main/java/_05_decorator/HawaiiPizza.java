@@ -1,11 +1,11 @@
 package _05_decorator;
 
-public class MargheritaPizza implements Pizza {
+public class HawaiiPizza implements Pizza{
 
     private final String description;
 
-    public MargheritaPizza() {
-        description = "A basic margherita pizza";
+    public HawaiiPizza() {
+        description = "A delicious pizza hawaii";
     }
 
     @Override
@@ -15,6 +15,6 @@ public class MargheritaPizza implements Pizza {
 
     @Override
     public double cost() {
-        return 8.95;
+        return 10.50;
     }
 }

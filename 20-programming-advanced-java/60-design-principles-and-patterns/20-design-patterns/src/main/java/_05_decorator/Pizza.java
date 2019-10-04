@@ -1,12 +1,8 @@
 package _05_decorator;
 
-public abstract class Pizza {
+public interface Pizza {
 
-    String description = "Unknown pizza";
+    String getDescription();
+    double cost();
 
-    public String getDescription() {
-        return description;
-    }
-
-    public abstract double cost();
 }

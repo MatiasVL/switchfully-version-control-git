@@ -2,7 +2,7 @@ package _08_chain_of_responsiblity.files;
 
 public class File {
 
-    private String filename;
+    private final String filename;
 
     public File(String filename) {
         this.filename = filename;
