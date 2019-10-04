@@ -5,11 +5,11 @@ package _02_builder;
  */
 public class Car {
 
-    private int numberOfWheels;
-    private String color;
-    private int numberOfDoors;
-    private String brand;
-    private String type;
+    private final int numberOfWheels;
+    private final String color;
+    private final int numberOfDoors;
+    private final String brand;
+    private final String type;
 
     private Car(CarBuilder carBuilder) {
         numberOfWheels = carBuilder.numberOfWheels;
