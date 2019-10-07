@@ -29,22 +29,22 @@ NPM (similar to Maven) manages dependencies, and needs access to the internet.\
 This usually works fine. However, additional proxy configuration is required behind a corporate firewall.
 
 To configure the proxy, execute the following commands (with the correct proxy url):
-> `npm config set proxy http://your-corporate-proxy-url:port`
-> `npm config set https-proxy http://your-corporate-proxy-url:port`
-> `npm config set strict-ssl false`
+- `npm config set proxy http://your-corporate-proxy-url:port`
+- `npm config set https-proxy http://your-corporate-proxy-url:port`
+- `npm config set strict-ssl false`
 
 It can happen that you also need to give access to your own backend
-> `set NO_PROXY=localhost,127.0.0.*` (configure it in your system variables)
+- `set NO_PROXY=localhost,127.0.0.*` (configure it in your system variables)
 
 ⚠ When NPM encounters proxy (or network) issues, the feedback you receive in the commandline is not very helpful.\
 If the commandline is stuck when starting the UI with NPX, something is wrong.
-> C:\devenv\track-java\20-programming-advanced-java\70-code-kata\gameoflife-gui>`npx lite-server --baseDir="dist"`\
-> `[..................] / rollbackFailedOptional: verb npm-session e8ef6a88aa7d6f97`
+- `C:\devenv\track-java\20-programming-advanced-java\70-code-kata\gameoflife-gui>npx lite-server --baseDir="dist"`\
+- `[..................] / rollbackFailedOptional: verb npm-session e8ef6a88aa7d6f97`
 
 ## Some tips
 
 - Tip 1: Run your entire build and all (backend) tests with command `mvn clean install` from inside the root folder (switchfully-gameoflife)
-    - Tests run on JUnit 4, not 5!
+    - Tests run on JUnit 5
 - Tip 2: the UI won't work properly without a running backend.
 - Tip 3: You don't have to make any changes to the UI
 - Tip 4: You can access the frontend by surfing to http://localhost:3000/gameoflife-gui/index.html
