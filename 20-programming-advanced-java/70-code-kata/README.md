@@ -2,7 +2,7 @@
 
 Game of Life Code Kata!
 
-Using Maven, Angular and Spring Boot (2.1.0.RELEASE).
+Using Maven, Angular and Spring Boot (2.2.0 +).
 
 - You have to further developer the backend application, not the frontend.
 
