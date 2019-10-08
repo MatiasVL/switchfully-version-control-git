@@ -6,13 +6,13 @@ Using Maven, Angular and Spring Boot (2.2.0 +).
 
 - You have to further developer the backend application, not the frontend.
 
-## Usage
+## Usage: Backend
 
 - If it's your first time using this application, read the **First time usage** section first... :)
 - Start the backend by running `GameOfLifeApplication.java`
 - Start the frontend with command `npx lite-server --baseDir="dist"` from inside directory `gameoflife-gui`
     - Leave the CMD open, if you close it, you will shut down the HTTP server (lite-server) which is required.
-    - Open your browser and surf to http://localhost:3000/gameoflife-gui/index.html, this is the front end. 
+    - Open your browser and surf to http://localhost:3000/gameoflife-gui, this is the front end. 
 
 ## First time usage
 
@@ -23,6 +23,15 @@ Using Maven, Angular and Spring Boot (2.2.0 +).
   - run `npx --version` `npx -v` from inside the terminal, if it's correctly installed it will return a version number
 - You can now start your front-end using the command as described in section **Usage**.
 
+## Alternatively: use Docker for running the front end
+1. Run `docker build -t switchfully/gameoflife:latest .` from inside the `gameoflife-gui` folder.
+    - This will create the `switchfully/gameoflife` image (tagged as `latest`).
+2. Then, run `docker run -d --name gameoflife -p 3000:80 switchfully/gameoflife:latest`
+    - This will create and run a container based on our image: it will launch a NGINX webserver
+    - Open your browser and surf to http://localhost:3000/gameoflife-gui, this is the front end.
+3. When you're done with the code kata, don't forget to stop the container.
+
+ 
 ## Setting the proxy behind a corporate firewall
 
 NPM (similar to Maven) manages dependencies, and needs access to the internet.\
