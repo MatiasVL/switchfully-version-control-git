@@ -11,12 +11,9 @@ Below you'll find a list of additional topics and exercises, related to the
 - Date time API
 - Annotations
 - Regular expressions
-- Threading / Multithreading
-- Concurrency
+- Concurrency: Threading / Multithreading
 - Files and I/O
-- Java bean validation (after ORM / Spring Data)
 - Clean Code
-- Spring AOP
 
 ### Additional Exercises
 
