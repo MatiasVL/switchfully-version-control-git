@@ -12,7 +12,7 @@ class LibraryTest {
                 new Book("Book1", "content1", new Author("Burtens1", "Burt1", 18, Author.Gender.MALE)),
                 new Book("Booky", "contenty", new Author("Burtens1", "Anja", 20, Author.Gender.FEMALE)),
                 new Book("Book2", "content2", new Author("Trulens1", "Truus1", 10, Author.Gender.FEMALE)),
-                new Book("Book3", "content3", new Author("Burtens2", "Burt1", 58, Author.Gender.MALE)),
+                new Book("Book3", "content3", new Author("Burtens2", "Burt2", 58, Author.Gender.MALE)),
                 new Book("Book4", "content4", new Author("Trulens2", "Truus2", 17, Author.Gender.FEMALE)),
                 new Book("Book5", "content5", new Author("Trulens3", "Truus3", 28, Author.Gender.FEMALE)),
                 new Book("Book6", "content6", new Author("Trulens4", "Truus4", 60, Author.Gender.FEMALE))
@@ -20,7 +20,7 @@ class LibraryTest {
 
         List<String> result = library.get15OrLessUniqueSurnamesOf50YearOrOlderAuthorsOfBooks();
 
-        Assertions.assertThat(result).containsExactlyInAnyOrder("Burt1", "Truus4");
+        Assertions.assertThat(result).containsExactlyInAnyOrder("Burt2", "Truus4");
     }
 
     @Test
@@ -29,7 +29,7 @@ class LibraryTest {
                 new Book("Book1", "content1", new Author("Burtens1", "Burt1", 18, Author.Gender.MALE)),
                 new Book("Booky", "contenty", new Author("Burtens1", "Anja", 20, Author.Gender.FEMALE)),
                 new Book("Book2", "content2", new Author("Trulens1", "Truus1", 10, Author.Gender.FEMALE)),
-                new Book("Book3", "content3", new Author("Burtens2", "Burt1", 58, Author.Gender.MALE)),
+                new Book("Book3", "content3", new Author("Burtens2", "Burt2", 58, Author.Gender.MALE)),
                 new Book("Book4", "content4", new Author("Trulens2", "Truus2", 17, Author.Gender.FEMALE)),
                 new Book("Book5", "content5", new Author("Trulens3", "Truus3", 28, Author.Gender.FEMALE)),
                 new Book("Book6", "content6", new Author("Trulens4", "Truus4", 60, Author.Gender.FEMALE))
