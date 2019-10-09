@@ -1,27 +1,12 @@
 # Data Structures
 - I can choose and use the right data structure based on my requirements
-    - I know that I can use a List to have an **ordered** group of elements
-    - I know that I can use a Set to have a group of **unique** elements on which I can do mathematical operations
-    - I know that a Queue can be used to **handle** elements following the **FIFO** principle
-    - I know that I can use a Map to store a group of elements that I quickly can look up with a certain key.
-    
+    - I have a good understanding of the high-level data structures: list, map / dictionary, set, queue, stack,...
+        - I know that I can use a List to have an **ordered** group of elements
+        - I know that I can use a Set to have a group of **unique** elements on which I can do mathematical operations
+        - I know that a Queue can be used to **store** elements (before processing)
+        - I know that I can use a Map to store key-value pairs, which allows for quick key-based look-ups.  
 - I know some general specifics
-    - I know about util classes like Collections and how to use them
+    - I know about util classes like Collections, Arrays and how to use them
     - When I write data structures I write against an interface
-    
-- I know some specifics about lists
-    - I know that a list uses an array in the background
-    - I know that a list can become infinite long
-    - I can order a list
-        - I also can order a list based on a custom comparator
-    - I can loop over all elements of a list
-    - I can in one line create and assign values to a list using a library function
-    
-- I know some specifics about sets
-    - I know how the uniqueness is checked
-    - I know the importance of the equals() and hashcode() function and what their difference is
-
-- I know some specifics about maps
-    - I can access the different parts of a map: keys, values, entryset
-    - I know the importance of the equals() and hashcode() function and what their difference is
-    - I can lookup a key based on its value 
+- I can use concrete implementations of the Data structure interfaces provided in Java
+    - E.g. ArrayList<E>, HashMap<K, V>,...
