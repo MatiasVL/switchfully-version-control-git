@@ -20,7 +20,7 @@ class LibraryTest {
 
         List<String> result = library.get15OrLessUniqueSurnamesOf50YearOrOlderAuthorsOfBooks();
 
-        Assertions.assertThat(result).containsExactlyInAnyOrder("Burt2", "Truus4");
+        Assertions.assertThat(result).containsExactlyInAnyOrder("BURT2", "TRUUS4");
     }
 
     @Test
