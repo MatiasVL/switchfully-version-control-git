@@ -1,0 +1,21 @@
+# Generics
+- I know how to use existing generic classes
+    - I can create a object from a generic class with a provided type
+    - I know the difference between using the raw-type and using a specific 
+- I know how to create my own generic classes
+    - I can define a type parameter in my class
+    - I can use that type as a parameter type of a method
+    - I can use that type as a return type
+- I know how to create my own generic methods
+    - I can define a type parameter on my method
+    - I can use that type as a parameter
+    - I can use that type as a return type
+- I can generalise another generic class
+    - I can implement a generic interface
+    - I can extends from a generic (abstract) class
+- I understand the basics of a bounded type
+    - I know with which types I can create an object of a generic class with bounded type parameters.
+- I understand the basics of a wildcard bounded generic type in combination with data-structures
+    - I know which types of a List I can provide to method having a wildcard bounded generic type
+    
+    
