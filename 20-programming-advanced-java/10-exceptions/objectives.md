@@ -2,10 +2,10 @@
 - I can handle exceptions
     - I know how to use the try/catch/finally block
     - I know the difference between checked and unchecked exceptions
-- I can throw my own exceptions
-    - I can create a new Exception and throw it
-    - I can catch an exception and rethrow it
+    - I know how to catch (and rethrow) exceptions
+- I can throw existing exceptions
+- I can create my own custom exceptions
 - I can read a stacktrace            
     - When an exception is thrown I can find which method caused the exception
-- I know how and when to use exception and when not
+- I know how and when to use exceptions and when not
     - I know that exceptions only should be thrown to handle the exceptional cases
