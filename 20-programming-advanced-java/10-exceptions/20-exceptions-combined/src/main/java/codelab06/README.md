@@ -25,7 +25,7 @@ rather simple.
 If you have a small-ish file and you would like to read its entire contents in one pass, you can use the 
 `readAllLines(Path)` method. This method takes care of most of the work for you, 
 such as opening and closing the stream, but are not intended for handling large files. The following code shows 
-how to use the readAllBytes method:
+how to use the readAllLines method:
 
 ```
 Path pathToFile = ...;
