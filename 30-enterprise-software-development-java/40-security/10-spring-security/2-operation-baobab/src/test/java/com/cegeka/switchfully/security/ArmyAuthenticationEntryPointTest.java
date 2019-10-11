@@ -15,7 +15,7 @@ class ArmyAuthenticationEntryPointTest {
     private ArmyAuthenticationEntryPoint entrypoint;
 
     private ArmyAuthenticationEntryPointTest() {
-        entrypoint = Mockito.mock(ArmyAuthenticationEntryPoint.class);
+        entrypoint = new ArmyAuthenticationEntryPoint();
     }
 
     @Test
