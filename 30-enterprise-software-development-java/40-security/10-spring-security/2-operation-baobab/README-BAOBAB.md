@@ -41,6 +41,8 @@ public void joinArmy() {
 - The `hasRole` expression is used here to check if the currently authenticated principal has the specified authority.
 - The `hasAnyRole` allows for more than one role.
 
+Make sure that all tests become green after implementing the requirements.
+
 ### Manual call
 Try starting the application and call the rest endpoint using Advanced Rest Client or Postman. 
 Experiment with correct and incorrect authorization data and check if the app returns what you'd expect.
