@@ -2,7 +2,7 @@ package com.cegeka.switchfully.security;
 
 import java.io.Serializable;
 
-public class ArmyInfoDto implements Serializable{
+public class ArmyInfoDto implements Serializable {
 
     public String country;
     public int numberOfTroops;

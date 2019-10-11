@@ -2,6 +2,11 @@ package com.cegeka.switchfully.security;
 
 import java.io.Serializable;
 
+/**
+ * A DTO object, used for sending data 'over the wire'
+ * They're nothing more than 'dumb' data holders...
+ * This object will be marshalled to JSON, or visa-versa (unmarshalling)
+ */
 public class ArmyInfoDto implements Serializable{
 
     public String country;

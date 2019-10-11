@@ -12,8 +12,12 @@ import org.springframework.security.web.AuthenticationEntryPoint;
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
+    private final AuthenticationEntryPoint authEntryPoint;
+
     @Autowired
-    private AuthenticationEntryPoint authEntryPoint;
+    public SecurityConfig(AuthenticationEntryPoint authEntryPoint) {
+        this.authEntryPoint = authEntryPoint;
+    }
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
@@ -23,16 +27,19 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .authenticationEntryPoint(authEntryPoint);
     }
 
+    /**
+     * Question about {noop}? --> https://docs.spring.io/spring-security/site/docs/current/reference/htmlsingle/#pe-dpe
+     */
     @Autowired
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
         auth.inMemoryAuthentication()
-                .withUser("ZWANETTA").password("WORST").roles("CIVILIAN")
+                .withUser("ZWANETTA").password("{noop}WORST").roles("CIVILIAN")
                 .and()
-                .withUser("JMILLER").password("THANKS").roles("PRIVATE")
+                .withUser("JMILLER").password("{noop}THANKS").roles("PRIVATE")
                 .and()
-                .withUser("UNCLE").password("SAM").roles("HUMAN_RELATIONSHIPS")
+                .withUser("UNCLE").password("{noop}SAM").roles("HUMAN_RELATIONSHIPS")
                 .and()
-                .withUser("GENNY").password("RALLY").roles("GENERAL");
+                .withUser("GENNY").password("{noop}RALLY").roles("GENERAL");
     }
 
 }
