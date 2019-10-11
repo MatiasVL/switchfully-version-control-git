@@ -146,10 +146,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
         auth.inMemoryAuthentication()
-                .withUser("dummy username").password("{noop}dummy password");
+                .withUser("dummy username").password("{noop}dummy password").roles("HUMAN");
     }
 }
 ```
+We will not discuss the roles yet, but we have to provide at least one role, so we make-up a very generic one, "Human".  
 
 ### Authentication Entry Point
 Now let us define our authentication entry point, we will name it `ArmyAuthenticationEntryPoint`. 
@@ -183,8 +184,18 @@ Extra information:
 ### Fix your tests
 Run the tests! Make sure that they work now.
 
-### Extra assignment
-- Try starting the application and call the rest endpoint using Advanced Rest Client or Postman. 
+### Manual call
+Try starting the application and call the rest endpoint using Advanced Rest Client or Postman. 
 Experiment with correct and incorrect authorization data and check if the app returns what you'd expect.
+1. HTTP GET `http://localhost:9123/armies/belgium` without an Authorization header
+    - Should be 401 Unauthorized (+ the WWW-Authenticate response header)
+2. HTTP GET `http://localhost:9123/armies/belgium` with an Authorization header
+    - Pair `JMILLER:THANKS` Base64 encoded is Sk1JTExFUjpUSEFOS1M=
+        - Encode yourself using https://www.base64encode.org (UTF-8, CRLF)
+    - Should be 200 OK with a JSON payload (the `ArmyInfoDto` as JSON)
+3. Finally, perform a HTTP GET `http://localhost:9123/armies/belgium` with an Authorization header 
+but with an invalid username:password pair.
+
+### Extra assignment
 - `AvocadoTest` currently only tests the `getDeployedArmyInfo` REST-call. Write similar tests for the other 3 REST-calls
 - Implement the methods in your `ArmyResource` that have `//TODO` in their body.
