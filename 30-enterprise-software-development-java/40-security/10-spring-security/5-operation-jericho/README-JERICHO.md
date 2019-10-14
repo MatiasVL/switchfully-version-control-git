@@ -113,3 +113,4 @@ the backend can quickly validate if the received token is already expired
 8. Start
 9. Try
 10. Paste token into: https://jwt.io/
+11. Fix the test (no longer basic-auth) header.
