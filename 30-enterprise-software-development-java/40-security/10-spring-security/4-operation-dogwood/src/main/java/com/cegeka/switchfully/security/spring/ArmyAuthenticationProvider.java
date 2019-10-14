@@ -1,6 +1,6 @@
 package com.cegeka.switchfully.security.spring;
 
-import com.cegeka.switchfully.security.external.authentication.ExternalAuthenticaton;
+import com.cegeka.switchfully.security.external.authentication.ExternalAuthentication;
 import com.cegeka.switchfully.security.external.authentication.FakeAuthenticationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationProvider;
@@ -28,7 +28,7 @@ public class ArmyAuthenticationProvider implements AuthenticationProvider {
 
     @Override
     public Authentication authenticate(Authentication authentication) throws AuthenticationException {
-        ExternalAuthenticaton user = fakeAuthenticationService.getUser(authentication.getPrincipal().toString(), authentication.getCredentials().toString());
+        ExternalAuthentication user = fakeAuthenticationService.getUser(authentication.getPrincipal().toString(), authentication.getCredentials().toString());
         if(user != null){
             return new UsernamePasswordAuthenticationToken(user.getUsername(), user.getPassword(), rolesToGrantedAuthorities(user.getRoles()));
         }
