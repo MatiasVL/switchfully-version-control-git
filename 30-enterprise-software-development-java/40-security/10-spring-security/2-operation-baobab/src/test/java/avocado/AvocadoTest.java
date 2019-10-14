@@ -1,5 +1,6 @@
 package avocado;
 
+import com.cegeka.switchfully.RestAssuredTest;
 import com.cegeka.switchfully.security.ArmyInfoDto;
 import com.cegeka.switchfully.security.ArmyResource;
 import org.junit.jupiter.api.Test;

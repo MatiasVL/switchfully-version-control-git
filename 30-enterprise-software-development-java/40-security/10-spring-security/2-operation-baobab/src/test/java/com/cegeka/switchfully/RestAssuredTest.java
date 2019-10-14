@@ -1,4 +1,4 @@
-package avocado;
+package com.cegeka.switchfully;
 
 import com.cegeka.switchfully.security.Application;
 import io.restassured.specification.RequestSpecification;
@@ -20,7 +20,7 @@ public abstract class RestAssuredTest {
     @Autowired
     private Environment env;
 
-    RequestSpecification givenRequestForUser(String username, String password) {
+    public RequestSpecification givenRequestForUser(String username, String password) {
         String encodedString = Base64.getEncoder().encodeToString((username+":"+password).getBytes());
         return given()
                 .header("Authorization", "Basic " + encodedString)

@@ -1,5 +1,6 @@
-package avocado;
+package baobab;
 
+import com.cegeka.switchfully.RestAssuredTest;
 import com.cegeka.switchfully.security.ArmyResource;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
