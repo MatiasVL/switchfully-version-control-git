@@ -83,3 +83,6 @@ When using a custom `AuthenticationProvider`, Spring pretty much requires you to
 To not make the story even bigger than it already is, we're gonna cheat a bit on that part (don't worry, we'll implement it properly in the next story).
 - To fix everything up, change your `hasRole`- and `hasAnyRole`-code in the `ArmyResource` (and/or SecurityConfig) to `hasAuthority` and `hasAnyAuthority`.
 - If everything is implemented correctly, all tests should run successfully.
+
+## Solution
+Inspect the `solutions` branch for a solution.

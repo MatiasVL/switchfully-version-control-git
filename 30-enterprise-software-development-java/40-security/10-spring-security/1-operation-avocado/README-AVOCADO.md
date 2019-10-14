@@ -199,3 +199,6 @@ but with an invalid username:password pair.
 ### Extra assignment
 - `AvocadoTest` currently only tests the `getDeployedArmyInfo` REST-call. Write similar tests for the other 3 REST-calls
 - Implement the methods in your `ArmyResource` that have `//TODO` in their body.
+
+## Solution
+Inspect the `solutions` branch for a solution.

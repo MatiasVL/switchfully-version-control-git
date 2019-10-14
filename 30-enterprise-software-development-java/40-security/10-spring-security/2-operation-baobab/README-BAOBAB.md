@@ -51,3 +51,6 @@ Experiment with correct and incorrect authorization data and check if the app re
 - The article offers multiple ways to fix this problem (we implemented the second one). Try implementing both and see if they both do the job.
     - Don't get confused with the XML configuration, it's for legacy code bases, we use java config.
 - Users can have multiple roles. Create a user who is both a PRIVATE and a HUMAN_RELATIONSHIPS and check if he can do everything both roles can.
+
+## Solution
+Inspect the `solutions` branch for a solution.

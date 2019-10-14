@@ -66,3 +66,6 @@ Once again, there are no new end to end tests. The old tests should keep working
 
 Extra info:
 - [Another article on role based vs feature based (called 'activity based' here)](https://lostechies.com/derickbailey/2011/05/24/dont-do-role-based-authorization-checks-do-activity-based-checks/)
+
+## Solution
+Inspect the `solutions` branch for a solution.
