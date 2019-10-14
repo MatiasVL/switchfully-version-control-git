@@ -103,3 +103,13 @@ the backend can quickly validate if the received token is already expired
 
 ## Implementing JWT
 
+1. Add correct dependencies
+2. Add the constants such as the signing key,...
+3. Add the Authentication filter
+4. Add the Authorization filter
+5. Add both filters + cors to the http Security config
+6. Remove from http config the basic authentication + entry point
+7. Remove the EntryPoint class.
+8. Start
+9. Try
+10. Paste token into: https://jwt.io/
