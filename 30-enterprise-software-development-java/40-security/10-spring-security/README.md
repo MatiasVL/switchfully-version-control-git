@@ -1,38 +1,3 @@
-
-
-## Operation Cedar (starting point: `3-operation-cedar`)
-In the previous story we implemented 'Role based'-security. There is another way to approach this, however: feature based security.
-
-But first, let's switch to a userstore that's a bit closer to reality. Out goes the inMemoryAuthentication and in comes your very own authenticationProvider!
-
-You will have to get rid of the inMemoryAuthentication in your Spring SecurityConfig class and replace it by a custom AuthenticationProvider.
-This is a class that extends AuthenticationProvider. You will have to implement two methods: 'authenticate' and 'supports'.
-
-### Implementing the authenticate() method
-In the package 'external.authentication' you will find the class 'FakeAuthenticationService'. 
-You will have to provide this class with a username and a password. 
-If the combination is correct, this service will return an Object that contains the username, password and roles of the user.
-If the combination is incorrect, it will return null.
-
-The authenticate should return an 'Authentication' object if the username/password combo exists. 
-Otherwise it should throw an exception that extends the AuthenticationException class.
-Pick one you think fits the bill.
-**HINT**: This method is a great candidate for some unit-tests.
-
-### Implementing the supports() method
-This method determines if the custom AuthenticationProvider will handle the Authentication request. In our case, the provider handles Username/Password Authenticationtokens.
-The standard Java method 'isAssignableFrom()' might help you.
-
-Note that no extra end-to-end tests have been provided for this story. 
-That's because the existing behaviours aren't altered in any way. So after you're done, all the other tests should still run.
-
-### Oh right, one more thing:
-
-When using a custom AuthenticationProvider, Spring pretty much requires you to be using feature based security. 
-To not make the story even bigger than it already is, we're gonna cheat a bit on that part (don't worry, we'll implement it properly in the next story).
-To fix everything up, change your 'hasRole'- and 'hasAnyRole'-code in the ArmyResource and/or SecurityConfig to 'hasAuthority' and 'hasAnyAuthority'.
-If everything is implemented correctly, both the baobabTest and the AvocadoTest should run.
-
 ## Operation Dogwood (starting point: `4-operation-dogwood`)
 
 Back to feature-based security. To get up to speed about the benefits feature-based security has, read [the following post on stackexchange](https://softwareengineering.stackexchange.com/questions/299729/role-vs-permission-based-access-control).
