@@ -7,7 +7,7 @@ public class ExternalAuthentication {
     private String password;
     private List<String> roles;
 
-    public static ExternalAuthentication externalAuthenticaton(){
+    public static ExternalAuthentication externalAuthentication(){
         return new ExternalAuthentication();
     }
 
