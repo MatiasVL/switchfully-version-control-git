@@ -1,26 +1,26 @@
-package avocado;
+package com.cegeka.switchfully;
 
 import com.cegeka.switchfully.security.Application;
 import io.restassured.specification.RequestSpecification;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.core.env.Environment;
-import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import java.util.Base64;
 
 import static io.restassured.RestAssured.given;
 import static java.lang.Integer.parseInt;
 
-@RunWith(SpringRunner.class)
+@ExtendWith(SpringExtension.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT, classes = Application.class)
 public abstract class RestAssuredTest {
 
     @Autowired
     private Environment env;
 
-    RequestSpecification givenRequestForUser(String username, String password) {
+    public RequestSpecification givenRequestForUser(String username, String password) {
         String encodedString = Base64.getEncoder().encodeToString((username+":"+password).getBytes());
         return given()
                 .header("Authorization", "Basic " + encodedString)

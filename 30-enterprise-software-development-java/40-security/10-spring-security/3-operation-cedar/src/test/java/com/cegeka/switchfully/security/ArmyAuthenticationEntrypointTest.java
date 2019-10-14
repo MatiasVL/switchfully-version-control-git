@@ -1,34 +1,30 @@
 package com.cegeka.switchfully.security;
 
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.mockito.InjectMocks;
-import org.mockito.runners.MockitoJUnitRunner;
+import org.junit.jupiter.api.Test;
 import org.springframework.mock.web.MockHttpServletRequest;
 import org.springframework.mock.web.MockHttpServletResponse;
 
-import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-@RunWith(MockitoJUnitRunner.class)
-public class ArmyAuthenticationEntrypointTest {
+class ArmyAuthenticationEntryPointTest {
 
-    @InjectMocks
-    private ArmyAuthenticationEntrypoint entrypoint;
+    private ArmyAuthenticationEntryPoint entrypoint;
+
+    private ArmyAuthenticationEntryPointTest() {
+        entrypoint = new ArmyAuthenticationEntryPoint();
+    }
 
     @Test
-    public void commence_shouldSetUnauthorisedStatusAndHeader() throws IOException, ServletException {
-
+    void commence_shouldSetUnauthorisedStatusAndHeader() {
         HttpServletRequest request = new MockHttpServletRequest();
         HttpServletResponse response = new MockHttpServletResponse();
 
         entrypoint.commence(request, response, null);
 
-        assertThat(response.getHeader("WWW-Authenticate")).isEqualTo("Basic realm=ARMYRealm");
+        assertThat(response.getHeader("WWW-Authenticate")).isEqualTo("Basic realm=" + ArmyAuthenticationEntryPoint.NAME_OF_REALM);
         assertThat(response.getStatus()).isEqualTo(401);
     }
 }
