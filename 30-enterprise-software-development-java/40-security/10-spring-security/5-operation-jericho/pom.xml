@@ -10,7 +10,7 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>5-operation-elm</artifactId>
+    <artifactId>5-operation-jericho</artifactId>
 
     <dependencies>
         <dependency>
