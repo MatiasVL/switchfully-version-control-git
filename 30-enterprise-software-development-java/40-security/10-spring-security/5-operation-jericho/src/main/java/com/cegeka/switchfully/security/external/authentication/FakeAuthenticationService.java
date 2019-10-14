@@ -10,12 +10,12 @@ import static com.google.common.collect.Lists.newArrayList;
 public class FakeAuthenticationService {
 
     private List<ExternalAuthentication> externalAuthentications = newArrayList(
-            ExternalAuthentication.externalAuthenticaton().withUsername("CRIMI").withPassword("NAL").withRoles(newArrayList("PRIVATE")),
-            ExternalAuthentication.externalAuthenticaton().withUsername("MOB").withPassword("BOSS").withRoles(newArrayList("PRIVATE")),
-            ExternalAuthentication.externalAuthenticaton().withUsername("ZWANETTA").withPassword("WORST").withRoles(newArrayList("CIVILIAN")),
-            ExternalAuthentication.externalAuthenticaton().withUsername("JMILLER").withPassword("THANKS").withRoles(newArrayList("PRIVATE")),
-            ExternalAuthentication.externalAuthenticaton().withUsername("UNCLE").withPassword("SAM").withRoles(newArrayList("HUMAN_RELATIONSHIPS")),
-            ExternalAuthentication.externalAuthenticaton().withUsername("GENNY").withPassword("RALLY").withRoles(newArrayList("GENERAL"))
+            ExternalAuthentication.externalAuthentication().withUsername("CRIMI").withPassword("NAL").withRoles(newArrayList("PRIVATE")),
+            ExternalAuthentication.externalAuthentication().withUsername("MOB").withPassword("BOSS").withRoles(newArrayList("PRIVATE")),
+            ExternalAuthentication.externalAuthentication().withUsername("ZWANETTA").withPassword("WORST").withRoles(newArrayList("CIVILIAN")),
+            ExternalAuthentication.externalAuthentication().withUsername("JMILLER").withPassword("THANKS").withRoles(newArrayList("PRIVATE")),
+            ExternalAuthentication.externalAuthentication().withUsername("UNCLE").withPassword("SAM").withRoles(newArrayList("HUMAN_RELATIONSHIPS")),
+            ExternalAuthentication.externalAuthentication().withUsername("GENNY").withPassword("RALLY").withRoles(newArrayList("GENERAL"))
     );
 
     public ExternalAuthentication getUser(String username, String password) {
