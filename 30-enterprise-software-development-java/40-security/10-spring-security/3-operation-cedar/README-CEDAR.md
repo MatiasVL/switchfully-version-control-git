@@ -18,7 +18,7 @@ Spring Security provides a variety of options for performing authentication. The
 **an Authentication request is processed by an AuthenticationProvider and a fully authenticated object with full credentials is returned**.
 
 You will have to get rid of the inMemoryAuthentication in your Spring `SecurityConfig` class and replace it by a custom `AuthenticationProvider`.
-This custom authentication provider (let's name it `ArmyAuthenticationProvider`) is a class that should extend `AuthenticationProvider`. 
+This custom authentication provider (let's name it `ArmyAuthenticationProvider`) is a class that should implement `AuthenticationProvider`. 
 You will have to override two methods: 'authenticate' and 'supports'.
 - Method **authenticate** (on success) must return a fully authenticated object (`Authentication`) with full credentials.
 - Method **supports** is a rather technical method which we will help you with to implement...
@@ -28,21 +28,23 @@ In the package `...security.external.authentication` you will find the class `Fa
 It can be used to access the known users (based of username and password).
 It is fully ready to be used by your `ArmyAuthenticationProvider` class:
 - You can call `getUser` by providing a password and username. 
-- If the combination is correct, this service will return a fully authenticated object (`ExternalAuthentication` 
-which extends `Authentication`) that contains the username, password and roles of the user.
+- If the combination is correct, this service will return a `ExternalAuthentication` object that contains the username, 
+password and roles of the user.
 - If the combination is incorrect, it will return an empty optional.
 
 The `authenticate()` method in the `ArmyAuthenticationProvider` class should:
-- Return an `Authentication` object (specifically, a `ExternalAuthentication` object in our case) if the username/password combo exists.
-    - It should use the `FakeAuthenticationService` to check this.
-    - `Authentication` is an interface of Spring Security, which you'll have to implement in a specific class, name it the `ArmyAuthentication`. 
+- Return an `Authentication` object if the username/password combo exists (a fully authenticated object with full credentials).
+    - It should use the `FakeAuthenticationService` to check if a given username and password is known (if we have a user for those credentials).
+    - It returns an object of `Authentication` (`Authentication` is an interface of Spring Security). 
 - Otherwise it should throw an exception that extends the `AuthenticationException` class.
     - Pick one you think fits the bill.
 - **HINT**: This method is a great candidate for some unit-tests.
 
 ### Implementing the supports() method
-This method determines if the custom `AuthenticationProvider` (The `ArmyAuthenticationProvier`) will handle the `Authentication` request. 
-In our case, the provider handles Username/Password Authentication tokens. You don't have to know the specifics, implement it as follows:
+This method must return true if this `AuthenticationProvider` (`ArmyAuthenticationProvider`) supports the indicated `Authentication` object. 
+In our case, the provider handles Username/Password Authentication tokens. 
+- `UsernamePasswordAuthenticationToken` is an already existing implementation of `Authentication`.
+You don't have to know the specifics, implement it as follows:
 ```
 @Override
 public boolean supports(Class<?> authentication) {
