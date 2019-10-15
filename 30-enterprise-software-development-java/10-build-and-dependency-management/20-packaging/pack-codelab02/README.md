@@ -16,10 +16,8 @@ which we can then include on our own project (as external dependencies).
     simplejarproject
         | output
         | src
-            | main
-                | java
-                    | application
-                    | person 
+            | application
+            | person 
     ```
 3. Create a `Person` class in package `person`, it should have a name (`String`) and a `Gender` (Enum, also in package `person`)
 4. Create a `MyApplication` class (in the `application` package) which has a main method.
