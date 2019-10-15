@@ -49,7 +49,7 @@ which we can then include on our own project (as external dependencies).
     ```
     - Find out about the `jar` command and what the `-c`, `-f` and `-e` option do: 
         - https://docs.oracle.com/javase/8/docs/technotes/tools/windows/jar.html
-        - https://docs.oracle.com/en/java/javase/12/tools/jar.htm
+        - https://docs.oracle.com/en/java/javase/12/tools/jar.html
     - **Not providing** the `-e` option - in this scenario - will make this JAR non-executable.
     - You can imagine packaging a large project manually can be a pretty cumbersome task to do...
 9. At the root level of your `output` folder, the `my-packaged-project.jar` jar file should be generated.
