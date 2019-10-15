@@ -16,8 +16,10 @@ which we can then include on our own project (as external dependencies).
     simplejarproject
         | output
         | src
-            | application
-            | person 
+            | main
+                | java
+                    | application
+                    | person 
     ```
 3. Create a `Person` class in package `person`, it should have a name (`String`) and a `Gender` (Enum, also in package `person`)
 4. Create a `MyApplication` class (in the `application` package) which has a main method.
@@ -45,6 +47,7 @@ which we can then include on our own project (as external dependencies).
     ```
     jar cfe my-packaged-project.jar application.MyApplication application/*.class person/*.class
     ```
+    - Based on how IntelliJ handles your sources, it might be that you have to specify `main/java/application/*.class` instead of `application/*class`. (same goes for person).
     - Find out about the `jar` command and what the `-c`, `-f` and `-e` option do: 
         - https://docs.oracle.com/javase/8/docs/technotes/tools/windows/jar.html
         - https://docs.oracle.com/en/java/javase/12/tools/jar.html
