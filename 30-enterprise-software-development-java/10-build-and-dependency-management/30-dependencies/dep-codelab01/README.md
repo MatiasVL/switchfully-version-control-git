@@ -50,7 +50,7 @@ Let's use it as an example for our first external dependency.
         ```
 7. Something went wrong, right?
     - Something like this, to be precise: ```error: package com.google.common.collect does not exist```
-8. When compiling, we have to include all other user class files, source files,... (including external dependencies).
+8. When compiling, we have to include (put on the classpath) all other used class files, source files,... (including external dependencies).
 Since we're using classes from Guava in ```MyApplication```, we have to include the guava jar. We do this by using the 
 ```-cp``` option (classpath) and providing its path.
     - Execute the following command:
