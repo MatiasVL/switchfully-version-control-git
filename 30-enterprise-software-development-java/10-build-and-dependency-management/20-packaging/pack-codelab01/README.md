@@ -70,7 +70,7 @@ Main-Class: GitHubLinkGenerator
 - Where `GitHubLinkGenerator` is the name of the Class that has a `main` method which you want to execute.
     - It's not the name of a `.class` file.
 
-Finally, to [create a jar](jarfiles) we use the ```jar``` command line utility.
+Finally, to create a jar we use the `jar` command line utility.
 - jar files: https://docs.oracle.com/javase/tutorial/deployment/jar/index.html
 
 From inside the `pack-codelab01` folder, open the terminal (CMD):
