@@ -14,7 +14,7 @@ We're going to create a multi-module Maven project.
     - In the `main` method, it should loop over the list, printing the name of every Person
 6. Do **Dependency Management** (`<dependencyManagement>`) in the parent pom
 7. Overwrite the correct `properties` to set the source and target runtime version to Java 8 (or higher), so that both modules are compiled against that version. 
-8. Use the `maven-jar-dependency` combined with the `maven-dependency-plugin` to create an executable JAR.
+8. Use the `maven-jar-plugin` combined with the `maven-dependency-plugin` to create an executable JAR.
     - The main class being `myApi`
     -  Only for module `api`
     - Alternatively, use the `maven-assembly-plugin` to create an executable fat JAR (a fat JAR contains all the JARs of its dependencies, they're packaged inside of our JAR).
