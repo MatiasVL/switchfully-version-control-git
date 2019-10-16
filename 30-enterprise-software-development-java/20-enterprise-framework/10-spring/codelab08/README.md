@@ -43,7 +43,7 @@ In this codelab, we'll do it manually!
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.1.6.RELEASE</version>
+        <version>2.2.0.RELEASE</version>
     </parent>
     <dependencies>
         <dependency>

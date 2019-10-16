@@ -17,7 +17,7 @@ The Stock Exchange Application is described in the README.md file of package `_0
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.1.6.RELEASE</version>
+        <version>2.2.0.RELEASE</version>
     </parent>
     ```
 2. Still in your own parent pom
