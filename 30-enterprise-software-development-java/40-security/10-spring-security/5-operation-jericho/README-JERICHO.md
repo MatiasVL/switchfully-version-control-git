@@ -617,6 +617,9 @@ is equal to its random-salted, hashed variant.
 Restart your backend, everything should still work as before.
 - But, no plain-text passwords are kept in memory, only hashed passwords (in List `externalAuthentications`).
 
+#### Solution
+Inspect the `solutions` branch for a solution.
+
 ### 10. Resources
 1. https://jwt.io/
 2. https://dzone.com/articles/spring-security-authentication
