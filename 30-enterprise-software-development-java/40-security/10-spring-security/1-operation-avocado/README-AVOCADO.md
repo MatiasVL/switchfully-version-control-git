@@ -31,6 +31,11 @@ We do expect you to write some additional (Unit) tests where you see fit.
 Also, a REST-client such as [Postman](https://www.getpostman.com/) or [ARC](https://chrome.google.com/webstore/detail/advanced-rest-client/hgmloofddffdnphfgcellkdfbfbjeloo) 
 might come in handy for some manual testing.
 
+Also, Spring Security is extensive. We are only covering the basics in order to secure our application.
+Don't forget about the online reference if you want to know more:
+- https://docs.spring.io/spring-security/site/docs/5.2.1.BUILD-SNAPSHOT/reference/html5
+- https://docs.spring.io/spring-security/site/docs/5.2.1.BUILD-SNAPSHOT/reference/html5/#servlet-applications
+
 # Operation Avocado (starting point: `1-operation-avocado`)
 
 You're given a very basic Spring Boot application with a couple of REST-calls (see ArmyResource).
