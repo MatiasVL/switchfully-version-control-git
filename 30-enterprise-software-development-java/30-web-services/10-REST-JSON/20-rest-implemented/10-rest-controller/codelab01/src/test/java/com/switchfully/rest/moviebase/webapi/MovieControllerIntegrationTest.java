@@ -32,7 +32,7 @@ class MovieControllerIntegrationTest {
                         .contentType(JSON)
                         .when()
                         .port(port)
-                        .post("/members")
+                        .post("/movies")
                         .then()
                         .assertThat()
                         .statusCode(HttpStatus.CREATED.value())
