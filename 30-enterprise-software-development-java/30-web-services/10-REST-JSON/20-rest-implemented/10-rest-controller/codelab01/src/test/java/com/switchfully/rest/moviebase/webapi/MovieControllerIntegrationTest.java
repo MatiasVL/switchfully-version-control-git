@@ -4,16 +4,13 @@ import com.switchfully.rest.moviebase.webapi.dtos.CreateMovieDto;
 import com.switchfully.rest.moviebase.webapi.dtos.MovieDto;
 import io.restassured.RestAssured;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.HttpStatus;
-import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import static io.restassured.http.ContentType.JSON;
 import static org.assertj.core.api.Assertions.assertThat;
 
-@ExtendWith(SpringExtension.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT)
 class MovieControllerIntegrationTest {
 
@@ -29,18 +26,18 @@ class MovieControllerIntegrationTest {
 
         MovieDto movieDto =
                 RestAssured
-                    .given()
+                        .given()
                         .body(createMovieDto)
                         .accept(JSON)
                         .contentType(JSON)
-                    .when()
+                        .when()
                         .port(port)
-                        .post("/members")
-                    .then()
+                        .post("/movies")
+                        .then()
                         .assertThat()
                         .statusCode(HttpStatus.CREATED.value())
                         .extract()
-                            .as(MovieDto.class);
+                        .as(MovieDto.class);
 
         assertThat(movieDto.getId()).isNotBlank();
         assertThat(movieDto.getTitle()).isEqualTo(createMovieDto.getTitle());

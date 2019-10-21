@@ -6,7 +6,7 @@ including:
 - Dependency Injection with Spring
 - An executable JAR (also known as "fat JAR" or "JAR with dependencies")
 
-The Stock Exchange Application is described in the README.md file of package `_08_build_and_dependency_management._03.maven.codelab04`
+The Stock Exchange Application is described in the README.md file of package `30-enterprise-software-development-java > 10-build-and-dependency-management > 40-maven > codelab05`
 - If you already successfully finished codelab05, use your own code as your starting point
 - If not (or, if you prefer our solution), use the provided solution of codelab05 as your starting point
     -  https://github.com/switchfully/maven-stock-exchange
@@ -111,7 +111,6 @@ The Stock Exchange Application is described in the README.md file of package `_0
     - No idea how to start? ASK!
 2. Annotate this test-class with:
      ```
-     @RunWith(SpringRunner.class)
      @SpringBootTest(classes = {TestApplication.class})
      ```
     - Where TestApplication has the following code:
