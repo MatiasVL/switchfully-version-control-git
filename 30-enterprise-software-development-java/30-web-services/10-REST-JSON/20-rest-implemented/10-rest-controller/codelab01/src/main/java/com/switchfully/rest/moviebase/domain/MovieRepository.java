@@ -12,7 +12,7 @@ import java.util.concurrent.ConcurrentHashMap;
 @Component
 public class MovieRepository {
 
-    ConcurrentHashMap<String, Movie> moviesById;
+    private final ConcurrentHashMap<String, Movie> moviesById;
 
     public MovieRepository() {
         moviesById = new ConcurrentHashMap<>();
