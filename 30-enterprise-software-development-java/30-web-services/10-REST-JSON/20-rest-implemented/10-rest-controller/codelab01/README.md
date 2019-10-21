@@ -44,9 +44,7 @@ There are tests available.
 
 ## MovieController
 
-The `MovieController` should offer two distinct actions:
-1. Performing an HTTP-call, you should be able to create a new `Movie`.
-2. Performing an HTTP-call, you should be able to fetch all existing `Movie` objects.
+The `MovieController` should offer four distinct actions.
  
 Make sure to pick the right resource name (http://base-url/<resource-name>), according to conventions.
  
