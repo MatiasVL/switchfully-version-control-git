@@ -21,13 +21,8 @@
         <java.target.version>12</java.target.version>
         <maven.compiler.version>3.8.1</maven.compiler.version>
         <jaxb.api.version>2.4.0-b180830.0359</jaxb.api.version>
-        <spring.version>5.0.6.RELEASE</spring.version>
-        <spring.boot.version>2.1.7.RELEASE</spring.boot.version>
-        <hibernate.version>5.3.1.Final</hibernate.version>
+        <spring.boot.version>2.2.0.RELEASE</spring.boot.version>
         <commons.lang.version>3.9</commons.lang.version>
-        <junit.version>5.4.2</junit.version>
-        <assertj.version>3.12.2</assertj.version>
-        <mockito.version>2.27.0</mockito.version>
         <surefire.plugin.version>2.22.2</surefire.plugin.version>
     </properties>
 
@@ -65,25 +60,6 @@
             <artifactId>jaxb-api</artifactId>
             <version>${jaxb.api.version}</version>
         </dependency>
-        <dependency>
-            <groupId>org.assertj</groupId>
-            <artifactId>assertj-core</artifactId>
-            <version>${assertj.version}</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.mockito</groupId>
-            <artifactId>mockito-core</artifactId>
-            <version>${mockito.version}</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-engine</artifactId>
-            <version>${junit.version}</version>
-            <scope>test</scope>
-        </dependency>
-
     </dependencies>
 
     <build>
