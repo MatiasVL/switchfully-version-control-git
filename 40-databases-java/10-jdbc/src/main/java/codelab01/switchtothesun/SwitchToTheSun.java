@@ -1,15 +1,17 @@
 package codelab01.switchtothesun;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Import;
 
 import java.util.Scanner;
 
-@ComponentScan(basePackages = "codelab01")
+@Import(value = Codelab01Config.class)
 public class SwitchToTheSun {
 
     public static void main(String[] args) {
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SwitchToTheSun.class);
+
+        System.out.println("Welcome to Switch To The Sun");
 
         Scanner scanner = new Scanner(System.in);
         while(true){
