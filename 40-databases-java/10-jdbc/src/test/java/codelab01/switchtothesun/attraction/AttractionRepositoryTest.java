@@ -18,6 +18,6 @@ class AttractionRepositoryTest {
 
     @Test
     void getAllCountries() {
-        Assertions.assertThat(true).isTrue();
+        Assertions.assertThat(true).isFalse();
     }
 }
