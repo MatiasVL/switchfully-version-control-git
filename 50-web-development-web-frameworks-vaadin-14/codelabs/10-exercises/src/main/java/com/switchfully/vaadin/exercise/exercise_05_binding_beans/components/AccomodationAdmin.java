@@ -21,18 +21,13 @@ import static com.switchfully.vaadin.domain.Accomodation.AccomodationBuilder.acc
 
 public class AccomodationAdmin extends Composite<VerticalLayout> {
 
-    private Grid<Accomodation> grid = new Grid();
+    private Grid<Accomodation> grid = new Grid(Accomodation.class);
 
-    private AccomodationService accomodationService;
-    private CityService cityService;
     private TextField filter;
     private Button newAccomodationButton;
     private ListDataProvider<Accomodation> accomodationsDataProvider;
 
     public AccomodationAdmin(AccomodationService accomodationService, CityService cityService) {
-        this.accomodationService = accomodationService;
-        this.cityService = cityService;
-
         List<Accomodation> accomodations = accomodationService.getAccomodations();
         accomodationsDataProvider = DataProvider.ofCollection(accomodations);
         populateGrid(accomodationsDataProvider);
@@ -44,16 +39,15 @@ public class AccomodationAdmin extends Composite<VerticalLayout> {
         form.setVisible(false);
 
         HorizontalLayout main = new HorizontalLayout(grid, form);
-        main.setSpacing(true);
-        main.setSizeFull();
-        grid.setSizeFull();
-        main.setFlexGrow(1, grid);
+//        main.setSizeFull();
+//        grid.setSizeFull();
+//        main.setFlexGrow(1, grid);
 
         grid.addSelectionListener(event -> {
             if (event.getAllSelectedItems().isEmpty()) {
                 form.setVisible(false);
             } else {
-                Accomodation accomodation = (Accomodation) event.getAllSelectedItems().iterator().next();
+                Accomodation accomodation = event.getAllSelectedItems().iterator().next();
                 form.setAccomodation(accomodation);
             }
         });
@@ -62,10 +56,8 @@ public class AccomodationAdmin extends Composite<VerticalLayout> {
         newAccomodationButton.addClickListener(e -> form.setAccomodation(accomodation().build()));
 
         HorizontalLayout toolbar = new HorizontalLayout(filtering, newAccomodationButton);
-        toolbar.setSpacing(true);
 
         getContent().add(toolbar, main);
-        getContent().setMargin(true);
     }
 
     private Div createFilterComponent() {
@@ -75,7 +67,7 @@ public class AccomodationAdmin extends Composite<VerticalLayout> {
             accomodationsDataProvider.setFilter(Accomodation::getName, name -> name.toLowerCase().contains(e.getValue().toLowerCase()));
         });
 
-        Button clearFilterTextBtn = new Button(new Icon(VaadinIcon.DEL));
+        Button clearFilterTextBtn = new Button(new Icon(VaadinIcon.CLOSE));
         clearFilterTextBtn.getElement().setProperty("title", "Clear the current filter");
         clearFilterTextBtn.addClickListener(e -> {
             filter.clear();

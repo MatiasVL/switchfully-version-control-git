@@ -21,7 +21,7 @@ import static com.switchfully.vaadin.domain.Accomodation.AccomodationBuilder.acc
 
 public class AccomodationAdmin extends Composite<VerticalLayout> {
 
-    private Grid<Accomodation> grid = new Grid();
+    private Grid<Accomodation> grid = new Grid(Accomodation.class);
 
     private AccomodationService accomodationService;
     private CityService cityService;

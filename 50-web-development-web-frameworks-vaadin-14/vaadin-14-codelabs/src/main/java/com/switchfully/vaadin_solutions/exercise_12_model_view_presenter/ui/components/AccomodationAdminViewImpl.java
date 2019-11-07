@@ -19,7 +19,7 @@ import java.util.List;
 
 public class AccomodationAdminViewImpl extends Composite<VerticalLayout> implements AccomodationAdminView, EditAccomodationForm.EditAccomodationFormListener {
 
-    private Grid<Accomodation> grid = new Grid();
+    private Grid<Accomodation> grid = new Grid(Accomodation.class);
 
     private TextField filter;
     private Button newAccomodationButton;
