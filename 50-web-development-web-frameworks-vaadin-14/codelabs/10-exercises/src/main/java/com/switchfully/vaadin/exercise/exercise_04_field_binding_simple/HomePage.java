@@ -21,7 +21,7 @@ import java.time.format.DateTimeFormatter;
 @Route("exercises/4")
 public class HomePage extends VerticalLayout {
 
-    private static DateTimeFormatter timeFormatter = DateTimeFormatter.ISO_LOCAL_TIME;
+    private static DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("HH:mm:ss");
     private Button update;
     private TextField nameField;
     private Binder<MyFormData> formDataBinder = new Binder<>();
