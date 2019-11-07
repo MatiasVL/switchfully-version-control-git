@@ -11,9 +11,7 @@
 	<packaging>pom</packaging>
 
     <modules>
-        <module>10-basic_layouts</module>
-        <module>20-grids</module>
-        <module>30-live_filtering</module>
+        <module>10-exercises</module>
     </modules>
 
     <properties>
