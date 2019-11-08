@@ -5,6 +5,7 @@
 JPA and Hibernate classes, annotations,... at your disposal. 
 - Refactor the code in `20-orm-jpa/src/main/java/switchtothesun` based on the requirements below.
 - The `application.properties` (if stored inside `resources`) will be read in by a Spring Boot application by default.
+- Look at the slides for links to additional resources **(!!)**
 
 ## Reporting
 Change the reporting functionality so that it uses JPA (using Hibernate as the vendor) in its calls.

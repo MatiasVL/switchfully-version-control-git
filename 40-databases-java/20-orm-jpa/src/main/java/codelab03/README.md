@@ -2,6 +2,8 @@
 
 In this codelab we'll be extending the `SwitchToTheSun` exercise with extra data, thus allowing us for more relationships.
 
+- Look at the slides for links to additional resources **(!!)**
+
 ## Exercises
 
 ### Embeddable

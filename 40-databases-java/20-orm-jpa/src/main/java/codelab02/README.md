@@ -2,6 +2,8 @@
 
 We continue with transforming `SwitchToTheSun` to JPA (Hibernate).
 
+- Look at the slides for links to additional resources **(!!)**
+
 ## Exercises
 ### Create
 1. We're going to focus now on the 'creating a country' functionality.
