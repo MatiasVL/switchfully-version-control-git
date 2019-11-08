@@ -22,9 +22,9 @@ public class HomePage extends VerticalLayout {
         // - City Name
 
         // SOLUTION_START
-        grid.setItems(accomodationService.getAccomodations());
-        grid.addColumn(accomodation -> accomodation.getCity().getName()).setHeader("City").setId("city.name");
-        grid.setColumns("name", "starRating", "city.name");
+        grid.addColumn("name");
+        grid.addColumn(accomodation -> accomodation.getStarRating().getNumberOfStars() + (accomodation.getStarRating().getNumberOfStars() == 1 ? " star" : " stars")).setHeader("Star Rating").setId("starRating");
+        grid.addColumn("city.name").setHeader("City").setId("city");
 
         add(grid);
         // SOLUTION_END

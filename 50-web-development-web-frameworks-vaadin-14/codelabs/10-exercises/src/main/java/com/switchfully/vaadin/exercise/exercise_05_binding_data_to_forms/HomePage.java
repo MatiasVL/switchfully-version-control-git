@@ -1,6 +1,6 @@
-package com.switchfully.vaadin.exercise.exercise_05_binding_beans;
+package com.switchfully.vaadin.exercise.exercise_05_binding_data_to_forms;
 
-import com.switchfully.vaadin.exercise.exercise_05_binding_beans.components.AccomodationAdmin;
+import com.switchfully.vaadin.exercise.exercise_05_binding_data_to_forms.components.AccomodationAdmin;
 import com.switchfully.vaadin.service.AccomodationService;
 import com.switchfully.vaadin.service.CityService;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;

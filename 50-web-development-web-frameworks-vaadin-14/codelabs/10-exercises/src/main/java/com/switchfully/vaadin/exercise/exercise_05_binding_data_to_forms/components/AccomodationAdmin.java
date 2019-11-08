@@ -1,4 +1,4 @@
-package com.switchfully.vaadin.exercise.exercise_05_binding_beans.components;
+package com.switchfully.vaadin.exercise.exercise_05_binding_data_to_forms.components;
 
 import com.switchfully.vaadin.domain.Accomodation;
 import com.switchfully.vaadin.service.AccomodationService;
@@ -15,21 +15,23 @@ import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.data.provider.DataProvider;
 import com.vaadin.flow.data.provider.ListDataProvider;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import static com.switchfully.vaadin.domain.Accomodation.AccomodationBuilder.accomodation;
 
 public class AccomodationAdmin extends Composite<VerticalLayout> {
 
-    private Grid<Accomodation> grid = new Grid(Accomodation.class);
+    private final AccomodationService accomodationService;
+    private Grid<Accomodation> grid = new Grid(Accomodation.class, false);
 
     private TextField filter;
     private Button newAccomodationButton;
     private ListDataProvider<Accomodation> accomodationsDataProvider;
 
     public AccomodationAdmin(AccomodationService accomodationService, CityService cityService) {
-        List<Accomodation> accomodations = accomodationService.getAccomodations();
-        accomodationsDataProvider = DataProvider.ofCollection(accomodations);
+        this.accomodationService = accomodationService;
+        accomodationsDataProvider = DataProvider.ofCollection(new ArrayList<>(accomodationService.getAccomodations()));
         populateGrid(accomodationsDataProvider);
         Div filtering = createFilterComponent();
 
@@ -37,11 +39,11 @@ public class AccomodationAdmin extends Composite<VerticalLayout> {
 
         EditAccomodationForm form = new EditAccomodationForm(this, accomodationService, cityService);
         form.setVisible(false);
+        form.setWidth("600px");
 
         HorizontalLayout main = new HorizontalLayout(grid, form);
-//        main.setSizeFull();
-//        grid.setSizeFull();
-//        main.setFlexGrow(1, grid);
+        main.setWidthFull();
+        main.setFlexGrow(1, grid);
 
         grid.addSelectionListener(event -> {
             if (event.getAllSelectedItems().isEmpty()) {
@@ -81,13 +83,16 @@ public class AccomodationAdmin extends Composite<VerticalLayout> {
 
     private void populateGrid(ListDataProvider<Accomodation> dataProvider) {
         grid.setDataProvider(dataProvider);
-        grid.addColumn(accomodation -> accomodation.getCity().getName()).setHeader("City").setId("city.name");
-        grid.setColumns("name", "starRating", "city.name");
+        grid.addColumn("name");
+        grid.addColumn(accomodation -> accomodation.getStarRating().getNumberOfStars() + (accomodation.getStarRating().getNumberOfStars() == 1 ? " star" : " stars")).setHeader("Star Rating").setId("starRating");
+        grid.addColumn("city.name").setHeader("City").setId("city");
     }
 
-    public void updateList() {
+    void updateList() {
         filter.clear();
-        populateGrid(accomodationsDataProvider);
+        accomodationsDataProvider.getItems().clear();
+        accomodationsDataProvider.getItems().addAll(accomodationService.getAccomodations());
+        accomodationsDataProvider.refreshAll();
     }
 
 }

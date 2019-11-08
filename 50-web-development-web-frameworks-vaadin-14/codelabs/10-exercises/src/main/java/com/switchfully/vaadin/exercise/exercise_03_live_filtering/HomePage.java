@@ -19,7 +19,7 @@ import com.vaadin.flow.theme.material.Material;
 import org.springframework.beans.factory.annotation.Autowired;
 
 @Route("exercises/3")
-@Theme(value = Material.class, variant = Material.DARK)
+//@Theme(value = Material.class, variant = Material.DARK)
 public class HomePage extends VerticalLayout {
 
     private Grid<Accomodation> grid = new Grid<>(Accomodation.class);

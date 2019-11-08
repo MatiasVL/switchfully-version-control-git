@@ -1,4 +1,4 @@
-package com.switchfully.vaadin.exercise.exercise_05_binding_beans.components;
+package com.switchfully.vaadin.exercise.exercise_06_binding_beans_to_forms.components;
 
 import com.switchfully.vaadin.domain.Accomodation;
 import com.switchfully.vaadin.domain.City;
@@ -9,8 +9,10 @@ import com.vaadin.flow.component.Key;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.button.ButtonVariant;
 import com.vaadin.flow.component.formlayout.FormLayout;
+import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.select.Select;
+import com.vaadin.flow.component.textfield.NumberField;
 import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.data.binder.Binder;
 
@@ -23,9 +25,9 @@ public class EditAccomodationForm extends FormLayout {
     private final CityService cityService;
 
     private final TextField name;
-    private final Select city;
-    private final TextField numberOfRooms;
-    private final Select starRating;
+    private final Select<City> city;
+    private final NumberField numberOfRooms;
+    private final Select<StarRating> starRating;
     private final Button delete;
     private final Button save;
     private final Button cancel;
@@ -41,12 +43,13 @@ public class EditAccomodationForm extends FormLayout {
         this.city = createCityField();
         this.numberOfRooms = createNumberOfRoomsField();
         this.starRating = createStarRatingField();
+
+        binder.forMemberField(numberOfRooms).withConverter(new DoubleToIntegerConverter());
+        binder.bindInstanceFields(this);
+
         this.delete = createDeleteButton();
         this.save = createSaveButton();
         this.cancel = createCancelButton();
-
-
-        setSizeUndefined();
 
         HorizontalLayout buttons = new HorizontalLayout(save, delete, cancel);
         buttons.setSpacing(true);
@@ -58,7 +61,7 @@ public class EditAccomodationForm extends FormLayout {
     }
 
     public void setAccomodation(Accomodation accomodation) {
-        this.binder.readBean(cloneAccomodation(accomodation).build());
+        this.binder.setBean(cloneAccomodation(accomodation).build());
 
         // Show delete button for only customers already in the database
         delete.setVisible(accomodation.isPersisted());
@@ -66,15 +69,14 @@ public class EditAccomodationForm extends FormLayout {
         name.setAutoselect(true);
     }
 
-    private TextField createNumberOfRoomsField() {
-        TextField numberOfRooms = new TextField("Number of rooms");
+    private NumberField createNumberOfRoomsField() {
+        NumberField numberOfRooms = new NumberField("Number of rooms");
 
         return numberOfRooms;
     }
     private Select createCityField() {
-        Select<City> city = new Select("City");
-
-        city.setItems(cityService.getCities());
+        Select<City> city = new Select(cityService.getCities().toArray(i -> new City[i]));
+        city.setLabel("City");
         city.setTextRenderer(City::getName);
 
         return city;
@@ -89,7 +91,6 @@ public class EditAccomodationForm extends FormLayout {
         Button save = new Button("Save");
         save.addClickListener(e -> save());
         save.addThemeVariants(ButtonVariant.LUMO_PRIMARY);
-        save.addClickShortcut(Key.ENTER);
         return save;
     }
 
@@ -100,21 +101,17 @@ public class EditAccomodationForm extends FormLayout {
     }
 
     private Select createStarRatingField() {
-        Select rating = new Select("Rating");
+        Select<StarRating> ratingField = new Select(StarRating.values());
+        ratingField.setLabel("Star Rating");
+        ratingField.setTextRenderer(rating -> rating.getNumberOfStars() + " stars");
 
-        rating.setItems((Object[]) StarRating.values());
-
-        return rating;
+        return ratingField;
     }
 
     private TextField createNameField() {
         TextField name = new TextField("Name");
 
         name.setWidth("30em");
-//        name.setNullRepresentation("");
-
-        binder.forField(name)
-                .bind(Accomodation::getName, Accomodation::setName);
 
         return name;
     }
@@ -123,10 +120,12 @@ public class EditAccomodationForm extends FormLayout {
         accomodationService.delete(binder.getBean().getId());
         admin.updateList();
         setVisible(false);
+        Notification.show(String.format("Accomodation %s has been deleted.", binder.getBean().getName()));
     }
 
     private void save() {
         accomodationService.save(binder.getBean());
+        Notification.show(String.format("Accomodation %s has been %s.", binder.getBean().getName(), binder.getBean().isPersisted() ? "updated" : "created"));
         admin.updateList();
         setVisible(false);
     }
