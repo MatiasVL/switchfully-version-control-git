@@ -9,6 +9,7 @@ We continue with transforming `SwitchToTheSun` to JPA (Hibernate).
         1. You'll need to specify the id generation strategy, or you will get an error / incorrect id
             1. Try to fix this with the `@SequenceGenerator` and `@GeneratedValue` annotations.
             1. https://www.mkyong.com/jpa/jpa-insert-oracle-sequences-example/
+            1. https://www.objectdb.com/java/jpa/entity/generated
         1. Secondly, in order to persist, the entityManager needs an active transaction (which it wants to commit)
             1. Try to fix the error with the `@Transactional` annotation.
             1. Be sure to use the spring `@Transactional` and not the javax one!
