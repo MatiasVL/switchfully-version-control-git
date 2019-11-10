@@ -11,6 +11,4 @@ Add the following validation to the form:
 Add the following validation to the form:
 * Four and five star hotels should have at least 20 rooms.
 
-**Tip:** You can use a `CommitHandler` on the `BeanFieldGroup` for this.
-
 [Relevant documentation](https://vaadin.com/docs/v13/flow/binding-data/tutorial-flow-components-binder-validation.html)
