@@ -6,6 +6,7 @@ import com.switchfully.vaadin.domain.StarRating;
 import com.switchfully.vaadin.service.AccomodationService;
 import com.switchfully.vaadin.service.CityService;
 import com.vaadin.flow.component.Key;
+import com.vaadin.flow.component.Shortcuts;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.button.ButtonVariant;
 import com.vaadin.flow.component.formlayout.FormLayout;
@@ -155,7 +156,7 @@ public class EditAccomodationForm extends FormLayout {
         accomodationService.delete(accomodation.getId());
         admin.updateList();
         setVisible(false);
-        Notification.show(String.format("Accomodation %s has been deleted.", binder.getBean().getName()));
+        Notification.show(String.format("Accomodation %s has been deleted.", accomodation.getName()));
     }
 
     private void save() {
