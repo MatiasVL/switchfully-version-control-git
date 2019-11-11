@@ -35,9 +35,6 @@ public class ExampleForm1 extends Composite<VerticalLayout>
         buttons.setSpacing(true);
 
         getContent().add(textField, buttons, result);
-
-        Shortcuts.addShortcutListener(this, () -> clearButton.click(), Key.KEY_C, KeyModifier.CONTROL).listenOn(this);
-        Shortcuts.addShortcutListener(this, () -> searchButton.click(), Key.ENTER).listenOn(this);
     }
 
 }

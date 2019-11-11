@@ -6,7 +6,6 @@ import com.vaadin.flow.component.Composite;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.button.ButtonVariant;
 import com.vaadin.flow.component.formlayout.FormLayout;
-import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.textfield.NumberField;
@@ -25,22 +24,21 @@ public class BookingForm extends Composite<VerticalLayout> {
     private Binder<Booking> binder = new Binder<>(Booking.class);
 
     public BookingForm() {
-
         TextField firstNameField = createFirstNameField();
         TextField surnameField = createSurnameField();
 
         NumberField numberOfGuestsField = createNumberOfGuestsField();
         NumberField numberOfRoomsField = createNumberOfRoomsField();
-        DateRangeField periodField = createPeriodField();
 
         FormLayout form = new FormLayout();
+
+        // TODO 12-custom-fields: Add a custom DateRangeField for the period of the Booking to this form.
 
         form.add(
                 firstNameField,
                 surnameField,
                 numberOfGuestsField,
-                numberOfRoomsField,
-                periodField);
+                numberOfRoomsField);
 
         Button save = createSaveButton();
 
@@ -64,14 +62,6 @@ public class BookingForm extends Composite<VerticalLayout> {
             saveClickListener.accept(booking);
         } catch (ValidationException e) {
         }
-    }
-
-    private DateRangeField createPeriodField() {
-        DateRangeField dateRangeField = new DateRangeField("Period");
-        binder.forField(dateRangeField)
-                .asRequired()
-                .bind(Booking::getPeriod, Booking::setPeriod);
-        return dateRangeField;
     }
 
     private NumberField createNumberOfGuestsField() {
