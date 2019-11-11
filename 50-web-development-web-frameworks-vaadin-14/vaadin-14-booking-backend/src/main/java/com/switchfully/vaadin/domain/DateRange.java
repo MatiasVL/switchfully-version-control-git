@@ -1,5 +1,7 @@
 package com.switchfully.vaadin.domain;
 
+import org.springframework.util.Assert;
+
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
@@ -12,6 +14,8 @@ public class DateRange implements Cloneable {
     }
 
     public DateRange(LocalDate startDate, LocalDate endDate) {
+        Assert.notNull(startDate, "Start date cannot be null");
+        Assert.isTrue(endDate == null || !endDate.isBefore(startDate), "End date cannot be before start date");
         this.startDate = startDate;
         this.endDate = endDate;
     }

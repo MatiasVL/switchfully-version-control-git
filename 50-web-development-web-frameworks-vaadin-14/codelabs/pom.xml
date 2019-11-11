@@ -90,6 +90,10 @@
                     <artifactId>vaadin-core</artifactId></exclusion>
             </exclusions>
         </dependency>
+        <dependency>
+            <groupId>com.vaadin</groupId>
+            <artifactId>vaadin-custom-field-flow</artifactId>
+        </dependency>
 
         <dependency>
             <groupId>org.mockito</groupId>
