@@ -45,7 +45,7 @@ Add a Cancel button to the form that closes the form.
 
 ## Part 5: Notifications
 Show notifications when adding, updating and deleting accomodations.
-Use 
+Use `Notification.show()` for this.
 
 ## Extra credits
 Add a `DateField` to the form for the 'dateCreated' property of Accomodation.

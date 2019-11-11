@@ -5,8 +5,6 @@ import com.switchfully.vaadin.domain.City;
 import com.switchfully.vaadin.domain.StarRating;
 import com.switchfully.vaadin.service.AccomodationService;
 import com.switchfully.vaadin.service.CityService;
-import com.vaadin.flow.component.Key;
-import com.vaadin.flow.component.Shortcuts;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.button.ButtonVariant;
 import com.vaadin.flow.component.formlayout.FormLayout;
@@ -17,11 +15,8 @@ import com.vaadin.flow.component.select.Select;
 import com.vaadin.flow.component.textfield.NumberField;
 import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.data.binder.Binder;
-import com.vaadin.flow.data.binder.BinderValidationStatus;
 import com.vaadin.flow.data.binder.ValidationException;
 import com.vaadin.flow.data.validator.IntegerRangeValidator;
-
-import static com.switchfully.vaadin.domain.Accomodation.AccomodationBuilder.cloneAccomodation;
 
 public class EditAccomodationForm extends FormLayout {
 
@@ -60,6 +55,15 @@ public class EditAccomodationForm extends FormLayout {
         add(name, city, numberOfRooms, starRating, statusLabel, buttons);
     }
 
+    // TODO 07-form-validation: Add the following validation to the form:
+    //  * Name is required.
+    //  * City is required
+    //  * Number of rooms should be > 0 and < 10000
+    //
+    //  ## Extra credits
+    //  Add the following validation to the form:
+    //  * Four and five star hotels should have at least 20 rooms.
+
     private Span createStatusLabel() {
         Span statusLabel = new Span();
         binder.setStatusLabel(statusLabel);
@@ -85,18 +89,9 @@ public class EditAccomodationForm extends FormLayout {
 
         binder.forField(numberOfRooms)
                 .withConverter(new DoubleToIntegerConverter())
-                .withValidator(rooms -> isNumberOfRoomsValid(rooms, (StarRating) starRating.getValue()),
-                        "Four and five star hotels must have at least 20 rooms.")
-                .withValidator(new IntegerRangeValidator("Number of rooms must be greater than 1 and less than 10000", 1, 10000 - 1))
                 .bind(Accomodation::getNumberOfRooms, Accomodation::setNumberOfRooms);
 
         return numberOfRooms;
-    }
-
-    private boolean isNumberOfRoomsValid(Integer numberOfRooms, StarRating starRating) {
-        return starRating == null
-                || (starRating.getNumberOfStars() < 4)
-                || (starRating.getNumberOfStars() > 3 && numberOfRooms >= 20);
     }
 
     private Select createCityField() {
@@ -105,7 +100,6 @@ public class EditAccomodationForm extends FormLayout {
         city.setTextRenderer(City::getName);
 
         binder.forField(city)
-                .asRequired("City is required")
                 .bind(Accomodation::getCity, Accomodation::setCity);
 
         return city;
@@ -146,7 +140,6 @@ public class EditAccomodationForm extends FormLayout {
         name.setWidth("30em");
 
         binder.forField(name)
-                .asRequired("Name is required")
                 .bind(Accomodation::getName, Accomodation::setName);
 
         return name;

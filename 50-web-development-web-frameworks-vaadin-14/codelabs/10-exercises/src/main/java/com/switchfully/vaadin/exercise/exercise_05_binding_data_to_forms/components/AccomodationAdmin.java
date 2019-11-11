@@ -9,16 +9,13 @@ import com.vaadin.flow.component.grid.Grid;
 import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.component.icon.Icon;
 import com.vaadin.flow.component.icon.VaadinIcon;
-import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
+import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.data.provider.DataProvider;
 import com.vaadin.flow.data.provider.ListDataProvider;
 
 import java.util.ArrayList;
-import java.util.List;
-
-import static com.switchfully.vaadin.domain.Accomodation.AccomodationBuilder.accomodation;
 
 public class AccomodationAdmin extends Composite<VerticalLayout> {
 
@@ -35,31 +32,29 @@ public class AccomodationAdmin extends Composite<VerticalLayout> {
         populateGrid(accomodationsDataProvider);
         Div filtering = createFilterComponent();
 
-        // Add a form to the right of the grid to edit details of an accomodation.
+        // TODO 05-binding-data-to-forms: Part 1: Update an existing accomodation
+        // Create an EditAccomodationForm and add it to the right of the grid to
+        // edit details of an accomodation.
 
-        EditAccomodationForm form = new EditAccomodationForm(this, accomodationService, cityService);
-        form.setVisible(false);
-        form.setWidth("600px");
+        // TODO 05-binding-data-to-forms: Part 2: Adding a new accomodation
+        // Add a 'Add new accomodation button' that opens an empty EditAccomodationForm form to add a new Accomodation.
+        // Create the new Accomodation when the save-button is clicked. Use AccomodationService.save() to save the entity.
 
-        HorizontalLayout main = new HorizontalLayout(grid, form);
-        main.setWidthFull();
-        main.setFlexGrow(1, grid);
+        // TODO 05-binding-data-to-forms: Part 3: Deleting an accomodation
+        // Add a Delete button to delete the entity (in EditAccomodationForm).
+        // Use AccomodationService.delete() to delete the entity..
 
-        grid.addSelectionListener(event -> {
-            if (event.getAllSelectedItems().isEmpty()) {
-                form.setVisible(false);
-            } else {
-                Accomodation accomodation = event.getAllSelectedItems().iterator().next();
-                form.setAccomodation(accomodation);
-            }
-        });
+        // TODO 05-binding-data-to-forms: Part 4: Add a cancel button
+        // Add a Cancel button to the form that closes the form.
 
-        newAccomodationButton = new Button("Add new accomodation");
-        newAccomodationButton.addClickListener(e -> form.setAccomodation(accomodation().build()));
+        // TODO 05-binding-data-to-forms: Part 5: Notifications
+        // Show notifications when adding, updating and deleting accomodations.  Use Notification.show().
 
-        HorizontalLayout toolbar = new HorizontalLayout(filtering, newAccomodationButton);
+        // TODO 05-binding-data-to-forms: Part 6: Extra credits
+        // Add a DateField to the form for the 'dateCreated' property of Accomodation. Make this read-only.
+        // Hide it when creating a new Accomodation.
 
-        getContent().add(toolbar, main);
+        getContent().add(filtering, grid);
     }
 
     private Div createFilterComponent() {
@@ -86,13 +81,6 @@ public class AccomodationAdmin extends Composite<VerticalLayout> {
         grid.addColumn("name");
         grid.addColumn(accomodation -> accomodation.getStarRating().getNumberOfStars() + (accomodation.getStarRating().getNumberOfStars() == 1 ? " star" : " stars")).setHeader("Star Rating").setId("starRating");
         grid.addColumn("city.name").setHeader("City").setId("city");
-    }
-
-    void updateList() {
-        filter.clear();
-        accomodationsDataProvider.getItems().clear();
-        accomodationsDataProvider.getItems().addAll(accomodationService.getAccomodations());
-        accomodationsDataProvider.refreshAll();
     }
 
 }

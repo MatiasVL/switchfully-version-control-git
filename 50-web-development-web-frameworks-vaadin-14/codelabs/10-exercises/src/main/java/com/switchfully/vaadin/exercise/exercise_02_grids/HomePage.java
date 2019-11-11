@@ -15,19 +15,11 @@ public class HomePage extends VerticalLayout {
 
     @Autowired
     public HomePage(AccomodationService accomodationService) {
-        // TODO 20-grids: Show a grid on screen that shows the accomodations you get from accomodationService.getAccomodations().
+        // TODO 02-grids: Show a grid on screen that shows the accomodations you get from accomodationService.getAccomodations().
         // Try to only show the following properties of an accomodation, in that order:
         // - Name
         // - Star Rating
         // - City Name
-
-        // SOLUTION_START
-        grid.addColumn("name");
-        grid.addColumn(accomodation -> accomodation.getStarRating().getNumberOfStars() + (accomodation.getStarRating().getNumberOfStars() == 1 ? " star" : " stars")).setHeader("Star Rating").setId("starRating");
-        grid.addColumn("city.name").setHeader("City").setId("city");
-
-        add(grid);
-        // SOLUTION_END
     }
 
 }

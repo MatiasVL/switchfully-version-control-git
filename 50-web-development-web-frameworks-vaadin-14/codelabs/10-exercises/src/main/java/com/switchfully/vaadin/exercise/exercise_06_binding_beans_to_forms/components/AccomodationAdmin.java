@@ -34,31 +34,14 @@ public class AccomodationAdmin extends Composite<VerticalLayout> {
         populateGrid(accomodationsDataProvider);
         Div filtering = createFilterComponent();
 
-        // Add a form to the right of the grid to edit details of an accomodation.
+        // TODO 06-binding-beans-to-forms: Take your solution from exercise 5 and copy it in this exercise.
+        //  Remove all the binding logic.
+        //  Now use `Binder.bindInstanceFields()` to automatically bind the fields in `EditAccomodationForm` to the `Accomodation`
+        //  bean based on the field names.
+        //  Make sure that the java field names for the form components match the properties of `Accomodation`.
+        //  Do not forget to register the DoubleToIntegerConverter for the number of rooms.  You can use `Binder.forMemberField()` for that.
 
-        EditAccomodationForm form = new EditAccomodationForm(this, accomodationService, cityService);
-        form.setVisible(false);
-        form.setWidth("600px");
-
-        HorizontalLayout main = new HorizontalLayout(grid, form);
-        main.setWidthFull();
-        main.setFlexGrow(1, grid);
-
-        grid.addSelectionListener(event -> {
-            if (event.getAllSelectedItems().isEmpty()) {
-                form.setVisible(false);
-            } else {
-                Accomodation accomodation = event.getAllSelectedItems().iterator().next();
-                form.setAccomodation(accomodation);
-            }
-        });
-
-        newAccomodationButton = new Button("Add new accomodation");
-        newAccomodationButton.addClickListener(e -> form.setAccomodation(accomodation().build()));
-
-        HorizontalLayout toolbar = new HorizontalLayout(filtering, newAccomodationButton);
-
-        getContent().add(toolbar, main);
+        getContent().add(filtering, grid);
     }
 
     private Div createFilterComponent() {
