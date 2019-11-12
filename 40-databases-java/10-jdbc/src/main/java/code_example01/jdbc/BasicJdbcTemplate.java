@@ -2,11 +2,9 @@ package code_example01.jdbc;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 
-@Configuration
 public class BasicJdbcTemplate {
 
     public static void main(String[] args) {
