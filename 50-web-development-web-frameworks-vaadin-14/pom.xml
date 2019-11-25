@@ -29,7 +29,6 @@
 
     <modules>
         <module>codelabs</module>
-        <module>vaadin-14-codelabs</module>
         <module>vaadin-14-booking-backend</module>
     </modules>
 

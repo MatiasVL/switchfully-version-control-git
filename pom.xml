@@ -14,6 +14,7 @@
         <module>20-programming-advanced-java</module>
         <module>30-enterprise-software-development-java</module>
         <module>40-databases-java</module>
+        <module>50-web-development-web-frameworks-vaadin-14</module>
     </modules>
 
 </project>
