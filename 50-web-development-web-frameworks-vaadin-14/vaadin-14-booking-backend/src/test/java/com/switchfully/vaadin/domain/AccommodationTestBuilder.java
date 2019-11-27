@@ -2,17 +2,17 @@ package com.switchfully.vaadin.domain;
 
 import java.time.Instant;
 
-import static com.switchfully.vaadin.domain.Accomodation.AccomodationBuilder.accomodation;
-import static com.switchfully.vaadin.domain.AccomodationId.accomodationId;
+import static com.switchfully.vaadin.domain.Accommodation.AccommodationBuilder.accommodation;
+import static com.switchfully.vaadin.domain.AccommodationId.accommodationId;
 import static com.switchfully.vaadin.domain.City.CityBuilder.city;
 
-public class AccomodationTestBuilder {
+public class AccommodationTestBuilder {
 
-    private final Accomodation.AccomodationBuilder builder;
+    private final Accommodation.AccommodationBuilder builder;
 
-    private AccomodationTestBuilder() {
-        builder = accomodation()
-            .withId(accomodationId())
+    private AccommodationTestBuilder() {
+        builder = accommodation()
+            .withId(accommodationId())
             .withName("Dummy hotel name")
             .withCity(city().withName("Brussels").build())
             .withDateCreated(Instant.now())
@@ -23,45 +23,45 @@ public class AccomodationTestBuilder {
         ;
     }
 
-    public static AccomodationTestBuilder anAccomodation() {
-        return new AccomodationTestBuilder();
+    public static AccommodationTestBuilder anAccommodation() {
+        return new AccommodationTestBuilder();
     }
 
-    public Accomodation build() {
+    public Accommodation build() {
         return builder.build();
     }
 
-    public AccomodationTestBuilder withNumberOfRooms(int numberOfRooms) {
+    public AccommodationTestBuilder withNumberOfRooms(int numberOfRooms) {
         builder.withNumberOfRooms(numberOfRooms);
         return this;
     }
 
-    public AccomodationTestBuilder withDateCreated(Instant dateCreated) {
+    public AccommodationTestBuilder withDateCreated(Instant dateCreated) {
         builder.withDateCreated(dateCreated);
         return this;
     }
 
-    public AccomodationTestBuilder withStarRating(StarRating starRating) {
+    public AccommodationTestBuilder withStarRating(StarRating starRating) {
         builder.withStarRating(starRating);
         return this;
     }
 
-    public AccomodationTestBuilder withCity(City city) {
+    public AccommodationTestBuilder withCity(City city) {
         builder.withCity(city);
         return this;
     }
 
-    public AccomodationTestBuilder withName(String name) {
+    public AccommodationTestBuilder withName(String name) {
         builder.withName(name);
         return this;
     }
 
-    public AccomodationTestBuilder withImagePath(String imagePath) {
+    public AccommodationTestBuilder withImagePath(String imagePath) {
         builder.withImagePath(imagePath);
         return this;
     }
 
-    public AccomodationTestBuilder withDescription(String description) {
+    public AccommodationTestBuilder withDescription(String description) {
         builder.withDescription(description);
         return this;
     }

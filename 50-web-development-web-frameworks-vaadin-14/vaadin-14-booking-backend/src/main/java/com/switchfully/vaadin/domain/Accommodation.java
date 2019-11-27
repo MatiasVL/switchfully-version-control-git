@@ -4,12 +4,12 @@ import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.switchfully.vaadin.domain.AccomodationId.accomodationId;
+import static com.switchfully.vaadin.domain.AccommodationId.accommodationId;
 import static java.util.Collections.unmodifiableList;
 
-public class Accomodation {
+public class Accommodation {
 
-    private AccomodationId id;
+    private AccommodationId id;
     private String name;
     private String description;
     private int numberOfRooms;
@@ -20,7 +20,7 @@ public class Accomodation {
 
     private List<Booking> bookings = new ArrayList<>();
 
-    private Accomodation(AccomodationBuilder builder) {
+    private Accommodation(AccommodationBuilder builder) {
         this.id = builder.id;
         this.name = builder.name;
         this.description = builder.description;
@@ -31,7 +31,7 @@ public class Accomodation {
         this.city = builder.city;
     }
 
-    public AccomodationId getId() {
+    public AccommodationId getId() {
         return id;
     }
 
@@ -92,7 +92,7 @@ public class Accomodation {
         return imagePath;
     }
 
-    public static class AccomodationBuilder {
+    public static class AccommodationBuilder {
 
         private static final String DEFAULT_DESCRIPTION = "Lorem <b>ipsum</b> dolor sit <u>amet</u>, " +
                 "consectetur adipiscing elit, " +
@@ -102,7 +102,7 @@ public class Accomodation {
                 "occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
         private static final String DEFAULT_IMAGE = "generic_hotel.jpg";
 
-        private AccomodationId id;
+        private AccommodationId id;
         private String name;
         private String description = DEFAULT_DESCRIPTION;
         private String imagePath = DEFAULT_IMAGE;
@@ -111,70 +111,70 @@ public class Accomodation {
         private StarRating starRating;
         private City city;
 
-        public static AccomodationBuilder accomodation() {
-            return new AccomodationBuilder();
+        public static AccommodationBuilder accommodation() {
+            return new AccommodationBuilder();
         }
 
-        public static AccomodationBuilder cloneAccomodation(Accomodation accomodation) {
-            return new AccomodationBuilder()
-                    .withId(accomodation.getId())
-                    .withName(accomodation.getName())
-                    .withImagePath(accomodation.getImagePath())
-                    .withDescription(accomodation.getDescription())
-                    .withNumberOfRooms(accomodation.getNumberOfRooms())
-                    .withCity(accomodation.getCity())
-                    .withDateCreated(accomodation.getDateCreated())
-                    .withStarRating(accomodation.getStarRating());
+        public static AccommodationBuilder cloneAccommodation(Accommodation accommodation) {
+            return new AccommodationBuilder()
+                    .withId(accommodation.getId())
+                    .withName(accommodation.getName())
+                    .withImagePath(accommodation.getImagePath())
+                    .withDescription(accommodation.getDescription())
+                    .withNumberOfRooms(accommodation.getNumberOfRooms())
+                    .withCity(accommodation.getCity())
+                    .withDateCreated(accommodation.getDateCreated())
+                    .withStarRating(accommodation.getStarRating());
         }
 
-        private AccomodationBuilder() {
+        private AccommodationBuilder() {
         }
 
-        public Accomodation build() {
-            return new Accomodation(this);
+        public Accommodation build() {
+            return new Accommodation(this);
         }
 
-        public AccomodationBuilder withId() {
-            if (id == null) id = accomodationId();
+        public AccommodationBuilder withId() {
+            if (id == null) id = accommodationId();
             return this;
         }
 
-        public AccomodationBuilder withId(AccomodationId id) {
+        public AccommodationBuilder withId(AccommodationId id) {
             this.id = id;
             return this;
         }
 
-        public AccomodationBuilder withNumberOfRooms(int numberOfRooms) {
+        public AccommodationBuilder withNumberOfRooms(int numberOfRooms) {
             this.numberOfRooms = numberOfRooms;
             return this;
         }
 
-        public AccomodationBuilder withDateCreated(Instant dateCreated) {
+        public AccommodationBuilder withDateCreated(Instant dateCreated) {
             this.dateCreated = dateCreated;
             return this;
         }
 
-        public AccomodationBuilder withStarRating(StarRating starRating) {
+        public AccommodationBuilder withStarRating(StarRating starRating) {
             this.starRating = starRating;
             return this;
         }
 
-        public AccomodationBuilder withCity(City city) {
+        public AccommodationBuilder withCity(City city) {
             this.city = city;
             return this;
         }
 
-        public AccomodationBuilder withName(String name) {
+        public AccommodationBuilder withName(String name) {
             this.name = name;
             return this;
         }
 
-        public AccomodationBuilder withImagePath(String imagePath) {
+        public AccommodationBuilder withImagePath(String imagePath) {
             this.imagePath = imagePath;
             return this;
         }
 
-        public AccomodationBuilder withDescription(String description) {
+        public AccommodationBuilder withDescription(String description) {
             this.description = description;
             return this;
         }

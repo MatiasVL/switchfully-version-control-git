@@ -1,7 +1,7 @@
 package com.switchfully.vaadin.exercise.exercise_08_images;
 
-import com.switchfully.vaadin.exercise.exercise_08_images.components.AccomodationResultList;
-import com.switchfully.vaadin.service.AccomodationService;
+import com.switchfully.vaadin.exercise.exercise_08_images.components.AccommodationResultList;
+import com.switchfully.vaadin.service.AccommodationService;
 import com.vaadin.flow.component.Key;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
@@ -13,18 +13,18 @@ import org.springframework.beans.factory.annotation.Autowired;
 @Route("exercises/8")
 public class HomePage extends VerticalLayout {
 
-    private AccomodationService accomodationService;
+    private AccommodationService accommodationService;
 
     @Autowired
-    public HomePage(AccomodationService accomodationService) {
-        this.accomodationService = accomodationService;
+    public HomePage(AccommodationService accommodationService) {
+        this.accommodationService = accommodationService;
 
-        AccomodationResultList resultList = new AccomodationResultList();
+        AccommodationResultList resultList = new AccommodationResultList();
 
         TextField searchField = new TextField();
         Button searchButton = new Button("Search",
-                event -> resultList.setAccomodations(
-                        accomodationService.findAccomodations(searchField.getValue())
+                event -> resultList.setAccommodations(
+                        accommodationService.findAccommodations(searchField.getValue())
                 ));
         searchButton.addClickShortcut(Key.ENTER);
 

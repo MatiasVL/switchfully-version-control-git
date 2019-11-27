@@ -1,5 +1,5 @@
 # Exercise 3 - Live filtering
-Enhance the previous exercise by adding a filter `TextField` to provide live filtering on the accomodation name.
+Enhance the previous exercise by adding a filter `TextField` to provide live filtering on the accommodation name.
 
 Also add a `Button` next to the filter field to clear the filter.
 

@@ -1,9 +1,9 @@
 package com.switchfully.vaadin.exercise.exercise_07_form_validation.components;
 
-import com.switchfully.vaadin.domain.Accomodation;
+import com.switchfully.vaadin.domain.Accommodation;
 import com.switchfully.vaadin.domain.City;
 import com.switchfully.vaadin.domain.StarRating;
-import com.switchfully.vaadin.service.AccomodationService;
+import com.switchfully.vaadin.service.AccommodationService;
 import com.switchfully.vaadin.service.CityService;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.button.ButtonVariant;
@@ -16,12 +16,11 @@ import com.vaadin.flow.component.textfield.NumberField;
 import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.data.binder.Binder;
 import com.vaadin.flow.data.binder.ValidationException;
-import com.vaadin.flow.data.validator.IntegerRangeValidator;
 
-public class EditAccomodationForm extends FormLayout {
+public class EditAccommodationForm extends FormLayout {
 
-    private final AccomodationAdmin admin;
-    private AccomodationService accomodationService;
+    private final AccommodationAdmin admin;
+    private AccommodationService accommodationService;
     private final CityService cityService;
 
     private final TextField name;
@@ -33,12 +32,12 @@ public class EditAccomodationForm extends FormLayout {
     private final Button save;
     private final Button cancel;
 
-    private Binder<Accomodation> binder = new Binder<>(Accomodation.class);
-    private Accomodation accomodation;
+    private Binder<Accommodation> binder = new Binder<>(Accommodation.class);
+    private Accommodation accommodation;
 
-    public EditAccomodationForm(AccomodationAdmin admin, AccomodationService accomodationService, CityService cityService) {
+    public EditAccommodationForm(AccommodationAdmin admin, AccommodationService accommodationService, CityService cityService) {
         this.admin = admin;
-        this.accomodationService = accomodationService;
+        this.accommodationService = accommodationService;
         this.cityService = cityService;
 
         this.name = createNameField();
@@ -74,12 +73,12 @@ public class EditAccomodationForm extends FormLayout {
         setVisible(false);
     }
 
-    public void setAccomodation(Accomodation accomodation) {
-        this.accomodation = accomodation;
-        this.binder.readBean(accomodation);
+    public void setAccommodation(Accommodation accommodation) {
+        this.accommodation = accommodation;
+        this.binder.readBean(accommodation);
 
         // Show delete button for only customers already in the database
-        delete.setVisible(accomodation.isPersisted());
+        delete.setVisible(accommodation.isPersisted());
         setVisible(true);
         name.setAutoselect(true);
     }
@@ -89,7 +88,7 @@ public class EditAccomodationForm extends FormLayout {
 
         binder.forField(numberOfRooms)
                 .withConverter(new DoubleToIntegerConverter())
-                .bind(Accomodation::getNumberOfRooms, Accomodation::setNumberOfRooms);
+                .bind(Accommodation::getNumberOfRooms, Accommodation::setNumberOfRooms);
 
         return numberOfRooms;
     }
@@ -100,7 +99,7 @@ public class EditAccomodationForm extends FormLayout {
         city.setTextRenderer(City::getName);
 
         binder.forField(city)
-                .bind(Accomodation::getCity, Accomodation::setCity);
+                .bind(Accommodation::getCity, Accommodation::setCity);
 
         return city;
     }
@@ -129,7 +128,7 @@ public class EditAccomodationForm extends FormLayout {
         ratingField.setTextRenderer(rating -> rating.getNumberOfStars() + " stars");
 
         binder.forField(ratingField)
-                .bind(Accomodation::getStarRating, Accomodation::setStarRating);
+                .bind(Accommodation::getStarRating, Accommodation::setStarRating);
 
         return ratingField;
     }
@@ -140,23 +139,23 @@ public class EditAccomodationForm extends FormLayout {
         name.setWidth("30em");
 
         binder.forField(name)
-                .bind(Accomodation::getName, Accomodation::setName);
+                .bind(Accommodation::getName, Accommodation::setName);
 
         return name;
     }
 
     private void delete() {
-        accomodationService.delete(accomodation.getId());
+        accommodationService.delete(accommodation.getId());
         admin.updateList();
         setVisible(false);
-        Notification.show(String.format("Accomodation %s has been deleted.", accomodation.getName()));
+        Notification.show(String.format("Accommodation %s has been deleted.", accommodation.getName()));
     }
 
     private void save() {
         try {
-            binder.writeBean(accomodation);
-            accomodationService.save(accomodation);
-            Notification.show(String.format("Accomodation %s has been %s.", accomodation.getName(), accomodation.isPersisted() ? "updated" : "created"));
+            binder.writeBean(accommodation);
+            accommodationService.save(accommodation);
+            Notification.show(String.format("Accommodation %s has been %s.", accommodation.getName(), accommodation.isPersisted() ? "updated" : "created"));
             admin.updateList();
             setVisible(false);
         } catch (ValidationException e) {

@@ -1,7 +1,7 @@
 package com.switchfully.vaadin.exercise.exercise_10_router_layout.views;
 
-import com.switchfully.vaadin.exercise.exercise_10_router_layout.components.AccomodationResultList;
-import com.switchfully.vaadin.service.AccomodationService;
+import com.switchfully.vaadin.exercise.exercise_10_router_layout.components.AccommodationResultList;
+import com.switchfully.vaadin.service.AccommodationService;
 import com.vaadin.flow.component.Composite;
 import com.vaadin.flow.component.Key;
 import com.vaadin.flow.component.button.Button;
@@ -10,16 +10,16 @@ import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.router.Route;
 
-@Route(value = "exercises/10/accomodations/search")
-public class SearchAccomodationView extends Composite<VerticalLayout> {
+@Route(value = "exercises/10/accommodations/search")
+public class SearchAccommodationView extends Composite<VerticalLayout> {
 
-    public SearchAccomodationView(AccomodationService accomodationService) {
-        AccomodationResultList resultList = new AccomodationResultList();
+    public SearchAccommodationView(AccommodationService accommodationService) {
+        AccommodationResultList resultList = new AccommodationResultList();
 
         TextField searchField = new TextField();
         Button searchButton = new Button("Search",
-                event -> resultList.setAccomodations(
-                accomodationService.findAccomodations(searchField.getValue())
+                event -> resultList.setAccommodations(
+                accommodationService.findAccommodations(searchField.getValue())
         ));
         searchButton.addClickShortcut(Key.ENTER);
 

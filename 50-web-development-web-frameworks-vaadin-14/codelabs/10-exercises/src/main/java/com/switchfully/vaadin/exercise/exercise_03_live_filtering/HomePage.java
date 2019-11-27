@@ -1,7 +1,7 @@
 package com.switchfully.vaadin.exercise.exercise_03_live_filtering;
 
-import com.switchfully.vaadin.domain.Accomodation;
-import com.switchfully.vaadin.service.AccomodationService;
+import com.switchfully.vaadin.domain.Accommodation;
+import com.switchfully.vaadin.service.AccommodationService;
 import com.vaadin.flow.component.grid.Grid;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.data.provider.DataProvider;
@@ -13,25 +13,25 @@ import org.springframework.beans.factory.annotation.Autowired;
 //@Theme(value = Material.class, variant = Material.DARK)
 public class HomePage extends VerticalLayout {
 
-    private Grid<Accomodation> grid = new Grid<>(Accomodation.class);
+    private Grid<Accommodation> grid = new Grid<>(Accommodation.class);
 
-    private AccomodationService accomodationService;
-    private ListDataProvider<Accomodation> accomodationsDataProvider;
+    private AccommodationService accommodationService;
+    private ListDataProvider<Accommodation> accommodationsDataProvider;
 
     @Autowired
-    public HomePage(AccomodationService accomodationService) {
-        this.accomodationService = accomodationService;
+    public HomePage(AccommodationService accommodationService) {
+        this.accommodationService = accommodationService;
 
-        accomodationsDataProvider = DataProvider.ofCollection(accomodationService.getAccomodations());
-        populateGrid(accomodationsDataProvider);
+        accommodationsDataProvider = DataProvider.ofCollection(accommodationService.getAccommodations());
+        populateGrid(accommodationsDataProvider);
 
-        // TODO 03-live_filtering: Add a filter TextField to the top of the grid to filter the list of accomodations by their name.
+        // TODO 03-live_filtering: Add a filter TextField to the top of the grid to filter the list of accommodations by their name.
         // TODO 03-live_filtering: Add a button next to the filter TextField to clear the filter.
     }
 
-    private void populateGrid(ListDataProvider<Accomodation> dataProvider) {
+    private void populateGrid(ListDataProvider<Accommodation> dataProvider) {
         grid.setDataProvider(dataProvider);
-        grid.addColumn(accomodation -> accomodation.getCity().getName()).setHeader("City").setId("city.name");
+        grid.addColumn(accommodation -> accommodation.getCity().getName()).setHeader("City").setId("city.name");
         grid.setColumns("name", "starRating", "city.name");
     }
 

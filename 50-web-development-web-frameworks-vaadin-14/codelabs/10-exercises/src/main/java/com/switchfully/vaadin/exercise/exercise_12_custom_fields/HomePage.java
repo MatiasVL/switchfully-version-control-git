@@ -2,7 +2,7 @@ package com.switchfully.vaadin.exercise.exercise_12_custom_fields;
 
 import com.switchfully.vaadin.exercise.exercise_12_custom_fields.components.BookingDetailsComponent;
 import com.switchfully.vaadin.exercise.exercise_12_custom_fields.components.BookingForm;
-import com.switchfully.vaadin.service.AccomodationService;
+import com.switchfully.vaadin.service.AccommodationService;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.Route;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,11 +10,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 @Route("exercises/12")
 public class HomePage extends VerticalLayout {
 
-    private AccomodationService accomodationService;
+    private AccommodationService accommodationService;
 
     @Autowired
-    public HomePage(AccomodationService accomodationService) {
-        this.accomodationService = accomodationService;
+    public HomePage(AccommodationService accommodationService) {
+        this.accommodationService = accommodationService;
         BookingDetailsComponent bookingDetails = new BookingDetailsComponent();
         bookingDetails.setVisible(false);
 
