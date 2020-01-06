@@ -29,9 +29,8 @@
 ### Hardware requirements
 - at least 2 USB-ports
 - Screen port (VGA/HDMI/Display port)
-- At least 20gb of free HD (preferably 100gb to be comfortable)
-- Decent battery life (laptop should be able to run for at least an hour without power)
-- Fast enough to not be bothered too much by performance (decent CPU and decent amount of memory)
+- At least 50gb of free HD (preferably 100gb to be comfortable)
+- i5 processor or later
 - (SSD)
 
 
