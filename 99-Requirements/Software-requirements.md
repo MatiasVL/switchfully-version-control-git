@@ -35,13 +35,13 @@
 
 
 ## Testing
-Install Git
-- Do a push and pull to github
-Install java
-- Compile and execute a simple program
-Install intellij
-- Compile and run an existing Spring Boot project
-Install postman
-- Send a request to Spring Boot program (locally and remote)
-Connect to a remote database
-- Let a Spring Boot program persist to this database
+1. Install Git
+   - Do a push and pull to github
+1. Install java
+   - Compile and execute a simple program
+1. Install intellij
+   - Compile and run an existing Spring Boot project
+1. Install postman
+   - Send a request to Spring Boot program (locally and remote)
+1. Connect to a remote database
+   - Let a Spring Boot program persist to this database
