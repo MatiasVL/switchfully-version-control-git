@@ -13,7 +13,7 @@ public class Person {
     private String lastName;
     private String job;
 
-    private Person() {
+    protected Person() {
 
     }
 

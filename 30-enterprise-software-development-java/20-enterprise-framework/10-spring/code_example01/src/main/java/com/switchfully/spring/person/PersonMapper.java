@@ -14,4 +14,8 @@ public class PersonMapper {
     public PersonDto toDto(Person person) {
         return new PersonDto(person.getId(), person.getFirstName(), person.getLastName());
     }
+
+    public Person toPerson(PersonDto personDto) {
+        return new Person(personDto.getId(), personDto.getFirstName(), personDto.getLastName());
+    }
 }

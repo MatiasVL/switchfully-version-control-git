@@ -1,5 +1,7 @@
 # Code example
 
+This an example of a full fledged spring application
+
 ## Purpose
 Showing a use case for Spring by creating a simple full stack application
 

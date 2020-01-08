@@ -22,4 +22,8 @@ public class PersonDto {
     public String getLastName() {
         return lastName;
     }
+
+    public void setId(int id) {
+
+    }
 }
