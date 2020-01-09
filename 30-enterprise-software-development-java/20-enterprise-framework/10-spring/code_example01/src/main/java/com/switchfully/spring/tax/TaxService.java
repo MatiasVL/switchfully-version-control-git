@@ -23,16 +23,16 @@ public class TaxService {
         this.taxationMapper = taxationMapper;
     }
 
-    public TaxationDto taxSimulation(int id, int income) {
+    public TaxationDto taxSimulation(int id, double income) {
         return taxationMapper.toDto(calculateTax(id, income));
     }
 
-    private Taxation calculateTax(int id, int income) {
+    private Taxation calculateTax(int id, double income) {
         Person person = personRepository.getOne(id);
         return taxSystem.calculateTaxFor(person, income);
     }
 
-    public TaxationDto tax(int id, int income) {
+    public TaxationDto tax(int id, double income) {
         Taxation taxation = calculateTax(id, income);
         taxationRepository.save(taxation);
         return taxationMapper.toDto(taxation);

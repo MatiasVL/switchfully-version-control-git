@@ -1,8 +1,11 @@
 package com.switchfully.spring.person;
 
 import javax.persistence.Entity;
+import javax.persistence.Enumerated;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
+import static javax.persistence.EnumType.STRING;
 
 @Entity
 @Table(name = "PERSON")
@@ -11,7 +14,8 @@ public class Person {
     private int id;
     private String firstName;
     private String lastName;
-    private String job;
+    @Enumerated(STRING)
+    private Job job;
 
     protected Person() {
 
@@ -33,6 +37,10 @@ public class Person {
 
     public String getLastName() {
         return lastName;
+    }
+
+    public Job getJob() {
+        return job;
     }
 
     public String getFullName() {

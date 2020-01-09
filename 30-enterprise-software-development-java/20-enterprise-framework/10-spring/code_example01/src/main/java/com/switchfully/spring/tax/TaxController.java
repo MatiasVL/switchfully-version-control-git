@@ -5,6 +5,8 @@ import org.springframework.web.bind.annotation.*;
 import javax.websocket.server.PathParam;
 import java.util.List;
 
+import static java.lang.Double.parseDouble;
+
 @RestController
 @RequestMapping(path = "taxes")
 public class TaxController {
@@ -27,6 +29,6 @@ public class TaxController {
 
     @PostMapping(produces = "application/json", consumes = "text/plain", path = "{id}")
     public TaxationDto tax(@PathVariable("id") int id, @RequestBody String income){
-        return taxService.tax(id, Integer.parseInt(income));
+        return taxService.tax(id, parseDouble(income));
     }
 }

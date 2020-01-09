@@ -14,7 +14,7 @@ public class Taxation {
     @Id
     private String id;
     private String fullName;
-    private int brutoIncome;
+    private double brutoIncome;
     private double netIncome;
     private double taxes;
     private LocalDate dueDate;
@@ -23,7 +23,7 @@ public class Taxation {
 
     }
 
-    public Taxation(String fullName, int brutoIncome, double netIncome, double taxes) {
+    public Taxation(String fullName, double brutoIncome, double netIncome, double taxes) {
         this.id = UUID.randomUUID().toString();
         this.fullName = fullName;
         this.brutoIncome = brutoIncome;
@@ -40,7 +40,7 @@ public class Taxation {
         return fullName;
     }
 
-    public int getBrutoIncome() {
+    public double getBrutoIncome() {
         return brutoIncome;
     }
 

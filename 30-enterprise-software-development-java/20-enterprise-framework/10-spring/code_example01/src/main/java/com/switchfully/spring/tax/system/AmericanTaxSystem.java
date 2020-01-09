@@ -20,12 +20,12 @@ public class AmericanTaxSystem implements TaxSystem {
     private double highTaxRate;
 
     @Override
-    public Taxation calculateTaxFor(Person person, int income) {
+    public Taxation calculateTaxFor(Person person, double income) {
         double taxes = getTaxes(income);
         return new Taxation(person.getFullName(), income, income - taxes, taxes);
     }
 
-    private double getTaxes(int income) {
+    private double getTaxes(double income) {
         double taxes = 0;
         if (income > mediumTaxLimit) {
             taxes += (income - mediumTaxLimit) * highTaxRate;
