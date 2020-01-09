@@ -25,6 +25,11 @@ public class BelgianTaxSystem implements TaxSystem {
 
     @Override
     public Taxation calculateTaxFor(Person person, double income) {
+        double taxes = getTaxes(person, income);
+        return new Taxation(person.getFullName(), income, income - taxes, taxes);
+    }
+
+    private double getTaxes(Person person, double income) {
         double taxes = 0;
 
         if (income > lowerTaxLimit) {
@@ -39,7 +44,7 @@ public class BelgianTaxSystem implements TaxSystem {
         }
 
         taxes -= (income * getReduction(person));
-        return new Taxation(person.getFullName(), income, income - taxes, taxes);
+        return taxes;
     }
 
     private double getReduction(Person person) {
