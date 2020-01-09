@@ -5,6 +5,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.websocket.server.PathParam;
+
 @RestController
 @RequestMapping(path = "taxes")
 public class TaxController {
@@ -15,8 +17,8 @@ public class TaxController {
         this.taxService = taxService;
     }
 
-    @GetMapping(produces = "text/plain", path = "{id}")
-    public String tax(@PathVariable("id") int id){
-        return "" + taxService.calculateTax(id);
+    @GetMapping(produces = "application/json", path = "{id}")
+    public TaxationDto tax(@PathVariable("id") int id, @PathParam("income") int income){
+        return taxService.calculateTax(id, income);
     }
 }

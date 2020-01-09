@@ -34,4 +34,8 @@ public class Person {
     public String getLastName() {
         return lastName;
     }
+
+    public String getFullName() {
+        return firstName + " " + lastName;
+    }
 }

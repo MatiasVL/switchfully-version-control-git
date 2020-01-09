@@ -5,10 +5,10 @@ import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
 
 @Component
-@Profile("Belgium")
+@Profile("belgium")
 public class BelgianTaxSystem implements TaxSystem {
     @Override
-    public int calculateTaxFor(Person person) {
-        return 10;
+    public Taxation calculateTaxFor(Person person, int income) {
+        return new Taxation(person.getFullName(), income, 0, 0);
     }
 }
