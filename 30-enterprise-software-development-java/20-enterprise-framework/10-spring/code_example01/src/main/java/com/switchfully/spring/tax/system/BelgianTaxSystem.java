@@ -1,6 +1,7 @@
-package com.switchfully.spring.tax;
+package com.switchfully.spring.tax.system;
 
 import com.switchfully.spring.person.Person;
+import com.switchfully.spring.tax.Taxation;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
 
