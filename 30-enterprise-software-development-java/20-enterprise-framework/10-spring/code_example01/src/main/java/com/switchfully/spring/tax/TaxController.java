@@ -1,5 +1,6 @@
 package com.switchfully.spring.tax;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.websocket.server.PathParam;
@@ -13,11 +14,12 @@ public class TaxController {
 
     private TaxService taxService;
 
+    @Autowired
     public TaxController(TaxService taxService) {
         this.taxService = taxService;
     }
 
-    @GetMapping(produces = "application/json", path = "{id}")
+    @GetMapping(produces = "application/json", path = "{id}/simulate")
     public TaxationDto taxSimulation(@PathVariable("id") int id, @PathParam("income") int income){
         return taxService.taxSimulation(id, income);
     }
