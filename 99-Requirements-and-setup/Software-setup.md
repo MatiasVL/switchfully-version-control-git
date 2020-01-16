@@ -134,6 +134,12 @@ Test:\
         1. Click on reimport projects (its the button with the two arrows in a circle)
         1. You shouldn't get any error anymore
 
+## Videoconferencing with Zoom
+It's not (all) about code!\
+It's about communication!
+
+Download & install Zoom: https://zoom.us/client/latest/ZoomInstaller.exe
+
 ## Optional tools to install
 > _(Without further instructions)_
 * Postman
