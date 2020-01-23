@@ -100,3 +100,7 @@ Final board situation:
 [ ] [X] [0] [0] [ ] [ ] [ ]
 ---------------------------
 ```
+
+## Extra: Distribute your version of Connect Four
+* How would you distribute your version of Connect Four to your colleagues?
+* How would you distribute your version of Connect Four to non-technical people?
