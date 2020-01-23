@@ -37,4 +37,3 @@ Print the results, then run the TimeRunner and inspect the results. Does it all 
 
 When done, let someone evaluate your implementation.
 
-    
