@@ -71,15 +71,15 @@ Unzip it into `C:\_development\.programs`
     Oracle, a company that sells a commercial version of java, provides both an installer and a zip file with binaries.
     
 ### Set the necessary environment variables
-1. Setup `$JAVA_HOME`
+1. Setup `JAVA_HOME`
     1. Go to `System Properties` or type `<windows-key>` + "environment variables"
     1. In the tab `Advanced` click `Environment Variables...`
     1. This screen is split in 2 parts (User variables & System variables)
     1. Create a new System Variable in called "JAVA_HOME", `C:\_development\.programs\<java_folder>`
 
-1. Setup your `$PATH` variable
+1. Setup your `Path` variable
     1. In the same screen.
-    1. Edit `PATH`
+    1. Edit `Path`
     1. Add `%JAVA_HOME%\bin`
 
 Test:\
@@ -107,7 +107,7 @@ Test:\
 ## Maven
 Download the maven binary zipfile (https://maven.apache.org/) & unzip it: `C:\_development\.programs`
 
-Add the maven bin folder to the `$PATH` (in the same way as you did for the JDK)
+Add the maven bin folder to the `Path` (in the same way as you did for the JDK)
     
 Test:\
 `mvn -v`
@@ -125,10 +125,7 @@ Test:\
         1. Under "project sdk" press the new button
         1. Select the jdk folder in C:\_development\.programs\java
         1. After that select your new jdk as the default jdk
-        1. Set project language level to 12
-    1. Download the settings.xml posted in slack
-    1. Fill in your username and password in the downloaded settings.xml file (and don't forget to save afterwards)
-    1. Copy the settings.xml file to C:\Users\\\<username>\\.m2\ (if there is already a settings.xml file there, override it)
+        1. Set project language level to 13
     1. Go to intellij
         1. On the right-hand-side you have a M (maven) button. Click it.
         1. Click on reimport projects (its the button with the two arrows in a circle)
