@@ -117,13 +117,13 @@ Test:\
 ## Get started with the Switchfully java track
     ​
     1. Fork the java track: https://github.com/switchfully/track-java
-    1. Clone your fork into C:\_Projects\switchfully
+    1. Clone your fork into C:\_development\switchfully
     1. Open your project with IntellIj: File -> Open -> Select the "track-java"-folder
     1. Configure your sdk
         1. Go to file > project structure (or press ctrl + alt + shift + s)
         1. Select the project menu on the left hand side
         1. Under "project sdk" press the new button
-        1. Select the jdk folder in C:\_projects\.programs\java
+        1. Select the jdk folder in C:\_development\.programs\java
         1. After that select your new jdk as the default jdk
         1. Set project language level to 12
     1. Download the settings.xml posted in slack
