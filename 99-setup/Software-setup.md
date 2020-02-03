@@ -75,7 +75,7 @@ Unzip it into `C:\_development\.programs`
     1. Go to `System Properties` or type `<windows-key>` + "environment variables"
     1. In the tab `Advanced` click `Environment Variables...`
     1. This screen is split in 2 parts (User variables & System variables)
-    1. Create a new System Variable in called "JAVA_HOME", `C:\_development\.programs`
+    1. Create a new System Variable in called "JAVA_HOME", `C:\_development\.programs\<java_folder>`
 
 1. Setup your `$PATH` variable
     1. In the same screen.
