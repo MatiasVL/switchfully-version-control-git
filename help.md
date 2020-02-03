@@ -2,9 +2,12 @@
 
 1. Relax, breath
 1. Take a step back
+   - In words, clearly describe the problem to yourself. **Be as explicit as possible**
+       - Speak out loud
+       - Write down your question
+       - [Rubberduck your problem](https://en.wikipedia.org/wiki/Rubber_duck_debugging)
    - Tackle the problem step by step
-   - Does the problem persist if you revert your code? What has changed?
-   - Rubberduck your problem
+   - Does the problem persist if you **revert your code**? What has changed?
    - Make the problem smaller
 1. Review the slides
 1. Google it
@@ -46,3 +49,4 @@ Always -> learn from every experience, even bad onces. This helps you to become 
 
 ## Is it a problem with git?
 * Revert!
+ 
