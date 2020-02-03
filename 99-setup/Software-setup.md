@@ -53,7 +53,7 @@ Next: Make sure the user is correctly configured -> Use your *github* username (
 
 Test:\
 `git --version`\
-`git clone switchfully/track-shared`
+`git clone https://github.com/switchfully/track-shared`
 
 Git Cheat Sheet https://github.github.com/training-kit/downloads/github-git-cheat-sheet.pdf
 
